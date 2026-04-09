@@ -41,7 +41,6 @@ export function Footer() {
           <div className="flex gap-4">
             <Link href="/legal/terms" className="hover:text-accent transition-colors">terms</Link>
             <Link href="/legal/privacy" className="hover:text-accent transition-colors">privacy</Link>
-            <span>legal@pizzarobotstudios.com</span>
           </div>
           <span>a ripper project</span>
         </div>
