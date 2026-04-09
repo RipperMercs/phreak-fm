@@ -36,8 +36,13 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-4 border-t border-border flex items-center justify-between text-xs text-text-muted">
+        <div className="mt-8 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-muted">
           <span>&copy; {new Date().getFullYear()} phreak.fm</span>
+          <div className="flex gap-4">
+            <Link href="/legal/terms" className="hover:text-accent transition-colors">terms</Link>
+            <Link href="/legal/privacy" className="hover:text-accent transition-colors">privacy</Link>
+            <span>legal@pizzarobotstudios.com</span>
+          </div>
           <span>a ripper project</span>
         </div>
       </div>
