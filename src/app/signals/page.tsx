@@ -1,0 +1,90 @@
+import { Metadata } from "next";
+import { getAllArticles } from "@/lib/mdx";
+import { buildVerticalMetadata } from "@/lib/seo";
+import { ArticleCard } from "@/components/ArticleCard";
+
+export const metadata: Metadata = buildVerticalMetadata("signals");
+
+export default function SignalsPage() {
+  const articles = getAllArticles("signals");
+  const featured = articles.filter((a) => a.frontmatter.featured);
+  const rest = articles.filter((a) => !a.frontmatter.featured);
+
+  return (
+    <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
+      {/* Header */}
+      <header className="mb-12">
+        <h1 className="font-mono text-3xl sm:text-4xl text-signals mb-3">
+          Signals
+        </h1>
+        <p className="font-serif text-muted text-lg max-w-2xl">
+          Hacker stories, security long-form, breach narratives, and exploit
+          post-mortems. The history and present of the people who bend signals.
+        </p>
+      </header>
+
+      {/* Featured */}
+      {featured.length > 0 && (
+        <section className="mb-12">
+          <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-6">
+            Featured
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featured.map((a) => (
+              <ArticleCard
+                key={a.frontmatter.slug}
+                frontmatter={a.frontmatter}
+                variant="featured"
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* All articles */}
+      <section>
+        <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-6">
+          Latest
+        </h2>
+        <div>
+          {rest.length > 0 ? (
+            rest.map((a) => (
+              <ArticleCard key={a.frontmatter.slug} frontmatter={a.frontmatter} />
+            ))
+          ) : articles.length === 0 ? (
+            <p className="text-muted font-serif">
+              No articles yet. The archive is being assembled.
+            </p>
+          ) : null}
+        </div>
+      </section>
+
+      {/* Pillar topics link */}
+      <section className="mt-12 pt-8 border-t border-border">
+        <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-4">
+          Topics
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {[
+            { slug: "famous-breaches", title: "Famous Breaches" },
+            { slug: "ransomware-era", title: "Ransomware Era" },
+            { slug: "nation-state-operations", title: "Nation State Operations" },
+            { slug: "hacker-culture-and-history", title: "Hacker Culture & History" },
+            { slug: "zero-days-and-exploit-chains", title: "Zero Days & Exploit Chains" },
+            { slug: "insider-threats", title: "Insider Threats" },
+          ].map((topic) => (
+            <a
+              key={topic.slug}
+              href={`/signals/topics/${topic.slug}`}
+              className="block p-4 bg-surface border border-border rounded hover:border-signals/50 transition-colors"
+            >
+              <span className="font-mono text-sm text-foreground">
+                {topic.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
