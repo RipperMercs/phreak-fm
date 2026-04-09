@@ -36,6 +36,9 @@ yarn-error.log*
 .wrangler
 .dev.vars
 
+# build-time feed cache
+/public/feed-cache.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

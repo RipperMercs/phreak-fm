@@ -142,35 +142,21 @@ export default function Home() {
             <LiveFeed
               title="C:\FEEDS\SECURITY.EXE"
               color="signals"
-              feeds={[
-                "https://krebsonsecurity.com/feed/",
-                "https://www.bleepingcomputer.com/feed/",
-                "https://feeds.arstechnica.com/arstechnica/security",
-                "https://feeds.feedburner.com/TheHackersNews",
-                "https://www.wired.com/feed/tag/security/latest/rss",
-              ]}
+              feedKey="security"
               maxItems={8}
             />
 
             <LiveFeed
               title="C:\FEEDS\TECHNEWS.EXE"
               color="static-v"
-              feeds={[
-                "https://hnrss.org/frontpage?count=10",
-                "https://feeds.arstechnica.com/arstechnica/index",
-                "https://www.techmeme.com/feed.xml",
-              ]}
+              feedKey="tech"
               maxItems={6}
             />
 
             <LiveFeed
               title="C:\FEEDS\DEVWIRE.EXE"
               color="accent"
-              feeds={[
-                "https://www.techdirt.com/feed/",
-                "https://thenewstack.io/feed",
-                "https://hackernoon.com/feed",
-              ]}
+              feedKey="dev"
               maxItems={6}
             />
           </aside>
