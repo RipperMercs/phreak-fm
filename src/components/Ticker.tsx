@@ -43,7 +43,7 @@ export function Ticker({ articles }: TickerProps) {
             <span className="text-xs text-text-muted">
               {a.frontmatter.title}
             </span>
-            <span className="text-xs text-border mx-4">///</span>
+            <span className="text-xs text-border mx-4">{"///"}</span>
           </Link>
         ))}
       </div>
