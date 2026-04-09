@@ -5,9 +5,9 @@ interface AudioEmbedProps {
 
 export function AudioEmbed({ src, title }: AudioEmbedProps) {
   return (
-    <div className="my-6 p-4 bg-surface rounded border border-border">
+    <div className="my-6 p-4 bg-bg-surface rounded border border-border">
       {title && (
-        <p className="font-mono text-sm text-foreground mb-3">{title}</p>
+        <p className="font-mono text-sm text-text mb-3">{title}</p>
       )}
       <audio
         src={src}

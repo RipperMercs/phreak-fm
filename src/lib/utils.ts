@@ -18,6 +18,16 @@ export function formatDateShort(dateStr: string): string {
   });
 }
 
+export function formatDateWire(timestamp: number): string {
+  const date = new Date(timestamp);
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  const yy = String(date.getFullYear()).slice(2);
+  const hh = String(date.getHours()).padStart(2, "0");
+  const min = String(date.getMinutes()).padStart(2, "0");
+  return `${mm}.${dd}.${yy} ${hh}:${min}`;
+}
+
 export function timeAgo(timestamp: number): string {
   const seconds = Math.floor((Date.now() - timestamp) / 1000);
 
@@ -35,6 +45,15 @@ export function verticalLabel(vertical: Vertical): string {
     static: "Static",
   };
   return labels[vertical];
+}
+
+export function verticalAbbr(vertical: Vertical): string {
+  const abbrs: Record<Vertical, string> = {
+    signals: "SIG",
+    frequencies: "FRQ",
+    static: "STA",
+  };
+  return abbrs[vertical];
 }
 
 export function verticalColor(vertical: Vertical): string {
@@ -65,4 +84,11 @@ export function slugify(text: string): string {
 export function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength).replace(/\s+\S*$/, "") + "...";
+}
+
+export function formatDeadWax(author: string, date: string): string {
+  const d = new Date(date);
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const yy = String(d.getFullYear()).slice(2);
+  return `~ cut by ${author} / phreak.fm / ${mm}.${yy} ~`;
 }

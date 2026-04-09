@@ -6,7 +6,7 @@ import { getAuthor } from "@/lib/authors";
 
 interface ArticleCardProps {
   frontmatter: ArticleFrontmatter;
-  variant?: "default" | "featured" | "compact";
+  variant?: "featured" | "default" | "compact";
 }
 
 export function ArticleCard({
@@ -18,19 +18,15 @@ export function ArticleCard({
 
   if (variant === "compact") {
     return (
-      <article className="group py-3 border-b border-border last:border-b-0">
-        <Link href={href} className="block">
-          <div className="flex items-start gap-3">
-            <VerticalTag vertical={frontmatter.vertical} />
-            <div className="flex-1 min-w-0">
-              <h3 className="font-mono text-sm text-foreground group-hover:text-accent transition-colors line-clamp-1">
-                {frontmatter.title}
-              </h3>
-              <p className="text-xs text-muted mt-1 font-mono">
-                {author?.displayName} :: {formatDate(frontmatter.publishedAt)}
-              </p>
-            </div>
-          </div>
+      <article className="group py-2">
+        <Link href={href} className="flex items-center gap-3 no-underline">
+          <VerticalTag vertical={frontmatter.vertical} />
+          <h3 className="font-display text-sm text-text group-hover:text-link transition-colors truncate flex-1">
+            {frontmatter.title}
+          </h3>
+          <span className="text-xs text-text-muted font-mono whitespace-nowrap">
+            {formatDate(frontmatter.publishedAt)}
+          </span>
         </Link>
       </article>
     );
@@ -39,62 +35,50 @@ export function ArticleCard({
   if (variant === "featured") {
     return (
       <article className="group">
-        <Link href={href} className="block space-y-4">
+        <Link href={href} className="block no-underline space-y-4">
           {frontmatter.heroImage && (
-            <div
-              className={`aspect-[16/9] bg-surface rounded overflow-hidden ${
-                frontmatter.heroGrain ? "grain-overlay" : ""
-              }`}
-            >
+            <div className="halftone-overlay grain-overlay aspect-[16/9] bg-bg-surface overflow-hidden rounded-sm">
               <img
                 src={frontmatter.heroImage}
                 alt={frontmatter.title}
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 loading="lazy"
               />
             </div>
           )}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <VerticalTag vertical={frontmatter.vertical} />
-            <h2 className="font-mono text-2xl text-foreground group-hover:text-accent transition-colors leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl text-text leading-tight group-hover:text-link transition-colors text-balance">
               {frontmatter.title}
             </h2>
-            <p className="font-serif text-muted text-base line-clamp-3">
+            <p className="font-body text-text-muted text-base leading-relaxed line-clamp-3">
               {frontmatter.excerpt}
             </p>
-            <div className="flex items-center gap-3 text-xs text-muted font-mono">
-              <span>{author?.displayName}</span>
-              <span>::</span>
-              <span>{formatDate(frontmatter.publishedAt)}</span>
-              <span>::</span>
-              <span>{frontmatter.readingTimeMinutes} min read</span>
-            </div>
+            <p className="font-mono text-xs text-text-muted tracking-wide">
+              {author?.displayName} :: {formatDate(frontmatter.publishedAt)} :: {frontmatter.readingTimeMinutes} min read
+            </p>
           </div>
         </Link>
       </article>
     );
   }
 
+  // Default variant
   return (
-    <article className="group py-6 border-b border-border last:border-b-0">
-      <Link href={href} className="block space-y-2">
+    <article className="group py-6 border-b border-border-light last:border-b-0">
+      <Link href={href} className="block no-underline space-y-2">
         <div className="flex items-center gap-3">
           <VerticalTag vertical={frontmatter.vertical} />
-          <span className="text-xs text-muted font-mono">
-            {formatDate(frontmatter.publishedAt)}
-          </span>
         </div>
-        <h3 className="font-mono text-lg text-foreground group-hover:text-accent transition-colors">
+        <h3 className="font-display text-xl text-text group-hover:text-link transition-colors leading-snug">
           {frontmatter.title}
         </h3>
-        <p className="font-serif text-muted text-sm line-clamp-2">
+        <p className="font-body text-text-muted text-sm line-clamp-2 leading-relaxed">
           {frontmatter.excerpt}
         </p>
-        <div className="flex items-center gap-3 text-xs text-muted font-mono">
-          <span>{author?.displayName}</span>
-          <span>::</span>
-          <span>{frontmatter.readingTimeMinutes} min read</span>
-        </div>
+        <p className="font-mono text-xs text-text-muted tracking-wide">
+          {author?.displayName} :: {formatDate(frontmatter.publishedAt)} :: {frontmatter.readingTimeMinutes} min read
+        </p>
       </Link>
     </article>
   );

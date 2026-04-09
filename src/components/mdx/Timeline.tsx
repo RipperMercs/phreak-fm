@@ -14,18 +14,18 @@ export function Timeline({ events }: TimelineProps) {
       {events.map((event, i) => (
         <div key={i} className="flex gap-4 pb-6 last:pb-0">
           <div className="flex flex-col items-center">
-            <div className="w-2 h-2 rounded-full bg-accent mt-2" />
+            <div className="w-2 h-2 rounded-full bg-riso-cyan mt-2" />
             {i < events.length - 1 && (
               <div className="w-px flex-1 bg-border mt-2" />
             )}
           </div>
           <div className="flex-1 pb-2">
-            <p className="font-mono text-xs text-accent">{event.date}</p>
-            <p className="font-mono text-sm text-foreground mt-1">
+            <p className="font-mono text-xs text-riso-cyan">{event.date}</p>
+            <p className="font-display text-sm text-text mt-1">
               {event.title}
             </p>
             {event.description && (
-              <p className="font-serif text-sm text-muted mt-1">
+              <p className="font-body text-sm text-text-muted mt-1">
                 {event.description}
               </p>
             )}
