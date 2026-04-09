@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="paper" suppressHydrationWarning>
+    <html lang="en" className="blueprint" suppressHydrationWarning>
       <body
         className={`${instrumentSerif.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} ${caveat.variable} min-h-screen flex flex-col`}
       >
