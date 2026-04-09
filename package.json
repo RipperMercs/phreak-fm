@@ -13,6 +13,7 @@
     "worker:deploy": "cd worker && npx wrangler deploy"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@fontsource/caveat": "^5.2.8",
     "@fontsource/instrument-serif": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
