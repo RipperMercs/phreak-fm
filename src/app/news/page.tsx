@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "News Wire",
@@ -139,13 +138,6 @@ export default function NewsPage() {
         </div>
       </div>
 
-      {/* Deploy instructions */}
-      <div className="mt-12 border-t border-border pt-6">
-        <p className="text-xs text-text-muted">
-          To activate the live wire, deploy the phreak-api Cloudflare Worker.
-          See <Link href="https://github.com/RipperMercs/phreak-fm" className="text-accent">/docs/deploy.md</Link> for setup instructions.
-        </p>
-      </div>
     </main>
   );
 }
