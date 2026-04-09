@@ -20,9 +20,9 @@ const pillars: Record<string, { title: string; description: string }> = {
     title: "Nation State Operations",
     description: "State-sponsored hacking campaigns, APT groups, and the invisible wars fought across networks. When governments go on offense.",
   },
-  "hacker-culture-and-history": {
-    title: "Hacker Culture & History",
-    description: "Phrack, 2600, cDc, L0pht, and the phreaking origins. The culture, the zines, the cons, and the people who built the underground.",
+  "phreaker-elders-and-hacker-culture": {
+    title: "Phreaker Elders & Hacker Culture",
+    description: "The phreakers, the hackers, the zines, and the cons. From Cap'n Crunch's whistle to the L0pht testimony. The people who built the underground and the stories that defined it.",
   },
   "zero-days-and-exploit-chains": {
     title: "Zero Days & Exploit Chains",

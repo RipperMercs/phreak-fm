@@ -69,7 +69,7 @@ export default function SignalsPage() {
             { slug: "famous-breaches", title: "Famous Breaches" },
             { slug: "ransomware-era", title: "Ransomware Era" },
             { slug: "nation-state-operations", title: "Nation State Operations" },
-            { slug: "hacker-culture-and-history", title: "Hacker Culture & History" },
+            { slug: "phreaker-elders-and-hacker-culture", title: "Phreaker Elders & Hacker Culture" },
             { slug: "zero-days-and-exploit-chains", title: "Zero Days & Exploit Chains" },
             { slug: "insider-threats", title: "Insider Threats" },
           ].map((topic) => (
