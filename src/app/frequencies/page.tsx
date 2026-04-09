@@ -11,10 +11,8 @@ const genrePillars = [
   { slug: "progressive-house", title: "Progressive House" },
   { slug: "experimental-techno", title: "Experimental Techno" },
   { slug: "downtempo", title: "Downtempo" },
-  { slug: "hauntology", title: "Hauntology" },
   { slug: "modular-synth", title: "Modular / Synth" },
   { slug: "drone-and-minimalism", title: "Drone & Minimalism" },
-  { slug: "glitch", title: "Glitch" },
   { slug: "breaks", title: "Breaks" },
 ];
 
