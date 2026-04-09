@@ -8,7 +8,7 @@ export const metadata: Metadata = buildVerticalMetadata("frequencies");
 const genrePillars = [
   { slug: "ambient", title: "Ambient" },
   { slug: "idm", title: "IDM" },
-  { slug: "progressive-house", title: "Progressive House" },
+  { slug: "house", title: "House" },
   { slug: "experimental-techno", title: "Experimental Techno" },
   { slug: "downtempo", title: "Downtempo" },
   { slug: "modular-synth", title: "Modular / Synth" },
