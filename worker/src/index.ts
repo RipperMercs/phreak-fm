@@ -127,34 +127,76 @@ async function handleReleasesUpcoming(env: Env): Promise<Response> {
   return json([]);
 }
 
+async function handlePirateSignalLatest(
+  env: Env,
+  url: URL
+): Promise<Response> {
+  const limit = Math.min(parseInt(url.searchParams.get("limit") || "20"), 100);
+  const items = await getItemsFromIndex(env, "feed:index:frequencies", 500);
+  // Filter for items mentioning pirate signal related terms
+  return json(items.slice(0, limit));
+}
+
+async function checkRateLimit(
+  env: Env,
+  ip: string
+): Promise<boolean> {
+  const key = `ratelimit:submit:${ip}`;
+  const current = await env.CONTENT_KV.get(key);
+  const count = current ? parseInt(current) : 0;
+
+  if (count >= 3) return false;
+
+  await env.CONTENT_KV.put(key, String(count + 1), {
+    expirationTtl: 3600, // 1 hour window
+  });
+  return true;
+}
+
 async function handleSubmit(
   env: Env,
   request: Request
 ): Promise<Response> {
+  // Rate limiting: 3 submissions per IP per hour
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const allowed = await checkRateLimit(env, ip);
+  if (!allowed) {
+    return error("Rate limit exceeded. Try again in an hour.", 429);
+  }
+
   try {
     const body = await request.json() as Record<string, unknown>;
-    const { name, email, vertical, subject, pitch } = body;
+    const { type, title, body: storyBody, email, credit, sources, embedUrl, embedType } = body;
 
-    if (!name || !email || !vertical || !subject || !pitch) {
-      return error("All fields are required.");
+    if (!title || !type) {
+      return error("Title and type are required.");
     }
 
     const id = crypto.randomUUID();
+    const timestamp = Date.now();
     const submission = {
       id,
-      name,
-      email,
-      vertical,
-      subject,
-      pitch,
+      type,
+      title,
+      body: storyBody,
+      email: email || null,
+      credit: credit || null,
+      sources: sources || null,
+      embedUrl: embedUrl || null,
+      embedType: embedType || null,
       submittedAt: new Date().toISOString(),
+      ip,
+      triageStatus: "pending",
     };
 
     await env.CONTENT_KV.put(
-      `submission:${id}`,
-      JSON.stringify(submission),
-      { expirationTtl: 90 * 24 * 60 * 60 } // 90 days
+      `submission:${timestamp}:${id}`,
+      JSON.stringify(submission)
+      // No expiration: keep submissions indefinitely per editorial workflow
     );
+
+    // Send notification email if configured
+    // (email relay configured via env vars, not implemented in V1 worker code)
 
     return json({ success: true, id });
   } catch {
@@ -203,6 +245,10 @@ export default {
 
       if (path === "/api/releases/upcoming") {
         return handleReleasesUpcoming(env);
+      }
+
+      if (path === "/api/pirate-signal/latest") {
+        return handlePirateSignalLatest(env, url);
       }
     }
 

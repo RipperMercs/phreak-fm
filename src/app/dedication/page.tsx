@@ -7,10 +7,16 @@ export const metadata: Metadata = {
 
 export default function DedicationPage() {
   return (
-    <main className="max-w-article mx-auto px-4 sm:px-6 py-24">
+    <main
+      className="min-h-[70vh] flex items-center justify-center px-4"
+      style={{ backgroundColor: "#0f1923" }}
+    >
       <div className="text-center">
-        <p className="font-serif text-muted text-lg">
-          Dedication page content to be written by Evan.
+        <p
+          className="font-hand text-xl"
+          style={{ color: "#7a8fa0" }}
+        >
+          Dedication page content to be written by Ripper.
         </p>
       </div>
     </main>
