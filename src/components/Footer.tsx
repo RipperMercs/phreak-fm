@@ -3,8 +3,6 @@ import Link from "next/link";
 const crossReferences = [
   { name: "TerminalFeed", url: "https://terminalfeed.io" },
   { name: "TensorFeed", url: "https://tensorfeed.ai" },
-  { name: "VR.org", url: "https://vr.org" },
-  { name: "DramaRadar", url: "https://dramaradar.com" },
 ];
 
 export function Footer() {
