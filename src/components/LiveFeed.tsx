@@ -15,50 +15,67 @@ interface LiveFeedProps {
   maxItems?: number;
 }
 
-async function fetchViaRss2Json(feedUrl: string): Promise<FeedEntry[]> {
-  try {
-    const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&count=5`;
-    const res = await fetch(proxyUrl);
-    if (!res.ok) return [];
-    const data = await res.json();
-    if (data.status !== "ok" || !data.items) return [];
-    return data.items.map((item: { title: string; link: string; pubDate: string }) => ({
-      title: item.title,
-      link: item.link,
-      published: item.pubDate || "",
-    }));
-  } catch {
-    return [];
+function parseRssXml(text: string): FeedEntry[] {
+  const items: FeedEntry[] = [];
+  const itemRegex = /<item[\s>]([\s\S]*?)<\/item>/gi;
+  let match;
+  while ((match = itemRegex.exec(text)) !== null) {
+    const block = match[1];
+    const title = block.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)?.[1] || "";
+    const link =
+      block.match(/<link[^>]*>([\s\S]*?)<\/link>/)?.[1] ||
+      block.match(/<link[^>]*href="([^"]*)"[^>]*\/?>/)?.[1] ||
+      "";
+    const pubDate = block.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/)?.[1] || "";
+    if (title && link) {
+      items.push({
+        title: title.replace(/<[^>]*>/g, "").trim(),
+        link: link.trim(),
+        published: pubDate.trim(),
+      });
+    }
   }
-}
 
-async function fetchViaAllOrigins(feedUrl: string): Promise<FeedEntry[]> {
-  try {
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`;
-    const res = await fetch(proxyUrl);
-    if (!res.ok) return [];
-    const text = await res.text();
-
-    const items: FeedEntry[] = [];
-    const itemRegex = /<item[\s>]([\s\S]*?)<\/item>/gi;
-    let match;
-    while ((match = itemRegex.exec(text)) !== null) {
+  // Also try Atom entries
+  if (items.length === 0) {
+    const entryRegex = /<entry[\s>]([\s\S]*?)<\/entry>/gi;
+    while ((match = entryRegex.exec(text)) !== null) {
       const block = match[1];
-      const title = block.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)?.[1] || "";
-      const link = block.match(/<link[^>]*>([\s\S]*?)<\/link>/)?.[1] || "";
-      const pubDate = block.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/)?.[1] || "";
+      const title = block.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] || "";
+      const link = block.match(/<link[^>]*href="([^"]*)"[^>]*\/?>/)?.[1] || "";
+      const published = block.match(/<(?:published|updated)[^>]*>([\s\S]*?)<\/(?:published|updated)>/)?.[1] || "";
       if (title && link) {
         items.push({
           title: title.replace(/<[^>]*>/g, "").trim(),
           link: link.trim(),
-          published: pubDate.trim(),
+          published: published.trim(),
         });
       }
     }
-    return items.slice(0, 5);
-  } catch {
-    return [];
   }
+
+  return items.slice(0, 5);
+}
+
+async function fetchFeed(feedUrl: string): Promise<FeedEntry[]> {
+  // Try corsproxy.io first (reliable, no signup)
+  const proxies = [
+    `https://corsproxy.io/?${encodeURIComponent(feedUrl)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`,
+  ];
+
+  for (const proxyUrl of proxies) {
+    try {
+      const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(6000) });
+      if (!res.ok) continue;
+      const text = await res.text();
+      const items = parseRssXml(text);
+      if (items.length > 0) return items;
+    } catch {
+      continue;
+    }
+  }
+  return [];
 }
 
 export function LiveFeed({ title, color, feeds, maxItems = 8 }: LiveFeedProps) {
@@ -66,15 +83,15 @@ export function LiveFeed({ title, color, feeds, maxItems = 8 }: LiveFeedProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchFeeds() {
+    async function fetchAll() {
+      // Fetch all feeds in parallel
+      const results = await Promise.allSettled(feeds.map(fetchFeed));
       const allItems: FeedEntry[] = [];
 
-      for (const feedUrl of feeds) {
-        let entries = await fetchViaRss2Json(feedUrl);
-        if (entries.length === 0) {
-          entries = await fetchViaAllOrigins(feedUrl);
+      for (const result of results) {
+        if (result.status === "fulfilled") {
+          allItems.push(...result.value);
         }
-        allItems.push(...entries);
       }
 
       const seen = new Set<string>();
@@ -92,7 +109,7 @@ export function LiveFeed({ title, color, feeds, maxItems = 8 }: LiveFeedProps) {
       setLoading(false);
     }
 
-    fetchFeeds();
+    fetchAll();
   }, [feeds, maxItems]);
 
   const colorMap: Record<string, { text: string; border: string }> = {
