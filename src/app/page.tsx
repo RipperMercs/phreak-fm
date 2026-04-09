@@ -5,6 +5,7 @@ import { formatDate } from "@/lib/utils";
 import { getAuthor } from "@/lib/authors";
 import { Ticker } from "@/components/Ticker";
 import { SystemBar } from "@/components/SystemBar";
+import { LiveFeed } from "@/components/LiveFeed";
 
 const HACKER_QUOTES = [
   { text: "Information wants to be free.", author: "Stewart Brand" },
@@ -52,21 +53,13 @@ export default function Home() {
         </div>
 
         {/* ASCII Logo */}
-        <header className="py-8 border-b border-border">
-          <pre className="text-accent text-xs sm:text-sm leading-tight hidden sm:block" aria-hidden="true">{`
-  ██▓███   ██░ ██  ██▀███  ▓█████  ▄▄▄       ██ ▄█▀      █████▒███▄ ▄███▓
- ▓██░  ██▒▓██░ ██▒▓██ ▒ ██▒▓█   ▀ ▒████▄     ██▄█▒     ▓██   ▒▓██▒▀█▀ ██▒
- ▓██░ ██▓▒▒██▀▀██░▓██ ░▄█ ▒▒███   ▒██  ▀█▄  ▓███▄░     ▒████ ░▓██    ▓██░
- ▒██▄█▓▒ ▒░▓█ ░██ ▒██▀▀█▄  ▒▓█  ▄ ░██▄▄▄▄██ ▓██ █▄     ░▓█▒  ░▒██    ▒██
- ▒██▒ ░  ░░▓█▒░██▓░██▓ ▒██▒░▒████▒ ▓█   ▓██▒▒██▒ █▄  ██▒░▒█░   ▒██▒   ░██▒
- ▒▓▒░ ░  ░ ▒ ░░▒░▒░ ▒▓ ░▒▓░░░ ▒░ ░ ▒▒   ▓▒█░▒ ▒▒ ▓▒  ▒▓▒ ░ ▒   ░ ▒░   ░ ░
- ░▒ ░      ▒ ░▒░ ░  ░▒ ░ ▒░ ░ ░  ░  ▒   ▒▒ ░░ ░▒ ▒░  ░▒    ░   ░  ░   ░
-          `}</pre>
-          <h1 className="sm:hidden text-3xl text-text-bright cursor-blink">
+        <header className="py-12 sm:py-16 border-b border-border">
+          <h1 className="text-3xl sm:text-5xl text-text-bright leading-tight cursor-blink">
             phreak<span className="text-accent">.fm</span>
           </h1>
-          <p className="text-text-muted text-xs mt-3 tracking-wide">
-            signals, frequencies, and the people who bend them
+          <p className="text-text-muted text-sm mt-3">
+            Hacker stories. Security narratives. Phreaker history.
+            Electronic music for the people who listen at 3am.
           </p>
         </header>
 
@@ -144,62 +137,32 @@ export default function Home() {
             </section>
           </div>
 
-          {/* RIGHT: DOS-window feed panels */}
+          {/* RIGHT: Live feed panels */}
           <aside className="hidden lg:block py-6 space-y-4">
-            {/* Security Feed Window */}
-            <DosWindow title="C:\FEEDS\SECURITY.EXE" color="signals">
-              <p className="text-xs text-text-muted mb-3 italic">
-                Pulling from Krebs, BleepingComputer, Ars Technica Security,
-                Wired Security, SANS ISC, The Record, 404 Media...
-              </p>
-              <div className="space-y-2">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <div key={i} className="py-1.5 border-b border-border/30 last:border-b-0">
-                    <div className="h-2.5 w-full bg-bg rounded loading-pulse mb-1" />
-                    <div className="h-2 w-2/3 bg-bg rounded loading-pulse" />
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-text-muted mt-3">
-                {'>'} awaiting connection to feed aggregator_
-              </p>
-            </DosWindow>
+            <LiveFeed
+              title="C:\FEEDS\SECURITY.EXE"
+              color="signals"
+              feeds={[
+                "https://krebsonsecurity.com/feed/",
+                "https://www.bleepingcomputer.com/feed/",
+                "https://feeds.arstechnica.com/arstechnica/security",
+                "https://feeds.feedburner.com/TheHackersNews",
+                "https://www.wired.com/feed/tag/security/latest/rss",
+              ]}
+              maxItems={8}
+            />
 
-            {/* Tech Feed Window */}
-            <DosWindow title="C:\FEEDS\TECHNEWS.EXE" color="static-v">
-              <p className="text-xs text-text-muted mb-3 italic">
-                Pulling from 404 Media, Ars Technica, Hacker News,
-                The Verge, Kottke, MIT Tech Review...
-              </p>
-              <div className="space-y-2">
-                {Array.from({ length: 4 }).map((_, i) => (
-                  <div key={i} className="py-1.5 border-b border-border/30 last:border-b-0">
-                    <div className="h-2.5 w-full bg-bg rounded loading-pulse mb-1" />
-                    <div className="h-2 w-1/2 bg-bg rounded loading-pulse" />
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-text-muted mt-3">
-                {'>'} awaiting connection to feed aggregator_
-              </p>
-            </DosWindow>
-
-            {/* System Info Window */}
-            <DosWindow title="C:\PHREAK\ABOUT.TXT" color="accent">
-              <div className="text-xs text-text-muted space-y-1">
-                <p>phreak.fm v1.0</p>
-                <p>est. 2026</p>
-                <p>---</p>
-                <p>hacker stories</p>
-                <p>phreaker history</p>
-                <p>security narratives</p>
-                <p>electronic music</p>
-                <p>---</p>
-                <p className="text-accent">
-                  <Link href="/about">{'>'} read more</Link>
-                </p>
-              </div>
-            </DosWindow>
+            <LiveFeed
+              title="C:\FEEDS\TECHNEWS.EXE"
+              color="static-v"
+              feeds={[
+                "https://www.404media.co/rss/",
+                "https://feeds.arstechnica.com/arstechnica/index",
+                "https://www.theverge.com/rss/index.xml",
+                "https://feeds.kottke.org/main",
+              ]}
+              maxItems={6}
+            />
           </aside>
         </div>
       </main>
@@ -207,46 +170,3 @@ export default function Home() {
   );
 }
 
-function DosWindow({
-  title,
-  color,
-  children,
-}: {
-  title: string;
-  color: string;
-  children: React.ReactNode;
-}) {
-  const borderColor: Record<string, string> = {
-    signals: "border-signals/40",
-    "static-v": "border-static-v/40",
-    accent: "border-accent/40",
-    frequencies: "border-frequencies/40",
-  };
-
-  const titleColor: Record<string, string> = {
-    signals: "text-signals",
-    "static-v": "text-static-v",
-    accent: "text-accent",
-    frequencies: "text-frequencies",
-  };
-
-  return (
-    <div className={`border ${borderColor[color] || "border-border"} bg-bg-surface`}>
-      {/* Title bar */}
-      <div className={`flex items-center justify-between px-3 py-1.5 border-b ${borderColor[color] || "border-border"} bg-bg`}>
-        <span className={`text-xs ${titleColor[color] || "text-text"}`}>
-          {title}
-        </span>
-        <div className="flex gap-1.5">
-          <span className="text-xs text-text-muted">_</span>
-          <span className="text-xs text-text-muted">□</span>
-          <span className="text-xs text-text-muted">×</span>
-        </div>
-      </div>
-      {/* Content */}
-      <div className="p-3">
-        {children}
-      </div>
-    </div>
-  );
-}
