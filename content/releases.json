@@ -1,0 +1,82 @@
+[
+  {
+    "artist": "Rykard",
+    "title": "NCO",
+    "label": "Hunya Munya Records",
+    "releaseDate": "2026-05-15",
+    "format": ["digital", "vinyl"],
+    "featured": true
+  },
+  {
+    "artist": "Aphex Twin",
+    "title": "TBA 2026",
+    "label": "Warp",
+    "releaseDate": "2026-06-01",
+    "format": ["digital", "vinyl"],
+    "featured": true
+  },
+  {
+    "artist": "Boards of Canada",
+    "title": "TBA 2026",
+    "label": "Warp",
+    "releaseDate": "2026-07-01",
+    "format": ["digital", "vinyl", "cd"],
+    "featured": true
+  },
+  {
+    "artist": "Jon Hopkins",
+    "title": "Ritual",
+    "label": "Domino",
+    "releaseDate": "2026-04-25",
+    "format": ["digital", "vinyl"],
+    "featured": false
+  },
+  {
+    "artist": "Caterina Barbieri",
+    "title": "Myuthafoo",
+    "label": "Light-years",
+    "releaseDate": "2026-05-02",
+    "format": ["digital", "vinyl"],
+    "featured": false
+  },
+  {
+    "artist": "Four Tet",
+    "title": "Three",
+    "label": "Text Records",
+    "releaseDate": "2026-04-18",
+    "format": ["digital"],
+    "featured": false
+  },
+  {
+    "artist": "Rival Consoles",
+    "title": "Night Visions",
+    "label": "Erased Tapes",
+    "releaseDate": "2026-05-10",
+    "format": ["digital", "vinyl"],
+    "featured": false
+  },
+  {
+    "artist": "Loraine James",
+    "title": "Gentle Confrontation II",
+    "label": "Hyperdub",
+    "releaseDate": "2026-06-14",
+    "format": ["digital", "vinyl"],
+    "featured": false
+  },
+  {
+    "artist": "Nicolas Jaar",
+    "title": "Fragments",
+    "label": "Other People",
+    "releaseDate": "2026-05-30",
+    "format": ["digital", "vinyl", "cd"],
+    "featured": false
+  },
+  {
+    "artist": "Tim Hecker",
+    "title": "Descent",
+    "label": "Kranky",
+    "releaseDate": "2026-06-20",
+    "format": ["digital", "vinyl"],
+    "featured": false
+  }
+]
