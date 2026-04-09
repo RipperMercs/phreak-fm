@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run check:emdash && next build",
+    "build": "npm run check:emdash && node scripts/fetch-feeds.js && next build",
     "start": "next start",
     "lint": "next lint",
     "check:emdash": "node scripts/check-emdash.js",

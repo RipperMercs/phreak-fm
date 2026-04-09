@@ -23,6 +23,7 @@ const patterns = [
 
 const extensions = "ts,tsx,mdx,md,json,css,html,txt,toml,yaml,yml";
 const excludeDirs = "node_modules,.next,.git,out,build";
+const excludeFiles = ["feed-cache.json"];
 
 let found = false;
 
@@ -86,6 +87,7 @@ function checkPatterns(dir) {
       if (stat.isDirectory()) {
         checkPatterns(fullPath);
       } else if (extensions.split(",").some((ext) => fullPath.endsWith("." + ext))) {
+        if (excludeFiles.some((f) => fullPath.endsWith(f))) continue;
         const content = readFileSync(fullPath, "utf8");
         for (const pattern of patterns) {
           if (content.includes(pattern)) {
