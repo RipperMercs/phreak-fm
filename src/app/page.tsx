@@ -163,6 +163,16 @@ export default function Home() {
               ]}
               maxItems={6}
             />
+
+            <LiveFeed
+              title="C:\FEEDS\DEVWIRE.EXE"
+              color="accent"
+              feeds={[
+                "https://terminalfeed.io/rss/developers",
+                "https://tensorfeed.ai/rss/news",
+              ]}
+              maxItems={6}
+            />
           </aside>
         </div>
       </main>
