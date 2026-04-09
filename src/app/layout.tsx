@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Source_Serif_4 } from "next/font/google";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
+import { JetBrains_Mono, Source_Serif_4, Instrument_Serif, Caveat } from "next/font/google";
 import "./globals.css";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -10,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
+const caveat = Caveat({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-hand",
   display: "swap",
 });
 
@@ -39,10 +50,7 @@ export const metadata: Metadata = {
     description:
       "Signals, frequencies, and the people who bend them. Hacker culture, electronic music, and tech news.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -51,13 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="paper" suppressHydrationWarning>
       <body
-        className={`${jetbrainsMono.variable} ${sourceSerif.variable} antialiased min-h-screen flex flex-col`}
+        className={`${instrumentSerif.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} ${caveat.variable} min-h-screen`}
       >
-        <Nav />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        {children}
       </body>
     </html>
   );
