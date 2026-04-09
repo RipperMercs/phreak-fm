@@ -4,7 +4,8 @@
       "Bash(npx create-next-app@14 . --typescript --tailwind --eslint --app --src-dir --no-import-alias)",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

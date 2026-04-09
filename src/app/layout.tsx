@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Source_Serif_4 } from "next/font/google";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -51,9 +53,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${jetbrainsMono.variable} ${sourceSerif.variable} antialiased min-h-screen`}
+        className={`${jetbrainsMono.variable} ${sourceSerif.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <Nav />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
