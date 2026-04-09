@@ -6,7 +6,9 @@
       "Bash(npm run:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(ls /c/projects/phreak-fm/content/signals/*.mdx)",
+      "Bash(xargs -I{} basename {} .mdx)"
     ]
   }
 }
