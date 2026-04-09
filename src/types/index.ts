@@ -2,6 +2,11 @@ export type Vertical = "signals" | "frequencies" | "static";
 
 export type TrustTier = 1 | 2 | 3;
 
+export interface MarginaliaItem {
+  anchor: string;
+  note: string;
+}
+
 export interface FeedItem {
   id: string;
   title: string;
@@ -22,21 +27,30 @@ export interface ArticleFrontmatter {
   title: string;
   slug: string;
   vertical: Vertical;
+  subsection?: "pirate-signal";
   author: string;
   publishedAt: string;
   updatedAt?: string;
   excerpt: string;
   heroImage?: string;
   heroGrain?: boolean;
+  heroHalftone?: boolean;
   tags: string[];
   pillar?: string;
   readingTimeMinutes: number;
   featured?: boolean;
   audioUrl?: string;
+  marginalia?: MarginaliaItem[];
+  deadwaxInscription?: string;
+
+  // Frequencies optional
   artist?: string;
   label?: string;
   releaseYear?: number;
-  rating?: number;
+
+  // Pirate Signal specific
+  embedUrl?: string;
+  embedType?: "bandcamp" | "soundcloud" | "youtube";
 }
 
 export interface Author {
@@ -47,7 +61,7 @@ export interface Author {
   primaryVertical: Vertical;
   specialties: string[];
   twitter?: string;
-  signature?: string;
+  signature: string;
 }
 
 export interface Release {

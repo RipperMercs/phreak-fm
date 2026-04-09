@@ -7,89 +7,67 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./content/**/*.{mdx,md}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // Core palette
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        surface: "var(--surface)",
-        "surface-hover": "var(--surface-hover)",
+        bg: "var(--bg)",
+        "bg-surface": "var(--bg-surface)",
+        "bg-surface-hover": "var(--bg-surface-hover)",
+        text: "var(--text)",
+        "text-muted": "var(--text-muted)",
         border: "var(--border)",
-        muted: "var(--muted)",
+        "border-light": "var(--border-light)",
 
-        // Accent: signal green
-        accent: {
-          DEFAULT: "var(--accent)",
-          hover: "var(--accent-hover)",
-          muted: "var(--accent-muted)",
-        },
+        // Risograph accent palette
+        "riso-red": "var(--riso-red)",
+        "riso-ochre": "var(--riso-ochre)",
+        "riso-cyan": "var(--riso-cyan)",
+        "riso-forest": "var(--riso-forest)",
 
-        // Vertical section tags
+        // Vertical section colors
         signals: "var(--color-signals)",
         frequencies: "var(--color-frequencies)",
         "static-v": "var(--color-static)",
+
+        link: "var(--link)",
+        "link-hover": "var(--link-hover)",
       },
       fontFamily: {
+        display: ["var(--font-display)", "Instrument Serif", "Georgia", "serif"],
+        body: ["var(--font-body)", "Source Serif 4", "Georgia", "serif"],
         mono: ["var(--font-mono)", "JetBrains Mono", "Fira Code", "monospace"],
-        serif: [
-          "var(--font-serif)",
-          "Source Serif 4",
-          "Georgia",
-          "Times New Roman",
-          "serif",
-        ],
-        sans: [
-          "var(--font-sans)",
-          "Inter",
-          "system-ui",
-          "sans-serif",
-        ],
+        hand: ["var(--font-hand)", "Caveat", "Kalam", "cursive"],
       },
       fontSize: {
-        // Type scale: 1.25 ratio (Major Third)
-        xs: ["0.64rem", { lineHeight: "1rem" }],
-        sm: ["0.8rem", { lineHeight: "1.25rem" }],
-        base: ["1rem", { lineHeight: "1.625rem" }],
-        lg: ["1.25rem", { lineHeight: "1.875rem" }],
-        xl: ["1.563rem", { lineHeight: "2.125rem" }],
+        // Major Third scale (1.25)
+        "xs": ["0.64rem", { lineHeight: "1rem" }],
+        "sm": ["0.8rem", { lineHeight: "1.25rem" }],
+        "base": ["1rem", { lineHeight: "1.7rem" }],
+        "lg": ["1.25rem", { lineHeight: "1.875rem" }],
+        "xl": ["1.563rem", { lineHeight: "2.125rem" }],
         "2xl": ["1.953rem", { lineHeight: "2.5rem" }],
-        "3xl": ["2.441rem", { lineHeight: "3rem" }],
-        "4xl": ["3.052rem", { lineHeight: "3.5rem" }],
-      },
-      spacing: {
-        // 4px base grid, extended tokens
-        "4.5": "1.125rem",
-        "13": "3.25rem",
-        "15": "3.75rem",
-        "18": "4.5rem",
-        "22": "5.5rem",
-        "26": "6.5rem",
-        "30": "7.5rem",
+        "3xl": ["2.441rem", { lineHeight: "2.875rem" }],
+        "4xl": ["3.052rem", { lineHeight: "3.25rem" }],
+        "5xl": ["3.815rem", { lineHeight: "3.875rem" }],
       },
       maxWidth: {
         article: "42rem",
         content: "72rem",
-      },
-      borderRadius: {
-        sm: "0.25rem",
-        DEFAULT: "0.375rem",
-        md: "0.5rem",
+        wire: "48rem",
       },
       keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(4px)" },
+        "paper-feed": {
+          "0%": { opacity: "0", transform: "translateY(-8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.4" },
-          "50%": { opacity: "1" },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       animation: {
+        "paper-feed": "paper-feed 0.4s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },

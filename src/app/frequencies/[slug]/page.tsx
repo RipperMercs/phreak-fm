@@ -79,11 +79,6 @@ export default function FrequenciesArticlePage({ params }: PageProps) {
                 {article.frontmatter.releaseYear}
               </span>
             )}
-            {article.frontmatter.rating && (
-              <span className="font-mono text-sm text-accent">
-                {article.frontmatter.rating}/10
-              </span>
-            )}
           </div>
 
           {author && (

@@ -1,11 +1,13 @@
 # phreak.fm
 
 **Domain:** phreak.fm
-**Tagline:** (to be locked by Evan)
+**Tagline:** (to be locked by Ripper)
 
-A single editorial publication covering three connected worlds: hacker culture and security narratives, boundary-pushing electronic music, and tech/nerd news.
+A personal editorial archive covering three connected worlds: hacker culture and security narratives, boundary-pushing electronic music, and tech/nerd news.
 
 Three verticals, one voice: Signals, Frequencies, Static.
+
+Xerox zine meets Warp Records liner notes meets 2600 Magazine.
 
 ## Stack
 
@@ -32,4 +34,4 @@ See `/docs/deploy.md` for Cloudflare deployment instructions.
 
 ## License
 
-All rights reserved. Pizza Robot Studios LLC.
+All rights reserved.
