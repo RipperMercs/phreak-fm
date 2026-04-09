@@ -68,7 +68,7 @@ Three tiers: web forms (Tier 1), email drop to tips@phreak.fm (Tier 2), secure s
 
 ## Sibling Sites
 
-TerminalFeed, TensorFeed, VR.org, DramaRadar. Cross-linked in footer as "cross-references." phreak.fm is independent in identity.
+TerminalFeed and TensorFeed. Cross-linked in footer as "cross-references." phreak.fm is independent in identity.
 
 ## Dedication Page
 
