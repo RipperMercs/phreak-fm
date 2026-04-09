@@ -5,7 +5,7 @@ export const authors: Record<string, Author> = {
     slug: "the-archivist",
     displayName: "The Archivist",
     avatar: "/avatars/the-archivist.png",
-    bio: "Hacker history, scene culture, and old-school coverage. Digging through the archives so you do not have to.",
+    bio: "Hacker history, scene culture, phreaker elders, and old-school coverage. Digging through the archives so you do not have to.",
     primaryVertical: "signals",
     specialties: [
       "hacker history",
@@ -15,7 +15,7 @@ export const authors: Record<string, Author> = {
       "Phrack",
       "cDc",
     ],
-    signature: "// end of transmission",
+    signature: "~ cut by the archivist / phreak.fm ~",
   },
   "the-analyst": {
     slug: "the-analyst",
@@ -30,7 +30,7 @@ export const authors: Record<string, Author> = {
       "malware analysis",
       "zero days",
     ],
-    signature: "// 0x00",
+    signature: "~ cut by the analyst / phreak.fm ~",
   },
   "the-listener": {
     slug: "the-listener",
@@ -46,7 +46,7 @@ export const authors: Record<string, Author> = {
       "progressive",
       "techno",
     ],
-    signature: "// press play",
+    signature: "~ cut by the listener / phreak.fm ~",
   },
   "the-historian": {
     slug: "the-historian",
@@ -60,7 +60,23 @@ export const authors: Record<string, Author> = {
       "scene retrospectives",
       "electronic music culture",
     ],
-    signature: "// rewind",
+    signature: "~ cut by the historian / phreak.fm ~",
+  },
+  "the-operator": {
+    slug: "the-operator",
+    displayName: "The Operator",
+    avatar: "/avatars/the-operator.png",
+    bio: "Pirate Signal: outsider music finds, bedroom genius showcases, and the strange transmissions nobody else is picking up.",
+    primaryVertical: "frequencies",
+    specialties: [
+      "outsider music",
+      "bedroom producers",
+      "bandcamp finds",
+      "lo-fi",
+      "experimental",
+      "noise",
+    ],
+    signature: "~ cut by the operator / phreak.fm ~",
   },
   "the-correspondent": {
     slug: "the-correspondent",
@@ -74,7 +90,7 @@ export const authors: Record<string, Author> = {
       "platform coverage",
       "digital culture",
     ],
-    signature: "// filed",
+    signature: "~ cut by the correspondent / phreak.fm ~",
   },
   "the-nightshift": {
     slug: "the-nightshift",
@@ -88,7 +104,7 @@ export const authors: Record<string, Author> = {
       "weird internet",
       "cultural connections",
     ],
-    signature: "// 03:00",
+    signature: "~ cut by the nightshift / phreak.fm ~",
   },
 };
 
