@@ -7,7 +7,7 @@ interface AudioPlayerProps {
   title: string;
 }
 
-const SPEEDS = [1, 1.25, 1.5, 2];
+const SPEEDS = [1, 1.25, 1.5, 2] as const;
 
 export function AudioPlayer({ src, title }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -78,16 +78,16 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-surface border-t border-border z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-bg-surface border-t border-border z-50">
       <audio ref={audioRef} src={src} preload="metadata" />
 
       <div className="max-w-content mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center gap-4">
-          {/* Controls */}
+          {/* Transport controls */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => skip(-15)}
-              className="font-mono text-xs text-muted hover:text-foreground transition-colors"
+              className="font-mono text-xs text-text-muted hover:text-text transition-colors"
               aria-label="Skip back 15 seconds"
             >
               -15
@@ -95,7 +95,7 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
 
             <button
               onClick={togglePlay}
-              className="w-8 h-8 flex items-center justify-center bg-accent text-background rounded-sm font-mono text-sm hover:bg-accent-hover transition-colors"
+              className="w-8 h-8 flex items-center justify-center border border-border rounded-sm font-mono text-sm text-text hover:bg-bg-surface-hover transition-colors"
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {isPlaying ? "||" : ">"}
@@ -103,20 +103,20 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
 
             <button
               onClick={() => skip(15)}
-              className="font-mono text-xs text-muted hover:text-foreground transition-colors"
+              className="font-mono text-xs text-text-muted hover:text-text transition-colors"
               aria-label="Skip forward 15 seconds"
             >
               +15
             </button>
           </div>
 
-          {/* Title and progress */}
+          {/* Title and progress bar */}
           <div className="flex-1 min-w-0">
-            <p className="font-mono text-xs text-foreground truncate">
+            <p className="font-mono text-xs text-text truncate">
               {title}
             </p>
             <div
-              className="mt-1 h-1 bg-border rounded-full cursor-pointer"
+              className="mt-1 h-[2px] bg-border cursor-pointer"
               onClick={seek}
               role="slider"
               aria-label="Audio progress"
@@ -125,20 +125,20 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
               aria-valuemax={100}
             >
               <div
-                className="h-full bg-accent rounded-full transition-[width] duration-100"
+                className="h-full bg-riso-cyan transition-[width] duration-100"
                 style={{ width: `${progress}%` }}
               />
             </div>
           </div>
 
-          {/* Time and speed */}
+          {/* Time readout and speed */}
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-muted whitespace-nowrap">
+            <span className="font-mono text-xs text-text-muted whitespace-nowrap">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
             <button
               onClick={cycleSpeed}
-              className="font-mono text-xs text-muted hover:text-foreground transition-colors"
+              className="font-mono text-xs text-text-muted hover:text-text transition-colors"
               aria-label={`Playback speed: ${SPEEDS[speedIndex]}x`}
             >
               {SPEEDS[speedIndex]}x

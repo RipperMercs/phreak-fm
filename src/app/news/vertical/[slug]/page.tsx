@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { FeedItem, Vertical } from "@/types";
-import { NewsItemCard } from "@/components/NewsItemCard";
+import { WireItem } from "@/components/WireItem";
 import { verticalLabel } from "@/lib/utils";
 
 export default function NewsVerticalPage() {
@@ -51,7 +51,7 @@ export default function NewsVerticalPage() {
           </div>
         ) : items.length > 0 ? (
           items.map((item) => (
-            <NewsItemCard key={item.id} item={item} showVertical={false} />
+            <WireItem key={item.id} item={item} showVertical={false} />
           ))
         ) : (
           <p className="text-muted font-serif">

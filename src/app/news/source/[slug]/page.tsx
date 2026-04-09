@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { FeedItem } from "@/types";
-import { NewsItemCard } from "@/components/NewsItemCard";
+import { WireItem } from "@/components/WireItem";
 
 export default function NewsSourcePage() {
   const params = useParams();
@@ -50,7 +50,7 @@ export default function NewsSourcePage() {
           </div>
         ) : items.length > 0 ? (
           items.map((item) => (
-            <NewsItemCard key={item.id} item={item} showVertical={false} />
+            <WireItem key={item.id} item={item} showVertical={false} />
           ))
         ) : (
           <p className="text-muted font-serif">

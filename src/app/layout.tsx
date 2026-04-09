@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Source_Serif_4, Instrument_Serif, Caveat } from "next/font/google";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -61,9 +63,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="paper" suppressHydrationWarning>
       <body
-        className={`${instrumentSerif.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} ${caveat.variable} min-h-screen`}
+        className={`${instrumentSerif.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} ${caveat.variable} min-h-screen flex flex-col`}
       >
-        {children}
+        <Nav />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );

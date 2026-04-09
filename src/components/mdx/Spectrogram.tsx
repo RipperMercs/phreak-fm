@@ -1,7 +1,6 @@
 /**
- * Spectrogram component: placeholder for future spectrogram visualization embeds.
- * Will accept audio data and render a frequency analysis view.
- * Implementation deferred to V2.
+ * Spectrogram placeholder for future frequency visualization embeds.
+ * Implementation deferred, renders a placeholder box.
  */
 
 interface SpectrogramProps {
@@ -11,8 +10,8 @@ interface SpectrogramProps {
 
 export function Spectrogram({ label }: SpectrogramProps) {
   return (
-    <div className="my-6 p-8 bg-surface border border-border rounded flex items-center justify-center">
-      <p className="font-mono text-xs text-muted">
+    <div className="my-6 p-8 bg-bg-surface border border-border rounded-sm flex items-center justify-center">
+      <p className="font-mono text-xs text-text-muted">
         [spectrogram: {label || "visualization pending"}]
       </p>
     </div>

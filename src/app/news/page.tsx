@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { FeedItem, Vertical } from "@/types";
-import { NewsItemCard } from "@/components/NewsItemCard";
+import { WireItem } from "@/components/WireItem";
 
 const VERTICALS: { key: Vertical | "all"; label: string; color: string }[] = [
   { key: "all", label: "All", color: "text-foreground" },
@@ -80,7 +80,7 @@ export default function NewsPage() {
           </div>
         ) : items.length > 0 ? (
           items.map((item) => (
-            <NewsItemCard key={item.id} item={item} />
+            <WireItem key={item.id} item={item} />
           ))
         ) : (
           <div className="text-center py-12">

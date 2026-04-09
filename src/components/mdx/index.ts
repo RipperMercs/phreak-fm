@@ -6,3 +6,5 @@ export { Aside } from "./Aside";
 export { Timeline } from "./Timeline";
 export { TrackList } from "./TrackList";
 export { Spectrogram } from "./Spectrogram";
+export { ZineBreak } from "../ZineBreak";
+export { DeadWax } from "../DeadWax";
