@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check:emdash && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:emdash": "node scripts/check-emdash.js",
+    "build:search": "npx ts-node scripts/build-search-index.ts",
+    "worker:dev": "cd worker && npx wrangler dev",
+    "worker:deploy": "cd worker && npx wrangler deploy"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",

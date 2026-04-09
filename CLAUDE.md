@@ -41,9 +41,11 @@ phreak.fm is a single editorial publication covering three connected worlds: hac
 
 - Editorial articles: `/content/[vertical]/*.mdx`
 - Author personas defined in `/src/lib/authors.ts`
-- RSS feed config in `/config/feeds.ts`
-- Artist data in `/config/artists.ts`
-- Label data in `/config/labels.ts`
+- RSS feed config in `/src/config/feeds.ts`
+- Artist data in `/src/config/artists.ts`
+- Label data in `/src/config/labels.ts`
+- Release calendar: `/content/releases.json`
+- Worker source: `/worker/src/`
 
 ## Sister Sites
 
@@ -63,3 +65,12 @@ TerminalFeed, TensorFeed, VR.org, DramaRadar. Cross-linked in footer. phreak.fm 
 - Static tag: muted yellow #ffd166
 - Type scale: 1.25 ratio (Major Third)
 - Spacing: 4px base grid
+
+## Build Notes
+
+- Em dash check runs before every build (`npm run check:emdash`)
+- Worker has its own tsconfig and is excluded from the main Next.js build
+- Search index must be rebuilt when articles change (`npm run build:search`)
+- Worker deploys separately via `npm run worker:deploy`
+- See `/docs/deploy.md` for full Cloudflare setup instructions
+- DramaRadar and TerminalFeed serve as pattern precedents for cross-site conventions
