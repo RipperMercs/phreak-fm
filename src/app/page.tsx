@@ -156,10 +156,9 @@ export default function Home() {
               title="C:\FEEDS\TECHNEWS.EXE"
               color="static-v"
               feeds={[
-                "https://www.404media.co/rss/",
+                "https://hnrss.org/frontpage?count=10",
                 "https://feeds.arstechnica.com/arstechnica/index",
-                "https://www.theverge.com/rss/index.xml",
-                "https://feeds.kottke.org/main",
+                "https://www.techmeme.com/feed.xml",
               ]}
               maxItems={6}
             />
@@ -168,8 +167,9 @@ export default function Home() {
               title="C:\FEEDS\DEVWIRE.EXE"
               color="accent"
               feeds={[
-                "https://terminalfeed.io/rss/developers",
-                "https://tensorfeed.ai/rss/news",
+                "https://www.techdirt.com/feed/",
+                "https://thenewstack.io/feed",
+                "https://hackernoon.com/feed",
               ]}
               maxItems={6}
             />
