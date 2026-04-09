@@ -1,149 +1,93 @@
-"use client";
+import { Metadata } from "next";
+import Link from "next/link";
 
-import { useState } from "react";
+export const metadata: Metadata = {
+  title: "Submit",
+  description: "Submit a story, a track, or a secure tip to phreak.fm.",
+};
 
 export default function SubmitPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    vertical: "signals" as string,
-    subject: "",
-    pitch: "",
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-
-    try {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
-      const res = await fetch(`${apiBase}/api/submit`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", vertical: "signals", subject: "", pitch: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <main className="max-w-article mx-auto px-4 sm:px-6 py-12">
-      <header className="mb-8">
-        <h1 className="font-mono text-3xl text-foreground mb-3">
-          Submit a Pitch
-        </h1>
-        <p className="font-serif text-muted text-lg">
-          Have a story, review, or feature idea? We want to hear it. Pitches
-          for all three verticals are welcome.
-        </p>
+      <header className="mb-12">
+        <h1 className="font-display text-4xl text-text mb-4">Submit</h1>
       </header>
 
-      {status === "sent" ? (
-        <div className="p-6 bg-surface border border-accent/30 rounded">
-          <p className="font-mono text-sm text-accent mb-2">Pitch received.</p>
-          <p className="font-serif text-sm text-muted">
-            Thank you for your submission. If it is a fit, you will hear back.
+      {/* Editorial policy */}
+      <blockquote className="border-l-2 border-riso-cyan pl-6 mb-12 font-body text-text leading-relaxed">
+        <p>
+          phreak.fm reads every submission. We verify what we can. We publish
+          when a story holds up. We credit how you ask to be credited and we
+          protect sources when asked. We are a small independent archive, not
+          a professional newsroom, but we take this work seriously and we will
+          not publish a story we cannot stand behind.
+        </p>
+      </blockquote>
+
+      {/* Three CTAs */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Tier 1: Story submission */}
+        <Link
+          href="/submit/story"
+          className="no-underline block p-6 border border-border rounded-sm hover:border-signals/50 transition-colors group"
+        >
+          <h2 className="font-display text-xl text-text group-hover:text-signals transition-colors mb-2">
+            Submit a Story
+          </h2>
+          <p className="font-body text-sm text-text-muted leading-relaxed">
+            Hacker history, breach narratives, security post-mortems, tech
+            culture commentary. If you have a story for Signals, Frequencies,
+            or Static, we want to hear it.
           </p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block font-mono text-sm text-muted mb-2">
-              Name
-            </label>
-            <input
-              id="name"
-              type="text"
-              required
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full bg-surface border border-border rounded px-4 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-accent"
-            />
-          </div>
+        </Link>
 
-          <div>
-            <label htmlFor="email" className="block font-mono text-sm text-muted mb-2">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              required
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-surface border border-border rounded px-4 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-accent"
-            />
-          </div>
+        {/* Tier 1: Pirate Signal track */}
+        <Link
+          href="/submit/pirate-signal"
+          className="no-underline block p-6 border border-border rounded-sm hover:border-frequencies/50 transition-colors group"
+        >
+          <h2 className="font-display text-xl text-text group-hover:text-frequencies transition-colors mb-2">
+            Submit a Track
+          </h2>
+          <p className="font-body text-sm text-text-muted leading-relaxed">
+            Found something strange and beautiful on Bandcamp, SoundCloud,
+            or YouTube? Making something yourself? Pirate Signal is always
+            listening.
+          </p>
+        </Link>
 
-          <div>
-            <label htmlFor="vertical" className="block font-mono text-sm text-muted mb-2">
-              Vertical
-            </label>
-            <select
-              id="vertical"
-              value={form.vertical}
-              onChange={(e) => setForm({ ...form, vertical: e.target.value })}
-              className="w-full bg-surface border border-border rounded px-4 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-accent"
-            >
-              <option value="signals">Signals</option>
-              <option value="frequencies">Frequencies</option>
-              <option value="static">Static</option>
-            </select>
-          </div>
+        {/* Tier 3: Secure submissions */}
+        <Link
+          href="/submit/secure"
+          className="no-underline block p-6 border border-border rounded-sm hover:border-riso-forest/50 transition-colors group"
+        >
+          <h2 className="font-display text-xl text-text group-hover:text-riso-forest transition-colors mb-2">
+            Secure Submissions
+          </h2>
+          <p className="font-body text-sm text-text-muted leading-relaxed">
+            If you need real operational security for a sensitive
+            submission, read our secure contact documentation.
+          </p>
+        </Link>
+      </div>
 
-          <div>
-            <label htmlFor="subject" className="block font-mono text-sm text-muted mb-2">
-              Subject
-            </label>
-            <input
-              id="subject"
-              type="text"
-              required
-              value={form.subject}
-              onChange={(e) => setForm({ ...form, subject: e.target.value })}
-              className="w-full bg-surface border border-border rounded px-4 py-2 font-mono text-sm text-foreground focus:outline-none focus:border-accent"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="pitch" className="block font-mono text-sm text-muted mb-2">
-              Pitch
-            </label>
-            <textarea
-              id="pitch"
-              required
-              rows={6}
-              value={form.pitch}
-              onChange={(e) => setForm({ ...form, pitch: e.target.value })}
-              className="w-full bg-surface border border-border rounded px-4 py-2 font-serif text-sm text-foreground focus:outline-none focus:border-accent resize-y"
-              placeholder="Describe your idea. What is the angle? Why does it belong on phreak.fm?"
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="font-mono text-sm px-6 py-2 bg-accent text-background rounded hover:bg-accent-hover transition-colors disabled:opacity-50"
-          >
-            {status === "sending" ? "Sending..." : "Submit Pitch"}
-          </button>
-
-          {status === "error" && (
-            <p className="font-mono text-sm text-red-400 mt-2">
-              Something went wrong. Try again later.
-            </p>
-          )}
-        </form>
-      )}
+      {/* Tier 2: Email drop */}
+      <section className="mt-12 pt-8 border-t border-border">
+        <h2 className="font-display text-xl text-text mb-3">
+          Email Drop
+        </h2>
+        <p className="font-body text-text-muted leading-relaxed mb-3">
+          Prefer email? Send story tips, pitches, or Pirate Signal
+          recommendations directly to:
+        </p>
+        <p className="font-mono text-sm text-link">
+          tips@phreak.fm
+        </p>
+        <p className="font-body text-sm text-text-muted mt-2">
+          Same privacy level as the web forms. Familiar to scene people who
+          prefer email over web forms.
+        </p>
+      </section>
     </main>
   );
 }
