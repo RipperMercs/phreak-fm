@@ -2,22 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
+  /* Dark mode (default) */
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #e8e6e1;
+    --surface: #141414;
+    --surface-hover: #1c1c1c;
+    --border: #2a2a2a;
+    --muted: #6b6b6b;
+
+    /* Accent: signal green */
+    --accent: #00ff9f;
+    --accent-hover: #00cc7f;
+    --accent-muted: rgba(0, 255, 159, 0.15);
+
+    /* Vertical section colors */
+    --color-signals: #4ecdc4;
+    --color-frequencies: #c77dff;
+    --color-static: #ffd166;
+  }
+
+  /* Light mode */
+  .light {
+    --background: #f5f3ef;
+    --foreground: #1a1a1a;
+    --surface: #eae8e3;
+    --surface-hover: #dddbd6;
+    --border: #ccc9c3;
+    --muted: #7a7a7a;
+
+    --accent: #008f5a;
+    --accent-hover: #006e45;
+    --accent-muted: rgba(0, 143, 90, 0.12);
+
+    --color-signals: #2a9d8f;
+    --color-frequencies: #9d4edd;
+    --color-static: #d4a843;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Monospace for headings and nav elements */
+h1, h2, h3, h4, h5, h6,
+nav, .font-mono {
+  font-family: var(--font-mono), "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* Article body uses serif */
+.prose {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
+/* Selection highlight with accent */
+::selection {
+  background-color: var(--accent-muted);
+  color: var(--foreground);
+}
+
+/* Scrollbar styling for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Grain overlay for hero images */
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Link base styles */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
 }
 
 @layer utilities {
