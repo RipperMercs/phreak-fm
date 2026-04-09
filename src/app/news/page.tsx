@@ -1,100 +1,151 @@
-"use client";
+import { Metadata } from "next";
+import Link from "next/link";
 
-import { useState, useEffect } from "react";
-import { FeedItem, Vertical } from "@/types";
-import { WireItem } from "@/components/WireItem";
+export const metadata: Metadata = {
+  title: "News Wire",
+  description: "Aggregated security, music, and tech news from 38 trusted sources.",
+};
 
-const FILTERS: { key: Vertical | "all"; label: string; abbr: string }[] = [
-  { key: "all", label: "ALL", abbr: "ALL" },
-  { key: "signals", label: "SIG", abbr: "SIG" },
-  { key: "frequencies", label: "FRQ", abbr: "FRQ" },
-  { key: "static", label: "STA", abbr: "STA" },
-];
+const feedSources = {
+  signals: [
+    { name: "Krebs on Security", url: "https://krebsonsecurity.com" },
+    { name: "BleepingComputer", url: "https://www.bleepingcomputer.com" },
+    { name: "The Record", url: "https://therecord.media" },
+    { name: "The Hacker News", url: "https://thehackernews.com" },
+    { name: "Ars Technica Security", url: "https://arstechnica.com/security/" },
+    { name: "Wired Security", url: "https://www.wired.com/category/security/" },
+    { name: "SANS ISC", url: "https://isc.sans.edu" },
+    { name: "DarkReading", url: "https://www.darkreading.com" },
+    { name: "SecurityWeek", url: "https://www.securityweek.com" },
+    { name: "Risky Business", url: "https://risky.biz" },
+    { name: "404 Media Security", url: "https://www.404media.co" },
+  ],
+  static: [
+    { name: "404 Media", url: "https://www.404media.co" },
+    { name: "Ars Technica", url: "https://arstechnica.com" },
+    { name: "The Verge", url: "https://www.theverge.com" },
+    { name: "Hacker News", url: "https://news.ycombinator.com" },
+    { name: "Kottke.org", url: "https://kottke.org" },
+    { name: "Waxy.org", url: "https://waxy.org" },
+    { name: "Rest of World", url: "https://restofworld.org" },
+    { name: "The Markup", url: "https://themarkup.org" },
+    { name: "MIT Technology Review", url: "https://www.technologyreview.com" },
+    { name: "Low-Tech Magazine", url: "https://solar.lowtechmagazine.com" },
+  ],
+  frequencies: [
+    { name: "Resident Advisor", url: "https://ra.co" },
+    { name: "Mixmag", url: "https://mixmag.net" },
+    { name: "FACT Magazine", url: "https://www.factmag.com" },
+    { name: "The Quietus", url: "https://thequietus.com" },
+    { name: "Bandcamp Daily", url: "https://daily.bandcamp.com" },
+    { name: "Pitchfork Electronic", url: "https://pitchfork.com" },
+    { name: "XLR8R", url: "https://xlr8r.com" },
+  ],
+};
 
 export default function NewsPage() {
-  const [items, setItems] = useState<FeedItem[]>([]);
-  const [filter, setFilter] = useState<Vertical | "all">("all");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchNews() {
-      setLoading(true);
-      try {
-        const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
-        const params = new URLSearchParams({ limit: "100" });
-        if (filter !== "all") params.set("vertical", filter);
-
-        const res = await fetch(`${apiBase}/api/feed/latest?${params}`);
-        if (res.ok) {
-          const data = await res.json();
-          setItems(data);
-        }
-      } catch {
-        // API not available yet
-      }
-      setLoading(false);
-    }
-
-    fetchNews();
-  }, [filter]);
-
   return (
-    <main className="max-w-wire mx-auto px-4 sm:px-6 py-12">
-      {/* Wire header */}
-      <header className="mb-8">
-        <h1 className="font-display text-3xl text-text mb-2">News Wire</h1>
-        <p className="font-mono text-xs text-text-muted tracking-wide">
-          AGGREGATED FEED :: UPDATED EVERY 30 MINUTES :: ALL SOURCES
+    <main className="max-w-content mx-auto px-4 sm:px-6 py-8">
+      {/* Header */}
+      <header className="mb-8 border-b border-border pb-6">
+        <p className="text-xs text-text-muted tracking-widest uppercase mb-2">
+          {'>'} ./wire --status
         </p>
+        <h1 className="text-2xl text-text-bright mb-2">News Wire</h1>
+        <p className="text-sm text-text-muted">
+          Aggregated from {38} sources across security, tech, and music.
+          Updates every 30 minutes once the feed aggregator is deployed.
+        </p>
+        <div className="mt-3 flex gap-3 text-xs">
+          <span className="text-signals border border-signals/30 px-2 py-0.5">SIG: {feedSources.signals.length} sources</span>
+          <span className="text-static-v border border-static-v/30 px-2 py-0.5">STA: {feedSources.static.length} sources</span>
+          <span className="text-frequencies border border-frequencies/30 px-2 py-0.5">MUS: {feedSources.frequencies.length} sources</span>
+        </div>
       </header>
 
-      {/* Filter toggles */}
-      <nav className="mb-8 flex gap-2" aria-label="Filter by vertical">
-        {FILTERS.map((f) => (
-          <button
-            key={f.key}
-            onClick={() => setFilter(f.key)}
-            className={`font-mono text-xs px-3 py-1.5 rounded-sm border transition-colors ${
-              filter === f.key
-                ? "border-text text-text bg-bg-surface"
-                : "border-border text-text-muted hover:border-text-muted"
-            }`}
-            aria-pressed={filter === f.key}
-          >
-            {f.abbr}
-          </button>
-        ))}
-      </nav>
+      {/* Wire status */}
+      <div className="border border-border bg-bg-surface p-4 mb-8">
+        <p className="text-xs text-text-muted mb-2">{'>'} wire.status()</p>
+        <p className="text-xs text-static-v">
+          STANDBY: Feed aggregator not yet deployed. Wire will activate
+          when the Cloudflare Worker cron job is running.
+        </p>
+        <p className="text-xs text-text-muted mt-2">
+          When active, this page will display a live chronological feed
+          of headlines from all sources, filterable by section.
+        </p>
+      </div>
 
-      {/* Wire feed */}
-      <section>
-        {loading ? (
-          <div className="space-y-4">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="py-4 border-b border-dashed border-border">
-                <div className="h-3 w-48 bg-bg-surface dot-matrix-loading rounded mb-2" />
-                <div className="h-4 w-full bg-bg-surface dot-matrix-loading rounded mb-1" />
-                <div className="h-3 w-3/4 bg-bg-surface dot-matrix-loading rounded" />
-              </div>
+      {/* Source directory */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Security sources */}
+        <div>
+          <h2 className="text-xs text-signals tracking-widest uppercase mb-4 border-b border-signals/20 pb-2">
+            [SIG] Security Sources
+          </h2>
+          <div className="space-y-2">
+            {feedSources.signals.map((source) => (
+              <a
+                key={source.name}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-xs text-text-muted hover:text-signals transition-colors py-1"
+              >
+                {'>'} {source.name}
+              </a>
             ))}
           </div>
-        ) : items.length > 0 ? (
-          items.map((item) => (
-            <WireItem key={item.id} item={item} />
-          ))
-        ) : (
-          <div className="text-center py-16">
-            <p className="font-mono text-sm text-text-muted mb-2">
-              :: NO WIRE ITEMS LOADED ::
-            </p>
-            <p className="font-body text-sm text-text-muted">
-              The RSS aggregator will populate this wire once the Cloudflare
-              Worker is deployed and the cron job fires. Updated every 30
-              minutes from {38} trusted sources.
-            </p>
+        </div>
+
+        {/* Tech sources */}
+        <div>
+          <h2 className="text-xs text-static-v tracking-widest uppercase mb-4 border-b border-static-v/20 pb-2">
+            [STA] Tech Sources
+          </h2>
+          <div className="space-y-2">
+            {feedSources.static.map((source) => (
+              <a
+                key={source.name}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-xs text-text-muted hover:text-static-v transition-colors py-1"
+              >
+                {'>'} {source.name}
+              </a>
+            ))}
           </div>
-        )}
-      </section>
+        </div>
+
+        {/* Music sources */}
+        <div>
+          <h2 className="text-xs text-frequencies tracking-widest uppercase mb-4 border-b border-frequencies/20 pb-2">
+            [MUS] Music Sources
+          </h2>
+          <div className="space-y-2">
+            {feedSources.frequencies.map((source) => (
+              <a
+                key={source.name}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-xs text-text-muted hover:text-frequencies transition-colors py-1"
+              >
+                {'>'} {source.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Deploy instructions */}
+      <div className="mt-12 border-t border-border pt-6">
+        <p className="text-xs text-text-muted">
+          To activate the live wire, deploy the phreak-api Cloudflare Worker.
+          See <Link href="https://github.com/RipperMercs/phreak-fm" className="text-accent">/docs/deploy.md</Link> for setup instructions.
+        </p>
+      </div>
     </main>
   );
 }
