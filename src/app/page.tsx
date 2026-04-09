@@ -1,27 +1,14 @@
-import { getFeaturedArticles, getAllArticles } from "@/lib/mdx";
-import { ArticleCard } from "@/components/ArticleCard";
+import { getAllArticles } from "@/lib/mdx";
 import { buildSiteJsonLd } from "@/lib/seo";
-import { Vertical } from "@/types";
+import Link from "next/link";
+import { formatDate } from "@/lib/utils";
+import { getAuthor } from "@/lib/authors";
 
 export default function Home() {
   const jsonLd = buildSiteJsonLd();
-
-  const verticals: Vertical[] = ["signals", "frequencies", "static"];
-  const featuredByVertical = verticals
-    .map((v) => getFeaturedArticles(v)[0] || null)
-    .filter(Boolean);
-
   const allArticles = getAllArticles();
-  const latestArticles = allArticles.slice(0, 8);
-
-  // Pirate Signal posts
-  const piratePosts = allArticles
-    .filter((a) => a.frontmatter.subsection === "pirate-signal")
-    .slice(0, 3);
-
-  // Hero: first featured article
-  const hero = featuredByVertical[0] || null;
-  const secondaryFeatured = featuredByVertical.slice(1, 3);
+  const featured = allArticles.find((a) => a.frontmatter.featured);
+  const latest = allArticles.filter((a) => a !== featured).slice(0, 8);
 
   return (
     <>
@@ -30,128 +17,103 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
-        {/* Masthead */}
-        <header className="mb-16">
-          <h1 className="font-display text-5xl sm:text-6xl tracking-tight text-text mb-3">
-            phreak<span className="text-riso-cyan">.fm</span>
+      <main className="max-w-content mx-auto px-4 sm:px-6">
+        {/* Hero */}
+        <header className="py-16 sm:py-24 border-b border-border">
+          <p className="text-xs text-text-muted mb-4 tracking-widest uppercase">
+            transmitting
+          </p>
+          <h1 className="text-3xl sm:text-5xl text-text-bright leading-tight mb-4 cursor-blink">
+            phreak<span className="text-accent">.fm</span>
           </h1>
-          <p className="font-body text-text-muted text-lg italic">
-            signals, frequencies, and the people who bend them
+          <p className="text-text-muted text-sm max-w-lg leading-relaxed">
+            Hacker stories. Security narratives. Phreaker history.
+            Electronic music for the people who listen at 3am.
+            An archive, built slowly, for the ones who bend signals.
           </p>
         </header>
 
-        {/* Hero feature (large, asymmetric) */}
-        {hero && (
-          <section className="mb-16">
-            <ArticleCard frontmatter={hero.frontmatter} variant="featured" />
+        {/* Featured piece */}
+        {featured && (
+          <section className="py-10 border-b border-border">
+            <p className="text-xs text-accent tracking-widest uppercase mb-4">
+              featured
+            </p>
+            <Link
+              href={`/${featured.frontmatter.vertical}/${featured.frontmatter.slug}`}
+              className="group block"
+            >
+              <h2 className="text-xl sm:text-2xl text-text-bright group-hover:text-accent transition-colors leading-snug mb-3">
+                {featured.frontmatter.title}
+              </h2>
+              <p className="text-sm text-text-muted leading-relaxed mb-3 max-w-2xl font-body">
+                {featured.frontmatter.excerpt}
+              </p>
+              <p className="text-xs text-text-muted">
+                {getAuthor(featured.frontmatter.author)?.displayName} :: {formatDate(featured.frontmatter.publishedAt)} :: {featured.frontmatter.readingTimeMinutes} min
+              </p>
+            </Link>
           </section>
         )}
 
-        {/* Asymmetric two-column: editorial left, wire sidebar right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 mb-16">
-          {/* Left: secondary editorial pieces */}
-          <div className="space-y-8">
-            {secondaryFeatured.map((article) =>
-              article ? (
-                <ArticleCard
+        {/* Latest */}
+        <section className="py-10">
+          <p className="text-xs text-text-muted tracking-widest uppercase mb-6">
+            latest from the archive
+          </p>
+          <div className="space-y-0">
+            {latest.map((article) => {
+              const author = getAuthor(article.frontmatter.author);
+              const sectionColors: Record<string, string> = {
+                signals: "text-signals",
+                frequencies: "text-frequencies",
+                static: "text-static-v",
+              };
+              const sectionAbbr: Record<string, string> = {
+                signals: "SIG",
+                frequencies: "MUS",
+                static: "STA",
+              };
+              return (
+                <Link
                   key={article.frontmatter.slug}
-                  frontmatter={article.frontmatter}
-                  variant="default"
-                />
-              ) : null
-            )}
-            {latestArticles.slice(0, 4).map((article) => (
-              <ArticleCard
-                key={article.frontmatter.slug}
-                frontmatter={article.frontmatter}
-                variant="default"
-              />
-            ))}
-          </div>
-
-          {/* Right: condensed news wire sidebar */}
-          <aside className="border-l border-border pl-6 hidden lg:block">
-            <h2 className="font-mono text-xs text-text-muted uppercase tracking-widest mb-4">
-              News Wire
-            </h2>
-            <p className="font-body text-sm text-text-muted mb-4">
-              Wire will populate once the RSS aggregator is deployed.
-            </p>
-            <a
-              href="/news"
-              className="no-underline font-mono text-xs text-link hover:text-link-hover"
-            >
-              View full wire
-            </a>
-          </aside>
-        </div>
-
-        {/* Three vertical panels */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 pt-8 border-t border-border">
-          {verticals.map((v) => {
-            const vArticles = getAllArticles(v).slice(0, 3);
-            const labels: Record<Vertical, string> = {
-              signals: "Signals",
-              frequencies: "Frequencies",
-              static: "Static",
-            };
-            const colors: Record<Vertical, string> = {
-              signals: "text-signals",
-              frequencies: "text-frequencies",
-              static: "text-static-v",
-            };
-            return (
-              <div key={v}>
-                <a
-                  href={`/${v}`}
-                  className={`no-underline font-mono text-xs uppercase tracking-widest ${colors[v]} mb-4 block`}
+                  href={`/${article.frontmatter.vertical}/${article.frontmatter.slug}`}
+                  className="group block py-4 border-b border-border last:border-b-0"
                 >
-                  {labels[v]}
-                </a>
-                {vArticles.length > 0 ? (
-                  vArticles.map((a) => (
-                    <ArticleCard
-                      key={a.frontmatter.slug}
-                      frontmatter={a.frontmatter}
-                      variant="compact"
-                    />
-                  ))
-                ) : (
-                  <p className="font-body text-sm text-text-muted">
-                    Content coming soon.
-                  </p>
-                )}
-              </div>
-            );
-          })}
+                  <div className="flex items-start gap-4">
+                    <span className={`text-xs ${sectionColors[article.frontmatter.vertical]} shrink-0 mt-0.5 w-8`}>
+                      {sectionAbbr[article.frontmatter.vertical]}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm text-text group-hover:text-accent transition-colors leading-snug">
+                        {article.frontmatter.title}
+                      </h3>
+                      <p className="text-xs text-text-muted mt-1">
+                        {author?.displayName} :: {formatDate(article.frontmatter.publishedAt)}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </section>
 
-        {/* Pirate Signal strip */}
-        {piratePosts.length > 0 && (
-          <section className="pt-8 border-t border-border">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="font-mono text-xs text-text-muted uppercase tracking-widest">
-                Pirate Signal
-              </h2>
-              <a
-                href="/frequencies/pirate-signal"
-                className="no-underline font-mono text-xs text-frequencies hover:text-link-hover"
-              >
-                View all
-              </a>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {piratePosts.map((post) => (
-                <ArticleCard
-                  key={post.frontmatter.slug}
-                  frontmatter={post.frontmatter}
-                  variant="compact"
-                />
-              ))}
-            </div>
-          </section>
-        )}
+        {/* Wire teaser */}
+        <section className="py-10 border-t border-border">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-xs text-text-muted tracking-widest uppercase">
+              news wire
+            </p>
+            <Link href="/news" className="text-xs text-accent hover:text-accent-dim">
+              view wire &gt;
+            </Link>
+          </div>
+          <p className="text-xs text-text-muted">
+            Live feed from {38} sources across security, music, and tech.
+            Updates every 30 minutes once the aggregator is deployed.
+          </p>
+        </section>
       </main>
     </>
   );

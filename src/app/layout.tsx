@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Source_Serif_4, Instrument_Serif, Caveat } from "next/font/google";
+import { JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-display",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -23,9 +10,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const caveat = Caveat({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-hand",
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -61,9 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="blueprint" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${instrumentSerif.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} ${caveat.variable} min-h-screen flex flex-col`}
+        className={`${jetbrainsMono.variable} ${sourceSerif.variable} min-h-screen flex flex-col`}
       >
         <Nav />
         <div className="flex-1">{children}</div>

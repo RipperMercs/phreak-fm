@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ModeToggle } from "./ModeToggle";
 
 const navLinks = [
-  { href: "/signals", label: "Signals", color: "text-signals" },
-  { href: "/frequencies", label: "Frequencies", color: "text-frequencies" },
-  { href: "/static", label: "Static", color: "text-static-v" },
-  { href: "/news", label: "News", color: "text-text" },
-  { href: "/search", label: "/search", color: "text-text-muted" },
+  { href: "/signals", label: "signals" },
+  { href: "/static", label: "static" },
+  { href: "/frequencies", label: "music" },
+  { href: "/news", label: "wire" },
 ];
 
 export function Nav() {
@@ -17,49 +15,49 @@ export function Nav() {
 
   return (
     <nav
-      className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur-sm"
+      className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-sm"
       role="navigation"
       aria-label="Main navigation"
     >
       <div className="max-w-content mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-14">
+        <div className="flex items-center justify-between h-12">
           {/* Wordmark */}
           <Link
             href="/"
-            className="no-underline font-display text-lg tracking-wide text-text hover:text-riso-cyan transition-colors"
+            className="text-sm tracking-wide text-text-bright hover:text-accent transition-colors"
           >
-            phreak<span className="text-riso-cyan">.fm</span>
+            phreak<span className="text-accent">.fm</span>
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`no-underline font-mono text-sm ${link.color} opacity-75 hover:opacity-100 transition-opacity`}
+                className="text-xs text-text-muted hover:text-accent transition-colors"
               >
                 {link.label}
               </Link>
             ))}
-
-            <div className="ml-2 pl-4 border-l border-border">
-              <ModeToggle />
-            </div>
-          </div>
-
-          {/* Mobile hamburger */}
-          <div className="flex items-center gap-3 md:hidden">
-            <ModeToggle />
-            <button
-              className="font-mono text-sm text-text-muted hover:text-text transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
+            <span className="text-border">|</span>
+            <Link
+              href="/search"
+              className="text-xs text-text-muted hover:text-accent transition-colors"
             >
-              {mobileOpen ? "[x]" : "[=]"}
-            </button>
+              /search
+            </Link>
           </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden text-xs text-text-muted hover:text-text transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+          >
+            {mobileOpen ? "[x]" : "[=]"}
+          </button>
         </div>
 
         {/* Mobile dropdown */}
@@ -69,12 +67,19 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`no-underline block font-mono text-sm py-2 ${link.color} opacity-75 hover:opacity-100`}
+                className="block text-xs py-2 text-text-muted hover:text-accent"
                 onClick={() => setMobileOpen(false)}
               >
-                :: {link.label}
+                &gt; {link.label}
               </Link>
             ))}
+            <Link
+              href="/search"
+              className="block text-xs py-2 text-text-muted hover:text-accent"
+              onClick={() => setMobileOpen(false)}
+            >
+              &gt; /search
+            </Link>
           </div>
         )}
       </div>
