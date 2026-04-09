@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { FeedItem, Vertical } from "@/types";
 import { WireItem } from "@/components/WireItem";
 
-const VERTICALS: { key: Vertical | "all"; label: string; color: string }[] = [
-  { key: "all", label: "All", color: "text-foreground" },
-  { key: "signals", label: "Signals", color: "text-signals" },
-  { key: "frequencies", label: "Frequencies", color: "text-frequencies" },
-  { key: "static", label: "Static", color: "text-static-v" },
+const FILTERS: { key: Vertical | "all"; label: string; abbr: string }[] = [
+  { key: "all", label: "ALL", abbr: "ALL" },
+  { key: "signals", label: "SIG", abbr: "SIG" },
+  { key: "frequencies", label: "FRQ", abbr: "FRQ" },
+  { key: "static", label: "STA", abbr: "STA" },
 ];
 
 export default function NewsPage() {
@@ -20,8 +20,7 @@ export default function NewsPage() {
     async function fetchNews() {
       setLoading(true);
       try {
-        const apiBase =
-          process.env.NEXT_PUBLIC_API_URL || "";
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
         const params = new URLSearchParams({ limit: "100" });
         if (filter !== "all") params.set("vertical", filter);
 
@@ -31,7 +30,7 @@ export default function NewsPage() {
           setItems(data);
         }
       } catch {
-        // API not available yet, show empty state
+        // API not available yet
       }
       setLoading(false);
     }
@@ -40,42 +39,43 @@ export default function NewsPage() {
   }, [filter]);
 
   return (
-    <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
+    <main className="max-w-wire mx-auto px-4 sm:px-6 py-12">
+      {/* Wire header */}
       <header className="mb-8">
-        <h1 className="font-mono text-3xl text-foreground mb-3">News</h1>
-        <p className="font-serif text-muted text-lg max-w-2xl">
-          Aggregated news from trusted sources across security, electronic
-          music, and tech. Updated every 30 minutes.
+        <h1 className="font-display text-3xl text-text mb-2">News Wire</h1>
+        <p className="font-mono text-xs text-text-muted tracking-wide">
+          AGGREGATED FEED :: UPDATED EVERY 30 MINUTES :: ALL SOURCES
         </p>
       </header>
 
-      {/* Filter chips */}
+      {/* Filter toggles */}
       <nav className="mb-8 flex gap-2" aria-label="Filter by vertical">
-        {VERTICALS.map((v) => (
+        {FILTERS.map((f) => (
           <button
-            key={v.key}
-            onClick={() => setFilter(v.key)}
-            className={`font-mono text-sm px-3 py-1.5 rounded-sm border transition-colors ${
-              filter === v.key
-                ? `${v.color} border-current bg-surface`
-                : "text-muted border-border hover:border-muted"
+            key={f.key}
+            onClick={() => setFilter(f.key)}
+            className={`font-mono text-xs px-3 py-1.5 rounded-sm border transition-colors ${
+              filter === f.key
+                ? "border-text text-text bg-bg-surface"
+                : "border-border text-text-muted hover:border-text-muted"
             }`}
-            aria-pressed={filter === v.key}
+            aria-pressed={filter === f.key}
           >
-            {v.label}
+            {f.abbr}
           </button>
         ))}
       </nav>
 
-      {/* News items */}
+      {/* Wire feed */}
       <section>
         {loading ? (
-          <div className="space-y-3">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-16 bg-surface rounded animate-pulse"
-              />
+          <div className="space-y-4">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="py-4 border-b border-dashed border-border">
+                <div className="h-3 w-48 bg-bg-surface dot-matrix-loading rounded mb-2" />
+                <div className="h-4 w-full bg-bg-surface dot-matrix-loading rounded mb-1" />
+                <div className="h-3 w-3/4 bg-bg-surface dot-matrix-loading rounded" />
+              </div>
             ))}
           </div>
         ) : items.length > 0 ? (
@@ -83,13 +83,14 @@ export default function NewsPage() {
             <WireItem key={item.id} item={item} />
           ))
         ) : (
-          <div className="text-center py-12">
-            <p className="font-mono text-sm text-muted mb-2">
-              No news items loaded yet.
+          <div className="text-center py-16">
+            <p className="font-mono text-sm text-text-muted mb-2">
+              :: NO WIRE ITEMS LOADED ::
             </p>
-            <p className="font-serif text-sm text-muted">
-              The RSS aggregator will populate this page once the Cloudflare
-              Worker is deployed and the cron job fires.
+            <p className="font-body text-sm text-text-muted">
+              The RSS aggregator will populate this wire once the Cloudflare
+              Worker is deployed and the cron job fires. Updated every 30
+              minutes from {38} trusted sources.
             </p>
           </div>
         )}
