@@ -7,13 +7,13 @@ crons = ["*/30 * * * *"]
 
 [[kv_namespaces]]
 binding = "FEED_KV"
-id = ""
-preview_id = ""
+id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
+preview_id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
 
 [[kv_namespaces]]
 binding = "CONTENT_KV"
-id = ""
-preview_id = ""
+id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
+preview_id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
 
 [[r2_buckets]]
 binding = "AUDIO_R2"
