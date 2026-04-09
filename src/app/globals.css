@@ -3,63 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  /* Paper mode (default): warm off-white, deep ink, zine energy */
-  :root,
-  .paper {
-    --bg: #f4f0e8;
-    --bg-surface: #ece8de;
-    --bg-surface-hover: #e4e0d6;
-    --text: #1a1a1a;
-    --text-muted: #5c5a55;
-    --border: #cdc8bc;
-    --border-light: #ddd9cf;
+  :root {
+    --bg: #151518;
+    --bg-surface: #1c1c20;
+    --bg-surface-hover: #232328;
+    --text: #d4d4d8;
+    --text-bright: #fafafa;
+    --text-muted: #71717a;
+    --border: #27272a;
+    --border-light: #2e2e33;
 
-    /* Risograph accent palette */
-    --riso-red: #c83c30;
-    --riso-ochre: #d9a441;
-    --riso-cyan: #4a7a8c;
-    --riso-forest: #4d5f3a;
+    /* Deep teal accent */
+    --accent: #2dd4bf;
+    --accent-dim: #1a9e8f;
+    --accent-glow: rgba(45, 212, 191, 0.08);
 
-    /* Vertical section colors */
-    --color-signals: #4a7a8c;
-    --color-frequencies: #c83c30;
-    --color-static: #d9a441;
-
-    /* Links */
-    --link: #4a7a8c;
-    --link-hover: #3a6272;
-
-    /* Paper grain opacity */
-    --grain-opacity: 0.08;
-    --halftone-mix: saturate(0.3) contrast(1.1);
-
-    color-scheme: light;
-  }
-
-  /* Blueprint mode: washed-out navy, pale cyan text, technical drawings */
-  .blueprint {
-    --bg: #1a2433;
-    --bg-surface: #1f2d40;
-    --bg-surface-hover: #253548;
-    --text: #c8d8e4;
-    --text-muted: #7a8fa0;
-    --border: #2d3f54;
-    --border-light: #253548;
-
-    --riso-red: #d4574d;
-    --riso-ochre: #e0b65a;
-    --riso-cyan: #6ba3b8;
-    --riso-forest: #6d8a56;
-
-    --color-signals: #6ba3b8;
-    --color-frequencies: #d4574d;
-    --color-static: #e0b65a;
-
-    --link: #6ba3b8;
-    --link-hover: #8bbdd0;
-
-    --grain-opacity: 0.05;
-    --halftone-mix: saturate(0.2) contrast(1.05) brightness(0.8) sepia(0.3);
+    /* Section colors */
+    --color-signals: #2dd4bf;
+    --color-frequencies: #a78bfa;
+    --color-static: #fbbf24;
 
     color-scheme: dark;
   }
@@ -68,184 +30,108 @@
 body {
   color: var(--text);
   background: var(--bg);
-  font-family: var(--font-body), "Source Serif 4", Georgia, serif;
+  font-family: var(--font-mono), "JetBrains Mono", "Fira Code", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-/* Paper grain overlay on the whole page */
+/* Everything is mono. Articles get serif for readability. */
+.prose, .prose p, .prose li, .prose blockquote {
+  font-family: var(--font-body), "Source Serif 4", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.prose h2, .prose h3, .prose h4 {
+  font-family: var(--font-mono), monospace;
+  color: var(--text-bright);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-dim);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* Subtle scan line effect on the whole page */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: var(--grain-opacity);
-  background-image: url("/textures/grain.svg");
-  background-size: 200px 200px;
-  mix-blend-mode: multiply;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
 }
 
-.blueprint body::after {
-  mix-blend-mode: screen;
-}
-
-/* Blueprint gridlines background */
-.blueprint body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.04;
-  background-image:
-    linear-gradient(var(--color-signals) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-signals) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Typography hierarchy */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), "Instrument Serif", Georgia, serif;
-  color: var(--text);
-  line-height: 1.15;
-}
-
-/* Monospace for metadata and technical elements */
-nav, .font-mono, .wire-item, time, .meta {
-  font-family: var(--font-mono), "JetBrains Mono", "Fira Code", monospace;
-}
-
-/* Handwritten marginalia font */
-.font-hand {
-  font-family: var(--font-hand), "Caveat", "Kalam", cursive;
-}
-
-/* Article body serif */
-.prose, article p, article li, article blockquote {
-  font-family: var(--font-body), "Source Serif 4", Georgia, serif;
-  line-height: 1.7;
-}
-
-/* Selection highlight */
-::selection {
-  background-color: var(--riso-ochre);
-  color: var(--bg);
-}
-
-.blueprint ::selection {
-  background-color: var(--riso-cyan);
-  color: var(--bg);
-}
-
-/* Hand-drawn link underline */
-a {
-  color: var(--link);
-  text-decoration: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='4' viewBox='0 0 100 4'%3E%3Cpath d='M0 3 Q 10 1, 20 3 Q 30 4, 40 2 Q 50 1, 60 3 Q 70 4, 80 2 Q 90 1, 100 3' stroke='%234a7a8c' fill='none' stroke-width='0.8' opacity='0.5'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  background-size: 100px 4px;
-  padding-bottom: 2px;
-  transition: color 0.15s ease;
-}
-
-a:hover {
-  color: var(--link-hover);
-}
-
-/* Nav links should not get the wavy underline */
-nav a, .no-underline {
-  background-image: none;
-  padding-bottom: 0;
-}
-
-/* Focus visible */
-:focus-visible {
-  outline: 2px solid var(--riso-cyan);
-  outline-offset: 2px;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-
-/* Grain overlay for hero images */
-.grain-overlay {
-  position: relative;
-}
-.grain-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: var(--grain-opacity);
-  background-image: url("/textures/grain.svg");
-  background-size: 200px 200px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Halftone dot treatment on hero images */
-.halftone-overlay {
-  position: relative;
-}
-.halftone-overlay img {
-  filter: var(--halftone-mix);
-}
-.halftone-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  background-image: radial-gradient(circle, var(--text) 1px, transparent 1px);
-  background-size: 4px 4px;
-  pointer-events: none;
-  z-index: 1;
-  mix-blend-mode: multiply;
-}
-
-/* Dashed rule separator for wire items */
+/* Wire separator */
 .wire-rule {
   border: none;
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px solid var(--border);
   margin: 0;
 }
 
-/* Dead wax inscription styling */
+/* Dead wax */
 .dead-wax {
-  font-family: var(--font-mono), monospace;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   color: var(--text-muted);
-  opacity: 0.5;
+  opacity: 0.4;
   text-align: center;
   padding: 2rem 0;
 }
 
-/* Dot-matrix loading pattern */
-@keyframes dot-matrix-fill {
-  0% { background-position: 0 0; }
-  100% { background-position: 200px 0; }
+/* Dot-matrix loading */
+@keyframes pulse-dim {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
 }
 
-.dot-matrix-loading {
-  background-image: radial-gradient(circle, var(--text-muted) 1px, transparent 1px);
-  background-size: 8px 8px;
-  animation: dot-matrix-fill 1.5s linear infinite;
-  opacity: 0.3;
+.loading-pulse {
+  animation: pulse-dim 1.5s ease-in-out infinite;
+  background: var(--bg-surface);
 }
 
-/* Zine break ornament */
-.zine-break {
-  text-align: center;
-  padding: 1.5rem 0;
-  color: var(--text-muted);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.5em;
-  opacity: 0.4;
+/* Prompt cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
 }
 
 @layer utilities {
