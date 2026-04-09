@@ -12,7 +12,8 @@
       "Bash(git remote:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(npx wrangler:*)"
+      "Bash(npx wrangler:*)",
+      "Bash(grep -l \"author: ripper\\\\|author: nullbyte\\\\|author: synth_error\\\\|author: deadpacket\" content/signals/*.mdx content/static/*.mdx content/frequencies/*.mdx content/frequencies/pirate-signal/*.mdx)"
     ]
   }
 }
