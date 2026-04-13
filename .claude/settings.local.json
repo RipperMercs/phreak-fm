@@ -13,7 +13,11 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "Bash(npx wrangler:*)",
-      "Bash(grep -l \"author: ripper\\\\|author: nullbyte\\\\|author: synth_error\\\\|author: deadpacket\" content/signals/*.mdx content/static/*.mdx content/frequencies/*.mdx content/frequencies/pirate-signal/*.mdx)"
+      "Bash(grep -l \"author: ripper\\\\|author: nullbyte\\\\|author: synth_error\\\\|author: deadpacket\" content/signals/*.mdx content/static/*.mdx content/frequencies/*.mdx content/frequencies/pirate-signal/*.mdx)",
+      "Bash(gh workflow:*)",
+      "Bash(gh run:*)",
+      "Bash(npm view:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

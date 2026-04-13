@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/signals", label: "signals" },
   { href: "/static", label: "static" },
   { href: "/frequencies", label: "music" },
+  { href: "/museum", label: "museum" },
   { href: "/news", label: "wire" },
   { href: "/search", label: "/search" },
 ];
