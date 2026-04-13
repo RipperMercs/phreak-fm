@@ -46,9 +46,9 @@ export default function MuseumAboutPage() {
           other assembly language in BBS chat rooms. A lot of them grew up to
           be security researchers, game developers, and musicians. The line
           between virus authorship, demoscene art, and electronic music in
-          that era is almost invisible. Spanska's virus from 1997 is as
+          that era is almost invisible. The Spanska virus from 1997 is as
           visually accomplished as most contemporary demos. The Yankee Doodle
-          virus plays a recognizable tune. Walker's pixel sprite is charming
+          virus plays a recognizable tune. The Walker pixel sprite is charming
           graphic design.
         </p>
         <p>
@@ -59,7 +59,7 @@ export default function MuseumAboutPage() {
         </p>
         <p>
           All visual material comes from public educational archives including
-          the Internet Archive's Malware Museum, Virus Bulletin's historical
+          the Internet Archive Malware Museum, Virus Bulletin historical
           writeups, F-PROT archives, academic security research repositories,
           and scene documentation like the 40Hex zine archives. Source
           citations appear on every specimen page. Corrections, additions,

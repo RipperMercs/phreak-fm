@@ -88,6 +88,7 @@ export default function SpecimenPage({ params }: PageProps) {
               url={fm.heroMedia}
               type={fm.heroMediaType}
               alt={fm.heroMediaAlt}
+              priority
             />
           </div>
 
