@@ -10,6 +10,7 @@ import {
   Timeline,
   TrackList,
   Spectrogram,
+  SpecimenReference,
 } from "./mdx";
 import { ZineBreak } from "./ZineBreak";
 
@@ -22,6 +23,7 @@ const mdxComponents = {
   Timeline,
   TrackList,
   Spectrogram,
+  SpecimenReference,
   ZineBreak,
 };
 

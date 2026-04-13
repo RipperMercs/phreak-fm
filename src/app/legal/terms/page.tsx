@@ -74,6 +74,21 @@ export default function TermsPage() {
           These terms are governed by the laws of the State of California,
           United States.
         </p>
+
+        <h2 className="text-base text-text-bright font-mono mt-8">14. The DOS Virus Museum</h2>
+        <p>
+          phreak.fm maintains a historical archive of MS-DOS-era computer
+          viruses at /museum. The archive is strictly educational and contains
+          no executable virus code, no malware binaries, and no downloadable
+          payloads. All content consists of historical documentation, still
+          images, animated image captures, short video clips of virus execution
+          sourced from public educational archives, technical writeups, and
+          cultural commentary. We do not distribute active malware. We do not
+          accept submissions of active malware. We do not encourage the creation
+          or deployment of malware. The archive preserves a significant chapter
+          of computing history in the same spirit as the Internet Archive's
+          Malware Museum, which we cite extensively as a primary source.
+        </p>
       </div>
     </main>
   );
