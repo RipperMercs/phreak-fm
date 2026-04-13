@@ -8,9 +8,16 @@ interface SpecimenHeroProps {
   type: MediaType;
   alt: string;
   caption?: string;
+  priority?: boolean;
 }
 
-export function SpecimenHero({ url, type, alt, caption }: SpecimenHeroProps) {
+export function SpecimenHero({
+  url,
+  type,
+  alt,
+  caption,
+  priority = false,
+}: SpecimenHeroProps) {
   const [paused, setPaused] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isAnimated = type === "gif" || type === "mp4";
@@ -47,7 +54,7 @@ export function SpecimenHero({ url, type, alt, caption }: SpecimenHeroProps) {
             src={url}
             alt={alt}
             className="w-full h-full object-contain"
-            loading="eager"
+            loading={priority ? "eager" : "lazy"}
             data-paused={paused ? "true" : "false"}
           />
         )}

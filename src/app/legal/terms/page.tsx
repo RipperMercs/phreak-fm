@@ -86,7 +86,7 @@ export default function TermsPage() {
           cultural commentary. We do not distribute active malware. We do not
           accept submissions of active malware. We do not encourage the creation
           or deployment of malware. The archive preserves a significant chapter
-          of computing history in the same spirit as the Internet Archive's
+          of computing history in the same spirit as the Internet Archive
           Malware Museum, which we cite extensively as a primary source.
         </p>
       </div>

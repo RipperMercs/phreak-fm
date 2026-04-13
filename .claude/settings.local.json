@@ -17,7 +17,8 @@
       "Bash(gh workflow:*)",
       "Bash(gh run:*)",
       "Bash(npm view:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(SKIP_FETCH=1 npx next build)"
     ]
   }
 }
