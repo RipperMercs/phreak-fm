@@ -19,6 +19,7 @@ This is the master context file for phreak.fm. It lives at the repo root and ser
 **Editorial frame / tagline:** "signals, frequencies, and the people who bend them"
 
 **Sibling sites** (cross-linked, not affiliated editorially):
+- ripper.tools (Ripper personal tools site, closest in voice and audience)
 - TerminalFeed (terminalfeed.io)
 - TensorFeed (tensorfeed.ai)
 - VR.org

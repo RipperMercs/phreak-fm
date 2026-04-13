@@ -21,6 +21,7 @@ export function Footer() {
               <Link href="/signals" className="block hover:text-accent transition-colors">signals</Link>
               <Link href="/static" className="block hover:text-accent transition-colors">static</Link>
               <Link href="/frequencies" className="block hover:text-accent transition-colors">music</Link>
+              <Link href="/museum" className="block hover:text-accent transition-colors">museum</Link>
               <Link href="/news" className="block hover:text-accent transition-colors">wire</Link>
             </div>
             <div className="space-y-1.5">
@@ -29,6 +30,8 @@ export function Footer() {
               <Link href="/dedication" className="block hover:text-accent transition-colors">dedication</Link>
             </div>
             <div className="space-y-1.5">
+              <p className="text-[10px] uppercase tracking-wider text-text-muted/70 mb-1">sister sites</p>
+              <a href="https://ripper.tools" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">ripper.tools</a>
               <a href="https://terminalfeed.io" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">terminalfeed</a>
               <a href="https://tensorfeed.ai" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">tensorfeed</a>
             </div>
