@@ -2,7 +2,7 @@
 
 This is the master context file for phreak.fm. It lives at the repo root and serves as persistent memory for Claude Code, Claude sessions, and Ripper himself. Update it whenever something important changes. Read it at the start of every session before doing anything else.
 
-**Last updated:** April 9, 2026
+**Last updated:** April 12, 2026
 
 ---
 
@@ -205,7 +205,24 @@ This is the live pipeline of pieces in consideration, in progress, or recently s
 6. `[idea]` The death of flat image hosting (ImageShack, Photobucket, etc.)
 7. `[idea]` The Wayback Machine as the last public library
 
-### 5.4 Cross-Vertical (pieces only phreak.fm can publish)
+### 5.4 DOS Virus Museum longform queue
+
+Cross-promoted between museum specimens and longform articles. Full
+museum status in section 9.
+
+1. `[idea]` The Alvi Brothers and the First PC Virus (Brain)
+2. `[idea]` The Bulgarian Virus Factory (Dark Avenger and the Sofia scene)
+3. `[idea]` Spanska and the French Demoscene Crossover
+4. `[idea]` CIH / Chernobyl and Chen Ing-hau
+5. `[idea]` The Rise and Fall of 40Hex and Phalcon/Skism (VX zines)
+6. `[idea]` Michelangelo Panic, 1992 (the media vs the actual threat)
+7. `[idea]` The Yankee Doodle Virus and Early Musical Payloads (cross-vertical with Frequencies)
+8. `[idea]` Boot Sector Art as Outsider Visual Design
+9. `[idea]` Why Eastern Europe Produced So Many Viruses, 1988 to 1994
+10. `[idea]` The Ransomware Era vs The Art Era (a lament)
+
+### 5.5 Cross-Vertical (pieces only phreak.fm can publish)
+
 
 1. `[idea]` The 2600Hz Note :: the flagship thesis piece, hackers and ambient at the same frequency
 2. `[idea]` The 1984 CCC postal bank TV hack (cross-posted with Signals 24)
@@ -214,11 +231,11 @@ This is the live pipeline of pieces in consideration, in progress, or recently s
 5. `[idea]` The cracked software intro screen as outsider graphic design (Razor 1911, Fairlight, Skid Row)
 6. `[idea]` Phreaking was the first DJ culture (argumentative essay)
 
-### 5.5 Launch Piece (priority)
+### 5.6 Launch Piece (priority)
 
 `[idea]` **The 2600Hz Welcome Post** :: 600 to 800 words. Opens with Joybubbles and the 2600Hz tone, pivots through Draper and Apple's origin, lands on Aphex Twin's spectrograms and the observation that 2600Hz sits near an E7 on a piano. Closes with a paragraph introducing phreak.fm and a sign-off. Doubles as launch piece AND permanent About-adjacent content. This is piece number one. Draft opening paragraphs already written by Claude, awaiting Ripper to finish the landing paragraphs in his voice.
 
-### 5.6 Pirate Signal Beat (ongoing)
+### 5.7 Pirate Signal Beat (ongoing)
 
 Target cadence: 1 to 2 per week when inspired. Zero queue needed, these are reactive finds. Any weird Bandcamp release, outsider YouTube ambient, cassette-only label compilation, or bedroom producer with 40 monthly listeners. Three paragraphs each, embed the player, ship it.
 
@@ -248,6 +265,8 @@ Add phreak.fm to sibling site footers (TerminalFeed, TensorFeed, VR.org, DramaRa
 2. Publish one Pirate Signal post to prove the format
 3. Pick next Signals longform (recommended: Captain Crunch full profile)
 4. Register DMCA agent
+5. Source visual assets for the launch 25 museum specimens (ongoing, see section 9)
+6. Write real bodies for Brain, Cascade, and Spanska as the first three "complete" specimen pages (priority)
 
 **Short-term (next 2 to 4 weeks):**
 
@@ -276,6 +295,31 @@ Append entries here whenever this file is meaningfully updated.
 
 - **April 8, 2026:** Initial MEMORY.md created. Codifies workflow rules, editorial direction, full drafting queue, and known technical issues. Replaces scattered context across earlier specs and chat history.
 - **April 9, 2026:** RSS feeds fixed: replaced flaky CORS proxy client-side fetching with build-time server-side caching. GitHub Actions auto-deploy pipeline added (push to main = live site). Removed unused `@cloudflare/next-on-pages`. Removed hardcoded deploy instructions from /news page. Removed legal email from footer (already on /legal/* pages).
+- **April 12, 2026:** DOS Virus Museum launched per Addendum A3. Built /museum route tree (landing index with filters, family/year/author indexes, glossary, about), 25 specimen stubs (Brain through CIH), the_curator persona implied via /museum/about, SpecimenReference MDX component for cross-linking from longform articles, sitemap and llms.txt updated, /legal/terms section 14 added clarifying the static gallery posture. All hero images are placeholder PNGs awaiting real archival sources from Ripper. Sections 5.4 and 9 added to MEMORY.
+
+---
+
+## 9. DOS Virus Museum
+
+**Status:** V1 shipped (Addendum A3, April 12, 2026)
+
+**Launch roster:** 25 specimens (Brain, Cascade, Stoned, Jerusalem, Vienna, Ping Pong, Yankee Doodle, Walker, Ambulance, Casino, Cookie, Michelangelo, Monkey, Form, Tequila, Maltese Amoeba, V-Sign, Spanska, Hare, Crazy Boot, Kuku, Mummy, Coffeeshop, Techno, CIH/Chernobyl)
+
+**Cadence after launch:** 1 new specimen per week minimum, more when inspiration hits
+
+**Ownership:** Ripper writes all content under the_curator persona. Specimen MDX files live in `/content/museum/specimens/*.mdx`. Hero images live in `/public/museum/[slug]/`.
+
+**Known sources for visual material:**
+- Internet Archive Malware Museum (archive.org/details/malwaremuseum)
+- Virus Bulletin archives (virusbulletin.com)
+- F-PROT and AV-Test historical writeups
+- 40Hex zine archive (textfiles.com)
+- F-Secure / Mikko Hypponen personal talks and presentations
+- Academic security research repositories
+
+**Editorial flywheel:** Use `<SpecimenReference slug="..." />` in longform MDX articles to insert an inline card linking to a museum specimen. The first targeted longform pieces are listed in section 5.4.
+
+**Phase 6 audit (Ripper):** All hero images are dark gray placeholder PNGs generated by `scripts/generate-museum-placeholders.js`. Replace with real captures from public archives over time. Run `node scripts/generate-museum-placeholders.js` after adding new specimens to backfill missing placeholders.
 
 ---
 

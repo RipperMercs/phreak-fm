@@ -16,6 +16,10 @@ This is NOT a terminal dashboard. phreak.fm explicitly differs from the Terminal
 
 Two color modes: Paper (warm off-white, default) and Blueprint (washed-out navy). Toggle in header.
 
+## DOS Virus Museum
+
+`/museum` is a static historical archive of MS-DOS-era computer viruses. Gallery only. No executables, no sandbox, no downloads. All content is educational and sourced from public archives like the Internet Archive's Malware Museum and Virus Bulletin. Written by the_curator persona (Ripper). Specimen pages live in `/content/museum/specimens/*.mdx`. See MEMORY.md section 9 for the launch roster and editorial queue.
+
 ## Stack
 
 - Next.js 14 (App Router) with TypeScript strict mode
