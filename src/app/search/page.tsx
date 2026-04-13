@@ -13,6 +13,7 @@ interface SearchItem {
   artist?: string;
   label?: string;
   url: string;
+  kind?: "article" | "specimen";
 }
 
 export default function SearchPage() {
@@ -54,6 +55,7 @@ export default function SearchPage() {
     signals: "text-signals",
     frequencies: "text-frequencies",
     static: "text-static-v",
+    museum: "text-accent",
   };
 
   return (
@@ -96,6 +98,11 @@ export default function SearchPage() {
                   >
                     {result.item.vertical}
                   </span>
+                  {result.item.kind === "specimen" && (
+                    <span className="font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border border-accent text-accent">
+                      specimen
+                    </span>
+                  )}
                   <span className="font-mono text-xs text-muted">
                     {result.item.author}
                   </span>

@@ -11,6 +11,7 @@ export interface SearchItem {
   artist?: string;
   label?: string;
   url: string;
+  kind?: "article" | "specimen";
 }
 
 export function buildSearchIndex(): SearchItem[] {

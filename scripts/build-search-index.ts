@@ -17,6 +17,7 @@ interface SearchItem {
   artist?: string;
   label?: string;
   url: string;
+  kind?: "article" | "specimen";
 }
 
 const contentDir = path.join(process.cwd(), "content");
@@ -47,6 +48,35 @@ function buildIndex(): SearchItem[] {
         artist: data.artist,
         label: data.label,
         url: `/${vertical}/${slug}`,
+        kind: "article",
+      });
+    }
+  }
+
+  const museumDir = path.join(contentDir, "museum", "specimens");
+  if (fs.existsSync(museumDir)) {
+    const files = fs.readdirSync(museumDir).filter((f) => f.endsWith(".mdx"));
+    for (const file of files) {
+      const raw = fs.readFileSync(path.join(museumDir, file), "utf8");
+      const { data } = matter(raw);
+      const slug = file.replace(/\.mdx$/, "");
+
+      const tags: string[] = [
+        ...(data.tags || []),
+        ...(data.aliases || []),
+        data.family,
+        data.author,
+      ].filter(Boolean);
+
+      items.push({
+        title: data.name || slug,
+        excerpt: data.payloadDescription || "",
+        slug,
+        vertical: "museum",
+        author: data.author || "unknown",
+        tags,
+        url: `/museum/specimens/${slug}`,
+        kind: "specimen",
       });
     }
   }
