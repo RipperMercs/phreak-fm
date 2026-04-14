@@ -13,6 +13,19 @@ interface FeedCache {
   feeds: Record<string, FeedEntry[]>;
 }
 
+interface WorkerFeedItem {
+  id: string;
+  title: string;
+  url: string;
+  publishedAt: number;
+  excerpt: string;
+  source: string;
+  sourceSlug: string;
+  vertical: string;
+}
+
+const WORKER_API_BASE = process.env.NEXT_PUBLIC_WORKER_API_URL || "";
+
 interface LiveFeedProps {
   title: string;
   color: string;
@@ -25,20 +38,56 @@ export function LiveFeed({ title, color, feedKey, maxItems = 8 }: LiveFeedProps)
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function loadCache() {
+    async function loadFromWorker(): Promise<FeedEntry[] | null> {
+      if (!WORKER_API_BASE) return null;
+
+      try {
+        const verticalMap: Record<string, string> = {
+          security: "signals",
+          tech: "static",
+          dev: "static",
+        };
+        const vertical = verticalMap[feedKey] || feedKey;
+        const res = await fetch(
+          `${WORKER_API_BASE}/api/feed/vertical/${vertical}?limit=${maxItems}`,
+          { signal: AbortSignal.timeout(5000) }
+        );
+        if (!res.ok) return null;
+        const data: WorkerFeedItem[] = await res.json();
+        return data.map((item) => ({
+          title: item.title,
+          link: item.url,
+          published: new Date(item.publishedAt).toISOString(),
+        }));
+      } catch {
+        return null;
+      }
+    }
+
+    async function loadFromCache(): Promise<FeedEntry[]> {
       try {
         const res = await fetch("/feed-cache.json");
         if (!res.ok) throw new Error("Cache not found");
         const cache: FeedCache = await res.json();
-        const feedItems = cache.feeds[feedKey] || [];
-        setItems(feedItems.slice(0, maxItems));
+        return (cache.feeds[feedKey] || []).slice(0, maxItems);
       } catch {
-        setItems([]);
+        return [];
+      }
+    }
+
+    async function loadFeed() {
+      // Try Worker API first for real-time data, fall back to static cache
+      const workerItems = await loadFromWorker();
+      if (workerItems && workerItems.length > 0) {
+        setItems(workerItems);
+      } else {
+        const cacheItems = await loadFromCache();
+        setItems(cacheItems);
       }
       setLoading(false);
     }
 
-    loadCache();
+    loadFeed();
   }, [feedKey, maxItems]);
 
   const colorMap: Record<string, { text: string; border: string }> = {

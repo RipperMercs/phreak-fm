@@ -20,4 +20,56 @@ audioUrl: ""
 
 # John Draper and the 2600Hz Whistle
 
-Article draft pending. This piece will cover the full story of John Draper, from his Air Force service (where he first encountered telephone switching equipment) through his discovery that the Cap'n Crunch whistle produced a 2600Hz tone that could seize AT&T trunk lines. Sections will detail the technical specifics of how the whistle exploit worked within AT&T's in-band signaling system, Draper's development of more sophisticated blue box hardware, his role as the bridge between the counterculture and the emerging hacker scene, the Ron Rosenbaum Esquire article that brought phone phreaking to mainstream attention in 1971, Draper's multiple arrests and prison sentences (during one of which he reportedly taught fellow inmates how to phreak), his post-phreaking career as a programmer (including work on the Apple II), and the complicated legacy of a man who was both a genuine pioneer and a cautionary tale about the legal consequences of exploring systems you do not own.
+## The Whistle Moment
+
+In 1969, a blind phone enthusiast and occasional radio operator named John Draper was eating Cap'n Crunch cereal when he noticed something in the box: a plastic whistle. He played it out of idle curiosity. The frequency was exactly 2600 hertz. He recognized it immediately. That was the signaling tone. That was the key to the entire AT&T long-distance network.
+
+Draper wasn't the first to discover that 2600Hz could seize the trunk lines. That honor belonged to Joe Engressia and others working the underground telephone network in the mid-1960s. But Draper had something they didn't: the belief that this discovery was too important to keep quiet. The whistle wasn't an accident. It was an invitation. It was AT&T's own infrastructure handing you the keys.
+
+This is where the story of Captain Crunch begins. Not with the cereal, not with the whistle, but with the moment a young engineer realized that the entire telephone system was built on a dangerous assumption: that nobody would ever think to look at the signals between the machines.
+
+## How the Whistle Worked
+
+To understand why 2600Hz mattered, you had to understand how AT&T routed calls across the country. The system was elegant in its brutality: when a long-distance call completed, AT&T's operators and switchboards communicated with each other across trunk lines using in-band signaling. These were simple audio tones. A specific tone meant "this line is idle." Another tone meant "this call is complete." And 2600Hz, the frequency that lived in the audio spectrum of a normal call, meant "terminate this call."
+
+The vulnerability was this: if you could inject 2600Hz into the line, the switching equipment would interpret it as a signal from AT&T itself. The trunk would drop. The call would disconnect. But here was where it got dangerous for AT&T: once the trunk was free, the system would treat it as available for routing. If you maintained the tone, you could seize control of that trunk. You could dial out from nowhere. You could reach anywhere. You could call anywhere in the world and nobody would charge you. Nobody would bill you. Nobody would trace you, because in the system's logic, the call never happened.
+
+The Cap'n Crunch whistle was a toy. It had been designed to be a cereal-box novelty, nothing more. But it was precise. It was consistent. And it was free.
+
+Draper wasn't a mathematician or an engineer of the telephone system. He was an outsider who understood the language the system spoke better than its own designers seemed to. That was his genius. That was also his danger.
+
+## The Bridge
+
+Before Draper, phone phreaking existed in the shadows. It was hobbyists, it was blind teenagers with perfect pitch, it was the early underground that knew the system was a system and could be beaten. It was a secret.
+
+Draper made it a movement.
+
+In the early 1970s, he began building blue boxes: devices that could generate the precise tones needed to seize trunk lines. Unlike the whistle, these were engineered. They had dials. They had switches. They could generate not just 2600Hz but the entire orchestra of frequencies needed to navigate AT&T's signaling language. Draper didn't just want to phone phreak. He wanted to teach the world how. He wanted the secret to be known.
+
+In 1971, Esquire magazine published a major piece by Ron Rosenbaum called "Secrets of the Little Blue Box." The article, with Draper as the primary subject, made phone phreaking visible. It was a masterpiece of investigative journalism, and it changed everything. Suddenly, the underground had a story. Suddenly, it had a public face. That face was Draper's.
+
+But the article did something else too: it painted a target directly on him.
+
+## The Cost
+
+The first arrest came in 1972. Draper was charged with violating the Federal Communications Act. He served time. While in prison, he did something that would become legendary in hacker circles: he taught other inmates how to phreak. He shared the knowledge freely, even in a cell, because the knowledge was the point. The resistance mattered more than the safety.
+
+He was arrested again in 1974. And again in 1976. Each time, the charges were serious. Each time, AT&T was learning. The company was installing out-of-band signaling systems, moving away from the vulnerable in-band tones that Draper's boxes could exploit. The telephone network was closing itself off.
+
+But Draper never stopped. He couldn't. He had become Captain Crunch not because he wanted to be a criminal, but because he had discovered a truth about systems: they could be read. They could be understood. And once you understood them, you had to share that understanding.
+
+By the late 1970s, his days in the underground were ending. The legal pressure was too immense. AT&T was too large. The network was adapting faster than any individual hacker could keep up. He moved into legitimate work: he became a programmer. He worked on the Apple II. He contributed to real computer systems, using the same skills that had once let him navigate AT&T's switchboards.
+
+## The Complicated Legacy
+
+This is where the story gets hard to tell, because John Draper embodied a paradox that the hacker world still wrestles with. He was a genuine pioneer. His technical contributions were real. His understanding of systems was deep and authentic. He showed that a person with curiosity and a cereal-box whistle could challenge the largest telecommunications corporation on the planet.
+
+But he was also cautionary. He spent years in prison. He paid for his exploration in ways that modern hackers, protected by the internet and working remotely from basement servers, rarely have to. He lived in an era where there was no legal gray zone, no bug bounty, no responsible disclosure framework. There was only the choice: stay quiet, or become a criminal.
+
+Some in the scene would call him a martyr. Others would say he was reckless, that he exposed the whole community to federal heat, that his decision to make phone phreaking public was a mistake. The truth is more complicated. Draper believed that knowledge should be shared. He paid for that belief with his freedom, multiple times. And he never seemed to regret it.
+
+By the 1990s, his direct influence on the computer underground had faded. The internet had changed everything. The phone network that he had spent years mastering was becoming quaint, almost nostalgic. Phreaking itself was becoming a historical subject, something old hackers remembered and new hackers read about in old texts.
+
+But the lineage was clear. The Steves who built Apple had started with blue boxes. The entire ethos of hacking (the belief that systems exist to be understood, that knowledge shared strengthens communities, that the largest institutions are built on assumptions that can be broken) came from people like John Draper. From Captain Crunch. From a man with a whistlebox who listened closely enough to hear what AT&T was saying to itself.
+
+He showed us the network was a language. And once you can read a language, you can write in it too.
