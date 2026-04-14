@@ -1,0 +1,60 @@
+---
+name: Happy99
+slug: happy99
+aliases:
+  - Happy New Year
+  - Happy1999
+discovered: "1999-01"
+discoveredLocation: "unknown"
+firstReportedBy: "antivirus vendors"
+author: "Spanska"
+family: "Happy99"
+familySlug: "happy99"
+variants: []
+size: 15432
+platform: "Windows"
+infectionVector: "Email attachment (Happy99.exe)"
+payloadType:
+  - "visual"
+  - "prank"
+trigger: "execution"
+payloadDescription: "Displayed a fireworks animation celebrating the new year while silently modifying Winsock to attach copies of itself to outgoing emails. One of the first email worms."
+famousRating: 4
+aestheticRating: 3
+heroMedia: "/museum/happy99/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Happy99 fireworks animation from the first major email worm"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Happy99"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Mikko Hypponen, Internet Archive Malware Museum"
+relatedArticles: []
+tags:
+  - email-worm
+  - "1999"
+  - fireworks
+  - visual-payload
+  - new-year
+lastUpdated: "2026-04-14"
+---
+
+## The Millennium Worm That Played With Fire
+
+Happy99 exists at an inflection point in malware history: the moment when viruses realized the internet was not a bulletin board system anymore, but an endless network of addressable hosts. And when they saw that hosts held not only files but contact lists. Names. Addresses. The raw material for exponential spread.
+
+What made Happy99 peculiar was its aesthetic half-heartedness. It arrived as Happy99.exe, disguised as a festive greeting for the new year, and when executed it delivered exactly what it promised: a full-screen fireworks display, animated explosions blooming across the screen in vaguely celebratory colors. Bright bursts and ascending trails. The payload was pure visual theater, almost wholesome in its brevity. The animation was crude by modern standards but effective enough to hold attention for a few seconds.
+
+Then the virus did its real work in the background, invisible, inaudible.
+
+Happy99 modified the Winsock (Windows Sockets) layer, injecting itself into the system's networking stack. This was technically sophisticated for 1999. Any email sent through Outlook, Eudora, or other Windows mail clients would automatically receive a copy of Happy99.exe as an attachment. The infected email would appear normal to the sender, but the payload rode along in the shadows, carrying itself to every recipient. Every recipient who opened the attachment would see the same fireworks, press the same button, and propagate the same modification to their Winsock layer.
+
+The worm spread exponentially. Within days, thousands of machines were infected. Within weeks, it had become one of the most widespread viruses in the world. Antivirus vendors scrambled. Corporate email servers became vectors for Happy99's relay, forwarding copies of itself across internal networks, infecting machines that never saw the external internet.
+
+What was remarkable about Happy99 was the combination: pure user-facing spectacle paired with invisible systemic infection. The fireworks display was the social engineering vector, the reason you would execute the attachment in the first place. The Winsock modification was the mechanism of its survival and replication. The virus understood that in 1999, the Windows user was not yet trained in distrust of email attachments. A greeting that looked festive, from someone whose name you might recognize (or might not), was still opening material.
+
+Spanska, the credited author, was also responsible for the Spanska virus, a small Spanish virus from the early 1990s. The attribution is uncertain, but the design philosophy suggests someone comfortable with the Windows API and the Windows networking stack, someone who could reason about system hooks and interrupt vectors, someone who thought visually.
+
+Happy99 is historically significant because it marked the effective end of the era of purely file-to-file virus spread. Before it, viruses replicated through shared floppy disks, through downloaded executables, through swapped programs on bulletin boards. Happy99 showed that email clients, with their embedded contact lists and their native ability to send attachments, were a superior distribution mechanism. It was, in effect, the proof of concept that email would become the dominant vector for malware for the next two decades.
+
+But it also did something unusual: it asked for permission before it infected you, in the form of a visual bribe. Open this file, see something pretty, and the virus handles the rest. The transaction was transparent, consensual in its own way. You got the fireworks. The virus got your contact list.
