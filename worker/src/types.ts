@@ -28,7 +28,7 @@ export interface FeedSource {
 export interface Env {
   FEED_KV: KVNamespace;
   CONTENT_KV: KVNamespace;
-  AUDIO_R2: R2Bucket;
-  MEDIA_R2: R2Bucket;
+  AUDIO_R2?: R2Bucket;
+  MEDIA_R2?: R2Bucket;
   ENVIRONMENT: string;
 }

@@ -37,4 +37,18 @@ tags:
 lastUpdated: "2026-04-12"
 ---
 
-~ writeup coming soon ~
+The Maltese Amoeba occupies a peculiar corner in the DOS virus canon: a creature that rewarded patience with poetry. Not all code carries quotations from the Romantic era. Not all malware authors wanted to ruin your November.
+
+This boot sector resident, first catalogued in November 1991, earned its name through dual metaphor. Malta, the island nation, connotes distance and isolation; an amoeba, the shapeshifter, connotes mutation and spread. The virus itself embodied both: it polymorphed its code on each infection cycle, making pattern detection a moving target. The replication strategy was elegant and vicious. Once lodged in your boot sector, it siphoned cycles, corrupted the FAT, and waited.
+
+The trigger dates reveal aesthetic intention. March 15 (Ides of March, the betrayal) and November 1 (All Saints' Day, the threshold between worlds) were not random calendar picks. Early virus authors studied symbolism. They read. They quoted Blake. The payload, when unleashed on those dates, would overwrite the first sectors of every connected disk while displaying a fragment from William Blake, the poet of systems, chaos, and industrial consequence. A bit of high culture delivered via raw sector corruption. The message in the medium.
+
+What set Maltese Amoeba apart was its restraint before the trigger. Most viruses announced themselves immediately or corrupted silently. Amoeba was patient. It spread through COM and EXE files without fanfare, building an installed base, waiting for the appointed date. Then, when March 15th or November 1st arrived, the payload fired. Your hard drive's first sectors would vanish. But you would see Blake first. You would read before losing everything.
+
+The polymorphic engine was crude by later standards but effective. Each generation of the virus looked different at the byte level, which meant signature scanning was like trying to catch water. Behavioral detection (monitoring for disk writes at boot time) would have flagged it, but those tools were not yet standard. The AV community was still calibrating. Virus Bulletin tracked it in their December 1991 report with the mixture of alarm and admiration they reserved for technically coherent threats.
+
+In retrospect, Maltese Amoeba feels like a transitional form. Not a script kiddie porting existing code. Not yet the clinical payload engineers of the mid-1990s. A virus that cared about its delivery, its timing, its final statement. The poetry mattered to whoever wrote it. The dates mattered. Amoeba was patient, polymorphic, and possessed enough literary conviction to quote Blake while destroying your filesystem.
+
+It never achieved legendary status. It didn't trigger headline scares. But in the underground zines and BBS boards where virus culture incubated, Amoeba earned recognition. A thoughtful malware. A polymorph with citations. A reminder that not every piece of code was written to maximize infection; some were written to make a point on specific dates, to a specific audience, and then to disappear.
+
+The island, the shapeshifter, the poet. Maltese Amoeba was all three.

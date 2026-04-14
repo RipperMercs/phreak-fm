@@ -7,21 +7,22 @@ crons = ["*/30 * * * *"]
 
 [[kv_namespaces]]
 binding = "FEED_KV"
-id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
-preview_id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
+id = "fe98b85d318b4f9aa91568368e833d78"
+preview_id = "fe98b85d318b4f9aa91568368e833d78"
 
 [[kv_namespaces]]
 binding = "CONTENT_KV"
-id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
-preview_id = "PLACEHOLDER_REPLACE_WITH_REAL_ID"
+id = "66ce6bac1df4451a92a602987d111a5e"
+preview_id = "66ce6bac1df4451a92a602987d111a5e"
 
-[[r2_buckets]]
-binding = "AUDIO_R2"
-bucket_name = "phreak-audio"
+# R2 buckets (enable when ready for audio/media storage)
+# [[r2_buckets]]
+# binding = "AUDIO_R2"
+# bucket_name = "phreak-audio"
 
-[[r2_buckets]]
-binding = "MEDIA_R2"
-bucket_name = "phreak-media"
+# [[r2_buckets]]
+# binding = "MEDIA_R2"
+# bucket_name = "phreak-media"
 
 [vars]
 ENVIRONMENT = "production"

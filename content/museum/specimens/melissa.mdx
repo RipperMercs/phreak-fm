@@ -1,0 +1,75 @@
+---
+name: Melissa
+slug: melissa
+aliases:
+  - Melissa Macro Virus
+  - Melissa.A
+discovered: "1999-03"
+discoveredLocation: "unknown"
+firstReportedBy: "Antivirus vendors"
+author: "David L. Smith"
+authorSlug: "david-l-smith"
+authorNotes: "First virus author convicted and imprisoned under the Computer Fraud and Abuse Act. Arrested within one week of outbreak."
+family: "Melissa"
+familySlug: "melissa"
+variants: ["Melissa.B", "Melissa.C", "regional variants"]
+size: 1568
+platform: "Microsoft Word/Outlook"
+infectionVector: "Email with infected Word document attachment"
+payloadType:
+  - "prank"
+  - "mass-mailer"
+trigger: "opening document in Word"
+payloadDescription: "Emailed itself to the first 50 contacts in Outlook with the subject 'Important Message From [username].' Named after a Florida exotic dancer. Overwhelmed email servers worldwide. Smith was arrested and prosecuted."
+famousRating: 5
+aestheticRating: 1
+heroMedia: "/museum/melissa/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Melissa virus email notification in Outlook inbox"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Melissa"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Antivirus and FBI archives"
+  - title: "David L. Smith and the Melissa Virus"
+    url: "https://en.wikipedia.org/wiki/Melissa_virus"
+    citation: "Wikipedia historical record"
+  - title: "First Virus Author Sentenced"
+    url: "https://www.justice.gov"
+    citation: "U.S. Department of Justice press release"
+relatedArticles: []
+tags:
+  - email-worm
+  - macro-virus
+  - 1999
+  - outlook
+  - mass-mailer
+  - first-conviction
+lastUpdated: "2026-04-14"
+---
+
+## The Moment Viruses Became Federal Crime
+
+David L. Smith released the Melissa virus on March 26, 1999, uploaded to a newsgroup dedicated to adult content along with a lure: "Here is something cool to virus exchange." The actual spreadsheet he shared contained a Word document infected with what would become, for a brief moment, the world's fastest-spreading virus. Within days, it had infected hundreds of thousands of machines. Within a week, Smith was arrested at his home in New Jersey by FBI agents.
+
+Melissa changed the legal landscape of viruses in a way that no previous outbreak had managed. Smith became the first virus author to be convicted and imprisoned under the Computer Fraud and Abuse Act. The prosecution sent a message that would reverberate through the hacker community: writing viruses was no longer a prank. It was a federal crime.
+
+The technical design of Melissa was not particularly sophisticated. It was a Word macro, similar to Concept and other macro viruses, that would execute when an infected document was opened. The macro would check whether the document had already been infected (to avoid redundant infection) and then email itself to the first 50 addresses in the Outlook contacts list. The subject line would read "Important Message From [username]," spoofing the identity of the person who opened the document. The result was an email that appeared to come from a trusted contact, making the recipient far more likely to open the attachment.
+
+The payload was minimal. Once the document was infected and the emails were sent, there was no further damage. No files were deleted. No system was compromised beyond the infection itself. This was purely a replication mechanism, optimized for spread.
+
+What differentiated Melissa from its predecessors was not the code. It was the naming. Smith named the virus after a dancer he knew in Florida. This naming convention became symbolic. Early virus authors had often chosen abstract names or technical descriptors. Smith's choice of a woman's name, allegedly belonging to a real person, added a layer of personal signature to the attack. It was a calling card that made the virus feel less like a system error and more like an authored object.
+
+Melissa spread rapidly because it exploited the trust inherent in email. If someone trusted the sender, they would open the document. If they opened the document, they would become infected, and the virus would use their contacts list to propagate further. The exponential growth was achieved purely through social engineering and the automatic processes of Outlook's integration with Word.
+
+The damage estimates were significant for the time. Antivirus companies claimed that Melissa caused between $80 million and $300 million in economic losses through productivity disruption, network slowdowns, and emergency response costs. Email systems crashed under the volume of infected messages. Corporations shut down their email servers to prevent further spread.
+
+But the legal aftermath was more significant than the technical outbreak. Smith was arrested within a week. Federal prosecutors built a case against him using evidence of his posting history and technical forensics linking him to the virus code. The trial was swift. Smith pleaded guilty to violations of the Computer Fraud and Abuse Act and received a sentence of 20 months in federal prison.
+
+The sentencing was deliberately harsh, designed to establish precedent. Federal prosecutors understood that the virus landscape was evolving. Melissa was followed within weeks by ILOVEYOU, a far more destructive worm. The government needed to establish that this behavior would result in imprisonment. Smith's conviction served that purpose.
+
+What was remarkable about Smith's prosecution was how quickly it moved. The infrastructure for investigating computer crimes was still nascent in 1999. The FBI had limited expertise in digital forensics. But the scale of Melissa's outbreak, combined with the clear economic damage, made this a priority case. Smith became a public figure in the prosecution of computer crimes, the first virus author to serve actual prison time.
+
+The long-term effect was chilling. Virus development moved further underground. The hobbyist era of virus writing, in which authors could distribute code in bulletin board systems and expect a kind of underground celebrity status, began to crystallize into something darker and more paranoid. The line between prank and felony had been explicitly drawn, and Smith stood on one side of it in a federal prison.
+
+Melissa itself became less relevant within months, eclipsed by ILOVEYOU and subsequent worms. But the legal precedent Smith established endured. Computer viruses became, definitively, a federal crime. The era of virus authorship as a form of underground prestige was ending. The industrial malware era was beginning.

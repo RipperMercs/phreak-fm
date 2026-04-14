@@ -37,4 +37,18 @@ tags:
 lastUpdated: "2026-04-12"
 ---
 
-~ writeup coming soon ~
+When Vienna infected a file, it did something deceptively simple: it appended itself to the beginning of COM executables, 648 bytes of parasitic code that would run first, spawn the original program, then infect other files in its path. Elegant in its symmetry, vicious in its execution.
+
+The mathematics of its payload were almost cruel. One in eight. A coin flip that, odds demand, would eventually land wrong. When it did, Vienna didn't just corrupt the file. It obliterated the first five bytes of whatever COM file was in its way, replacing them with a single jump instruction straight to the BIOS reboot vector. The machine would shut down mid-program, leaving the user staring at a blank screen, rebooting into confusion. No error message. No warning. Just gone.
+
+This was 1987. The year Vienna emerged in Austria, the virus scene was still forming its language, its ethics, its mythology. Most early DOS viruses were crude proof-of-concepts, barely replicated beyond lab conditions. Vienna was different. It worked. It spread. It did what it promised.
+
+But here's where history pivots.
+
+By the late 1980s, Vienna's source code had been published. Not leaked. Published. Printed in textbooks like Ralf Burger's "Computer Viruses: A High-Tech Disease," where the code sat in plain sight, annotated and complete, available to anyone with 30 dollars and the curiosity to read. The virus became educational material. A reference implementation. The ur-text for an entire generation of virus writers who would use Vienna's structure as a template, tweaking its payload, refining its replication logic, building their own variants with the skeleton Vienna had provided.
+
+Vienna 648 became Vienna 1.x became Vienna 2.x. Each variant stripped another feature, added another trick. The source code publication changed everything. It was the moment the virus scene stopped being a fringe pursuit and became something with infrastructure, documentation, and lineage.
+
+The archive credits Franz Swoboda as the first to identify it, to name it after the city where it was discovered, to document it formally in the emerging culture of computer security. But Vienna's real legacy isn't the damage it did. It's that someone took the virus apart completely, printed the recipe, and left it on a shelf for anyone to read.
+
+That act of publication transformed Vienna from a specimen into a textbook. And the virus scene has been writing its own curriculum ever since.

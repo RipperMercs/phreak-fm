@@ -1,0 +1,70 @@
+---
+name: Elk Cloner
+slug: elk-cloner
+aliases:
+  - Elk Cloner Virus
+discovered: "1982"
+discoveredLocation: "Pittsburgh, PA"
+firstReportedBy: "Rich Skrenta"
+author: "Rich Skrenta"
+authorSlug: "rich-skrenta"
+authorNotes: "Fifteen years old at time of creation. Written as a prank on Apple II floppy disks distributed among friends."
+family: "Elk Cloner"
+familySlug: "elk-cloner"
+variants: []
+size: 1536
+platform: "Apple II"
+infectionVector: "Apple II floppy disk boot sector"
+payloadType:
+  - "visual"
+  - "prank"
+trigger: "every 50th boot"
+payloadDescription: "On every 50th boot, displayed a poem: 'Elk Cloner: The program with a personality / It will get on all your disks / It will infiltrate your chips / Yes, it's Cloner!'"
+famousRating: 5
+aestheticRating: 3
+heroMedia: "/museum/elk-cloner/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Elk Cloner poem message displayed on Apple II boot screen"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Elk Cloner"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Fred Cohen and early virus research archives"
+  - title: "Elk Cloner: The First Personal Computer Virus"
+    url: "https://en.wikipedia.org/wiki/Elk_Cloner"
+    citation: "Wikipedia historical record"
+relatedArticles: []
+tags:
+  - first-virus
+  - apple-ii
+  - 1982
+  - prank
+  - poem
+  - boot-sector
+lastUpdated: "2026-04-14"
+---
+
+## The Genesis Moment
+
+Before the Brain virus. Before the 1260. Before any of the DOS-era machines that would define the viral era in the popular imagination, there was a teenager in Pittsburgh with an Apple II and an idea. Rich Skrenta was fifteen years old when he created what is now universally acknowledged as the first personal computer virus to spread in the wild. Not the first theoretical virus. Not the first laboratory construct. The first one that actually moved, copied itself, and appeared on machines outside the author's control.
+
+This detail matters historically. The Elk Cloner predates the Brain virus by four years. But most virus histories begin with Brain, because Brain was written with commercial intent and financial motivation. Brain was dressed in the mythology of Pakistan and piracy protection. Brain, in short, fit the narrative arc that people wanted to tell about where viruses came from. Elk Cloner was just a kid and his prank, distributed via floppy disk at his high school and among friends. The story was too innocent, too small, too lacking in the drama of international intrigue.
+
+The technical accomplishment was genuine. Skrenta's code modified the Apple II boot sector, hijacking the system's startup sequence. Every time an infected disk was booted, the virus would copy itself to the boot sector of any new disk accessed by the machine. This is, fundamentally, how boot sector viruses work, full stop. Skrenta understood the hardware intimately enough to execute what should have been an advanced programming exercise at an age when most teenagers were still struggling through BASIC.
+
+The payload, however, is what makes Elk Cloner transcendent. It was not written as a malware delivery mechanism. It was written as a message, as signature, as proof of authorship. On every 50th boot, the system would display the Elk Cloner poem. A four-line verse announcing the virus's presence:
+
+"Elk Cloner: The program with a personality
+It will get on all your disks
+It will infiltrate your chips
+Yes, it's Cloner!"
+
+This poem is deceptively sophisticated as a payload. It is not threatening. It is proud. The virus is personified, given character ("with a personality"), and the infection process is rendered in slightly absurd imagery: infiltrating chips, getting on disks. But the tone is playful, almost affectionate. This was not an act of sabotage. It was an act of introduction. "Hello, I am Elk Cloner. Notice me."
+
+The trigger timing is also significant. Every 50th boot means that the virus could spread invisibly for a considerable period before announcing itself. An infected user might bring their disk to school, lend it to a friend, trade it at the computer club, all while the virus replicated quietly in the background. Then suddenly, one morning, the poem appears. The user understands that their disk has been "infected." They may feel violated. They may feel impressed. They may feel both simultaneously.
+
+What followed was inevitable in retrospect. Skrenta's virus spread through the Apple II community via disk-swapping networks, the early distribution mechanism for software before networks and modems became ubiquitous. Friends got infected. Friends of friends. The Apple II community was tight enough that news of the virus traveled fast, and Skrenta's authorship was quickly established (or at least suspected widely enough that he could not deny it). He became, in a small moment, famous.
+
+He was not arrested. He was not prosecuted. He was a fifteen-year-old kid who had done something clever and unprecedented, and the computer community of the era, still in its adolescence as well, treated it as a remarkable prank rather than a crime. The legal framework for prosecuting computer viruses did not yet exist. The cultural framework for understanding them barely existed either.
+
+What Elk Cloner established was not just that a self-replicating program could spread on personal computers. It established the tradition of the virus as artifact, as signature, as authored statement. Every virus that followed, no matter how destructive, carried some echo of Skrenta's decision to include a poem. The payload became the author's voice in a medium that demanded anonymity.

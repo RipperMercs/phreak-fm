@@ -1,0 +1,70 @@
+---
+name: Concept
+slug: concept
+aliases:
+  - Concept Virus
+  - WordMacro
+discovered: "1995"
+discoveredLocation: "unknown"
+firstReportedBy: "Antivirus research community"
+author: "unknown"
+authorSlug: "unknown"
+authorNotes: "Author remains anonymous. First macro virus detected and analyzed by security researchers."
+family: "Concept"
+familySlug: "concept"
+variants: []
+size: 2080
+platform: "Microsoft Word (macro virus)"
+infectionVector: "Word document macros"
+payloadType:
+  - "prank"
+trigger: "opening infected document"
+payloadDescription: "First macro virus. Displayed a dialog box showing '1' and infected the Normal.dot template, spreading to every document opened afterward. Proved that data files could carry executable code."
+famousRating: 4
+aestheticRating: 1
+heroMedia: "/museum/concept/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Concept virus dialog box showing the number 1"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Concept"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Mikko Hypponen and F-Secure archives"
+  - title: "First Macro Virus: Concept.A"
+    url: "https://en.wikipedia.org/wiki/Concept_virus"
+    citation: "Wikipedia virus history"
+relatedArticles: []
+tags:
+  - macro-virus
+  - microsoft-word
+  - 1995
+  - first-macro-virus
+  - data-file
+lastUpdated: "2026-04-14"
+---
+
+## The Corruption of Content
+
+The historical narrative of computer viruses has always centered on a particular anxiety: the operating system as vulnerable substrate. Boot sectors could be hijacked. Executables could be subverted. The machine's foundational code was exposed to attack, and defense became a matter of patrolling the boundaries between code and system.
+
+Then, in 1995, Concept inverted the entire logic. It proved that the vulnerability was not in the system at all. It was in the content. The data. The file that sat innocently on your disk, waiting to be opened.
+
+This realization should have been obvious. But it took Concept to make it unavoidable.
+
+Microsoft Word documents were not executable files. They were content containers, marked as data, handled by an application rather than the operating system directly. But Word documents supported macros: embedded automation code that Word's macro language (WordBasic) could execute. The feature existed for legitimate purposes: automating repetitive document tasks, creating templates that could execute specific operations when opened.
+
+Concept exploited this with elegant simplicity. It was a Word macro that infected the Normal.dot template, which is the default document template that Word loads every time it starts. Any new document created in Word would inherit this infected macro. But more critically, every document opened in Word after infection would be saved with the macro embedded. The virus didn't need to overwrite executable files or manipulate the boot sector. It just needed to persist in the template and attach itself to documents through the normal, intended mechanisms of Word's functionality.
+
+The payload itself was almost absurdly minimal. When an infected document was opened, a dialog box would appear displaying the number 1. That was it. No data destruction. No message. No signature. Just a single numeral in a dialog box, announcing the presence of infection through an interaction that most users would dismiss as a glitch or an error.
+
+The genius of Concept was not in the payload. It was in what the payload represented: proof of concept. The name itself is a declaration of purpose. This is not a fully realized attack. This is a demonstration that the attack is possible. Someone, somewhere, had proven that data files were executable. That documents carried code. That the traditional boundary between content and instruction had dissolved.
+
+What followed was catastrophic, not for any single attack but for the entire security model. If macros in Word documents could carry viruses, then every document became a potential vector. Email attachments transformed from annoyances into threats. Document sharing networks became pathways for infection. By the late 1990s, macro viruses would become one of the dominant infection vectors, precisely because they lived in the files that people actually used and shared.
+
+The antivirus industry responded with macro virus detection and with warnings about opening unexpected email attachments. Microsoft eventually added security warnings to documents with macros. But the fundamental vulnerability remained: the transformation of documents from passive content into active code.
+
+Concept itself was crude. Its payload reveals nothing. Its author remains unknown. The virus did not spread globally or cause widespread damage. But it opened a door that would not close. It showed that the future of malware was not in exploiting the system, but in hiding inside the data that users trusted.
+
+Thirteen years later, this logic would evolve into the social engineering attacks that defined the 2000s: infected PDFs, weaponized Office documents, phishing campaigns built around malicious attachments. The vector changed with the technology, but the core vulnerability remained the same. Trust the document. Open it. The infection happens silently, during that ordinary moment when you simply read what someone sent you.
+
+Concept proved that the most dangerous attacks don't happen at the system level. They happen in the space between data and intention, in the files that move between people, in the documents that carry meaning and malware in the same envelope.
