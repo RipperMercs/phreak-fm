@@ -13,14 +13,14 @@ export function SystemBar({
   });
 
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 py-2 text-xs text-text-muted border-b border-border/50">
-      <span>SYS.DATE: {dateStr}</span>
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 py-2 text-xs text-text border-b border-border/50">
+      <span><span className="text-text-muted">SYS.DATE:</span> {dateStr}</span>
       <span className="text-border">|</span>
-      <span>ARTICLES: {articleCount}</span>
+      <span><span className="text-text-muted">ARTICLES:</span> {articleCount}</span>
       <span className="text-border">|</span>
-      <span>FEED.SOURCES: {feedCount}</span>
+      <span><span className="text-text-muted">FEED.SOURCES:</span> {feedCount}</span>
       <span className="text-border">|</span>
-      <span>STATUS: <span className="text-accent">ONLINE</span></span>
+      <span><span className="text-text-muted">STATUS:</span> <span className="text-accent">ONLINE</span></span>
     </div>
   );
 }
