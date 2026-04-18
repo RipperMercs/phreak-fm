@@ -143,6 +143,12 @@ export default function AsciiRain({
   apparitionIntervalMs = 20000,
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  // Refs let dim and apparitions update live without restarting the canvas
+  // on route changes. The animation loop reads .current each frame.
+  const dimRef = useRef(dim);
+  const apparitionsRef = useRef(apparitions);
+  useEffect(() => { dimRef.current = dim; }, [dim]);
+  useEffect(() => { apparitionsRef.current = apparitions; }, [apparitions]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -256,22 +262,23 @@ export default function AsciiRain({
       ctx.font = `${cell}px "JetBrains Mono", ui-monospace, monospace`;
       ctx.textBaseline = "top";
 
-      // Apparition lifecycle.
-      if (apparitions) {
+      // Apparition lifecycle. Only spawn new ones when enabled, but always
+      // let an in-flight apparition finish naturally so navigation away from
+      // a loud page doesn't snap-cut a visible silhouette.
+      if (apparitionsRef.current) {
         if (nextAppMs === 0) {
           // First reveal lands 5-10s after mount so the feature is discoverable.
           nextAppMs = ts + (5000 + Math.random() * 5000);
         }
         if (!activeApp && ts >= nextAppMs) trySpawn(ts);
-        if (activeApp) {
-          const total = activeApp.fadeInMs + activeApp.holdMs + activeApp.fadeOutMs;
-          if (ts - activeApp.bornAt >= total) {
-            activeApp = null;
-            scheduleNext(ts);
-          }
+      }
+      if (activeApp) {
+        const total = activeApp.fadeInMs + activeApp.holdMs + activeApp.fadeOutMs;
+        if (ts - activeApp.bornAt >= total) {
+          activeApp = null;
+          if (apparitionsRef.current) scheduleNext(ts);
+          else nextAppMs = 0;
         }
-      } else if (activeApp) {
-        activeApp = null;
       }
 
       let aAlpha = 0;
@@ -344,7 +351,7 @@ export default function AsciiRain({
             grid[i] = ch;
           }
 
-          const op = Math.min(0.5, field * 0.55) * dim;
+          const op = Math.min(0.5, field * 0.55) * dimRef.current;
           ctx.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${op.toFixed(3)})`;
           ctx.fillText(ch, x * cell, y * cell);
         }
@@ -379,7 +386,7 @@ export default function AsciiRain({
       window.removeEventListener("resize", resize);
       if (!noCursor) window.removeEventListener("pointermove", onPointer);
     };
-  }, [intensity, cell, noCursor, dim, rift, apparitions, apparitionIntervalMs]);
+  }, [intensity, cell, noCursor, rift, apparitionIntervalMs]);
 
   return (
     <canvas
