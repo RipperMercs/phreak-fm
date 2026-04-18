@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Submit",
-  description: "Submit a story, a track, or a secure tip to phreak.fm.",
+  description: "Submit a story or a track to phreak.fm.",
 };
 
 export default function SubmitPage() {
@@ -24,8 +24,8 @@ export default function SubmitPage() {
         </p>
       </blockquote>
 
-      {/* Three CTAs */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Two CTAs */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Tier 1: Story submission */}
         <Link
           href="/submit/story"
@@ -53,20 +53,6 @@ export default function SubmitPage() {
             Found something strange and beautiful on Bandcamp, SoundCloud,
             or YouTube? Making something yourself? Pirate Signal is always
             listening.
-          </p>
-        </Link>
-
-        {/* Tier 3: Secure submissions */}
-        <Link
-          href="/submit/secure"
-          className="no-underline block p-6 border border-border rounded-sm hover:border-riso-forest/50 transition-colors group"
-        >
-          <h2 className="font-display text-xl text-text group-hover:text-riso-forest transition-colors mb-2">
-            Secure Submissions
-          </h2>
-          <p className="font-body text-sm text-text-muted leading-relaxed">
-            If you need real operational security for a sensitive
-            submission, read our secure contact documentation.
           </p>
         </Link>
       </div>
