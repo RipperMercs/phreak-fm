@@ -47,6 +47,9 @@ export const artists: ArtistData[] = [
   { slug: "rival-consoles", name: "Rival Consoles", bio: "Ryan Radcliffe merges modular synthesis with pop sensibility. His shimmering, arpeggiated soundscapes prove that electronic music can be both emotionally direct and technically intricate.", links: { bandcamp: "https://rivalconsoles.bandcamp.com" }, relatedArtists: ["jon-hopkins"] },
   { slug: "beatrice-dillon", name: "Beatrice Dillon", bio: "Dublin's Beatrice crafts polyrhythmic, spatially complex electronic music that feels architectural. Her restraint and precision have made her central to contemporary club and gallery contexts.", links: { bandcamp: "https://beatricedillon.bandcamp.com" }, relatedArtists: [] },
 
+  // Drum and bass / atmospheric / liquid funk lineage
+  { slug: "ltj-bukem", name: "LTJ Bukem", bio: "Danny Williamson pulled jungle out of the strobe-lit hardcore rooms and into something slower, jazzier, more spatial. Good Looking Records and the Logical Progression compilations defined the atmospheric branch of drum and bass and taught the genre how to breathe.", links: { website: "https://www.goodlookingrecords.co.uk", bandcamp: "https://goodlookingrecords.bandcamp.com" }, relatedArtists: [] },
+
   // Featured
   { slug: "rykard", name: "Rykard", bio: "Rykard's self-released work captures the raw urgency of experimental techno and ambient. His vision of the future comes from the margins, uncompromising and deeply felt.", links: { label: "https://hunyamunya.com", bandcamp: "https://rykard.bandcamp.com" }, relatedArtists: [], featured: true },
 ];

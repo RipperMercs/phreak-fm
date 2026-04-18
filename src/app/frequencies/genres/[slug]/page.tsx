@@ -48,6 +48,10 @@ const genrePillars: Record<string, { title: string; description: string }> = {
     title: "Breaks",
     description: "Breakbeats, broken rhythms, and the lineage that runs from jungle through to modern bass music. Underserved elsewhere, it belongs here.",
   },
+  "drum-and-bass": {
+    title: "Drum & Bass",
+    description: "The atmospheric, jazz-inflected lineage. LTJ Bukem and Good Looking Records, the Speed club night, the Logical Progression series, and the artists who taught the genre how to breathe. Liquid funk forward.",
+  },
 };
 
 export function generateStaticParams() {
