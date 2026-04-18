@@ -6,62 +6,98 @@ import { useEffect, useRef } from "react";
  * Slow-breathing ASCII character field in phosphor teal.
  * Reads --accent live; falls back to teal. ~30fps. Reduced-motion aware.
  *
- * Apparitions: every ~20s a small ASCII shape (skull, laptop, ghost, mask)
- * morphs out of the field in a contrast color, holds briefly, then demorphs
- * back into noise. The chars themselves reorganize into and out of shape so
- * the silhouette reads as the rain transforming, not a sticker on top.
- * Disable via apparitions={false}.
+ * Apparitions: every ~20s a phreaker-era ASCII relic (skull, laptop, CRT,
+ * cassette, floppy, phone, 2600 mag, modem) materializes by reorganizing
+ * the rain chars into the silhouette, holds briefly with a per-cell color
+ * shimmer in a contrast tint, then demorphs back to noise. The chars
+ * themselves do the work, so the shape reads as the rain transforming.
  */
 
 const CHARS = ['.',',',':',';','|','/','\\','+','-','=','*','#','@','0','1','>','<','%','~','&','^','_','o','O','(',')'];
 
-const APP_SKULL = [
-  "    ______    ",
-  "   /      \\   ",
-  "  / o    o \\  ",
-  " |    /\\    | ",
-  " |   |  |   | ",
-  "  \\  ====  /  ",
-  "   \\______/   ",
-  "    | || |    ",
-  "    ' '' '    ",
-];
+const SPRITES: Record<string, string[]> = {
+  skull: [
+    "    ______    ",
+    "   /      \\   ",
+    "  /  .--.  \\  ",
+    " |  ( oo )  | ",
+    " |   \\__/   | ",
+    "  \\  ||||  /  ",
+    "   '--||--'   ",
+    "     ||||     ",
+  ],
+  laptop: [
+    "  ,--------------.  ",
+    "  |  .--------.  |  ",
+    "  |  |  ><_   |  |  ",
+    "  |  |  phreak|  |  ",
+    "  |  '--------'  |  ",
+    "  '--------------'  ",
+    " /________________\\ ",
+  ],
+  crt: [
+    "  ___________________  ",
+    " |  _______________  | ",
+    " | |               | | ",
+    " | |   NO CARRIER  | | ",
+    " | |               | | ",
+    " | |_______________| | ",
+    " |___________________| ",
+    "      \\_________/      ",
+    "      [_________]      ",
+  ],
+  cassette: [
+    " ,-------------------, ",
+    " | ,---, HF90 ,---,  | ",
+    " | | O |-----| O |  | ",
+    " | '---'     '---'  | ",
+    " |   |||||||||||    | ",
+    " '---o-----------o--' ",
+  ],
+  floppy: [
+    "  ,----------------,  ",
+    "  |[]|           | |  ",
+    "  |  |           | |  ",
+    "  |  '-----------' |  ",
+    "  |                |  ",
+    "  |  ,----------,  |  ",
+    "  |  | 3.5\" HD  |  |  ",
+    "  |  '----------'  |  ",
+    "  '----------------'  ",
+  ],
+  phone: [
+    "   ___________   ",
+    "  /   _____   \\  ",
+    " | []       [] | ",
+    " |  .-.-.-.-.  | ",
+    " |  '-'-'-'-'  | ",
+    " |   1  2  3   | ",
+    " |   4  5  6   | ",
+    " |   7  8  9   | ",
+    " |   *  0  #   | ",
+    "  \\___________/  ",
+  ],
+  mag2600: [
+    "  .----------------.  ",
+    "  |                |  ",
+    "  |  2 6 0 0       |  ",
+    "  |                |  ",
+    "  |  HACKER QTRLY  |  ",
+    "  |                |  ",
+    "  '----------------'  ",
+  ],
+  modem: [
+    "  ,------------------,  ",
+    "  | [ ] [ ] [ ] [ ]  |  ",
+    "  | MODEM  300/1200  |  ",
+    "  '--[][]-----[][]---'  ",
+  ],
+};
 
-const APP_LAPTOP = [
-  "  ____________  ",
-  " /            \\ ",
-  "|  > _         |",
-  "|              |",
-  "|              |",
-  " \\____________/ ",
-  "================",
-];
-
-const APP_GHOST = [
-  "    .----.    ",
-  "   / o  o \\   ",
-  "  |   <>   |  ",
-  "  |        |  ",
-  "  |        |  ",
-  "   \\_/\\_/\\_/  ",
-];
-
-const APP_MASK = [
-  "  .--------.  ",
-  " /  \\    /  \\ ",
-  "|    \\  /    |",
-  "|     \\/     |",
-  " \\   ====   / ",
-  "  '--------'  ",
-];
-
-const APPARITIONS = [APP_SKULL, APP_LAPTOP, APP_GHOST, APP_MASK].map((art) => ({
-  art,
-  width: Math.max(...art.map((r) => r.length)),
-  height: art.length,
-}));
+const SPRITE_KEYS = Object.keys(SPRITES);
 
 const APP_COLORS: [number, number, number][] = [
+  [120, 230, 140],
   [57, 255, 20],
   [239, 68, 68],
   [251, 191, 36],
@@ -82,19 +118,19 @@ type Props = {
   rift?: boolean;
   /** Periodic colored ASCII apparitions that emerge from the field. Default true. */
   apparitions?: boolean;
-  /** Average seconds between apparitions. Default 20 (jittered +0-8s). */
-  apparitionIntervalSec?: number;
+  /** Average ms between apparitions. Default 20000 (jittered 0.6-1.4x). */
+  apparitionIntervalMs?: number;
 };
 
+type AppCell = { x: number; y: number; idx: number; ch: string };
 type ActiveApparition = {
-  art: string[];
-  width: number;
-  height: number;
-  ox: number;
-  oy: number;
+  cells: AppCell[];
+  index: Map<number, string>;
   rgb: [number, number, number];
-  startMs: number;
-  durationMs: number;
+  bornAt: number;
+  fadeInMs: number;
+  holdMs: number;
+  fadeOutMs: number;
 };
 
 export default function AsciiRain({
@@ -104,7 +140,7 @@ export default function AsciiRain({
   dim = 0.65,
   rift = true,
   apparitions = true,
-  apparitionIntervalSec = 20,
+  apparitionIntervalMs = 20000,
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -155,13 +191,58 @@ export default function AsciiRain({
       for (let i = 0; i < grid.length; i++) {
         grid[i] = CHARS[(Math.random() * CHARS.length) | 0];
       }
-      // Drop any in-flight apparition: its origin coords are stale on the new grid.
+      // Cells use idx = y*cols + x; resize invalidates that mapping.
       activeApp = null;
     };
 
     const onPointer = (e: PointerEvent) => {
       px = e.clientX / window.innerWidth;
       py = e.clientY / window.innerHeight;
+    };
+
+    const scheduleNext = (now: number) => {
+      const jitter = 0.6 + Math.random() * 0.8;
+      nextAppMs = now + apparitionIntervalMs * jitter;
+    };
+
+    const trySpawn = (now: number) => {
+      const key = SPRITE_KEYS[(Math.random() * SPRITE_KEYS.length) | 0];
+      const sprite = SPRITES[key];
+      const sh = sprite.length;
+      const sw = Math.max(...sprite.map((r) => r.length));
+      if (sw + 2 >= cols || sh + 2 >= rows) {
+        // Viewport too small for this sprite; try another in 4s.
+        nextAppMs = now + 4000;
+        return;
+      }
+      const marginX = Math.max(1, Math.floor((cols - sw) / 2));
+      const marginY = Math.max(1, Math.floor((rows - sh) / 2));
+      const gx = Math.max(1, Math.min(cols - sw - 1,
+        marginX + (((Math.random() - 0.5) * cols * 0.5) | 0)));
+      const gy = Math.max(1, Math.min(rows - sh - 1,
+        marginY + (((Math.random() - 0.5) * rows * 0.4) | 0)));
+      const cells: AppCell[] = [];
+      const index = new Map<number, string>();
+      for (let yy = 0; yy < sh; yy++) {
+        const row = sprite[yy];
+        for (let xx = 0; xx < row.length; xx++) {
+          const ch = row[xx];
+          if (ch === ' ') continue;
+          const ax = gx + xx, ay = gy + yy;
+          const idx = ay * cols + ax;
+          cells.push({ x: ax, y: ay, idx, ch });
+          index.set(idx, ch);
+        }
+      }
+      activeApp = {
+        cells,
+        index,
+        rgb: APP_COLORS[(Math.random() * APP_COLORS.length) | 0],
+        bornAt: now,
+        fadeInMs: 1800,
+        holdMs: 1600 + Math.random() * 1400,
+        fadeOutMs: 2200,
+      };
     };
 
     const tick = (ts: number) => {
@@ -175,53 +256,41 @@ export default function AsciiRain({
       ctx.font = `${cell}px "JetBrains Mono", ui-monospace, monospace`;
       ctx.textBaseline = "top";
 
+      // Apparition lifecycle.
       if (apparitions) {
         if (nextAppMs === 0) {
-          // Show the first apparition early so users see the feature on landing.
-          nextAppMs = ts + (5 + Math.random() * 5) * 1000;
+          // First reveal lands 5-10s after mount so the feature is discoverable.
+          nextAppMs = ts + (5000 + Math.random() * 5000);
         }
-        if (!activeApp && ts >= nextAppMs) {
-          const proto = APPARITIONS[(Math.random() * APPARITIONS.length) | 0];
-          if (cols >= proto.width + 4 && rows >= proto.height + 4) {
-            const ox = 2 + ((Math.random() * (cols - proto.width - 4)) | 0);
-            const oy = 2 + ((Math.random() * (rows - proto.height - 4)) | 0);
-            const aRgb = APP_COLORS[(Math.random() * APP_COLORS.length) | 0];
-            activeApp = {
-              art: proto.art,
-              width: proto.width,
-              height: proto.height,
-              ox,
-              oy,
-              rgb: aRgb,
-              startMs: ts,
-              durationMs: 6500,
-            };
-          } else {
-            // Viewport too small for this design; try again shortly.
-            nextAppMs = ts + 4000;
+        if (!activeApp && ts >= nextAppMs) trySpawn(ts);
+        if (activeApp) {
+          const total = activeApp.fadeInMs + activeApp.holdMs + activeApp.fadeOutMs;
+          if (ts - activeApp.bornAt >= total) {
+            activeApp = null;
+            scheduleNext(ts);
           }
-        }
-        if (activeApp && ts - activeApp.startMs > activeApp.durationMs) {
-          activeApp = null;
-          nextAppMs = ts + (apparitionIntervalSec + Math.random() * 8) * 1000;
         }
       } else if (activeApp) {
         activeApp = null;
       }
 
-      let appAlpha = 0;
+      let aAlpha = 0;
       let morphProb = 0;
       let demorphProb = 0;
       if (activeApp) {
-        const phase = (ts - activeApp.startMs) / activeApp.durationMs;
-        const env = Math.sin(phase * Math.PI);
-        appAlpha = Math.min(1, env * 1.4);
-        if (phase < 0.5) {
-          morphProb = env * 0.18;
+        const age = ts - activeApp.bornAt;
+        if (age < activeApp.fadeInMs) {
+          aAlpha = age / activeApp.fadeInMs;
+          morphProb = Math.max(0.04, aAlpha * 0.15);
+        } else if (age < activeApp.fadeInMs + activeApp.holdMs) {
+          aAlpha = 1;
+          // Catch any stragglers that didn't morph during fade-in.
+          morphProb = 0.05;
         } else {
-          // Demorph during fade-out so the shape dissolves with the color
-          // instead of leaving a teal silhouette behind for ~minute.
-          demorphProb = (1 - env) * 0.05;
+          aAlpha = 1 - (age - activeApp.fadeInMs - activeApp.holdMs) / activeApp.fadeOutMs;
+          // Demorph during fade-out so the silhouette dissolves with the color
+          // instead of leaving a teal afterimage in the rain for a minute.
+          demorphProb = (1 - aAlpha) * 0.10;
         }
       }
 
@@ -237,18 +306,7 @@ export default function AsciiRain({
           const i = y * cols + x;
           let ch = grid[i];
 
-          let artCh: string | null = null;
-          if (activeApp) {
-            const ax = x - activeApp.ox;
-            const ay = y - activeApp.oy;
-            if (ax >= 0 && ax < activeApp.width && ay >= 0 && ay < activeApp.height) {
-              const row = activeApp.art[ay];
-              if (row && ax < row.length) {
-                const aCh = row[ax];
-                if (aCh !== ' ') artCh = aCh;
-              }
-            }
-          }
+          const artCh = activeApp ? activeApp.index.get(i) : undefined;
 
           if (artCh) {
             if (ch !== artCh && Math.random() < morphProb) {
@@ -272,15 +330,15 @@ export default function AsciiRain({
             const dr = proj - wavePos;
             field += 0.55 * Math.exp(-(dr * dr) / riftDenom);
           }
-          // Lift the field for cells that have committed to the apparition shape
-          // so the silhouette stays visible through wave troughs.
-          const isMorphed = artCh !== null && ch === artCh;
+          // Lift the field for committed apparition cells so the silhouette
+          // holds through wave troughs.
+          const isMorphed = !!artCh && ch === artCh;
           if (isMorphed) field = Math.max(field, 0.5);
 
           if (field < 0.12) continue;
 
-          // Pause natural mutation inside the apparition area; demorph above
-          // controls the dissolve rate so the silhouette ages predictably.
+          // Pause natural mutation inside the apparition footprint; the
+          // demorph rate above controls dissolve so timing is predictable.
           if (!artCh && Math.random() < 0.004) {
             ch = CHARS[(Math.random() * CHARS.length) | 0];
             grid[i] = ch;
@@ -289,11 +347,20 @@ export default function AsciiRain({
           const op = Math.min(0.5, field * 0.55) * dim;
           ctx.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${op.toFixed(3)})`;
           ctx.fillText(ch, x * cell, y * cell);
+        }
+      }
 
-          if (isMorphed && appAlpha > 0.04 && activeApp) {
-            ctx.fillStyle = `rgba(${activeApp.rgb[0]},${activeApp.rgb[1]},${activeApp.rgb[2]},${appAlpha.toFixed(3)})`;
-            ctx.fillText(ch, x * cell, y * cell);
-          }
+      // Color overlay pass: only morphed cells get a tinted draw on top, with
+      // per-cell sin shimmer so the apparition flickers like phosphor instead
+      // of sitting flat.
+      if (activeApp && aAlpha > 0.02) {
+        const ink = activeApp.rgb;
+        for (const cc of activeApp.cells) {
+          if (grid[cc.idx] !== cc.ch) continue;
+          const shimmer = Math.sin(cc.x * 0.7 + cc.y * 0.9 + t * 4) * 0.15 + 0.85;
+          const op = aAlpha * 0.9 * shimmer;
+          ctx.fillStyle = `rgba(${ink[0]},${ink[1]},${ink[2]},${op.toFixed(3)})`;
+          ctx.fillText(cc.ch, cc.x * cell, cc.y * cell);
         }
       }
     };
@@ -312,7 +379,7 @@ export default function AsciiRain({
       window.removeEventListener("resize", resize);
       if (!noCursor) window.removeEventListener("pointermove", onPointer);
     };
-  }, [intensity, cell, noCursor, dim, rift, apparitions, apparitionIntervalSec]);
+  }, [intensity, cell, noCursor, dim, rift, apparitions, apparitionIntervalMs]);
 
   return (
     <canvas
