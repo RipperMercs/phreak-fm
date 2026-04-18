@@ -16,9 +16,19 @@ type Props = {
   cell?: number;
   /** Disable cursor attractor. Default false. */
   noCursor?: boolean;
+  /** 0-1 multiplier on final opacity. Lower = quieter background. Default 0.65. */
+  dim?: number;
+  /** Slow diagonal brightening band that sweeps the field. Default true. */
+  rift?: boolean;
 };
 
-export default function AsciiRain({ intensity = 10, cell = 12, noCursor = false }: Props) {
+export default function AsciiRain({
+  intensity = 10,
+  cell = 12,
+  noCursor = false,
+  dim = 0.65,
+  rift = true,
+}: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -33,6 +43,7 @@ export default function AsciiRain({ intensity = 10, cell = 12, noCursor = false 
     let cols = 0, rows = 0;
     let grid: { ch: number; p: number }[] = [];
     let t = 0;
+    let riftPhase = 0;
     let px = 0.5, py = 0.5;
     let raf = 0;
     let last = 0;
@@ -79,12 +90,17 @@ export default function AsciiRain({ intensity = 10, cell = 12, noCursor = false 
 
       ctx.clearRect(0, 0, W, H);
       t += 0.008;
+      riftPhase += 0.0015;
       ctx.font = `${cell}px "JetBrains Mono", ui-monospace, monospace`;
       ctx.textBaseline = "top";
 
       const cx = px * cols;
       const cy = py * rows;
       const intScalar = 0.3 + Math.max(5, Math.min(100, intensity)) / 100 * 0.7;
+      // diagonal sweeping band, periodic, enters at -0.2 and exits past 1.2
+      const wavePos = (riftPhase % 1.4) - 0.2;
+      const riftWidth = 0.09;
+      const riftDenom = 2 * riftWidth * riftWidth;
 
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
@@ -97,9 +113,14 @@ export default function AsciiRain({ intensity = 10, cell = 12, noCursor = false 
             const d = Math.sqrt(dx * dx + dy * dy) / Math.max(cols, rows);
             field += Math.max(0, 1 - d * 3) * 0.5;
           }
+          if (rift) {
+            const proj = (x / cols + y / rows) * 0.5;
+            const dr = proj - wavePos;
+            field += 0.55 * Math.exp(-(dr * dr) / riftDenom);
+          }
           if (field < 0.12) continue;
           if (Math.random() < 0.004) c.ch = (Math.random() * CHARS.length) | 0;
-          const op = Math.min(0.5, field * 0.55);
+          const op = Math.min(0.5, field * 0.55) * dim;
           ctx.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${op.toFixed(3)})`;
           ctx.fillText(CHARS[c.ch], x * cell, y * cell);
         }
@@ -120,7 +141,7 @@ export default function AsciiRain({ intensity = 10, cell = 12, noCursor = false 
       window.removeEventListener("resize", resize);
       if (!noCursor) window.removeEventListener("pointermove", onPointer);
     };
-  }, [intensity, cell, noCursor]);
+  }, [intensity, cell, noCursor, dim, rift]);
 
   return (
     <canvas
