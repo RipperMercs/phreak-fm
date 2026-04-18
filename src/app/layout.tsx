@@ -3,6 +3,7 @@ import { JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SourceOde } from "@/components/SourceOde";
+import AsciiRain from "@/components/AsciiRain";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -53,9 +54,10 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} ${sourceSerif.variable} min-h-screen flex flex-col`}
       >
+        <AsciiRain />
         <SourceOde />
         <Nav />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 relative z-10">{children}</div>
         <Footer />
       </body>
     </html>
