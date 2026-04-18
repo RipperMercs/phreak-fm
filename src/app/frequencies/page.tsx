@@ -14,6 +14,7 @@ const genrePillars = [
   { slug: "modular-synth", title: "Modular / Synth" },
   { slug: "drone-and-minimalism", title: "Drone & Minimalism" },
   { slug: "breaks", title: "Breaks" },
+  { slug: "drum-and-bass", title: "Drum & Bass" },
 ];
 
 export default function FrequenciesPage() {

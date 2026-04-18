@@ -1,1 +1,2079 @@
-[]
+[
+  {
+    "title": "Welcome to Phreak.fm: Signals, Frequencies, and the People Who Bend Them",
+    "excerpt": "",
+    "slug": "2600hz-welcome-post",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "phreak-fm",
+      "manifesto",
+      "2600",
+      "welcome"
+    ],
+    "url": "/signals/2600hz-welcome-post",
+    "kind": "article"
+  },
+  {
+    "title": "The Alvi Brothers: How Two Programmers in Lahore Wrote the First PC Virus",
+    "excerpt": "In 1986, Basit and Amjad Farooq Alvi wrote a piece of code to protect their medical software from piracy. It became the first virus to infect IBM PCs, and it carried their real names, address, and phone number.",
+    "slug": "alvi-brothers-brain-virus",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "brain-virus",
+      "pakistan",
+      1986,
+      "first-virus",
+      "alvi-brothers",
+      "history"
+    ],
+    "url": "/signals/alvi-brothers-brain-virus",
+    "kind": "article"
+  },
+  {
+    "title": "Anatomy of a Zero Day: What Happens When Nobody Knows",
+    "excerpt": "A technical walkthrough of what zero-day vulnerabilities actually are, how they get discovered, weaponized, and eventually patched. The lifecycle of the most dangerous bugs in software.",
+    "slug": "anatomy-of-a-zero-day",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "zero-day",
+      "exploits",
+      "vulnerability",
+      "technical"
+    ],
+    "url": "/signals/anatomy-of-a-zero-day",
+    "kind": "article"
+  },
+  {
+    "title": "Anonymous: From 4chan Trolls to Global Hacktivist Movement",
+    "excerpt": "",
+    "slug": "anonymous-origins",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "anonymous",
+      "hacktivism",
+      "4chan",
+      "project-chanology",
+      "activism"
+    ],
+    "url": "/signals/anonymous-origins",
+    "kind": "article"
+  },
+  {
+    "title": "Aphex Twin's Spectrogram Hacks",
+    "excerpt": "Richard D. James hid images inside his music. Run certain Aphex Twin tracks through a spectrogram and you will see faces, spirals, and hidden messages encoded in the frequency domain. It is audio steganography as art.",
+    "slug": "aphex-twin-spectrograms",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "aphex-twin",
+      "spectrogram",
+      "steganography",
+      "electronic-music",
+      "hidden-images",
+      "frequencies",
+      "history"
+    ],
+    "url": "/signals/aphex-twin-spectrograms",
+    "kind": "article"
+  },
+  {
+    "title": "Bernie S and the Red Box Tapes",
+    "excerpt": "Red boxes generated the coin-drop tones that payphones used to signal the operator. Bernie S distributed cassette tapes loaded with those tones, turning every Walkman into a free-call machine.",
+    "slug": "bernie-s-red-box",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "phreaking",
+      "red-box",
+      "payphones",
+      "tone-generation",
+      "history"
+    ],
+    "url": "/signals/bernie-s-red-box",
+    "kind": "article"
+  },
+  {
+    "title": "Blue Box Technical Deep Dive: How Phone Phreaking Actually Worked",
+    "excerpt": "",
+    "slug": "blue-box-technical-deep-dive",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "blue-box",
+      "technical",
+      "mf-signaling",
+      "ss7",
+      "telephone-network"
+    ],
+    "url": "/signals/blue-box-technical-deep-dive",
+    "kind": "article"
+  },
+  {
+    "title": "Cult of the Dead Cow and Back Orifice",
+    "excerpt": "When the Cult of the Dead Cow released Back Orifice at DEF CON 6 in 1998, they called it a legitimate remote administration tool. Microsoft called it malware. The truth was more complicated, and more important.",
+    "slug": "cdc-back-orifice",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "cult-of-the-dead-cow",
+      "cdc",
+      "back-orifice",
+      "defcon",
+      "hacktivism",
+      "microsoft",
+      "history"
+    ],
+    "url": "/signals/cdc-back-orifice",
+    "kind": "article"
+  },
+  {
+    "title": "The Chaos Computer Club: Hamburg's Gift to the Hacker World",
+    "excerpt": "",
+    "slug": "chaos-computer-club",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "ccc",
+      "chaos-computer-club",
+      "hamburg",
+      "wau-holland",
+      "btx-hack"
+    ],
+    "url": "/signals/chaos-computer-club",
+    "kind": "article"
+  },
+  {
+    "title": "Clifford Stoll and the Cuckoo's Egg",
+    "excerpt": "A 75-cent accounting discrepancy at Lawrence Berkeley Lab led astronomer Clifford Stoll on a months-long hunt for a KGB-sponsored hacker infiltrating U.S. military networks. The resulting book became a classic.",
+    "slug": "clifford-stoll-cuckoos-egg",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "clifford-stoll",
+      "cuckoos-egg",
+      "kgb",
+      "espionage",
+      "cold-war",
+      "history"
+    ],
+    "url": "/signals/clifford-stoll-cuckoos-egg",
+    "kind": "article"
+  },
+  {
+    "title": "Daphne Oram and Oramics",
+    "excerpt": "Daphne Oram invented a technique called Oramics: drawing sound directly onto film strips to generate electronic music. It was synthesis by hand, decades before anyone had a sequencer.",
+    "slug": "daphne-oram",
+    "vertical": "signals",
+    "author": "synth_error",
+    "tags": [
+      "daphne-oram",
+      "oramics",
+      "electronic-music",
+      "drawn-sound",
+      "sound-pioneer",
+      "bbc",
+      "history"
+    ],
+    "url": "/signals/daphne-oram",
+    "kind": "article"
+  },
+  {
+    "title": "The Dark Avenger and the Bulgarian Virus Factory",
+    "excerpt": "",
+    "slug": "dark-avenger-bulgarian-scene",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "dark-avenger",
+      "bulgaria",
+      "virus-writing",
+      "polymorphic",
+      "cold-war"
+    ],
+    "url": "/signals/dark-avenger-bulgarian-scene",
+    "kind": "article"
+  },
+  {
+    "title": "DEF CON: How a Going-Away Party Became the World's Largest Hacker Convention",
+    "excerpt": "Jeff Moss started DEF CON in 1993 as a goodbye party for the local BBS scene. It became the world's largest hacker conference. How a one-off event created the physical space where hacker culture became itself.",
+    "slug": "def-con-history",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "def-con",
+      "hacker-convention",
+      "jeff-moss",
+      "las-vegas",
+      "community"
+    ],
+    "url": "/signals/def-con-history",
+    "kind": "article"
+  },
+  {
+    "title": "Delia Derbyshire and the Radiophonic Workshop",
+    "excerpt": "Delia Derbyshire realized the Doctor Who theme using tape loops, oscillators, and test equipment at the BBC Radiophonic Workshop. She was decades ahead of her time, and the BBC barely acknowledged her.",
+    "slug": "delia-derbyshire",
+    "vertical": "signals",
+    "author": "synth_error",
+    "tags": [
+      "delia-derbyshire",
+      "bbc-radiophonic-workshop",
+      "electronic-music",
+      "doctor-who",
+      "sound-pioneer",
+      "history"
+    ],
+    "url": "/signals/delia-derbyshire",
+    "kind": "article"
+  },
+  {
+    "title": "Hackers: The Movie That Got Everything Wrong and Everything Right",
+    "excerpt": "",
+    "slug": "hackers-the-movie",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "hackers-movie",
+      1995,
+      "film",
+      "culture",
+      "hack-the-planet"
+    ],
+    "url": "/signals/hackers-the-movie",
+    "kind": "article"
+  },
+  {
+    "title": "Joe Engressia: The Blind Phreaker Who Could Whistle",
+    "excerpt": "Born blind with absolute pitch, Joe Engressia could whistle a perfect 2600Hz tone with his lips alone. He became one of the earliest phone phreakers, and later reinvented himself as Joybubbles.",
+    "slug": "joe-engressia-joybubbles",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "phreaking",
+      "joe-engressia",
+      "joybubbles",
+      2600,
+      "absolute-pitch",
+      "history"
+    ],
+    "url": "/signals/joe-engressia-joybubbles",
+    "kind": "article"
+  },
+  {
+    "title": "John Draper and the 2600Hz Whistle",
+    "excerpt": "A toy whistle from a cereal box turned out to produce the exact frequency that could seize control of AT&T's long-distance network. John Draper, known as Captain Crunch, built an entire subculture on that discovery.",
+    "slug": "john-draper-captain-crunch",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "phreaking",
+      "john-draper",
+      "captain-crunch",
+      2600,
+      "blue-box",
+      "history"
+    ],
+    "url": "/signals/john-draper-captain-crunch",
+    "kind": "article"
+  },
+  {
+    "title": "c0mrade: The Teenager Who Hacked NASA",
+    "excerpt": "At 15 years old, Jonathan James broke into NASA's Marshall Space Flight Center and the Department of Defense. He became the first juvenile incarcerated for cybercrime in the United States.",
+    "slug": "jonathan-james-c0mrade",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "jonathan-james",
+      "c0mrade",
+      "nasa",
+      "juvenile-hacker",
+      "cybercrime",
+      "history"
+    ],
+    "url": "/signals/jonathan-james-c0mrade",
+    "kind": "article"
+  },
+  {
+    "title": "Karl Koch: Hagbard Celine and the KGB Hack",
+    "excerpt": "German hacker Karl Koch, operating under the handle Hagbard Celine from the Illuminatus! trilogy, sold stolen data to the KGB. His story ended in tragedy, fueled by paranoia, drugs, and Cold War espionage.",
+    "slug": "karl-koch-hagbard",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "karl-koch",
+      "hagbard",
+      "kgb",
+      "chaos-computer-club",
+      "cold-war",
+      "germany",
+      "history"
+    ],
+    "url": "/signals/karl-koch-hagbard",
+    "kind": "article"
+  },
+  {
+    "title": "Kevin Lee Poulsen and the KIIS-FM Heist: The Greatest Phone Phreaking Caper",
+    "excerpt": "",
+    "slug": "kevin-lee-poulsen-kiis-fm",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "kevin-poulsen",
+      "kiis-fm",
+      "radio",
+      "porsche",
+      "phone-phreaking"
+    ],
+    "url": "/signals/kevin-lee-poulsen-kiis-fm",
+    "kind": "article"
+  },
+  {
+    "title": "Kevin Mitnick: The Social Engineer They Called a Hacker",
+    "excerpt": "The media called him the most dangerous hacker in America. But Kevin Mitnick's greatest weapon was never a computer. It was his voice, his confidence, and his ability to get people to hand over the keys.",
+    "slug": "kevin-mitnick",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "kevin-mitnick",
+      "social-engineering",
+      "hacker-culture",
+      "fbi",
+      "history"
+    ],
+    "url": "/signals/kevin-mitnick",
+    "kind": "article"
+  },
+  {
+    "title": "Dark Dante and the Porsche",
+    "excerpt": "Kevin Poulsen took over the phone lines of Los Angeles radio station KIIS-FM to guarantee he would be the 102nd caller, winning a Porsche 944 S2. The hack was elegant. The fallout was not.",
+    "slug": "kevin-poulsen-dark-dante",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "kevin-poulsen",
+      "dark-dante",
+      "phreaking",
+      "radio",
+      "los-angeles",
+      "history"
+    ],
+    "url": "/signals/kevin-poulsen-dark-dante",
+    "kind": "article"
+  },
+  {
+    "title": "Kraftwerk's Computer World as Prophecy",
+    "excerpt": "In 1981, Kraftwerk released Computer World, an album about digital surveillance, data love, pocket calculators, and home computers. Forty-five years later, every track reads like a prediction that came true.",
+    "slug": "kraftwerk-computer-world",
+    "vertical": "signals",
+    "author": "synth_error",
+    "tags": [
+      "kraftwerk",
+      "computer-world",
+      "electronic-music",
+      "prophecy",
+      "surveillance",
+      1981,
+      "history"
+    ],
+    "url": "/signals/kraftwerk-computer-world",
+    "kind": "article"
+  },
+  {
+    "title": "The L0pht Testimony: Seven Hackers Before Congress",
+    "excerpt": "In 1998, seven members of the L0pht hacker collective testified before the U.S. Senate and told them, plainly, that they could take down the entire internet in 30 minutes. Congress listened. Then did nothing.",
+    "slug": "l0pht-congress",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "l0pht",
+      "congress",
+      "senate",
+      "testimony",
+      "internet-security",
+      1998,
+      "history"
+    ],
+    "url": "/signals/l0pht-congress",
+    "kind": "article"
+  },
+  {
+    "title": "Mark Abene: The Kid Who Understood the Network Better Than the Feds",
+    "excerpt": "At 18, Mark Abene (Phiber Optik) of the Masters of Deception understood AT&T's telephone network at an engineering level most professionals never reached. His arrest showed how unprepared the justice system was for teenage technical genius.",
+    "slug": "mark-abene-phiber-optik",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "phiber-optik",
+      "mod",
+      "masters-of-deception",
+      "phone-network",
+      "1990s"
+    ],
+    "url": "/signals/mark-abene-phiber-optik",
+    "kind": "article"
+  },
+  {
+    "title": "MOD vs LOD: The First Hacker War",
+    "excerpt": "Masters of Deception and Legion of Doom were the two most notorious hacker groups of the late 1980s. Their rivalry escalated from BBS trash talk to full-scale digital warfare, and it drew the attention of the FBI.",
+    "slug": "mod-vs-lod",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "mod",
+      "lod",
+      "masters-of-deception",
+      "legion-of-doom",
+      "hacker-war",
+      "bbs",
+      "history"
+    ],
+    "url": "/signals/mod-vs-lod",
+    "kind": "article"
+  },
+  {
+    "title": "Moonlight Maze: The First State Cyber Espionage Campaign",
+    "excerpt": "",
+    "slug": "moonlight-maze",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "moonlight-maze",
+      "espionage",
+      "russia",
+      "pentagon",
+      "nation-state"
+    ],
+    "url": "/signals/moonlight-maze",
+    "kind": "article"
+  },
+  {
+    "title": "The Morris Worm: The First Internet Weapon",
+    "excerpt": "Robert Tappan Morris released the first internet worm in 1988. A coding error turned an experimental network measurement into a weapon that crashed 10% of the internet and changed everything. The son of an NSA cryptographer. The first person convicted under the Computer Fraud and Abuse Act.",
+    "slug": "morris-worm",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "morris-worm",
+      1988,
+      "internet-history",
+      "cfaa"
+    ],
+    "url": "/signals/morris-worm",
+    "kind": "article"
+  },
+  {
+    "title": "Operation Sundevil: The Secret Service Declares War on Hackers",
+    "excerpt": "May 1990. Secret Service raids across 14 American cities. 42 computers seized. 23,000 floppy disks confiscated. The government made it clear: the hacker underground was now a national security threat. But the raids created something larger than themselves. The EFF was founded in response. And hackers started organizing legally.",
+    "slug": "operation-sundevil",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "operation-sundevil",
+      1990,
+      "eff",
+      "hacker-crackdown"
+    ],
+    "url": "/signals/operation-sundevil",
+    "kind": "article"
+  },
+  {
+    "title": "Phrack Magazine: The Zine That Defined Hacker Writing",
+    "excerpt": "Founded in 1985 by Taran King and Knight Lightning. Phrack published the Hacker Manifesto. Ran for 69 issues across four decades. The Bellcore document controversy nearly ended it. Phrack defined what hacker writing looked like and how the underground published itself.",
+    "slug": "phrack-magazine",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "phrack",
+      "zine",
+      "hacker-manifesto",
+      1985
+    ],
+    "url": "/signals/phrack-magazine",
+    "kind": "article"
+  },
+  {
+    "title": "Solar Sunrise: When the Pentagon Thought Iraq Was Hacking It",
+    "excerpt": "",
+    "slug": "solar-sunrise",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "solar-sunrise",
+      "pentagon",
+      1998,
+      "cyberwar",
+      "military"
+    ],
+    "url": "/signals/solar-sunrise",
+    "kind": "article"
+  },
+  {
+    "title": "Susan Thunder and the Art of Social Engineering",
+    "excerpt": "In the early 1980s Los Angeles hacker scene, Susan Thunder stood out as a pioneer of social engineering. She could talk her way past security that no technical exploit could breach.",
+    "slug": "susan-thunder",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "social-engineering",
+      "susan-thunder",
+      "hacker-culture",
+      "los-angeles",
+      "history",
+      "1980s"
+    ],
+    "url": "/signals/susan-thunder",
+    "kind": "article"
+  },
+  {
+    "title": "The Roland TB-303: How a Failed Bass Guitar Created Acid House",
+    "excerpt": "Roland designed the TB-303 to simulate bass guitar lines for solo musicians. It was a commercial failure. Then Chicago producers got their hands on it and accidentally invented acid house.",
+    "slug": "tb-303-acid-house",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "tb-303",
+      "roland",
+      "acid-house",
+      "chicago",
+      "electronic-music",
+      "misuse",
+      "history"
+    ],
+    "url": "/signals/tb-303-acid-house",
+    "kind": "article"
+  },
+  {
+    "title": "The 414s: Teenage Hackers and the Law That Stopped Them",
+    "excerpt": "In 1983, a group of teenage hackers from Milwaukee broke into Los Alamos National Laboratory, Sloan-Kettering Cancer Center, and Security Pacific Bank. Kids with modems and curiosity. Their arrests directly triggered the Computer Fraud and Abuse Act of 1984. The moment hacking became a federal crime.",
+    "slug": "the-414s",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "414s",
+      1983,
+      "hacker-history",
+      "cfaa"
+    ],
+    "url": "/signals/the-414s",
+    "kind": "article"
+  },
+  {
+    "title": "The Demoscene as Hacking: When Creative Constraint Becomes Rebellion",
+    "excerpt": "",
+    "slug": "the-demoscene-as-hacking",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "demoscene",
+      "hacking",
+      "size-coding",
+      "creative-misuse"
+    ],
+    "url": "/signals/the-demoscene-as-hacking",
+    "kind": "article"
+  },
+  {
+    "title": "The Hacker Manifesto: 'My Crime is That of Curiosity'",
+    "excerpt": "The Mentor's Hacker Manifesto, published in Phrack 7 in 1986 after his arrest. The document that defined hacker philosophy for forty years. Why it still resonates when the world it described is almost entirely gone.",
+    "slug": "the-hacker-manifesto",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "hacker-manifesto",
+      "the-mentor",
+      "phrack",
+      1986,
+      "philosophy"
+    ],
+    "url": "/signals/the-hacker-manifesto",
+    "kind": "article"
+  },
+  {
+    "title": "The Jargon File: The Living Glossary That Defined Hacker Culture",
+    "excerpt": "",
+    "slug": "the-jargon-file",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "jargon-file",
+      "mit",
+      "hacker-culture",
+      "terminology",
+      "history"
+    ],
+    "url": "/signals/the-jargon-file",
+    "kind": "article"
+  },
+  {
+    "title": "The Last Phone Phreaker: How 2600Hz Changed Everything",
+    "excerpt": "Before hackers had keyboards, they had tone dialers. The story of phone phreaking, from Cap'n Crunch's whistle to the fall of the analog network, and why it still matters.",
+    "slug": "the-last-phone-phreaker",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "phreaking",
+      "history",
+      2600,
+      "cap'n crunch",
+      "analog"
+    ],
+    "url": "/signals/the-last-phone-phreaker",
+    "kind": "article"
+  },
+  {
+    "title": "Loyd Blankenship: The Mentor Beyond the Manifesto",
+    "excerpt": "",
+    "slug": "the-mentor-profile",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "the-mentor",
+      "loyd-blankenship",
+      "steve-jackson-games",
+      "gurps",
+      "manifesto"
+    ],
+    "url": "/signals/the-mentor-profile",
+    "kind": "article"
+  },
+  {
+    "title": "Tsutomu Shimomura: The Vigilante Who Hunted Kevin Mitnick",
+    "excerpt": "The computational physicist who tracked Kevin Mitnick across the country using cellular forensics and TCP/IP sequence prediction. A controversial hero whose story shaped how we think about vigilante security researchers and law enforcement.",
+    "slug": "tsutomu-shimomura",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "shimomura",
+      "mitnick",
+      "takedown",
+      "security-research"
+    ],
+    "url": "/signals/tsutomu-shimomura",
+    "kind": "article"
+  },
+  {
+    "title": "Wardriving and WiFi Cartography: The Radio Wave Hunt for Open Networks",
+    "excerpt": "",
+    "slug": "wardriving-wifi-cartography",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "wardriving",
+      "wifi",
+      "wireless",
+      "warchalking",
+      "2000s"
+    ],
+    "url": "/signals/wardriving-wifi-cartography",
+    "kind": "article"
+  },
+  {
+    "title": "Before Apple, There Were Blue Boxes",
+    "excerpt": "Steve Wozniak and Steve Jobs built and sold illegal blue boxes at UC Berkeley before they ever dreamed of personal computers. The blue box was their first product, and without it, Apple might never have existed.",
+    "slug": "wozniak-jobs-blue-box",
+    "vertical": "signals",
+    "author": "deadpacket",
+    "tags": [
+      "phreaking",
+      "blue-box",
+      "wozniak",
+      "steve-jobs",
+      "apple",
+      "history"
+    ],
+    "url": "/signals/wozniak-jobs-blue-box",
+    "kind": "article"
+  },
+  {
+    "title": "A Brief History of Ambient Music",
+    "excerpt": "From Music for Airports to the modern ambient renaissance, the genre's evolution reveals a fundamental shift in how we listen and what we require from sound.",
+    "slug": "ambient-music-history",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "ambient",
+      "brian-eno",
+      "history",
+      "tim-hecker",
+      "grouper"
+    ],
+    "url": "/frequencies/ambient-music-history",
+    "kind": "article"
+  },
+  {
+    "title": "Autechre and the Art of Machine Listening",
+    "excerpt": "Rob Brown and Sean Booth built a listening machine that listens back. When did Autechre stop making music for humans and start making it for themselves?",
+    "slug": "autechre-machine-listening",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "autechre",
+      "idm",
+      "generative",
+      "max-msp",
+      "warp"
+    ],
+    "artist": "autechre",
+    "label": "warp",
+    "url": "/frequencies/autechre-machine-listening",
+    "kind": "article"
+  },
+  {
+    "title": "Boards of Canada: The Recovered Memory Engine",
+    "excerpt": "Two brothers in the Scottish Highlands built the most haunted sound in electronic music. Twenty years later, their nostalgia machines still ping something deep in the listener's brain.",
+    "slug": "boards-of-canada-tomorrow",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "boards-of-canada",
+      "retrospective",
+      "ambient",
+      "nostalgia",
+      "warp"
+    ],
+    "artist": "boards-of-canada",
+    "label": "warp",
+    "url": "/frequencies/boards-of-canada-tomorrow",
+    "kind": "article"
+  },
+  {
+    "title": "Burial's Untrue: The Sound of 3AM in a City You Miss",
+    "excerpt": "Eighteen years later, Will Bevan's masterpiece still captures something essential about late-night solitude, longing, and the particular beauty of lost nights in cities.",
+    "slug": "burial-untrue-retrospective",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "burial",
+      "dubstep",
+      "uk-bass",
+      "retrospective"
+    ],
+    "artist": "burial",
+    "url": "/frequencies/burial-untrue-retrospective",
+    "kind": "article"
+  },
+  {
+    "title": "Cassette Revival: The Resistance of Physical Media",
+    "excerpt": "In the age of infinite streaming, cassette tapes have returned. Not as nostalgia. As defiance.",
+    "slug": "cassette-revival",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "cassette",
+      "physical-media",
+      "lo-fi",
+      "underground"
+    ],
+    "url": "/frequencies/cassette-revival",
+    "kind": "article"
+  },
+  {
+    "title": "Caterina Barbieri: The New Synthesis",
+    "excerpt": "How an Italian composer turned Buchla modular systems into minimalist ecstasy. Patterns of Consciousness and Spirit Exit as proof that sequencer music could be meditation, that synthesis could be spirituality.",
+    "slug": "caterina-barbieri-synthesis",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "caterina-barbieri",
+      "modular",
+      "buchla",
+      "minimalism",
+      "synthesis",
+      "italian-electronic-music"
+    ],
+    "artist": "caterina-barbieri",
+    "url": "/frequencies/caterina-barbieri-synthesis",
+    "kind": "article"
+  },
+  {
+    "title": "Demoscene Music: The Soundtrack to 64 Kilobytes",
+    "excerpt": "Tracker music emerged from the demoscene as an accidental genius solution to an impossible constraint. It became the training ground for an entire generation of electronic producers.",
+    "slug": "demoscene-music",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "demoscene",
+      "tracker",
+      "chiptune",
+      "mod",
+      "sid"
+    ],
+    "url": "/frequencies/demoscene-music",
+    "kind": "article"
+  },
+  {
+    "title": "Detroit Techno: The Belleville Three and the City That Invented the Future",
+    "excerpt": "Juan Atkins, Derrick May, and Kevin Saunderson took Kraftwerk, Parliament, and Alvin Toffler's 'Third Wave' and invented an entire genre in the suburbs of Detroit. Why techno is Black music and why that historical fact still matters.",
+    "slug": "detroit-techno-origins",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "detroit-techno",
+      "belleville-three",
+      "juan-atkins",
+      "derrick-may",
+      "kevin-saunderson",
+      "techno-history"
+    ],
+    "url": "/frequencies/detroit-techno-origins",
+    "kind": "article"
+  },
+  {
+    "title": "Dub Techno: Echo as Architecture",
+    "excerpt": "Moritz von Oswald and Mark Ernestus took the spatial techniques of dub reggae and applied them to minimal techno, creating a genre that treats reverb and delay not as effects but as compositional elements. The Berlin connection that changed everything.",
+    "slug": "dub-techno-deep-dive",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "dub-techno",
+      "basic-channel",
+      "berlin",
+      "minimal",
+      "moritz-von-oswald",
+      "chain-reaction"
+    ],
+    "url": "/frequencies/dub-techno-deep-dive",
+    "kind": "article"
+  },
+  {
+    "title": "Fennesz: The Guitar as Signal Processor",
+    "excerpt": "Christian Fennesz's 'Endless Summer' proved that a laptop could cry. Glitch as emotion. How granular synthesis and guitar feedback became the same thing in the Austrian tradition of computer music.",
+    "slug": "fennesz-endless-summer",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "fennesz",
+      "glitch",
+      "laptop-music",
+      "editions-mego",
+      "guitar",
+      "austrian-electronic-music"
+    ],
+    "artist": "fennesz",
+    "label": "editions-mego",
+    "url": "/frequencies/fennesz-endless-summer",
+    "kind": "article"
+  },
+  {
+    "title": "Four Tet and the Architecture of Joy",
+    "excerpt": "Kieran Hebden proved that electronic music could be emotionally overwhelming without abandoning the laptop. In the process, he rewrote what was possible in electronic production.",
+    "slug": "four-tet-everything-ecstatic",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "four-tet",
+      "folktronica",
+      "live-electronic",
+      "kieran-hebden"
+    ],
+    "artist": "four-tet",
+    "url": "/frequencies/four-tet-everything-ecstatic",
+    "kind": "article"
+  },
+  {
+    "title": "Ghost Box Records: The Hauntology of Britain",
+    "excerpt": "A British record label captured the sound of a country that never existed. Public information films, radiophonic workshops, lost futures. The uncanny made audible.",
+    "slug": "ghost-box-hauntology",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "ghost-box",
+      "hauntology",
+      "library-music",
+      "belbury-poly"
+    ],
+    "label": "ghost-box",
+    "url": "/frequencies/ghost-box-hauntology",
+    "kind": "article"
+  },
+  {
+    "title": "Hyperdub: From Theory Blog to Bass Music Institution",
+    "excerpt": "Kode9's label bridged academia and the dancefloor, proving that bass frequencies could carry theory. A profile of electronic music's most intellectually rigorous imprint.",
+    "slug": "hyperdub-label-profile",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "hyperdub",
+      "label-profile",
+      "bass-music",
+      "kode9"
+    ],
+    "label": "hyperdub",
+    "url": "/frequencies/hyperdub-label-profile",
+    "kind": "article"
+  },
+  {
+    "title": "Jon Hopkins' Immunity: The Architecture of Immersion",
+    "excerpt": "From Eno's ambient workshops to festival main stages, Jon Hopkins proved that electronic music could be both physically grounded and transcendent. Immunity showed how.",
+    "slug": "jon-hopkins-immunity",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "jon-hopkins",
+      "immunity",
+      "techno",
+      "ambient",
+      "production"
+    ],
+    "artist": "jon-hopkins",
+    "url": "/frequencies/jon-hopkins-immunity",
+    "kind": "article"
+  },
+  {
+    "title": "The Modular Synth Renaissance: Patching as Resistance",
+    "excerpt": "Eurorack exploded in the 2010s. Not because of nostalgia. Because some people decided synthesis should be messy, unpredictable, and impossible to automate.",
+    "slug": "modular-synth-scene",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "modular",
+      "eurorack",
+      "synthesis",
+      "gear",
+      "mutable-instruments"
+    ],
+    "url": "/frequencies/modular-synth-scene",
+    "kind": "article"
+  },
+  {
+    "title": "Ninja Tune: The Label That Never Got Stuck",
+    "excerpt": "Founded by Coldcut in 1990, Ninja Tune went from trip-hop innovators to the label that proved a single imprint could house everything from Amon Tobin's orchestral breakbeats to Young Fathers' post-punk futurism.",
+    "slug": "ninja-tune-label-profile",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "ninja-tune",
+      "label-profile",
+      "trip-hop",
+      "coldcut",
+      "electronic-music"
+    ],
+    "label": "ninja-tune",
+    "url": "/frequencies/ninja-tune-label-profile",
+    "kind": "article"
+  },
+  {
+    "title": "Northern Exposure at 30: How Sasha and Digweed Defined the Mix Album",
+    "excerpt": "Three decades after its release, Northern Exposure remains the benchmark for what a mix album can be. A retrospective on the compilation that turned the DJ mix into an art form.",
+    "slug": "northern-exposure-retrospective",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "progressive house",
+      "mix album",
+      "retrospective",
+      "sasha",
+      "digweed"
+    ],
+    "artist": "sasha",
+    "label": "global-underground",
+    "url": "/frequencies/northern-exposure-retrospective",
+    "kind": "article"
+  },
+  {
+    "title": "Rykard, NCO: A Review",
+    "excerpt": "Rykard returns on Hunya Munya Records with NCO, an album that sits at the intersection of ambient composition and something harder to name. A close listen.",
+    "slug": "rykard-nco-review",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "review",
+      "ambient",
+      "experimental",
+      "rykard",
+      "hunya munya records"
+    ],
+    "artist": "rykard",
+    "label": "hunya-munya-records",
+    "url": "/frequencies/rykard-nco-review",
+    "kind": "article"
+  },
+  {
+    "title": "Warp at 35: Sheffield's Gift to the Future",
+    "excerpt": "Thirty-five years after 'Track With No Name,' Warp Records remains the label that proved the future didn't have to sound cold. A retrospective on Sheffield's finest.",
+    "slug": "warp-records-at-35",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "warp",
+      "label-history",
+      "idm",
+      "sheffield"
+    ],
+    "label": "warp",
+    "url": "/frequencies/warp-records-at-35",
+    "kind": "article"
+  },
+  {
+    "title": "ANSI Art and the BBS Underground",
+    "excerpt": "ACiD Productions, iCE, and the art groups that turned 80-column terminals into galleries. The first digital art movement, sixteen colors and a blinking cursor.",
+    "slug": "ansi-art-underground",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "ansi-art",
+      "bbs",
+      "acid-productions",
+      "ice",
+      "digital-art"
+    ],
+    "url": "/static/ansi-art-underground",
+    "kind": "article"
+  },
+  {
+    "title": "The Death of the Forum",
+    "excerpt": "Web forums built the internet's most valuable knowledge bases. Platforms killed them. And we lost something essential when threaded discussion died.",
+    "slug": "death-of-the-forum",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "forums",
+      "internet-history",
+      "discord",
+      "communities"
+    ],
+    "url": "/static/death-of-the-forum",
+    "kind": "article"
+  },
+  {
+    "title": "The Dial-Up Sound: A Technical and Cultural History",
+    "excerpt": "What each screech actually means: carrier detection, protocol negotiation, training sequences. Why the modem handshake had to be audible and became a cultural touchstone.",
+    "slug": "dial-up-sound",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "dial-up",
+      "modem",
+      "sound",
+      "internet-history",
+      "nostalgia"
+    ],
+    "url": "/static/dial-up-sound",
+    "kind": "article"
+  },
+  {
+    "title": "Geocities as Digital Archaeology",
+    "excerpt": "The neighborhoods, the under-construction GIFs, the visitor counters. Geocities represented ordinary people building web pages because they wanted to. Its 2009 shutdown and the Archive Team rescue changed how we think about digital preservation.",
+    "slug": "geocities-digital-archaeology",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "geocities",
+      "web-history",
+      "digital-archaeology",
+      "personal-web"
+    ],
+    "url": "/static/geocities-digital-archaeology",
+    "kind": "article"
+  },
+  {
+    "title": "The IRC Channels That Built the Internet",
+    "excerpt": "EFnet, DALnet, Undernet. How real-time chat in the 1990s created social infrastructure for open source, hacking, and electronic music communities. The channel as gathering place.",
+    "slug": "irc-channels-that-built-the-internet",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "irc",
+      "chat",
+      "1990s",
+      "internet-history",
+      "communities"
+    ],
+    "url": "/static/irc-channels-that-built-the-internet",
+    "kind": "article"
+  },
+  {
+    "title": "LAN Party Culture: The Physical Gathering for a Digital Ritual",
+    "excerpt": "",
+    "slug": "lan-party-culture",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "lan-party",
+      "gaming",
+      "quake",
+      "counter-strike",
+      "1990s"
+    ],
+    "url": "/static/lan-party-culture",
+    "kind": "article"
+  },
+  {
+    "title": "Napster: 18 Months That Changed Music Forever",
+    "excerpt": "",
+    "slug": "napster-revolution",
+    "vertical": "static",
+    "author": "ripper",
+    "tags": [
+      "napster",
+      "p2p",
+      "file-sharing",
+      "music-industry",
+      1999
+    ],
+    "url": "/static/napster-revolution",
+    "kind": "article"
+  },
+  {
+    "title": "The Personal Website Comeback",
+    "excerpt": "People are building personal websites again. Not for SEO, not for monetization, but for the simple act of owning a corner of the internet. The personal web is resurgent.",
+    "slug": "personal-websites-comeback",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "personal-web",
+      "indieweb",
+      "neocities",
+      "web-revival"
+    ],
+    "url": "/static/personal-websites-comeback",
+    "kind": "article"
+  },
+  {
+    "title": "RSS Is Not Dead",
+    "excerpt": "Feed readers are experiencing a quiet renaissance. The people who never stopped using RSS are right. And phreak.fm itself is built on the bones of the open web.",
+    "slug": "rss-is-not-dead",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "rss",
+      "open-web",
+      "feeds",
+      "internet-culture"
+    ],
+    "url": "/static/rss-is-not-dead",
+    "kind": "article"
+  },
+  {
+    "title": "The 3AM Frequency: Notes on Staying Up Too Late Online",
+    "excerpt": "There is a specific quality to the internet after midnight. The algorithms quiet down. The professionals go to sleep. What remains is stranger and more honest.",
+    "slug": "the-3am-frequency",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "essay",
+      "internet culture",
+      "weird internet"
+    ],
+    "url": "/static/the-3am-frequency",
+    "kind": "article"
+  },
+  {
+    "title": "The BBS Era",
+    "excerpt": "Before the web, there were bulletin board systems. Dialing in at 2400 baud, ANSI art, message boards, and door games. The SysOps who built networks from their bedrooms shaped everything that came after.",
+    "slug": "the-bbs-era",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "bbs",
+      "dial-up",
+      "fidonet",
+      "ansi-art",
+      "internet-history"
+    ],
+    "url": "/static/the-bbs-era",
+    "kind": "article"
+  },
+  {
+    "title": "The Command Line as Philosophy",
+    "excerpt": "",
+    "slug": "the-command-line",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "command-line",
+      "terminal",
+      "unix",
+      "philosophy",
+      "interface"
+    ],
+    "url": "/static/the-command-line",
+    "kind": "article"
+  },
+  {
+    "title": "The Demoscene: Computer Art in Impossible Constraints",
+    "excerpt": "From the Amiga to the web: coding parties, size-limited competitions, and the purest form of creative hacking. The demoscene as UNESCO cultural heritage.",
+    "slug": "the-demoscene",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "demoscene",
+      "coding",
+      "computer-art",
+      "amiga",
+      "size-coding"
+    ],
+    "url": "/static/the-demoscene",
+    "kind": "article"
+  },
+  {
+    "title": "The Last Social Network You Will Ever Join",
+    "excerpt": "Platform fatigue is real, but every year a new network launches promising to fix everything the last one broke. Why we keep signing up, and why we keep being disappointed.",
+    "slug": "the-last-social-network",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "platforms",
+      "social media",
+      "commentary"
+    ],
+    "url": "/static/the-last-social-network",
+    "kind": "article"
+  },
+  {
+    "title": "The Text File",
+    "excerpt": "From Phrack e-zines to the Anarchist Cookbook to Cult of the Dead Cow's t-files. How plain ASCII text became the medium of the underground. No formatting, no images, just words.",
+    "slug": "the-text-file",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "text-files",
+      "ascii",
+      "zines",
+      "underground",
+      "hacker-culture"
+    ],
+    "url": "/static/the-text-file",
+    "kind": "article"
+  },
+  {
+    "title": "The Wayback Machine: Why Big Tech Fears the Internet Archive",
+    "excerpt": "Brewster Kahle built a library to save the entire internet from disappearance. The work still matters, and the opposition proves it.",
+    "slug": "the-wayback-machine",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "internet-archive",
+      "wayback-machine",
+      "digital-preservation",
+      "web-history"
+    ],
+    "url": "/static/the-wayback-machine",
+    "kind": "article"
+  },
+  {
+    "title": "The Zine Tradition: From Paper to Digital",
+    "excerpt": "From punk fanzines to Phrack to phreak.fm: how self-publishing shaped hacker culture, electronic music, and outsider networks. The direct line from photocopies to personal blogs.",
+    "slug": "the-zine-tradition",
+    "vertical": "static",
+    "author": "ripper",
+    "tags": [
+      "zines",
+      "self-publishing",
+      "punk",
+      2600,
+      "phrack",
+      "diy"
+    ],
+    "url": "/static/the-zine-tradition",
+    "kind": "article"
+  },
+  {
+    "title": "Usenet: The Internet's First Social Network",
+    "excerpt": "",
+    "slug": "usenet-before-reddit",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "usenet",
+      "newsgroups",
+      "internet-history",
+      "eternal-september"
+    ],
+    "url": "/static/usenet-before-reddit",
+    "kind": "article"
+  },
+  {
+    "title": "Webrings and Guestbooks: Social Infrastructure of the Early Web",
+    "excerpt": "",
+    "slug": "webrings-and-guestbooks",
+    "vertical": "static",
+    "author": "deadpacket",
+    "tags": [
+      "webrings",
+      "guestbooks",
+      "early-web",
+      "web-history"
+    ],
+    "url": "/static/webrings-and-guestbooks",
+    "kind": "article"
+  },
+  {
+    "title": "Ambulance",
+    "excerpt": "An ASCII ambulance drives across the bottom of the screen with siren sounds from the PC speaker, then disappears.",
+    "slug": "ambulance",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "visual-payload",
+      "audio-payload",
+      1990,
+      "Ambulance Car",
+      "Red Cross",
+      "Ambulance",
+      "unknown"
+    ],
+    "url": "/museum/specimens/ambulance",
+    "kind": "specimen"
+  },
+  {
+    "title": "Barrotes",
+    "excerpt": "On January 5, displays thick vertical bars across the screen resembling prison bars and overwrites sectors of the hard disk. The visual payload and the destructive payload are synchronized.",
+    "slug": "barrotes",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "spain",
+      "visual-payload",
+      "destructive",
+      1993,
+      "metaphorical",
+      "Barrotes",
+      "unknown"
+    ],
+    "url": "/museum/specimens/barrotes",
+    "kind": "specimen"
+  },
+  {
+    "title": "Blaster",
+    "excerpt": "Spread automatically across the internet exploiting unpatched Windows machines. Contained the message 'billy gates why do you make this possible? Stop making money and fix your software!' Forced system reboots and launched DDoS against windowsupdate.com.",
+    "slug": "blaster",
+    "vertical": "museum",
+    "author": "Jeffrey Lee Parson (variant author, 18 years old)",
+    "tags": [
+      "worm",
+      "windows-xp",
+      "2003",
+      "buffer-overflow",
+      "microsoft",
+      "MSBlast",
+      "Lovesan",
+      "Blaster",
+      "Jeffrey Lee Parson (variant author, 18 years old)"
+    ],
+    "url": "/museum/specimens/blaster",
+    "kind": "specimen"
+  },
+  {
+    "title": "Brain",
+    "excerpt": "Replaces the volume label of infected floppies with the string Brain and quietly relocates the original boot sector.",
+    "slug": "brain",
+    "vertical": "museum",
+    "author": "Basit and Amjad Farooq Alvi",
+    "tags": [
+      "first-pc-virus",
+      "boot-sector",
+      1986,
+      "pakistan",
+      "Pakistani Brain",
+      "Lahore",
+      "Ashar",
+      "Brain-A",
+      "Brain",
+      "Basit and Amjad Farooq Alvi"
+    ],
+    "url": "/museum/specimens/brain",
+    "kind": "specimen"
+  },
+  {
+    "title": "Cascade",
+    "excerpt": "Causes characters on the screen to detach from their lines and fall in a cascade to the bottom of the display.",
+    "slug": "cascade",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "encrypted",
+      "visual-payload",
+      1987,
+      "germany",
+      1701,
+      1704,
+      "Falling Letters",
+      "Herbstlaub",
+      "Cascade",
+      "unknown"
+    ],
+    "url": "/museum/specimens/cascade",
+    "kind": "specimen"
+  },
+  {
+    "title": "Casino",
+    "excerpt": "Wipes the first copy of the FAT into memory, then offers the user a slot machine game and one chance at three jackpots to win the FAT back. Lose and the disk is unrecoverable.",
+    "slug": "casino",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "destructive",
+      "hostage-payload",
+      1991,
+      "malta",
+      "Disk Destroyer",
+      "Casino",
+      "unknown"
+    ],
+    "url": "/museum/specimens/casino",
+    "kind": "specimen"
+  },
+  {
+    "title": "CIH",
+    "excerpt": "Overwrites the first megabyte of the hard disk and attempts to flash the BIOS, rendering vulnerable motherboards unbootable. The first widely seen virus to damage hardware.",
+    "slug": "cih",
+    "vertical": "museum",
+    "author": "Chen Ing-hau",
+    "tags": [
+      "destructive",
+      "hardware-damage",
+      1998,
+      "taiwan",
+      "cross-vertical",
+      "Chernobyl",
+      "Spacefiller",
+      "CIH",
+      "Chen Ing-hau"
+    ],
+    "url": "/museum/specimens/cih",
+    "kind": "specimen"
+  },
+  {
+    "title": "Code Red",
+    "excerpt": "Defaced websites with 'Hacked By Chinese!' message, then launched DDoS attacks against whitehouse.gov. Infected 359,000 servers in 14 hours. Operated in three phases: spread, attack, sleep.",
+    "slug": "code-red",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "worm",
+      "iis",
+      "2001",
+      "ddos",
+      "web-server",
+      "defacement",
+      "Hacked By Chinese",
+      "Code-Red.c",
+      "Code Red",
+      "unknown"
+    ],
+    "url": "/museum/specimens/code-red",
+    "kind": "specimen"
+  },
+  {
+    "title": "Coffeeshop",
+    "excerpt": "Pops up a small ASCII coffee cup and refuses to dismiss the dialog until the user types COFFEE.",
+    "slug": "coffeeshop",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "prank",
+      "visual-payload",
+      1992,
+      "Coffee",
+      "Java",
+      "Coffee",
+      "unknown"
+    ],
+    "url": "/museum/specimens/coffeeshop",
+    "kind": "specimen"
+  },
+  {
+    "title": "Concept",
+    "excerpt": "First macro virus. Displayed a dialog box showing '1' and infected the Normal.dot template, spreading to every document opened afterward. Proved that data files could carry executable code.",
+    "slug": "concept",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "macro-virus",
+      "microsoft-word",
+      1995,
+      "first-macro-virus",
+      "data-file",
+      "Concept Virus",
+      "WordMacro",
+      "Concept",
+      "unknown"
+    ],
+    "url": "/museum/specimens/concept",
+    "kind": "specimen"
+  },
+  {
+    "title": "Cookie",
+    "excerpt": "Periodically pops up the message I want a cookie and refuses to let the user continue working until they type the word COOKIE.",
+    "slug": "cookie",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "prank",
+      "mainframe-lineage",
+      1986,
+      "Cookie Monster",
+      "Wants Cookie",
+      "Cookie",
+      "unknown"
+    ],
+    "url": "/museum/specimens/cookie",
+    "kind": "specimen"
+  },
+  {
+    "title": "Crazy Boot",
+    "excerpt": "Hangs the boot process and renders a colorful ASCII art payload screen on top of the failed POST.",
+    "slug": "crazy-boot",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "boot-sector",
+      "ascii-art",
+      1996,
+      "CrazyBoot",
+      "Crazy Boot",
+      "unknown"
+    ],
+    "url": "/museum/specimens/crazy-boot",
+    "kind": "specimen"
+  },
+  {
+    "title": "Creeper",
+    "excerpt": "Displayed 'I'M THE CREEPER: CATCH ME IF YOU CAN' on infected terminals. Moved between DEC PDP-10 computers connected to ARPANET. Generally considered the first computer virus ever created.",
+    "slug": "creeper",
+    "vertical": "museum",
+    "author": "Bob Thomas",
+    "tags": [
+      "first-virus-ever",
+      "arpanet",
+      1971,
+      "bbn",
+      "pdp-10",
+      "tenex",
+      "Creeper Virus",
+      "CREEPER",
+      "Creeper",
+      "Bob Thomas"
+    ],
+    "url": "/museum/specimens/creeper",
+    "kind": "specimen"
+  },
+  {
+    "title": "Dark Avenger",
+    "excerpt": "Silently destroys data by overwriting random sectors on the hard disk every 16th file infection. Damage accumulates slowly and invisibly, designed to evade detection while destroying data in the background.",
+    "slug": "dark-avenger",
+    "vertical": "museum",
+    "author": "Dark Avenger",
+    "tags": [
+      "bulgaria",
+      "destructive",
+      1989,
+      "prolific-author",
+      "stealth",
+      "Eddie",
+      "Diana",
+      "Dark Avenger",
+      "Dark Avenger"
+    ],
+    "url": "/museum/specimens/dark-avenger",
+    "kind": "specimen"
+  },
+  {
+    "title": "Elk Cloner",
+    "excerpt": "On every 50th boot, displayed a poem: 'Elk Cloner: The program with a personality / It will get on all your disks / It will infiltrate your chips / Yes, it's Cloner!'",
+    "slug": "elk-cloner",
+    "vertical": "museum",
+    "author": "Rich Skrenta",
+    "tags": [
+      "first-virus",
+      "apple-ii",
+      1982,
+      "prank",
+      "poem",
+      "boot-sector",
+      "Elk Cloner Virus",
+      "Elk Cloner",
+      "Rich Skrenta"
+    ],
+    "url": "/museum/specimens/elk-cloner",
+    "kind": "specimen"
+  },
+  {
+    "title": "Form",
+    "excerpt": "On the 18th of any month, produces a soft click from the PC speaker on every keystroke. Otherwise dormant. Was the most reported virus of the early 1990s.",
+    "slug": "form",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "boot-sector",
+      1990,
+      "switzerland",
+      "prevalent",
+      "Form 18",
+      "Form",
+      "unknown"
+    ],
+    "url": "/museum/specimens/form",
+    "kind": "specimen"
+  },
+  {
+    "title": "Frodo",
+    "excerpt": "On September 22, overwrites the first sector of the hard disk, destroying the partition table. Uses advanced stealth techniques to hide from disk inspection. Named for the Tolkien reference in its trigger date.",
+    "slug": "frodo",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "stealth",
+      "destructive",
+      1989,
+      "tolkien",
+      "israel",
+      "partition-table",
+      4096,
+      "4K",
+      "Frodo",
+      "unknown"
+    ],
+    "url": "/museum/specimens/frodo",
+    "kind": "specimen"
+  },
+  {
+    "title": "Happy99",
+    "excerpt": "Displayed a fireworks animation celebrating the new year while silently modifying Winsock to attach copies of itself to outgoing emails. One of the first email worms.",
+    "slug": "happy99",
+    "vertical": "museum",
+    "author": "Spanska",
+    "tags": [
+      "email-worm",
+      "1999",
+      "fireworks",
+      "visual-payload",
+      "new-year",
+      "Happy New Year",
+      "Happy1999",
+      "Happy99",
+      "Spanska"
+    ],
+    "url": "/museum/specimens/happy99",
+    "kind": "specimen"
+  },
+  {
+    "title": "Hare",
+    "excerpt": "Displays the message HDEuthanasia by Demon Emperor and overwrites the first track of every disk it can reach.",
+    "slug": "hare",
+    "vertical": "museum",
+    "author": "Demon Emperor",
+    "tags": [
+      "destructive",
+      "polymorphic",
+      1996,
+      "slovenia",
+      "HD Euthanasia",
+      "Hare Krsna",
+      "Hare",
+      "Demon Emperor"
+    ],
+    "url": "/museum/specimens/hare",
+    "kind": "specimen"
+  },
+  {
+    "title": "Hymn",
+    "excerpt": "Plays a hymn-like melody through the PC speaker. One of the few viruses with a devotional or spiritual audio payload. The melody repeats at unpredictable intervals, creating an unsettling devotional atmosphere.",
+    "slug": "hymn",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "audio-payload",
+      "music",
+      1992,
+      "pc-speaker",
+      "devotional",
+      "Hymn",
+      "unknown"
+    ],
+    "url": "/museum/specimens/hymn",
+    "kind": "specimen"
+  },
+  {
+    "title": "ILOVEYOU",
+    "excerpt": "Overwrote image and music files with copies of itself, harvested passwords and sent them to attacker email addresses, and emailed itself to every contact in Outlook. Infected 45 million computers in 10 days. Estimated $10 billion in damages.",
+    "slug": "iloveyou",
+    "vertical": "museum",
+    "author": "Onel de Guzman",
+    "tags": [
+      "email-worm",
+      2000,
+      "philippines",
+      "social-engineering",
+      "destructive",
+      "mass-mailer",
+      "Love Bug",
+      "Love Letter",
+      "VBS.LoveLetter.A",
+      "ILOVEYOU",
+      "Onel de Guzman"
+    ],
+    "url": "/museum/specimens/iloveyou",
+    "kind": "specimen"
+  },
+  {
+    "title": "Jerusalem",
+    "excerpt": "On any Friday the 13th, deletes every executable file the user runs. Also slows the system noticeably and produces a black box on screen.",
+    "slug": "jerusalem",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "destructive",
+      1987,
+      "israel",
+      "date-trigger",
+      1813,
+      "Friday the 13th",
+      "Israeli",
+      "Hebrew University",
+      "Jerusalem",
+      "unknown"
+    ],
+    "url": "/museum/specimens/jerusalem",
+    "kind": "specimen"
+  },
+  {
+    "title": "Kuku",
+    "excerpt": "Drops a small bird sprite that walks across the screen and chirps Kuku from the PC speaker before vanishing.",
+    "slug": "kuku",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "visual-payload",
+      1996,
+      "russia",
+      "sprite",
+      "Kuku",
+      "unknown"
+    ],
+    "url": "/museum/specimens/kuku",
+    "kind": "specimen"
+  },
+  {
+    "title": "Maltese Amoeba",
+    "excerpt": "On trigger dates, overwrites the first sectors of every connected disk and displays a William Blake poem fragment.",
+    "slug": "maltese-amoeba",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "destructive",
+      1991,
+      "uk",
+      "polymorphic",
+      "Amoeba",
+      "Irish",
+      "Amoeba",
+      "unknown"
+    ],
+    "url": "/museum/specimens/maltese-amoeba",
+    "kind": "specimen"
+  },
+  {
+    "title": "Melissa",
+    "excerpt": "Emailed itself to the first 50 contacts in Outlook with the subject 'Important Message From [username].' Named after a Florida exotic dancer. Overwhelmed email servers worldwide. Smith was arrested and prosecuted.",
+    "slug": "melissa",
+    "vertical": "museum",
+    "author": "David L. Smith",
+    "tags": [
+      "email-worm",
+      "macro-virus",
+      1999,
+      "outlook",
+      "mass-mailer",
+      "first-conviction",
+      "Melissa Macro Virus",
+      "Melissa.A",
+      "Melissa",
+      "David L. Smith"
+    ],
+    "url": "/museum/specimens/melissa",
+    "kind": "specimen"
+  },
+  {
+    "title": "Michelangelo",
+    "excerpt": "On March 6 of any year, overwrites the first 256 sectors of the hard drive with garbage from memory, destroying the partition table and any data within reach.",
+    "slug": "michelangelo",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "destructive",
+      "boot-sector",
+      1991,
+      "media-panic",
+      "stoned-family",
+      "March 6",
+      "Stoned",
+      "unknown"
+    ],
+    "url": "/museum/specimens/michelangelo",
+    "kind": "specimen"
+  },
+  {
+    "title": "Monkey",
+    "excerpt": "Encrypts the partition table with a fixed key, making the C: drive invisible to a clean DOS boot until the virus loads itself first.",
+    "slug": "monkey",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "boot-sector",
+      1991,
+      "canada",
+      "stealth",
+      "Empire Monkey",
+      "Empire",
+      "unknown"
+    ],
+    "url": "/museum/specimens/monkey",
+    "kind": "specimen"
+  },
+  {
+    "title": "Mummy",
+    "excerpt": "Displays an ASCII art mummy and a message before corrupting random sectors on the active drive.",
+    "slug": "mummy",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "visual-payload",
+      "destructive",
+      1991,
+      "uk",
+      "Mummy 1364",
+      "Mummy",
+      "unknown"
+    ],
+    "url": "/museum/specimens/mummy",
+    "kind": "specimen"
+  },
+  {
+    "title": "Ping Pong",
+    "excerpt": "A small bouncing ball character travels around the screen, ricocheting off the borders, while the system continues to run normally.",
+    "slug": "ping-pong",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "visual-payload",
+      "boot-sector",
+      1988,
+      "italy",
+      "Italian",
+      "Bouncing Ball",
+      "Vera Cruz",
+      "Ping Pong",
+      "unknown"
+    ],
+    "url": "/museum/specimens/ping-pong",
+    "kind": "specimen"
+  },
+  {
+    "title": "Sasser",
+    "excerpt": "Spread without user interaction by exploiting the LSASS service. Caused infected machines to crash and reboot in a loop. Disrupted Delta Air Lines, British Coastguard, and hospitals. Jaschan was caught on his 18th birthday.",
+    "slug": "sasser",
+    "vertical": "museum",
+    "author": "Sven Jaschan (18-year-old German student)",
+    "tags": [
+      "worm",
+      "windows-xp",
+      "2004",
+      "germany",
+      "infrastructure",
+      "Sasser.A",
+      "Sasser.B",
+      "Sasser",
+      "Sven Jaschan (18-year-old German student)"
+    ],
+    "url": "/museum/specimens/sasser",
+    "kind": "specimen"
+  },
+  {
+    "title": "Sobig.F",
+    "excerpt": "Generated more email traffic than any virus before it. At its peak, 1 in every 17 emails globally was Sobig.F. Contained a backdoor that downloaded unknown payloads from predetermined servers. The author was never identified.",
+    "slug": "sobig",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "email-worm",
+      "2003",
+      "mass-mailer",
+      "backdoor",
+      "unknown-author",
+      "Sobig",
+      "Sobig.F",
+      "Sobig",
+      "unknown"
+    ],
+    "url": "/museum/specimens/sobig",
+    "kind": "specimen"
+  },
+  {
+    "title": "Spanska",
+    "excerpt": "Renders a smooth animated starfield over the active screen, scrolling toward the viewer in a perfect demoscene tunnel effect.",
+    "slug": "spanska",
+    "vertical": "museum",
+    "author": "Spanska",
+    "tags": [
+      "visual-payload",
+      "demoscene",
+      1997,
+      "france",
+      "starfield",
+      "Spanska 4250",
+      "Happy",
+      "Spanska",
+      "Spanska"
+    ],
+    "url": "/museum/specimens/spanska",
+    "kind": "specimen"
+  },
+  {
+    "title": "Stoned",
+    "excerpt": "Displays the message Your PC is now Stoned and Legalise Marijuana on roughly one in every eight boots from an infected disk.",
+    "slug": "stoned",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "boot-sector",
+      1987,
+      "new-zealand",
+      "prank",
+      "New Zealand",
+      "Marijuana",
+      "Hawaii",
+      "Stoned",
+      "unknown"
+    ],
+    "url": "/museum/specimens/stoned",
+    "kind": "specimen"
+  },
+  {
+    "title": "Techno",
+    "excerpt": "Plays a four-on-the-floor techno pattern through the PC speaker while the word TECHNO scrolls across the screen in large characters.",
+    "slug": "techno",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "audio-payload",
+      "visual-payload",
+      1994,
+      "cross-vertical",
+      "Techno",
+      "unknown"
+    ],
+    "url": "/museum/specimens/techno",
+    "kind": "specimen"
+  },
+  {
+    "title": "Tequila",
+    "excerpt": "After a delay, displays a Mandelbrot fractal and a message reading Execute: mov ax bx cs:eax. Otherwise spreads silently.",
+    "slug": "tequila",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "polymorphic",
+      1991,
+      "switzerland",
+      "fractal",
+      "Tequila",
+      "unknown"
+    ],
+    "url": "/museum/specimens/tequila",
+    "kind": "specimen"
+  },
+  {
+    "title": "V-Sign",
+    "excerpt": "Displays a large ASCII V across the screen, the victory sign for which the virus is named, then continues booting normally.",
+    "slug": "v-sign",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "boot-sector",
+      1992,
+      "turkey",
+      "ascii-art",
+      "Cansu",
+      "Victory",
+      "V-Sign",
+      "unknown"
+    ],
+    "url": "/museum/specimens/v-sign",
+    "kind": "specimen"
+  },
+  {
+    "title": "Vienna",
+    "excerpt": "Overwrites the first five bytes of one in every eight COM files it touches with a jump to the BIOS reboot vector.",
+    "slug": "vienna",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      1987,
+      "austria",
+      "source-published",
+      "648",
+      "DOS-62",
+      "Unesco",
+      "Vienna",
+      "unknown"
+    ],
+    "url": "/museum/specimens/vienna",
+    "kind": "specimen"
+  },
+  {
+    "title": "Walker",
+    "excerpt": "An old man sprite walks across the screen from one side to the other, then disappears, while the user continues working.",
+    "slug": "walker",
+    "vertical": "museum",
+    "author": "unknown",
+    "tags": [
+      "visual-payload",
+      "sprite",
+      1992,
+      "charming",
+      "1575",
+      "1576",
+      "Zhengxi",
+      "Walker",
+      "unknown"
+    ],
+    "url": "/museum/specimens/walker",
+    "kind": "specimen"
+  },
+  {
+    "title": "Whale",
+    "excerpt": "Displays a large, detailed ASCII art whale on screen. At over 9000 bytes, it was one of the largest viruses of its era. The virus included encrypted sections to evade detection.",
+    "slug": "whale",
+    "vertical": "museum",
+    "author": "R. Burger",
+    "tags": [
+      "ascii-art",
+      "visual-payload",
+      1990,
+      "encrypted",
+      "aesthetic",
+      "Z the Whale",
+      "Motherfish",
+      "Whale",
+      "R. Burger"
+    ],
+    "url": "/museum/specimens/whale",
+    "kind": "specimen"
+  },
+  {
+    "title": "Yankee Doodle",
+    "excerpt": "At five o'clock in the afternoon, the virus plays a recognizable rendition of Yankee Doodle through the PC speaker.",
+    "slug": "yankee-doodle",
+    "vertical": "museum",
+    "author": "Dark Avenger (associated)",
+    "tags": [
+      "musical-payload",
+      1989,
+      "bulgaria",
+      "sofia-scene",
+      "Five O'Clock",
+      "1961",
+      "2885",
+      "Yankee",
+      "Dark Avenger (associated)"
+    ],
+    "url": "/museum/specimens/yankee-doodle",
+    "kind": "specimen"
+  }
+]
