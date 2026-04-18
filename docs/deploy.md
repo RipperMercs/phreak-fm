@@ -95,8 +95,7 @@ wrangler deployments list
 
 1. Submit sitemap to Google Search Console: https://phreak.fm/sitemap.xml
 2. Write the dedication page content for Dirk
-3. Add ProtonMail and Signal contacts to /submit/secure
-4. Write 3 to 5 real articles before announcing
+3. Write 3 to 5 real articles before announcing
 5. Write first real Pirate Signal post
 6. Add phreak.fm to sibling site footer rotations
 7. Set up @phreakfm X handle (do not launch bot in V1)
