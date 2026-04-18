@@ -17,7 +17,7 @@ export function Nav() {
 
   return (
     <nav
-      className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-sm"
+      className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur-md"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -37,7 +37,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-text-muted hover:text-accent transition-colors"
+                className="text-xs text-text hover:text-accent transition-colors"
               >
                 {link.label}
               </Link>
@@ -49,7 +49,7 @@ export function Nav() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden ml-auto text-xs text-text-muted hover:text-text transition-colors"
+            className="md:hidden ml-auto text-xs text-text hover:text-accent transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -65,7 +65,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-xs py-2 text-text-muted hover:text-accent"
+                className="block text-xs py-2 text-text hover:text-accent"
                 onClick={() => setMobileOpen(false)}
               >
                 &gt; {link.label}
