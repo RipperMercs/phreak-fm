@@ -35,7 +35,7 @@ export default function Home() {
       {/* Scrolling headline ticker */}
       <Ticker articles={allArticles.slice(0, 8)} />
 
-      <main className="max-w-content mx-auto px-4 sm:px-6">
+      <main className="max-w-content mx-auto px-4 sm:px-6 relative z-10">
         {/* System status bar */}
         <SystemBar articleCount={allArticles.length} feedCount={38} />
 
