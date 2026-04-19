@@ -26,7 +26,7 @@ const HACKER_QUOTES = [
 ];
 
 export default function Home() {
-  const jsonLd = buildSiteJsonLd();
+  const jsonLdSchemas = buildSiteJsonLd();
   const allArticles = getAllArticles();
   // Featured is a pin-to-top highlight, not a removal from the feed.
   // Latest stays as a complete chronological view including featured pieces.
@@ -37,10 +37,13 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLdSchemas.map((schema: Record<string, unknown>, i: number) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       {/* Scrolling headline ticker */}
       <Ticker articles={allArticles.slice(0, 8)} />
@@ -227,4 +230,3 @@ export default function Home() {
     </>
   );
 }
-

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getAllArticles } from "@/lib/mdx";
-import { buildVerticalMetadata } from "@/lib/seo";
+import { buildVerticalMetadata, buildVerticalJsonLd } from "@/lib/seo";
 import { ArticleCard } from "@/components/ArticleCard";
 
 export const metadata: Metadata = buildVerticalMetadata("frequencies");
@@ -21,8 +21,17 @@ export default function FrequenciesPage() {
   const articles = getAllArticles("frequencies");
   // Featured is a pin-to-top highlight, not a removal from Latest.
   const featured = articles.find((a) => a.frontmatter.featured);
+  const jsonLdSchemas = buildVerticalJsonLd("frequencies");
 
   return (
+    <>
+      {jsonLdSchemas.map((schema: Record<string, unknown>, i: number) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
       <header className="mb-12">
         <h1 className="font-mono text-3xl sm:text-4xl text-frequencies mb-3">
@@ -99,5 +108,6 @@ export default function FrequenciesPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

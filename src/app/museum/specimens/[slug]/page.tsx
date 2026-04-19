@@ -11,6 +11,7 @@ import {
 import { SpecimenHero, MediaGallery } from "@/components/SpecimenHero";
 import { SpecimenCard } from "@/components/SpecimenCard";
 import { ArticleRenderer } from "@/components/ArticleRenderer";
+import { buildMuseumSpecimenJsonLd } from "@/lib/seo";
 
 interface PageProps {
   params: { slug: string };
@@ -46,6 +47,13 @@ export default function SpecimenPage({ params }: PageProps) {
   if (!specimen) notFound();
 
   const fm = specimen.frontmatter;
+  const jsonLdSchemas = buildMuseumSpecimenJsonLd({
+    name: fm.name,
+    slug: fm.slug,
+    description: fm.payloadDescription || `${fm.name}, a specimen in the phreak.fm DOS Virus Museum.`,
+    yearDiscovered: fm.discoveredYear || 1990,
+    aliases: fm.aliases,
+  });
   const related = getRelatedSpecimens(specimen, 6);
   const sameFamily = getSpecimensByFamily(fm.familySlug)
     .filter((s) => s.frontmatter.slug !== fm.slug)
@@ -57,6 +65,14 @@ export default function SpecimenPage({ params }: PageProps) {
     : [];
 
   return (
+    <>
+      {jsonLdSchemas.map((schema: Record<string, unknown>, i: number) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
       <nav className="font-mono text-xs text-text-muted mb-6">
         <Link href="/museum" className="hover:text-accent">
@@ -258,5 +274,6 @@ export default function SpecimenPage({ params }: PageProps) {
         </aside>
       </div>
     </main>
+    </>
   );
 }

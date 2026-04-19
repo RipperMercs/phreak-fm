@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phreak.fm</title>
+    <link>https://phreak.fm</link>
+    <description>Signals, frequencies, and the people who bend them. Hacker culture, electronic music, and tech news.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Apr 2026 02:06:48 GMT</lastBuildDate>
+    <atom:link href="https://phreak.fm/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://phreak.fm/favicon.ico</url>
+      <title>phreak.fm</title>
+      <link>https://phreak.fm</link>
+    </image>
+    <item>
+      <title>Boards of Canada, &apos;Tape 05&apos;: The Long Quiet, Broken</title>
+      <link>https://phreak.fm/frequencies/boards-of-canada-tape-05</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/boards-of-canada-tape-05</guid>
+      <description>On April 16, 2026, after thirteen years of near-total silence, Boards of Canada uploaded a six-minute piece of music to YouTube called Tape 05. The track ended a wait that had become its own kind of cultural artifact. The campaign that preceded it (mailed VHS tapes, posters appearing in four cities, a hexagonal logo on every surface) suggested that something larger is coming.</description>
+      <pubDate>Sat, 18 Apr 2026 20:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Stuxnet: The Malware That Sabotaged a Nuclear Program</title>
+      <link>https://phreak.fm/signals/stuxnet-olympic-games</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/stuxnet-olympic-games</guid>
+      <description>In June 2010, a small Belarusian antivirus firm received a malware sample they could not immediately classify. Six months of analysis later, the security industry understood that it had found the first piece of malware specifically built to cause physical destruction in the real world. The target was a nuclear enrichment facility. The operators were two of the most capable intelligence services on the planet. The era of cyber-physical warfare started here.</description>
+      <pubDate>Sat, 18 Apr 2026 13:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>nullbyte</dc:creator>
+    </item>
+    <item>
+      <title>Dan Kaminsky: The Bug, the Patch, and the Mensch</title>
+      <link>https://phreak.fm/signals/dan-kaminsky-dns-bug</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/dan-kaminsky-dns-bug</guid>
+      <description>In early 2008, a researcher in Seattle realized he had found a way to corrupt the DNS resolver caches that route most traffic on the public internet. What he did next, before disclosing the bug, became a model for how serious vulnerabilities should be coordinated. Then he died, suddenly, at 42. This is what he built and what he meant.</description>
+      <pubDate>Sat, 18 Apr 2026 10:30:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>nullbyte</dc:creator>
+    </item>
+    <item>
+      <title>LTJ Bukem and the Logical Progression of Atmospheric Drum and Bass</title>
+      <link>https://phreak.fm/frequencies/ltj-bukem-logical-progression</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/ltj-bukem-logical-progression</guid>
+      <description>Danny Williamson took jungle out of the strobe-lit hardcore rooms and built something slower, jazzier, more spatial. Good Looking Records, the Speed club night, and the Logical Progression compilations defined what drum and bass sounded like when it learned to breathe.</description>
+      <pubDate>Sat, 18 Apr 2026 10:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Phil Zimmermann, PGP, and the Time the US Government Tried to Classify Math</title>
+      <link>https://phreak.fm/signals/phil-zimmermann-pgp-crypto-wars</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/phil-zimmermann-pgp-crypto-wars</guid>
+      <description>In 1991, a peace activist in Boulder released a free encryption tool to protect dissidents from surveillance. Within months, federal investigators were treating his source code as illegally exported munitions. The three-year case that followed became the central battle of the Crypto Wars and the foundation for every secure messenger in your pocket today.</description>
+      <pubDate>Sat, 18 Apr 2026 09:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Elk Cloner: The First Virus in the Wild Was a Poem from a Ninth Grader</title>
+      <link>https://phreak.fm/signals/elk-cloner-first-virus</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/elk-cloner-first-virus</guid>
+      <description>Four years before the Alvi brothers wrote Brain in Lahore, a fifteen-year-old in Pittsburgh wrote a self-replicating program that would copy itself onto every Apple II floppy in his social circle and, on the fiftieth boot, display a poem. This is the story of the first computer virus that actually got loose.</description>
+      <pubDate>Sat, 18 Apr 2026 08:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>St Jude: The Hacker Who Coined Cypherpunk</title>
+      <link>https://phreak.fm/signals/jude-milhon-st-jude-cypherpunk</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/jude-milhon-st-jude-cypherpunk</guid>
+      <description>Jude Milhon was at the Selma march in 1965, was one of the few professional women programmers of the 1960s mainframe era, coined the word cypherpunk in the early 1990s as a wordplay on cyberpunk and cipher, and spent her last decades as the most beloved counterweight to the libertarian male orthodoxy that had grown up around the Cypherpunks list. The cypherpunk movement has the name she gave it. It has remembered her unevenly.</description>
+      <pubDate>Fri, 17 Apr 2026 20:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Marcus Hutchins, the Kill Switch, and the Long Strange Year After</title>
+      <link>https://phreak.fm/signals/marcus-hutchins-wannacry-killswitch</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/marcus-hutchins-wannacry-killswitch</guid>
+      <description>On May 12, 2017, a 23-year-old security researcher in Devon registered an obscure domain he had found inside a piece of ransomware spreading globally. The registration acted as a kill switch and ended the WannaCry outbreak before it took down the National Health Service entirely. Three months later, FBI agents arrested him in a Las Vegas hotel room. The story of what happened in between is the story of how strange the modern security industry actually is.</description>
+      <pubDate>Fri, 17 Apr 2026 17:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>nullbyte</dc:creator>
+    </item>
+    <item>
+      <title>Mudge: From the L0pht Loft to the Twitter Whistleblower Stand</title>
+      <link>https://phreak.fm/signals/mudge-zatko-l0pht-to-twitter</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/mudge-zatko-l0pht-to-twitter</guid>
+      <description>Peiter Mudge Zatko sat at the L0pht Heavy Industries table when seven hackers told the US Senate in 1998 that they could take down the internet in thirty minutes. Twenty-four years later he sat in front of Congress again, this time as the Twitter whistleblower describing security failures that helped reshape the largest social platform&apos;s legal exposure. The arc between those two appearances is one of the most useful careers to study in modern security.</description>
+      <pubDate>Fri, 17 Apr 2026 11:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>The Cypherpunks Mailing List: How Privacy Tech Was Born in a Bay Area Living Room</title>
+      <link>https://phreak.fm/signals/cypherpunks-mailing-list</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/cypherpunks-mailing-list</guid>
+      <description>In September 1992, three people met at a house in Oakland to talk about cryptography and decided to start a mailing list. Over the next nine years, that list became the workshop where Bitcoin, Tor, Signal, BitTorrent, and most of what we now call privacy tech was workshopped, argued out, and shipped.</description>
+      <pubDate>Thu, 16 Apr 2026 14:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>The Crypto Anarchist Manifesto: Tim May&apos;s 1988 Pamphlet That Predicted the Modern Privacy Stack</title>
+      <link>https://phreak.fm/signals/tim-may-crypto-anarchist-manifesto</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/tim-may-crypto-anarchist-manifesto</guid>
+      <description>In the summer of 1988, a former Intel physicist handed out a one-page essay at the Crypto &apos;88 conference. The essay argued that strong cryptography would, by purely technological means, render most state regulation of online activity unenforceable, and that this was a positive outcome. Most of the document&apos;s specific predictions came true. Some came true in ways the author would not have endorsed.</description>
+      <pubDate>Thu, 16 Apr 2026 09:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>keysmith</dc:creator>
+    </item>
+    <item>
+      <title>John Draper and the 2600Hz Whistle</title>
+      <link>https://phreak.fm/signals/john-draper-captain-crunch</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/john-draper-captain-crunch</guid>
+      <description>A toy whistle from a cereal box turned out to produce the exact frequency that could seize control of AT&amp;T&apos;s long-distance network. John Draper, known as Captain Crunch, built an entire subculture on that discovery.</description>
+      <pubDate>Wed, 15 Apr 2026 12:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>MafiaBoy: The Week in February 2000 a Fifteen-Year-Old Took Down the Internet</title>
+      <link>https://phreak.fm/signals/mafiaboy-february-2000</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/mafiaboy-february-2000</guid>
+      <description>Over four days in February 2000, a fifteen-year-old in suburban Montreal knocked Yahoo, Amazon, eBay, CNN, Buy.com, Dell, and E*Trade off the internet using a botnet of hijacked university workstations. The week DDoS stopped being a theory and became a permanent feature of the public web.</description>
+      <pubDate>Wed, 15 Apr 2026 11:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Emmanuel Goldstein: 2600, the H Word, and Forty Years of Holding the Line</title>
+      <link>https://phreak.fm/signals/emmanuel-goldstein-2600-editor</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/emmanuel-goldstein-2600-editor</guid>
+      <description>Eric Corley took a pen name from Orwell, founded a quarterly magazine in 1984 dedicated to a subculture that the rest of the world was already moving to criminalize, and spent the next four decades operating a radio show, a quarterly print publication, a biennial international conference, and a constant defense of the proposition that hackers are not the same as criminals. The hacker community has had institutional anchors come and go. Goldstein has been the steadiest of them.</description>
+      <pubDate>Tue, 14 Apr 2026 15:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>The Alvi Brothers: How Two Programmers in Lahore Wrote the First PC Virus</title>
+      <link>https://phreak.fm/signals/alvi-brothers-brain-virus</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/alvi-brothers-brain-virus</guid>
+      <description>In 1986, Basit and Amjad Farooq Alvi wrote a piece of code to protect their medical software from piracy. It became the first virus to infect IBM PCs, and it carried their real names, address, and phone number.</description>
+      <pubDate>Tue, 14 Apr 2026 12:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Kim Zetter: The Reporter Who Made Stuxnet Legible</title>
+      <link>https://phreak.fm/signals/kim-zetter-stuxnet-journalist</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/kim-zetter-stuxnet-journalist</guid>
+      <description>Cybersecurity reporting in 2010 was a niche beat with a small audience. By the time Kim Zetter finished publishing Countdown to Zero Day in 2014, she had done something that most security writers had never managed: she had told the story of a complex nation-state malware operation in a way that ordinary readers could follow without losing the technical truth. The shape of long-form security journalism since then is largely her shape.</description>
+      <pubDate>Mon, 13 Apr 2026 12:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>The Personal Website Comeback</title>
+      <link>https://phreak.fm/static/personal-websites-comeback</link>
+      <guid isPermaLink="true">https://phreak.fm/static/personal-websites-comeback</guid>
+      <description>People are building personal websites again. Not for SEO, not for monetization, but for the simple act of owning a corner of the internet. The personal web is resurgent.</description>
+      <pubDate>Sun, 12 Apr 2026 11:15:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Robert Tappan Morris: The Worm, the Sentence, the Second Act</title>
+      <link>https://phreak.fm/signals/robert-morris-worm-second-act</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/robert-morris-worm-second-act</guid>
+      <description>On November 2, 1988, a Cornell graduate student released a self-replicating program that brought a meaningful fraction of the early internet to a halt within hours. He became the first person convicted under the Computer Fraud and Abuse Act. He also became, eventually, an MIT professor, a Y Combinator cofounder, and the rare cautionary-tale figure whose second act overshadowed the cautionary tale.</description>
+      <pubDate>Sun, 12 Apr 2026 10:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>nullbyte</dc:creator>
+    </item>
+    <item>
+      <title>RSS Is Not Dead</title>
+      <link>https://phreak.fm/static/rss-is-not-dead</link>
+      <guid isPermaLink="true">https://phreak.fm/static/rss-is-not-dead</guid>
+      <description>Feed readers are experiencing a quiet renaissance. The people who never stopped using RSS are right. And phreak.fm itself is built on the bones of the open web.</description>
+      <pubDate>Wed, 08 Apr 2026 14:30:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Rykard, NCO: A Review</title>
+      <link>https://phreak.fm/frequencies/rykard-nco-review</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/rykard-nco-review</guid>
+      <description>Rykard returns on Hunya Munya Records with NCO, an album that sits at the intersection of ambient composition and something harder to name. A close listen.</description>
+      <pubDate>Sun, 05 Apr 2026 10:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Fennesz: The Guitar as Signal Processor</title>
+      <link>https://phreak.fm/frequencies/fennesz-endless-summer</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/fennesz-endless-summer</guid>
+      <description>Christian Fennesz&apos;s &apos;Endless Summer&apos; proved that a laptop could cry. Glitch as emotion. How granular synthesis and guitar feedback became the same thing in the Austrian tradition of computer music.</description>
+      <pubDate>Fri, 03 Apr 2026 22:03:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>The Modular Synth Renaissance: Patching as Resistance</title>
+      <link>https://phreak.fm/frequencies/modular-synth-scene</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/modular-synth-scene</guid>
+      <description>Eurorack exploded in the 2010s. Not because of nostalgia. Because some people decided synthesis should be messy, unpredictable, and impossible to automate.</description>
+      <pubDate>Fri, 03 Apr 2026 10:05:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>The Last Social Network You Will Ever Join</title>
+      <link>https://phreak.fm/static/the-last-social-network</link>
+      <guid isPermaLink="true">https://phreak.fm/static/the-last-social-network</guid>
+      <description>Platform fatigue is real, but every year a new network launches promising to fix everything the last one broke. Why we keep signing up, and why we keep being disappointed.</description>
+      <pubDate>Thu, 02 Apr 2026 09:00:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>The Last Phone Phreaker: How 2600Hz Changed Everything</title>
+      <link>https://phreak.fm/signals/the-last-phone-phreaker</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/the-last-phone-phreaker</guid>
+      <description>Before hackers had keyboards, they had tone dialers. The story of phone phreaking, from Cap&apos;n Crunch&apos;s whistle to the fall of the analog network, and why it still matters.</description>
+      <pubDate>Wed, 01 Apr 2026 12:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Hyperdub: From Theory Blog to Bass Music Institution</title>
+      <link>https://phreak.fm/frequencies/hyperdub-label-profile</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/hyperdub-label-profile</guid>
+      <description>Kode9&apos;s label bridged academia and the dancefloor, proving that bass frequencies could carry theory. A profile of electronic music&apos;s most intellectually rigorous imprint.</description>
+      <pubDate>Wed, 01 Apr 2026 11:45:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>The Morris Worm: The First Internet Weapon</title>
+      <link>https://phreak.fm/signals/morris-worm</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/morris-worm</guid>
+      <description>Robert Tappan Morris released the first internet worm in 1988. A coding error turned an experimental network measurement into a weapon that crashed 10% of the internet and changed everything. The son of an NSA cryptographer. The first person convicted under the Computer Fraud and Abuse Act.</description>
+      <pubDate>Mon, 30 Mar 2026 22:41:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>nullbyte</dc:creator>
+    </item>
+    <item>
+      <title>The 3AM Frequency: Notes on Staying Up Too Late Online</title>
+      <link>https://phreak.fm/static/the-3am-frequency</link>
+      <guid isPermaLink="true">https://phreak.fm/static/the-3am-frequency</guid>
+      <description>There is a specific quality to the internet after midnight. The algorithms quiet down. The professionals go to sleep. What remains is stranger and more honest.</description>
+      <pubDate>Mon, 30 Mar 2026 03:00:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Anatomy of a Zero Day: What Happens When Nobody Knows</title>
+      <link>https://phreak.fm/signals/anatomy-of-a-zero-day</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/anatomy-of-a-zero-day</guid>
+      <description>A technical walkthrough of what zero-day vulnerabilities actually are, how they get discovered, weaponized, and eventually patched. The lifecycle of the most dangerous bugs in software.</description>
+      <pubDate>Sat, 28 Mar 2026 10:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>nullbyte</dc:creator>
+    </item>
+    <item>
+      <title>Northern Exposure at 30: How Sasha and Digweed Defined the Mix Album</title>
+      <link>https://phreak.fm/frequencies/northern-exposure-retrospective</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/northern-exposure-retrospective</guid>
+      <description>Three decades after its release, Northern Exposure remains the benchmark for what a mix album can be. A retrospective on the compilation that turned the DJ mix into an art form.</description>
+      <pubDate>Wed, 25 Mar 2026 14:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Jon Hopkins&apos; Immunity: The Architecture of Immersion</title>
+      <link>https://phreak.fm/frequencies/jon-hopkins-immunity</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/jon-hopkins-immunity</guid>
+      <description>From Eno&apos;s ambient workshops to festival main stages, Jon Hopkins proved that electronic music could be both physically grounded and transcendent. Immunity showed how.</description>
+      <pubDate>Wed, 25 Mar 2026 07:48:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Phrack Magazine: The Zine That Defined Hacker Writing</title>
+      <link>https://phreak.fm/signals/phrack-magazine</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/phrack-magazine</guid>
+      <description>Founded in 1985 by Taran King and Knight Lightning. Phrack published the Hacker Manifesto. Ran for 69 issues across four decades. The Bellcore document controversy nearly ended it. Phrack defined what hacker writing looked like and how the underground published itself.</description>
+      <pubDate>Tue, 24 Mar 2026 16:57:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>LAN Party Culture: The Physical Gathering for a Digital Ritual</title>
+      <link>https://phreak.fm/static/lan-party-culture</link>
+      <guid isPermaLink="true">https://phreak.fm/static/lan-party-culture</guid>
+      <description></description>
+      <pubDate>Mon, 23 Mar 2026 17:22:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Anonymous: From 4chan Trolls to Global Hacktivist Movement</title>
+      <link>https://phreak.fm/signals/anonymous-origins</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/anonymous-origins</guid>
+      <description></description>
+      <pubDate>Mon, 23 Mar 2026 13:08:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>The Death of the Forum</title>
+      <link>https://phreak.fm/static/death-of-the-forum</link>
+      <guid isPermaLink="true">https://phreak.fm/static/death-of-the-forum</guid>
+      <description>Web forums built the internet&apos;s most valuable knowledge bases. Platforms killed them. And we lost something essential when threaded discussion died.</description>
+      <pubDate>Sun, 22 Mar 2026 16:20:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Usenet: The Internet&apos;s First Social Network</title>
+      <link>https://phreak.fm/static/usenet-before-reddit</link>
+      <guid isPermaLink="true">https://phreak.fm/static/usenet-before-reddit</guid>
+      <description></description>
+      <pubDate>Sat, 21 Mar 2026 19:24:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Before Apple, There Were Blue Boxes</title>
+      <link>https://phreak.fm/signals/wozniak-jobs-blue-box</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/wozniak-jobs-blue-box</guid>
+      <description>Steve Wozniak and Steve Jobs built and sold illegal blue boxes at UC Berkeley before they ever dreamed of personal computers. The blue box was their first product, and without it, Apple might never have existed.</description>
+      <pubDate>Thu, 19 Mar 2026 15:32:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>The Demoscene as Hacking: When Creative Constraint Becomes Rebellion</title>
+      <link>https://phreak.fm/signals/the-demoscene-as-hacking</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/the-demoscene-as-hacking</guid>
+      <description></description>
+      <pubDate>Mon, 16 Mar 2026 04:11:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Welcome to Phreak.fm: Signals, Frequencies, and the People Who Bend Them</title>
+      <link>https://phreak.fm/signals/2600hz-welcome-post</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/2600hz-welcome-post</guid>
+      <description></description>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>Cassette Revival: The Resistance of Physical Media</title>
+      <link>https://phreak.fm/frequencies/cassette-revival</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/cassette-revival</guid>
+      <description>In the age of infinite streaming, cassette tapes have returned. Not as nostalgia. As defiance.</description>
+      <pubDate>Thu, 12 Mar 2026 14:15:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Demoscene Music: The Soundtrack to 64 Kilobytes</title>
+      <link>https://phreak.fm/frequencies/demoscene-music</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/demoscene-music</guid>
+      <description>Tracker music emerged from the demoscene as an accidental genius solution to an impossible constraint. It became the training ground for an entire generation of electronic producers.</description>
+      <pubDate>Mon, 09 Mar 2026 09:52:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>The BBS Era</title>
+      <link>https://phreak.fm/static/the-bbs-era</link>
+      <guid isPermaLink="true">https://phreak.fm/static/the-bbs-era</guid>
+      <description>Before the web, there were bulletin board systems. Dialing in at 2400 baud, ANSI art, message boards, and door games. The SysOps who built networks from their bedrooms shaped everything that came after.</description>
+      <pubDate>Sun, 08 Mar 2026 20:37:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>Ninja Tune: The Label That Never Got Stuck</title>
+      <link>https://phreak.fm/frequencies/ninja-tune-label-profile</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/ninja-tune-label-profile</guid>
+      <description>Founded by Coldcut in 1990, Ninja Tune went from trip-hop innovators to the label that proved a single imprint could house everything from Amon Tobin&apos;s orchestral breakbeats to Young Fathers&apos; post-punk futurism.</description>
+      <pubDate>Sun, 08 Mar 2026 12:29:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Boards of Canada: The Recovered Memory Engine</title>
+      <link>https://phreak.fm/frequencies/boards-of-canada-tomorrow</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/boards-of-canada-tomorrow</guid>
+      <description>Two brothers in the Scottish Highlands built the most haunted sound in electronic music. Twenty years later, their nostalgia machines still ping something deep in the listener&apos;s brain.</description>
+      <pubDate>Thu, 05 Mar 2026 18:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>The Chaos Computer Club: Hamburg&apos;s Gift to the Hacker World</title>
+      <link>https://phreak.fm/signals/chaos-computer-club</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/chaos-computer-club</guid>
+      <description></description>
+      <pubDate>Thu, 05 Mar 2026 01:18:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>A Brief History of Ambient Music</title>
+      <link>https://phreak.fm/frequencies/ambient-music-history</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/ambient-music-history</guid>
+      <description>From Music for Airports to the modern ambient renaissance, the genre&apos;s evolution reveals a fundamental shift in how we listen and what we require from sound.</description>
+      <pubDate>Sun, 01 Mar 2026 12:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Ghost Box Records: The Hauntology of Britain</title>
+      <link>https://phreak.fm/frequencies/ghost-box-hauntology</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/ghost-box-hauntology</guid>
+      <description>A British record label captured the sound of a country that never existed. Public information films, radiophonic workshops, lost futures. The uncanny made audible.</description>
+      <pubDate>Sat, 28 Feb 2026 19:45:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Daphne Oram and Oramics</title>
+      <link>https://phreak.fm/signals/daphne-oram</link>
+      <guid isPermaLink="true">https://phreak.fm/signals/daphne-oram</guid>
+      <description>Daphne Oram invented a technique called Oramics: drawing sound directly onto film strips to generate electronic music. It was synthesis by hand, decades before anyone had a sequencer.</description>
+      <pubDate>Sun, 22 Feb 2026 22:39:00 GMT</pubDate>
+      <category>Signals</category>
+      <dc:creator>synth_error</dc:creator>
+    </item>
+    <item>
+      <title>Detroit Techno: The Belleville Three and the City That Invented the Future</title>
+      <link>https://phreak.fm/frequencies/detroit-techno-origins</link>
+      <guid isPermaLink="true">https://phreak.fm/frequencies/detroit-techno-origins</guid>
+      <description>Juan Atkins, Derrick May, and Kevin Saunderson took Kraftwerk, Parliament, and Alvin Toffler&apos;s &apos;Third Wave&apos; and invented an entire genre in the suburbs of Detroit. Why techno is Black music and why that historical fact still matters.</description>
+      <pubDate>Sun, 15 Feb 2026 12:00:00 GMT</pubDate>
+      <category>Frequencies</category>
+      <dc:creator>Ripper</dc:creator>
+    </item>
+    <item>
+      <title>The Wayback Machine: Why Big Tech Fears the Internet Archive</title>
+      <link>https://phreak.fm/static/the-wayback-machine</link>
+      <guid isPermaLink="true">https://phreak.fm/static/the-wayback-machine</guid>
+      <description>Brewster Kahle built a library to save the entire internet from disappearance. The work still matters, and the opposition proves it.</description>
+      <pubDate>Sun, 15 Feb 2026 10:45:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+    <item>
+      <title>The IRC Channels That Built the Internet</title>
+      <link>https://phreak.fm/static/irc-channels-that-built-the-internet</link>
+      <guid isPermaLink="true">https://phreak.fm/static/irc-channels-that-built-the-internet</guid>
+      <description>EFnet, DALnet, Undernet. How real-time chat in the 1990s created social infrastructure for open source, hacking, and electronic music communities. The channel as gathering place.</description>
+      <pubDate>Sat, 14 Feb 2026 22:27:00 GMT</pubDate>
+      <category>Static</category>
+      <dc:creator>deadpacket</dc:creator>
+    </item>
+  </channel>
+</rss>

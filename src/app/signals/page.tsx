@@ -1,18 +1,27 @@
 import { Metadata } from "next";
 import { getAllArticles } from "@/lib/mdx";
-import { buildVerticalMetadata } from "@/lib/seo";
+import { buildVerticalMetadata, buildVerticalJsonLd } from "@/lib/seo";
 import { ArticleCard } from "@/components/ArticleCard";
 
 export const metadata: Metadata = buildVerticalMetadata("signals");
 
 export default function SignalsPage() {
   const articles = getAllArticles("signals");
+  const jsonLdSchemas = buildVerticalJsonLd("signals");
   // Featured is a pin-to-top highlight, not a removal from Latest. The
   // featured piece appears both in the Featured slot and at the top of the
   // chronological list, so the feed always reflects every published piece.
   const featured = articles.find((a) => a.frontmatter.featured);
 
   return (
+    <>
+      {jsonLdSchemas.map((schema: Record<string, unknown>, i: number) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
       {/* Header */}
       <header className="mb-12">
@@ -87,5 +96,6 @@ export default function SignalsPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

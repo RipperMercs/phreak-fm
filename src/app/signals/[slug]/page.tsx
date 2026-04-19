@@ -27,14 +27,17 @@ export default function SignalsArticlePage({ params }: PageProps) {
   if (!article) notFound();
 
   const author = getAuthor(article.frontmatter.author);
-  const jsonLd = buildArticleJsonLd(article.frontmatter);
+  const jsonLdSchemas = buildArticleJsonLd(article.frontmatter);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLdSchemas.map((schema: Record<string, unknown>, i: number) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       <article className="max-w-article mx-auto px-4 sm:px-6 py-12">
         {/* Header */}
