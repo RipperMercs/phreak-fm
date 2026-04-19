@@ -54,8 +54,12 @@ export function ArticleCard({
             <p className="font-body text-text-muted text-base leading-relaxed line-clamp-3">
               {frontmatter.excerpt}
             </p>
-            <p className="font-mono text-xs text-text-muted tracking-wide">
-              {author?.displayName} :: {formatDate(frontmatter.publishedAt)} :: {frontmatter.readingTimeMinutes} min read
+            <p className="font-mono text-xs tracking-wide">
+              <span className="text-text-muted">{author?.displayName}</span>
+              <span className="text-border"> :: </span>
+              <span className="text-accent">{formatDate(frontmatter.publishedAt)}</span>
+              <span className="text-border"> :: </span>
+              <span className="text-text-muted">{frontmatter.readingTimeMinutes} min read</span>
             </p>
           </div>
         </Link>
@@ -76,8 +80,12 @@ export function ArticleCard({
         <p className="font-body text-text-muted text-sm line-clamp-2 leading-relaxed">
           {frontmatter.excerpt}
         </p>
-        <p className="font-mono text-xs text-text-muted tracking-wide">
-          {author?.displayName} :: {formatDate(frontmatter.publishedAt)} :: {frontmatter.readingTimeMinutes} min read
+        <p className="font-mono text-xs tracking-wide">
+          <span className="text-text-muted">{author?.displayName}</span>
+          <span className="text-border"> :: </span>
+          <span className="text-accent">{formatDate(frontmatter.publishedAt)}</span>
+          <span className="text-border"> :: </span>
+          <span className="text-text-muted">{frontmatter.readingTimeMinutes} min read</span>
         </p>
       </Link>
     </article>

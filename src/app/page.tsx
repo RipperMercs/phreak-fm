@@ -131,7 +131,7 @@ export default function Home() {
                         <span className={`text-xs ${sectionColors[article.frontmatter.vertical]} shrink-0 w-7`}>
                           {sectionAbbr[article.frontmatter.vertical]}
                         </span>
-                        <span className="text-xs text-text-muted shrink-0 w-16">
+                        <span className="text-xs text-accent shrink-0 w-16">
                           {dateStr}
                         </span>
                         <span className="text-sm text-text group-hover:text-accent transition-colors truncate flex-1">

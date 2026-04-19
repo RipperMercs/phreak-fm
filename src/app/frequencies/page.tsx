@@ -19,8 +19,10 @@ const genrePillars = [
 
 export default function FrequenciesPage() {
   const articles = getAllArticles("frequencies");
-  const featured = articles.filter((a) => a.frontmatter.featured);
-  const rest = articles.filter((a) => !a.frontmatter.featured);
+  // One featured slot (the most recent featured article); everything else
+  // including other featured:true items falls into Latest sorted by date.
+  const featured = articles.find((a) => a.frontmatter.featured);
+  const rest = articles.filter((a) => a !== featured);
 
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
@@ -48,19 +50,17 @@ export default function FrequenciesPage() {
       </nav>
 
       {/* Featured */}
-      {featured.length > 0 && (
+      {featured && (
         <section className="mb-12">
           <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-6">
             Featured
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featured.map((a) => (
-              <ArticleCard
-                key={a.frontmatter.slug}
-                frontmatter={a.frontmatter}
-                variant="featured"
-              />
-            ))}
+          <div className="grid grid-cols-1">
+            <ArticleCard
+              key={featured.frontmatter.slug}
+              frontmatter={featured.frontmatter}
+              variant="featured"
+            />
           </div>
         </section>
       )}
