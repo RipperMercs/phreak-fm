@@ -1,0 +1,97 @@
+---
+title: "Elk Cloner: The First Virus in the Wild Was a Poem from a Ninth Grader"
+slug: elk-cloner-first-virus
+vertical: signals
+author: ripper
+publishedAt: "2026-04-18T08:00:00Z"
+excerpt: "Four years before the Alvi brothers wrote Brain in Lahore, a fifteen-year-old in Pittsburgh wrote a self-replicating program that would copy itself onto every Apple II floppy in his social circle and, on the fiftieth boot, display a poem. This is the story of the first computer virus that actually got loose."
+tags:
+  - elk-cloner
+  - rich-skrenta
+  - computer-virus
+  - virus-history
+  - apple-ii
+  - 1982
+pillar: phreaker-elders-and-hacker-culture
+readingTimeMinutes: 7
+---
+
+# Elk Cloner: The First Virus in the Wild Was a Poem from a Ninth Grader
+
+Before there was a word for it, before anyone in academia had used the term computer virus in print, before the security industry existed in any recognizable form, before the Pakistani Brain virus arrived on IBM PCs in 1986, there was a fifteen-year-old in Pittsburgh writing a self-replicating program in 6502 assembly during his winter break.
+
+His name was Rich Skrenta. The program was called Elk Cloner. The year was 1982. The target platform was the Apple II. The medium of transmission was the 5.25-inch floppy disk. The payload, on the fiftieth boot of an infected disk, was a poem.
+
+This is generally accepted, in the histories that bother to look beyond the IBM PC, as the first computer virus that actually got loose into the world. Not the first self-replicating program (those go back to the 1960s in academic theory). Not the first published proof of concept (Fred Cohen would coin the term computer virus in his 1983 USC dissertation work). But the first one that started infecting machines its author had no contact with. The first one in the wild.
+
+## The Setup
+
+To understand why a fifteen-year-old wrote Elk Cloner, you have to understand what he was doing before Elk Cloner.
+
+Skrenta was a known prankster in the Apple II scene at Mount Lebanon High School and across the Pittsburgh teenage computer community. The dominant social activity of that scene, and you have to remember this is 1981 and 1982, was trading pirated games on floppy disks. People would copy disks for their friends. Floppies would circulate through friend groups and across high schools.
+
+What Skrenta liked to do, when a friend's disk was in his drive, was modify it. Not to break the game. To prank the user. He would patch the boot sector or the executable so that, on a particular run, the game would freeze and display a sarcastic message, or show his initials, or make some joke at the recipient's expense. Then he would hand the disk back and wait for the result.
+
+This worked for a while. Then his friends caught on. By late 1981, Skrenta could not get his hands on his friends' floppies anymore. They had stopped trusting him. The prank had outlived its delivery mechanism.
+
+The technical answer to this problem, which Skrenta worked out over winter break in early 1982, was to build a program that would propagate without him being there. He did not need to physically touch a friend's disk if the disk could carry a payload that would infect any new disk it encountered.
+
+## How It Worked
+
+Elk Cloner lived in the boot sector of an Apple II floppy. When the user booted from an infected disk, the virus loaded itself into memory and stayed resident. From that point until the machine was powered off, any uninfected floppy inserted into the drive would have its boot sector overwritten with the Elk Cloner code. The original boot code was preserved elsewhere on the disk so that the disk would still work normally for its intended purpose. The user had no idea anything had happened.
+
+This is the same general approach that boot sector viruses on the IBM PC would use throughout the 1980s and 1990s. Skrenta had, in early 1982, independently invented the technique that would dominate virus design for the next fifteen years.
+
+The virus also kept a counter. Each time an infected disk was booted, the counter incremented. On the fiftieth boot, instead of letting the system come up normally, Elk Cloner would clear the screen and display the following:
+
+```
+Elk Cloner: The program with a personality
+
+It will get on all your disks
+It will infiltrate your chips
+Yes, it's Cloner!
+
+It will stick to you like glue
+It will modify RAM too
+Send in the Cloner!
+```
+
+Then it would let the system boot. The disk continued to function. The user had a moment of confusion, mentioned it to their friends, possibly realized that several of their friends had seen the same poem on their own machines, and started asking questions.
+
+By that point, of course, every floppy in their collection was already infected.
+
+## The Spread
+
+Elk Cloner spread the way every viable virus has always spread: through social networks of disk sharing. Skrenta gave it to his friends. His friends gave it to their friends. Within months, Elk Cloner had escaped the Pittsburgh teenage Apple II scene and started showing up in unexpected places.
+
+The most-cited example, which Skrenta himself has talked about in interviews, was that his cousin received an infected disk at a Naval base in Texas, where someone had brought it in from elsewhere. By the standard of 1982 floppy-only spread, this was a significant geographic distribution. The virus had crossed multiple social and institutional boundaries, hopping disks at every step.
+
+There was no antivirus industry. There was no patch. The fix, if you had it, was to know which of your disks were clean and to wipe and re-image the infected ones, and to never let an infected disk into your drive again.
+
+Most people who got Elk Cloner just lived with it.
+
+## Before the Term Existed
+
+Fred Cohen would not formally define the term computer virus until late 1983, in PhD work at the University of Southern California. Cohen's contribution was the rigorous theoretical framing: a program that modifies other programs to include a possibly evolved copy of itself. He demonstrated experimental viruses on academic Unix systems in November 1983, more than a year after Elk Cloner was already replicating in the wild.
+
+This is part of why Elk Cloner sometimes gets undercredited in popular tellings. By the time the academic vocabulary existed, the IBM PC was the dominant platform and the discourse had shifted there. Brain, written by the Alvi brothers in Lahore in 1986, gets called the first PC virus, and that is true if you mean IBM PC. Skrenta's program is generally not what comes up when people search for "first computer virus" because it predates the language we now use to describe what it was.
+
+But it was a virus. It self-replicated. It modified host code to include a copy of itself. It spread autonomously through a population of machines. It had a payload, even if the payload was just a poem. It met every criterion that Cohen would later set out, and it predated the criteria.
+
+## What Skrenta Did Next
+
+Skrenta went on to a long career in software. He worked at Unix shops, then in early web infrastructure. He co-founded Topix in 2002, which became one of the dominant local news aggregation sites of the early web. He founded the search engine Blekko in 2007. He has been involved in various AI and search ventures since.
+
+In every interview he has done over the last forty years, Elk Cloner comes up. He has been gracious about it. He talks about the prank lineage, about the social engineering of getting friends to insert disks they should not have trusted, about the technical satisfaction of writing the resident loader. He has noted, accurately, that he never intended for it to spread as far as it did. He was a teenager solving the problem of how to keep pranking his friends after they stopped letting him touch their floppies. He did not have a vision for malicious self-replicating code as a global phenomenon.
+
+What he did, though, was demonstrate the technique. Every wild virus that came after Elk Cloner, every boot sector infector that spread through the IBM PC scene, every macro virus and email worm and ransomware family of the next four decades, was descended in some sense from a fifteen-year-old's prank. The technique was the technique. The medium changed. The motivation changed. The scale changed by many orders of magnitude. But the basic move, write code that copies itself onto other machines without the user knowing, was already there in 1982 in the boot sector of an Apple II floppy.
+
+## Coda
+
+The poem is the part that lingers.
+
+You can write a malicious program that does damage. Many people have. You can write a malicious program with a sense of humor. Most malicious programs do not have one. You can write a malicious program that wants you to know it is there, that announces itself in verse on the fiftieth boot like a polite houseguest letting you know they have been staying with you longer than expected.
+
+The history of computer viruses gets darker after Elk Cloner. The motivations get more commercial, more state-sponsored, more cruel. The poetry mostly goes away.
+
+But it was there at the start.

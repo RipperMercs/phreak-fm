@@ -164,6 +164,23 @@
     "kind": "article"
   },
   {
+    "title": "Dan Kaminsky: The Bug, the Patch, and the Mensch",
+    "excerpt": "In early 2008, a researcher in Seattle realized he had found a way to corrupt the DNS resolver caches that route most traffic on the public internet. What he did next, before disclosing the bug, became a model for how serious vulnerabilities should be coordinated. Then he died, suddenly, at 42. This is what he built and what he meant.",
+    "slug": "dan-kaminsky-dns-bug",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "dan-kaminsky",
+      "dns",
+      "dns-cache-poisoning",
+      "vulnerability-disclosure",
+      "security-research",
+      "in-memoriam"
+    ],
+    "url": "/signals/dan-kaminsky-dns-bug",
+    "kind": "article"
+  },
+  {
     "title": "Daphne Oram and Oramics",
     "excerpt": "Daphne Oram invented a technique called Oramics: drawing sound directly onto film strips to generate electronic music. It was synthesis by hand, decades before anyone had a sequencer.",
     "slug": "daphne-oram",
@@ -228,6 +245,23 @@
       "history"
     ],
     "url": "/signals/delia-derbyshire",
+    "kind": "article"
+  },
+  {
+    "title": "Elk Cloner: The First Virus in the Wild Was a Poem from a Ninth Grader",
+    "excerpt": "Four years before the Alvi brothers wrote Brain in Lahore, a fifteen-year-old in Pittsburgh wrote a self-replicating program that would copy itself onto every Apple II floppy in his social circle and, on the fiftieth boot, display a poem. This is the story of the first computer virus that actually got loose.",
+    "slug": "elk-cloner-first-virus",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "elk-cloner",
+      "rich-skrenta",
+      "computer-virus",
+      "virus-history",
+      "apple-ii",
+      1982
+    ],
+    "url": "/signals/elk-cloner-first-virus",
     "kind": "article"
   },
   {
@@ -478,6 +512,24 @@
       "hacker-crackdown"
     ],
     "url": "/signals/operation-sundevil",
+    "kind": "article"
+  },
+  {
+    "title": "Phil Zimmermann, PGP, and the Time the US Government Tried to Classify Math",
+    "excerpt": "In 1991, a peace activist in Boulder released a free encryption tool to protect dissidents from surveillance. Within months, federal investigators were treating his source code as illegally exported munitions. The three-year case that followed became the central battle of the Crypto Wars and the foundation for every secure messenger in your pocket today.",
+    "slug": "phil-zimmermann-pgp-crypto-wars",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "phil-zimmermann",
+      "pgp",
+      "crypto-wars",
+      "encryption",
+      "cryptography",
+      "civil-liberties",
+      1991
+    ],
+    "url": "/signals/phil-zimmermann-pgp-crypto-wars",
     "kind": "article"
   },
   {
@@ -921,6 +973,24 @@
     ],
     "artist": "jon-hopkins",
     "url": "/frequencies/jon-hopkins-immunity",
+    "kind": "article"
+  },
+  {
+    "title": "LTJ Bukem and the Logical Progression of Atmospheric Drum and Bass",
+    "excerpt": "Danny Williamson took jungle out of the strobe-lit hardcore rooms and built something slower, jazzier, more spatial. Good Looking Records, the Speed club night, and the Logical Progression compilations defined what drum and bass sounded like when it learned to breathe.",
+    "slug": "ltj-bukem-logical-progression",
+    "vertical": "frequencies",
+    "author": "ripper",
+    "tags": [
+      "drum-and-bass",
+      "ltj-bukem",
+      "good-looking-records",
+      "logical-progression",
+      "jungle",
+      "atmospheric",
+      "liquid-funk"
+    ],
+    "url": "/frequencies/ltj-bukem-logical-progression",
     "kind": "article"
   },
   {
