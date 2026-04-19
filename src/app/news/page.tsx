@@ -1,6 +1,11 @@
 import { Metadata } from "next";
-import fs from "fs";
-import path from "path";
+import {
+  loadFeedCache,
+  getSortedWireItems,
+  extractDomain,
+  formatPubDate,
+  sectionMeta,
+} from "@/lib/feed-cache";
 
 export const metadata: Metadata = {
   title: "News Wire",
@@ -44,51 +49,6 @@ const sourceDirectory = {
   ],
 };
 
-interface FeedEntry {
-  title: string;
-  link: string;
-  published: string;
-}
-
-interface FeedCache {
-  built: string;
-  feeds: Record<string, FeedEntry[]>;
-}
-
-interface WireItem extends FeedEntry {
-  section: string;
-}
-
-const sectionMeta: Record<string, { abbr: string; color: string; label: string }> = {
-  security: { abbr: "SIG", color: "text-signals", label: "Security" },
-  tech: { abbr: "STA", color: "text-static-v", label: "Tech" },
-  dev: { abbr: "DEV", color: "text-accent", label: "Dev" },
-};
-
-function loadFeedCache(): FeedCache {
-  try {
-    const cachePath = path.join(process.cwd(), "public", "feed-cache.json");
-    return JSON.parse(fs.readFileSync(cachePath, "utf8")) as FeedCache;
-  } catch {
-    return { built: "", feeds: {} };
-  }
-}
-
-function extractDomain(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return "";
-  }
-}
-
-function formatPubDate(input: string): string {
-  if (!input) return "";
-  const d = new Date(input);
-  if (isNaN(d.getTime())) return "";
-  return `${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}.${String(d.getFullYear()).slice(2)}`;
-}
-
 function formatBuildTimestamp(iso: string): string {
   if (!iso) return "unknown";
   const d = new Date(iso);
@@ -106,15 +66,7 @@ function formatBuildTimestamp(iso: string): string {
 
 export default function NewsPage() {
   const cache = loadFeedCache();
-  const items: WireItem[] = [];
-  for (const [section, entries] of Object.entries(cache.feeds)) {
-    for (const entry of entries) {
-      items.push({ ...entry, section });
-    }
-  }
-  items.sort(
-    (a, b) => new Date(b.published).getTime() - new Date(a.published).getTime(),
-  );
+  const items = getSortedWireItems(cache);
 
   const totalSources = Object.values(sourceDirectory).reduce(
     (n, list) => n + list.length,
