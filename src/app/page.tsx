@@ -6,6 +6,13 @@ import { getAuthor } from "@/lib/authors";
 import { Ticker } from "@/components/Ticker";
 import { SystemBar } from "@/components/SystemBar";
 import { LiveFeed } from "@/components/LiveFeed";
+import {
+  loadFeedCache,
+  getSortedWireItems,
+  extractDomain,
+  formatPubDate,
+  sectionMeta,
+} from "@/lib/feed-cache";
 
 const HACKER_QUOTES = [
   { text: "Information wants to be free.", author: "Stewart Brand" },
@@ -24,6 +31,7 @@ export default function Home() {
   const featured = allArticles.find((a) => a.frontmatter.featured);
   const latest = allArticles.filter((a) => a !== featured).slice(0, 12);
   const randomQuote = HACKER_QUOTES[Math.floor(Math.random() * HACKER_QUOTES.length)];
+  const wireItems = getSortedWireItems(loadFeedCache(), 10);
 
   return (
     <>
@@ -135,6 +143,58 @@ export default function Home() {
                 })}
               </div>
             </section>
+
+            {/* Wire teaser: latest external headlines, links to /news for full feed */}
+            {wireItems.length > 0 && (
+              <section className="py-6 border-t border-border">
+                <div className="flex items-baseline justify-between mb-4">
+                  <p className="text-xs text-text-muted tracking-widest uppercase">
+                    {'>'} tail /var/log/wire
+                  </p>
+                  <Link
+                    href="/news"
+                    className="text-xs text-text-muted hover:text-accent transition-colors"
+                  >
+                    full wire {'->'}
+                  </Link>
+                </div>
+                <div className="space-y-0">
+                  {wireItems.map((item, i) => {
+                    const meta = sectionMeta[item.section] || sectionMeta.dev;
+                    const domain = extractDomain(item.link);
+                    return (
+                      <a
+                        key={`${item.link}-${i}`}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block py-2.5 border-b border-border/50 last:border-b-0 hover:bg-bg-surface/50 transition-colors -mx-2 px-2"
+                      >
+                        <div className="flex items-baseline gap-3">
+                          <span className="text-xs text-text-muted w-5 shrink-0 text-right">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className={`text-xs ${meta.color} shrink-0 w-7`}>
+                            {meta.abbr}
+                          </span>
+                          <span className="text-xs text-text-muted shrink-0 w-16">
+                            {formatPubDate(item.published)}
+                          </span>
+                          <span className="text-sm text-text group-hover:text-accent transition-colors flex-1 leading-snug">
+                            {item.title}
+                          </span>
+                          {domain && (
+                            <span className="text-xs text-text-muted shrink-0 hidden md:inline">
+                              {domain}
+                            </span>
+                          )}
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* RIGHT: Live feed panels */}
