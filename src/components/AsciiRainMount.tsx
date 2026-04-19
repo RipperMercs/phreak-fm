@@ -7,10 +7,15 @@ import AsciiRain from "./AsciiRain";
 // gutters keep the live atmosphere. Apparitions still spawn anywhere on the
 // canvas; the ones that land in the masked center are hidden, the ones in the
 // gutters surface as easter eggs.
+// Mask outer edge sits at 39rem from center (see ContentMask). Constrain
+// apparitions to spawn beyond that distance so they appear in the visible
+// gutters rather than getting swallowed by the mask.
+const MASK_EDGE_REM = 39;
+
 export default function AsciiRainMount() {
   return (
     <>
-      <AsciiRain />
+      <AsciiRain apparitionEdgeRem={MASK_EDGE_REM} />
       <ContentMask />
     </>
   );
