@@ -1,23 +1,44 @@
-"use client";
-import { usePathname } from "next/navigation";
 import AsciiRain from "./AsciiRain";
 
-// Pages where the rain IS the experience: home and section landings. Reading
-// pages and forms get a heavily dimmed field with no apparitions so the
-// background never competes with content.
-const LOUD_PATHS = new Set<string>([
-  "/",
-  "/signals",
-  "/frequencies",
-  "/frequencies/pirate-signal",
-  "/static",
-  "/museum",
-  "/news",
-]);
-
+// Same treatment everywhere: full-intensity rain across the viewport, with a
+// fixed horizontal spotlight mask sitting between the canvas (z-0) and content
+// (z-10). The mask is solid bg across the central content column and feathers
+// to transparent at the edges, so the reading area is dead-quiet but the
+// gutters keep the live atmosphere. Apparitions still spawn anywhere on the
+// canvas; the ones that land in the masked center are hidden, the ones in the
+// gutters surface as easter eggs.
 export default function AsciiRainMount() {
-  const pathname = usePathname();
-  const normalized = pathname.replace(/\/+$/, "") || "/";
-  const loud = LOUD_PATHS.has(normalized);
-  return <AsciiRain dim={loud ? 0.65 : 0.12} apparitions={loud} />;
+  return (
+    <>
+      <AsciiRain />
+      <ContentMask />
+    </>
+  );
+}
+
+// Mask geometry (rem units so it tracks font scaling):
+// - 34rem solid bg either side of center => 68rem total solid (matches max-w-content)
+// - 5rem feather either side fading bg -> transparent
+// - Beyond 39rem from center: full transparent, rain fully visible
+function ContentMask() {
+  const stops = [
+    "transparent 0",
+    "transparent calc(50% - 39rem)",
+    "var(--bg) calc(50% - 34rem)",
+    "var(--bg) calc(50% + 34rem)",
+    "transparent calc(50% + 39rem)",
+    "transparent 100%",
+  ].join(", ");
+  return (
+    <div
+      aria-hidden
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 1,
+        pointerEvents: "none",
+        background: `linear-gradient(to right, ${stops})`,
+      }}
+    />
+  );
 }
