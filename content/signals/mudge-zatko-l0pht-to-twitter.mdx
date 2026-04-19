@@ -1,0 +1,83 @@
+---
+title: "Mudge: From the L0pht Loft to the Twitter Whistleblower Stand"
+slug: mudge-zatko-l0pht-to-twitter
+vertical: signals
+author: ripper
+publishedAt: "2026-04-17T11:00:00Z"
+excerpt: "Peiter Mudge Zatko sat at the L0pht Heavy Industries table when seven hackers told the US Senate in 1998 that they could take down the internet in thirty minutes. Twenty-four years later he sat in front of Congress again, this time as the Twitter whistleblower describing security failures that helped reshape the largest social platform's legal exposure. The arc between those two appearances is one of the most useful careers to study in modern security."
+tags:
+  - mudge
+  - peiter-zatko
+  - l0pht
+  - whistleblower
+  - twitter
+  - security-history
+pillar: phreaker-elders-and-hacker-culture
+readingTimeMinutes: 9
+---
+
+# Mudge: From the L0pht Loft to the Twitter Whistleblower Stand
+
+On May 19, 1998, seven members of the Boston-area hacker collective L0pht Heavy Industries sat at a Senate Governmental Affairs Committee hearing and told a panel of US senators, on the record and on camera, that they could take down the internet in roughly thirty minutes. They were not bluffing. They had identified, by that point, structural vulnerabilities in the BGP routing infrastructure that powered the public internet, and they had a credible plan for exploiting those vulnerabilities at scale. The senators sat with the discomfort of having to take that claim seriously. Cable news ran the clip. The hearing entered the canon as the moment the underground hacker community first fully made contact with the institutional United States government on terms the hackers, not the institutions, had set.
+
+Sitting at the L0pht table that day, second from the left, with a leather jacket and a long ponytail, was a man going by the handle Mudge. His real name was Peiter C Zatko. He was twenty-seven years old. He had been a working hacker since his teens, was the lead author of a Windows password-cracking tool called L0phtCrack that had become the de facto auditing standard for corporate security teams, and was about to spend the next two and a half decades operating, with notable consistency, at every uncomfortable seam between underground hacker culture and the legitimate world.
+
+The arc of his career, traced from that 1998 testimony to his August 2022 testimony as a Twitter whistleblower in front of the same chamber, is one of the most useful careers in security to study. Mudge was not the most famous hacker of his generation. He was probably the most strategically placed.
+
+## L0pht and the Loft
+
+L0pht Heavy Industries was, in the late 1990s, the most influential hacker collective on the East Coast and arguably in the world. The group operated out of a loft space (the original meaning of the L0pht name) in the Boston area, where members ran one of the first serious vulnerability research operations outside of academia or government. They published advisories. They built tools and released them under permissive licenses. They ran a BBS and later a website that served as one of the central clearinghouses for security research being done by people who did not have institutional affiliations.
+
+Mudge was one of seven core members. The others (Brian Oblivion, Count Zero, Kingpin, Space Rogue, Stefan von Neumann, Weld Pond, Tan, Silicosis at various times) all went on to significant careers in security, but Mudge was the one who consistently bridged the technical and the public-facing roles. He gave interviews. He wrote talks. He maintained relationships with sympathetic government and corporate contacts who took L0pht's work seriously enough to pay attention.
+
+L0phtCrack, the tool he is most associated with from this period, mattered for a specific reason: it made the security weaknesses of Windows NT password storage trivially demonstrable. Anyone with access to a Windows network and a copy of L0phtCrack could extract password hashes and crack a substantial fraction of them within hours. Microsoft initially treated the tool as a hostile attack on their products. They eventually had to treat it as the wake-up call it was. The architectural changes Microsoft made to Windows password handling in the years following L0phtCrack's release were directly traceable to having to confront, publicly, that their existing system did not survive contact with reality.
+
+## The Senate Testimony
+
+The 1998 Senate hearing has been remembered, accurately, as a watershed moment in how the US government related to the security research community. The seven L0pht members testified under their handles, with the senators visibly aware that this was an unusual accommodation. The questions ranged from technical (what specific vulnerabilities) to political (why are you telling us this) to operational (what should we be doing about it).
+
+Mudge's individual contribution to the testimony was what observers at the time noticed most. He was articulate, technically precise, calmly willing to make claims that would alarm the senators, and willing to back those claims with specifics if pressed. He came across as someone who took the security of the internet seriously as a public interest, not as a hobbyist showing off, not as an adversary trying to embarrass the government.
+
+The line about taking down the internet in thirty minutes (delivered, depending on which version you trust, by Mudge or by Brian Oblivion) became the soundbite. The substance of the testimony was actually about something quieter and more important: the L0pht position was that the entire commercial internet had been built on top of infrastructure that nobody was treating as critical, and that this was going to break in increasingly serious ways unless something changed.
+
+The thing they were warning about did, in fact, break, repeatedly, over the next twenty-five years. Most of the major incidents the security industry now uses to teach what went wrong in the late 1990s and 2000s (Code Red, SQL Slammer, the early routing-table incidents, the early CDN failures) were instances of the failure pattern L0pht had pointed at in 1998.
+
+## After L0pht: Atstake, DARPA, BBN
+
+L0pht the loose collective merged in 2000 with @stake, a security consulting firm that was itself founded by L0pht alumni. @stake was an attempt to commercialize what the L0pht members knew how to do. Mudge was a founding member and a vice president. The firm was acquired by Symantec in 2004.
+
+Mudge spent the second half of the 2000s in less public roles. He worked at BBN Technologies (the original ARPANET contractor), where he reportedly contributed to research that has not been declassified.
+
+In 2010 he joined DARPA as a program manager. His most visible contribution there was launching Cyber Fast Track, a small-grant program designed to fund independent hackers and small security research efforts that would have been priced out of normal DARPA contract structures. The program was structured to give grants in days rather than months, with paperwork burdens scaled to the realities of how independent researchers actually work. It funded a substantial number of useful projects in its three-year run before being reorganized.
+
+The Cyber Fast Track period is the moment in Mudge's career where the bridge between the hacker world he came from and the institutional world he was operating in became most visible. He used DARPA money to fund work that would have been impossible to fund through normal procurement, in a way that explicitly recognized that the people doing the most interesting security work were often not affiliated with traditional contractors.
+
+## Stripe, Google, Twitter
+
+After leaving DARPA in 2013, Mudge moved into corporate security leadership roles. He was head of security engineering at Stripe. He moved to Google's Advanced Technology and Projects group. In 2020 he joined Twitter as head of security, reporting to then-CEO Jack Dorsey.
+
+The Twitter role was, by his own later account, the worst job of his career. He arrived expecting to find a company that was treating security seriously, given the political and reputational stakes Twitter was operating under during the 2020 election cycle and beyond. What he found, again by his own account, was a company whose security posture was substantially worse than its public statements suggested, whose internal access controls were dangerously permissive, whose data hygiene practices around user information were inadequate, and whose senior leadership was unwilling to acknowledge or fix the gaps.
+
+He was fired in January 2022 in a corporate restructuring under newer leadership. He spent the next several months working with attorneys at Whistleblower Aid to file complaints with the SEC, the FTC, and the Department of Justice alleging that Twitter had materially misrepresented its security practices to regulators and to its users.
+
+The complaint became public in August 2022 through reporting in CNN and the Washington Post. Mudge testified before the Senate Judiciary Committee in September 2022. The testimony came in the middle of Elon Musk's then-ongoing attempt to back out of his agreed acquisition of Twitter, and Musk's legal team incorporated significant portions of Mudge's whistleblower disclosures into its case.
+
+The acquisition closed anyway. Twitter became X. Mudge moved on to other work. The longer-term impact of the disclosures is still being litigated and regulated.
+
+## What His Career Means
+
+There are a small number of figures in security whose careers are useful precisely because they trace a coherent line through several institutional environments that most people in the field experience as separate worlds. Mudge is the cleanest example.
+
+He was credible inside the underground because he had built things that mattered there (L0phtCrack, the L0pht advisories, the disclosure norms the loft helped establish). He was credible inside the corporate security world because he had run engineering teams at @stake and Stripe and Google. He was credible inside the federal world because he had run a DARPA program that the agency considered a success. He was credible as a whistleblower because he had spent thirty years building a public reputation for telling the technical truth in environments where doing so was uncomfortable.
+
+The arc from the 1998 Senate testimony to the 2022 Senate testimony reads, on first glance, as ironic. The hacker who told senators the internet was insecure ends up, twenty-four years later, telling senators that one of the largest social platforms in the world was insecure too. But the underlying continuity is the point. He kept doing the same job. The job was: tell the institutions things they did not want to hear, in language they could use to act on, with a track record that made it expensive for them to dismiss him.
+
+That job is harder now than it was in 1998. There are fewer L0pht-equivalent collectives. The path from underground hacker to credible institutional commentator is narrower. The financial incentives for staying inside corporate security and not making waves are larger. The personal costs of whistleblowing are higher.
+
+## Coda
+
+Mudge is still working. He has not given a major public talk since the Twitter testimony. He occasionally posts on the platforms he has not been quietly excluded from. The L0pht reunion happened in 2023, and the surviving members did a roundtable at a major security conference where they revisited the 1998 testimony and what had and had not gotten better in the intervening twenty-five years.
+
+The honest answer was: not enough. The structural vulnerabilities L0pht warned about in 1998 are mostly different vulnerabilities now, but the pattern is recognizable. Critical infrastructure runs on systems that nobody is responsible for hardening. Vendors prioritize product velocity over security debt. Regulators do not understand the systems well enough to write effective rules. Researchers who report serious issues are still treated, often, as hostile rather than as helpful.
+
+The loft is gone. The work is not.
