@@ -7,10 +7,10 @@ export const metadata: Metadata = buildVerticalMetadata("signals");
 
 export default function SignalsPage() {
   const articles = getAllArticles("signals");
-  // One featured slot (the most recent featured article); everything else
-  // including other featured:true items falls into Latest sorted by date.
+  // Featured is a pin-to-top highlight, not a removal from Latest. The
+  // featured piece appears both in the Featured slot and at the top of the
+  // chronological list, so the feed always reflects every published piece.
   const featured = articles.find((a) => a.frontmatter.featured);
-  const rest = articles.filter((a) => a !== featured);
 
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
@@ -75,15 +75,15 @@ export default function SignalsPage() {
           Latest
         </h2>
         <div>
-          {rest.length > 0 ? (
-            rest.map((a) => (
+          {articles.length > 0 ? (
+            articles.map((a) => (
               <ArticleCard key={a.frontmatter.slug} frontmatter={a.frontmatter} />
             ))
-          ) : articles.length === 0 ? (
+          ) : (
             <p className="text-muted font-serif">
               No articles yet. The archive is being assembled.
             </p>
-          ) : null}
+          )}
         </div>
       </section>
     </main>

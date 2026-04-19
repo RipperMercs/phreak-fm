@@ -13,10 +13,8 @@ const pillars = [
 
 export default function StaticPage() {
   const articles = getAllArticles("static");
-  // One featured slot (the most recent featured article); everything else
-  // including other featured:true items falls into Latest sorted by date.
+  // Featured is a pin-to-top highlight, not a removal from Latest.
   const featured = articles.find((a) => a.frontmatter.featured);
-  const rest = articles.filter((a) => a !== featured);
 
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
@@ -49,15 +47,15 @@ export default function StaticPage() {
         <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-6">
           Latest
         </h2>
-        {rest.length > 0 ? (
-          rest.map((a) => (
+        {articles.length > 0 ? (
+          articles.map((a) => (
             <ArticleCard key={a.frontmatter.slug} frontmatter={a.frontmatter} />
           ))
-        ) : articles.length === 0 ? (
+        ) : (
           <p className="text-muted font-serif">
             No articles yet. The signal is being tuned.
           </p>
-        ) : null}
+        )}
       </section>
 
       <section className="pt-8 border-t border-border">
