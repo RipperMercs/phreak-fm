@@ -1,0 +1,81 @@
+---
+title: "MafiaBoy: The Week in February 2000 a Fifteen-Year-Old Took Down the Internet"
+slug: mafiaboy-february-2000
+vertical: signals
+author: ripper
+publishedAt: "2026-04-15T11:00:00Z"
+excerpt: "Over four days in February 2000, a fifteen-year-old in suburban Montreal knocked Yahoo, Amazon, eBay, CNN, Buy.com, Dell, and E*Trade off the internet using a botnet of hijacked university workstations. The week DDoS stopped being a theory and became a permanent feature of the public web."
+tags:
+  - mafiaboy
+  - michael-calce
+  - ddos
+  - 2000
+  - botnet
+  - internet-history
+pillar: phreaker-elders-and-hacker-culture
+readingTimeMinutes: 8
+---
+
+# MafiaBoy: The Week in February 2000 a Fifteen-Year-Old Took Down the Internet
+
+For roughly twenty-four hours starting on Monday February 7, 2000, Yahoo did not work. At the time Yahoo was, by a meaningful margin, the front door of the consumer internet. Most people who used the web at all started their session at Yahoo's homepage. They typed yahoo.com into their browser, the page loaded a directory of links and a search box, and they went somewhere from there. When Yahoo did not load, the modal experience for hundreds of millions of users was that the internet itself appeared to be broken.
+
+Yahoo's outage was the first hint of what was happening that week. It was not the last. Over the following four days, eBay went dark. Amazon went dark. CNN's website went dark. Buy.com went dark on the day of its initial public offering. Dell, ZDNet, and E*Trade all followed. The total estimated damage at the time was put at $1.7 billion in lost revenue, productivity, and emergency mitigation. The press coverage was wall-to-wall. President Clinton convened an emergency cybersecurity summit. The FBI launched a major investigation.
+
+The person responsible was a fifteen-year-old kid in a suburb of Montreal named Michael Calce, who used the IRC handle MafiaBoy.
+
+## Who He Was
+
+Calce was a Quebec-raised teenager with separated parents, an interest in computers that his middle school had not been able to keep up with, and a small reputation in the IRC channels where the warez scene and the early DDoS hobbyist culture overlapped. He had been online seriously since age nine. By thirteen he had been involved in script kiddie attacks on smaller targets. By fifteen he had access to a network of compromised university servers across North America that he had assembled mostly by exploiting weak default passwords and unpatched vulnerabilities in academic Unix systems.
+
+He was not, by the technical standards of the security community at the time, an exceptional hacker. He was not finding novel exploits. He was not writing custom malware. The university machines he controlled were boring boxes that nobody was paying attention to. The DDoS tools he used (Stacheldraht, German for "barbed wire", and a few similar packages of the era) were available for download from a half-dozen public archives. What Calce had was patience, time, and a teenager's willingness to point his weapon at the largest possible target just to see what would happen.
+
+## What He Did
+
+The technical mechanism was straightforward. Calce had compromised somewhere in the neighborhood of fifty university machines, mostly running unpatched Sun Solaris and Linux distributions. He had installed Stacheldraht client agents on each one. From a single command host, he could direct all fifty machines to send junk traffic to a single target IP simultaneously. With residential bandwidth at the time (the entire commercial internet ran on slower pipes than a 2026 home Wi-Fi connection), fifty university workstations pumping garbage at a single web server could overwhelm even the heaviest commercial infrastructure.
+
+He started with Yahoo on Monday morning. The attack worked better than he had expected. Yahoo's network engineers, who were among the most experienced in the industry, could not block the traffic in time. Yahoo's homepage was unavailable for several hours.
+
+Encouraged, he continued. Tuesday February 8 brought attacks on Buy.com (which, in a particular kind of bad timing, was holding its IPO that day), eBay, Amazon, and CNN. Wednesday brought Dell, ZDNet, and E*Trade. The pattern was consistent: target a major commercial site, run the attack until something else got more interesting to do, move on.
+
+Throughout the week, Calce was logging into IRC channels and bragging. This is the part of the story that, in retrospect, was always going to end badly for him. He was talking about the attacks before they happened. He was naming targets. He was claiming credit afterward. He was a fifteen-year-old who had just realized he had real power and could not resist showing other people that he had it.
+
+## The Investigation
+
+The FBI got involved within hours. The Royal Canadian Mounted Police got involved shortly after, since the IRC traffic patterns and infrastructure analysis pointed to a Canadian source. Both agencies were monitoring the IRC channels by Tuesday. By Wednesday, they had a strong suspicion that the bragging participant going by MafiaBoy was the right target.
+
+The break in the case came when Calce, in the middle of one of his post-attack victory laps, mentioned an attack that had not yet been publicly reported. Specifically, he claimed credit for the attack on a smaller Canadian site that the FBI had been told about by the victim but had not released to the press. The FBI knew who knew about that attack, and the list was short. Calce was on it.
+
+The arrest came on April 15, 2000, about two months after the attacks. Calce was fifteen years old. The RCMP raided his father's house in Île Bizard, a suburb west of Montreal. They seized his computer. They charged him with sixty-six counts under the Canadian Criminal Code, including unauthorized use of a computer and mischief related to data.
+
+He pleaded guilty in January 2001. Because he was a minor, his name was initially withheld from public reporting (the press knew the handle MafiaBoy but not the legal identity). He was sentenced in September 2001 to eight months in a youth detention center, one year of probation, restricted internet use, and a small fine. The sentence was widely considered light, although some commentators argued that for a fifteen-year-old who had not stolen money, had not extorted anyone, and had committed his crimes in a regulatory environment that did not really know what to do with computer offenses by minors, the sentence was about right.
+
+## The Industry Response
+
+What MafiaBoy did to the conversation about internet security in 2000 cannot be overstated.
+
+Before February 2000, distributed denial of service was something the security research community talked about and warned about, but that the general business public had never directly experienced. The dot-com economy was, at that point, in its peak phase. The dominant story being told about the consumer internet was about value creation, frictionless commerce, and infinite scaling. The idea that a teenager could turn off the most-trafficked websites on the internet for hours at a time was outside the frame of how mainstream business journalists were thinking about the web.
+
+After February 2000, that idea was inside the frame. Permanently.
+
+The immediate practical response was a wave of investment in DDoS mitigation. Companies like Arbor Networks, Prolexic, and later Akamai built businesses around scrubbing junk traffic before it hit customer infrastructure. CDN providers added DDoS protection as a standard offering. Network engineering teams at every major commercial site built playbooks for what to do when traffic spiked anomalously. The industry that grew up around defending against DDoS attacks is now an enormous one, with annual revenue in the billions of dollars. It exists in significant part because of one teenager in Quebec.
+
+The legislative response was equally significant. The Computer Fraud and Abuse Act in the US and analogous statutes in other jurisdictions were updated through the early 2000s in ways that were directly traceable to the policy environment after MafiaBoy. The PROTECT Act, parts of the USA PATRIOT Act, and various international treaties picked up provisions that had been sitting in committee for years and that suddenly had political momentum.
+
+## What He Did Next
+
+Calce served his time. He completed his probation. He spent the years immediately after his sentence trying to escape his teenage celebrity, with mixed success. By his early twenties he was working in security consulting under his real name, openly drawing on his MafiaBoy experience as a credential.
+
+In 2008 he co-wrote a memoir titled MafiaBoy: How I Cracked the Internet and Why It's Still Broken. The book is a clear-eyed account of what he did, what he was thinking at the time, and what he later learned about how poorly the consumer internet was secured during its growth phase. He has been an articulate public commentator on cybersecurity since.
+
+He runs a security consulting business in Montreal. He gives talks at conferences. He is, by every available indicator, a thoughtful adult who happens to have a strange thing in his teenage past.
+
+## Coda
+
+The MafiaBoy attacks are sometimes told as a cautionary tale about how easy it was to break the internet in 2000. That framing is technically accurate but ethically lopsided. The reason the attacks worked was that the entire commercial internet, in 2000, was built on top of infrastructure that nobody had seriously thought about defending. The universities whose machines Calce hijacked had not patched their servers. The commercial sites whose pipes Calce flooded had no traffic-scrubbing in front of them. The legal framework around computer crime was so unsettled that prosecutors were still figuring out what statutes to charge under.
+
+Calce did not invent any of those vulnerabilities. He demonstrated them. He demonstrated them at the most embarrassing possible scale. The infrastructure response that followed, the legal framework that followed, the entire DDoS mitigation industry that followed, was the system catching up to the demonstration.
+
+He was fifteen. He was bragging on IRC. He had no idea he was about to be the inflection point at which the consumer internet stopped being naive about its own attack surface.
+
+That happens sometimes. Inflection points often look, in retrospect, like they should have been obvious. They are usually obvious only because someone fifteen years old pointed at them.

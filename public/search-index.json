@@ -164,6 +164,24 @@
     "kind": "article"
   },
   {
+    "title": "The Cypherpunks Mailing List: How Privacy Tech Was Born in a Bay Area Living Room",
+    "excerpt": "In September 1992, three people met at a house in Oakland to talk about cryptography and decided to start a mailing list. Over the next nine years, that list became the workshop where Bitcoin, Tor, Signal, BitTorrent, and most of what we now call privacy tech was workshopped, argued out, and shipped.",
+    "slug": "cypherpunks-mailing-list",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "cypherpunks",
+      "cryptography",
+      "privacy",
+      "tim-may",
+      "eric-hughes",
+      "john-gilmore",
+      "mailing-list-history"
+    ],
+    "url": "/signals/cypherpunks-mailing-list",
+    "kind": "article"
+  },
+  {
     "title": "Dan Kaminsky: The Bug, the Patch, and the Mensch",
     "excerpt": "In early 2008, a researcher in Seattle realized he had found a way to corrupt the DNS resolver caches that route most traffic on the public internet. What he did next, before disclosing the bug, became a model for how serious vulnerabilities should be coordinated. Then he died, suddenly, at 42. This is what he built and what he meant.",
     "slug": "dan-kaminsky-dns-bug",
@@ -435,6 +453,40 @@
     "kind": "article"
   },
   {
+    "title": "MafiaBoy: The Week in February 2000 a Fifteen-Year-Old Took Down the Internet",
+    "excerpt": "Over four days in February 2000, a fifteen-year-old in suburban Montreal knocked Yahoo, Amazon, eBay, CNN, Buy.com, Dell, and E*Trade off the internet using a botnet of hijacked university workstations. The week DDoS stopped being a theory and became a permanent feature of the public web.",
+    "slug": "mafiaboy-february-2000",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "mafiaboy",
+      "michael-calce",
+      "ddos",
+      2000,
+      "botnet",
+      "internet-history"
+    ],
+    "url": "/signals/mafiaboy-february-2000",
+    "kind": "article"
+  },
+  {
+    "title": "Marcus Hutchins, the Kill Switch, and the Long Strange Year After",
+    "excerpt": "On May 12, 2017, a 23-year-old security researcher in Devon registered an obscure domain he had found inside a piece of ransomware spreading globally. The registration acted as a kill switch and ended the WannaCry outbreak before it took down the National Health Service entirely. Three months later, FBI agents arrested him in a Las Vegas hotel room. The story of what happened in between is the story of how strange the modern security industry actually is.",
+    "slug": "marcus-hutchins-wannacry-killswitch",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "marcus-hutchins",
+      "malwaretech",
+      "wannacry",
+      "ransomware",
+      "kronos",
+      2017
+    ],
+    "url": "/signals/marcus-hutchins-wannacry-killswitch",
+    "kind": "article"
+  },
+  {
     "title": "Mark Abene: The Kid Who Understood the Network Better Than the Feds",
     "excerpt": "At 18, Mark Abene (Phiber Optik) of the Masters of Deception understood AT&T's telephone network at an engineering level most professionals never reached. His arrest showed how unprepared the justice system was for teenage technical genius.",
     "slug": "mark-abene-phiber-optik",
@@ -500,6 +552,23 @@
     "kind": "article"
   },
   {
+    "title": "Mudge: From the L0pht Loft to the Twitter Whistleblower Stand",
+    "excerpt": "Peiter Mudge Zatko sat at the L0pht Heavy Industries table when seven hackers told the US Senate in 1998 that they could take down the internet in thirty minutes. Twenty-four years later he sat in front of Congress again, this time as the Twitter whistleblower describing security failures that helped reshape the largest social platform's legal exposure. The arc between those two appearances is one of the most useful careers to study in modern security.",
+    "slug": "mudge-zatko-l0pht-to-twitter",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "mudge",
+      "peiter-zatko",
+      "l0pht",
+      "whistleblower",
+      "twitter",
+      "security-history"
+    ],
+    "url": "/signals/mudge-zatko-l0pht-to-twitter",
+    "kind": "article"
+  },
+  {
     "title": "Operation Sundevil: The Secret Service Declares War on Hackers",
     "excerpt": "May 1990. Secret Service raids across 14 American cities. 42 computers seized. 23,000 floppy disks confiscated. The government made it clear: the hacker underground was now a national security threat. But the raids created something larger than themselves. The EFF was founded in response. And hackers started organizing legally.",
     "slug": "operation-sundevil",
@@ -561,6 +630,23 @@
       "military"
     ],
     "url": "/signals/solar-sunrise",
+    "kind": "article"
+  },
+  {
+    "title": "Stuxnet: The Malware That Sabotaged a Nuclear Program",
+    "excerpt": "In June 2010, a small Belarusian antivirus firm received a malware sample they could not immediately classify. Six months of analysis later, the security industry understood that it had found the first piece of malware specifically built to cause physical destruction in the real world. The target was a nuclear enrichment facility. The operators were two of the most capable intelligence services on the planet. The era of cyber-physical warfare started here.",
+    "slug": "stuxnet-olympic-games",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "stuxnet",
+      "olympic-games",
+      "nation-state",
+      "industrial-control-systems",
+      "cyber-warfare",
+      2010
+    ],
+    "url": "/signals/stuxnet-olympic-games",
     "kind": "article"
   },
   {
