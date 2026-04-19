@@ -33,3 +33,41 @@ export function getAllLabels(): LabelData[] {
 export function getFeaturedLabels(): LabelData[] {
   return labels.filter((l) => l.featured);
 }
+
+// Label of the Month rotation. The page picks one entry per calendar month
+// based on monthsSinceEpoch. Reorder to control which label leads when, add
+// new slugs to the end as the catalog grows. Don't include Hunya Munya here:
+// it sits in the permanent featured slot and would otherwise double up.
+export const labelMonthlyRotation: string[] = [
+  "good-looking-records",
+  "warp",
+  "hyperdub",
+  "ninja-tune",
+  "modern-love",
+  "ghost-box",
+  "kranky",
+  "pan",
+  "editions-mego",
+  "erased-tapes",
+  "touch",
+  "room40",
+  "12k",
+  "shelter-press",
+  "bedrock",
+  "global-underground",
+  "renaissance",
+  "perfecto",
+];
+
+const ROTATION_EPOCH_YEAR = 2026;
+const ROTATION_EPOCH_MONTH = 3; // April, 0-indexed
+
+export function getLabelOfTheMonth(now: Date = new Date()): LabelData | undefined {
+  const monthsSinceEpoch =
+    (now.getFullYear() - ROTATION_EPOCH_YEAR) * 12 +
+    (now.getMonth() - ROTATION_EPOCH_MONTH);
+  const len = labelMonthlyRotation.length;
+  if (len === 0) return undefined;
+  const idx = ((monthsSinceEpoch % len) + len) % len;
+  return getLabel(labelMonthlyRotation[idx]);
+}
