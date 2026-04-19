@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run check:emdash && node scripts/fetch-feeds.js && next build",
+    "build": "npm run check:emdash && node scripts/fetch-feeds.js && node scripts/generate-og-images.js && node scripts/generate-rss.js && next build",
+    "build:og": "node scripts/generate-og-images.js",
+    "build:rss": "node scripts/generate-rss.js",
     "start": "next start",
     "lint": "next lint",
     "check:emdash": "node scripts/check-emdash.js",

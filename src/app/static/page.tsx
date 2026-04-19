@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getAllArticles } from "@/lib/mdx";
-import { buildVerticalMetadata } from "@/lib/seo";
+import { buildVerticalMetadata, buildVerticalJsonLd } from "@/lib/seo";
 import { ArticleCard } from "@/components/ArticleCard";
 
 export const metadata: Metadata = buildVerticalMetadata("static");
@@ -15,8 +15,17 @@ export default function StaticPage() {
   const articles = getAllArticles("static");
   // Featured is a pin-to-top highlight, not a removal from Latest.
   const featured = articles.find((a) => a.frontmatter.featured);
+  const jsonLdSchemas = buildVerticalJsonLd("static");
 
   return (
+    <>
+      {jsonLdSchemas.map((schema: Record<string, unknown>, i: number) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
       <header className="mb-12">
         <h1 className="font-mono text-3xl sm:text-4xl text-static-v mb-3">
@@ -77,5 +86,6 @@ export default function StaticPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
