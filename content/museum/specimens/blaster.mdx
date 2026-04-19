@@ -1,0 +1,60 @@
+---
+name: Blaster
+slug: blaster
+aliases:
+  - MSBlast
+  - Lovesan
+discovered: "2003-08"
+discoveredLocation: "unknown"
+firstReportedBy: "eEye Digital Security"
+author: "Jeffrey Lee Parson (variant author, 18 years old)"
+family: "Blaster"
+familySlug: "blaster"
+variants:
+  - "Blaster.B"
+  - "Blaster.C"
+size: 16384
+platform: "Windows XP/2000"
+infectionVector: "RPC DCOM buffer overflow, no user interaction needed"
+payloadType:
+  - "destructive"
+  - "prank"
+trigger: "automatic on infection + date-based DDoS"
+payloadDescription: "Spread automatically across the internet exploiting unpatched Windows machines. Contained the message 'billy gates why do you make this possible? Stop making money and fix your software!' Forced system reboots and launched DDoS against windowsupdate.com."
+famousRating: 5
+aestheticRating: 2
+heroMedia: "/museum/blaster/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Blaster RPC worm system reboot warning and attack message"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Blaster"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Mikko Hypponen, Internet Archive Malware Museum"
+relatedArticles: []
+tags:
+  - worm
+  - windows-xp
+  - "2003"
+  - buffer-overflow
+  - microsoft
+lastUpdated: "2026-04-14"
+---
+
+## The Message in the Worm
+
+Blaster was a worm that wanted you to know why it existed. Unlike Code Red's geopolitical misdirection or Happy99's festive disguise, Blaster arrived in August 2003 with a message burned into its code, and that message was directed specifically at Bill Gates.
+
+"Why do you make this possible? Stop making money and fix your software!"
+
+The accusation was pointed: Microsoft shipped buggy software, security vulnerabilities sat unpatched for months, and the company prioritized profit over the actual safety of millions of users' machines. Blaster's author (or authors, the authorship is partially collaborative) decided that the proper response was to weaponize that negligence, to turn the vulnerability into a worm, and to propagate it globally at maximum speed.
+
+The vector was a buffer overflow in the RPC (Remote Procedure Call) DCOM interface on Windows XP and Windows 2000 machines. Microsoft had issued a patch months earlier, but millions of machines remained unpatched. The worm didn't need you to click anything. It didn't need an email attachment or a suspicious website. It simply found unpatched machines on the network and sent a specially crafted RPC request. The buffer overflow allowed arbitrary code execution. The worm installed itself. The infection spread.
+
+The propagation was aggressive and automatic. Like Code Red, Blaster scanned random IP addresses, but it did so more carefully, using optimized scanning logic that concentrated efforts on Class A and Class B subnets where Windows machines were more densely packed. The worm would infect thousands of machines per hour, often without the user ever knowing anything had happened. No alert message. No system slowdown. Just quiet compromise.
+
+Then the payload would trigger. On August 16, 2003 (and then repeatedly on the 16th of each following month), infected machines would receive a shutdown command. A system message would appear on the screen: "System Shutdown" and a countdown timer, giving the user 60 seconds to save their work before the machine forcibly rebooted. This was psychological warfare. Users on office networks would see the shutdown notice and have to manually stop the process or let their machines restart.
+
+Meanwhile, the infected machines would launch DDoS attacks against windowsupdate.com, Microsoft's own update server. The irony was exquisite: a worm that spread because Microsoft didn't patch fast enough, attacking Microsoft's patch distribution server, causing millions of users' machines to try and fail to fetch security updates. The system was feeding on itself.
+
+The code contained an angry message directed at Gates personally: "Why do you make this possible? Stop making money and fix your software!" This was a worm with political assertion embedded. By modern standards, Blaster's payload is mild, but in 2003 it affected millions of machines. Corporate networks crashed. Hospitals delayed surgeries. The economic damage was estimated in hundreds of millions of dollars. What made Blaster significant was the collapse of distance between vulnerability and exploitation. Microsoft issued the patch, days later Blaster was in the wild. That message remains the most authentic voice in the specimen.

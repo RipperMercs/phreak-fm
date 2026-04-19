@@ -1,0 +1,62 @@
+---
+name: Sobig.F
+slug: sobig
+aliases:
+  - Sobig
+  - Sobig.F
+discovered: "2003-08"
+discoveredLocation: "unknown"
+firstReportedBy: "Kaspersky Lab"
+author: "unknown"
+family: "Sobig"
+familySlug: "sobig"
+variants:
+  - "Sobig.A"
+  - "Sobig.B"
+  - "Sobig.C"
+  - "Sobig.D"
+  - "Sobig.E"
+size: 76288
+platform: "Windows"
+infectionVector: "Email attachment and network shares"
+payloadType:
+  - "destructive"
+trigger: "automatic mass-mailing"
+payloadDescription: "Generated more email traffic than any virus before it. At its peak, 1 in every 17 emails globally was Sobig.F. Contained a backdoor that downloaded unknown payloads from predetermined servers. The author was never identified."
+famousRating: 4
+aestheticRating: 1
+heroMedia: "/museum/sobig/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Sobig.F email worm mass mailing campaign visualization"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Sobig"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Mikko Hypponen, Internet Archive Malware Museum"
+relatedArticles: []
+tags:
+  - email-worm
+  - "2003"
+  - mass-mailer
+  - backdoor
+  - unknown-author
+lastUpdated: "2026-04-14"
+---
+
+## The Ghost in the Mailbox
+
+Sobig.F was a worm that transformed email itself into a weapon at scale never before seen. At its peak infection rate in September 2003, Sobig.F was responsible for roughly 1 out of every 17 emails circulating on the global internet. One in seventeen. Think about the volume that represents. Billions of emails per day, and one billion of them were Sobig copies.
+
+The virus existed in multiple variants (A through E, with F being the most widespread), each adding refinements to the mass-mailing mechanism. Like Happy99 from 1999, Sobig infected the Windows email stack, but where Happy99 rode along with legitimate email, Sobig became the primary generator of mail traffic. Infected machines would scan the victim's email address books, browse history, and shared network folders looking for valid email addresses. Then the worm would generate messages using plausible subject lines: "RE: Your Document," "Thank You," "Details," messages that sounded like legitimate replies or forwards.
+
+The messages contained the worm as an attachment, usually disguised as a document or invoice. The email would appear to come from someone the recipient knew (spoofed from the address books found on the infected machine). This was not crude mass-mailing. This was targeted, personal, origin-mimicking. The infection vector was trust and familiarity.
+
+The payload mechanism was sophisticated. Sobig didn't just copy itself through email. It installed a backdoor component that connected to predetermined command-and-control servers on the internet. Those servers were hardcoded into the worm binary. Once connected, the compromised machine would await instructions. Download and execute this file. Send email to this address list. Modify system settings. Install additional malware payloads.
+
+But the servers never gave commands. The backdoor was built into Sobig but essentially unused. The truth remains unknown. Sobig.F was never definitively attributed to any individual or group. Speculation suggests possible Russian, Ukrainian, or Eastern European origins, but these are educated guesses.
+
+By September 2003, Sobig.F had saturated email networks. ISPs implemented filtering specifically targeting Sobig traffic. Email systems were overwhelmed. The worm degraded the entire communication medium to near uselessness.
+
+On September 18, 2003, major security vendors coordinated to take down the command-and-control servers associated with Sobig. It was one of the first organized efforts at worm containment through infrastructure destruction. After the server takedown, Sobig.F infections declined rapidly. The worm became a zombie, mindlessly replicating without purpose.
+
+Sobig.F also represents a shift in the email security landscape. After Sobig, ISPs implemented sender verification (SPF, DKIM, DMARC) and email filtering became more sophisticated. Sobig was so destructive that it forced the infrastructure to evolve. For three months in 2003, a single piece of malware saturated the global email network and remained completely anonymous. Maximum damage. No clear motive. No identified perpetrator. Just a ghost in the mailbox.

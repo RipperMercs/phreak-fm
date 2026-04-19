@@ -1,0 +1,60 @@
+---
+name: Code Red
+slug: code-red
+aliases:
+  - "Hacked By Chinese"
+  - Code-Red.c
+discovered: "2001-07"
+discoveredLocation: "unknown"
+firstReportedBy: "eEye Digital Security"
+author: "unknown"
+family: "Code Red"
+familySlug: "code-red"
+variants:
+  - "Code Red II"
+size: 4099
+platform: "Windows IIS"
+infectionVector: "Buffer overflow in IIS web server"
+payloadType:
+  - "destructive"
+  - "prank"
+trigger: "date-based phases"
+payloadDescription: "Defaced websites with 'Hacked By Chinese!' message, then launched DDoS attacks against whitehouse.gov. Infected 359,000 servers in 14 hours. Operated in three phases: spread, attack, sleep."
+famousRating: 5
+aestheticRating: 1
+heroMedia: "/museum/code-red/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Code Red defaced website with 'Hacked By Chinese!' message"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Code Red"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Mikko Hypponen, Internet Archive Malware Museum"
+relatedArticles: []
+tags:
+  - worm
+  - iis
+  - "2001"
+  - ddos
+  - web-server
+  - defacement
+lastUpdated: "2026-04-14"
+---
+
+## The Worm That Broke the Internet
+
+Code Red arrived in July 2001 with the speed of a jet aircraft and the indiscriminate payload of a cruise missile. It was the first worm to achieve true hyperscale infection in the age of always-on internet connectivity. Within 14 hours, it had infected 359,000 web servers running Microsoft Internet Information Server (IIS), representing nearly half of all publicly accessible IIS installations on the planet.
+
+The vector was a buffer overflow in the IIS remote code execution vulnerability (CVE-2001-0731), a flaw in how IIS handled excessively long requests in the WebDAV protocol extension. No user interaction required. No email attachment to click. The worm simply scanned IP addresses, sent a specially crafted HTTP request, and if the target ran a vulnerable version of IIS, the server would execute arbitrary code. Code Red's code. The worm was automated, algorithmic, relentless.
+
+What made Code Red historically distinct was its operational architecture. The worm operated in three distinct phases, phase-locked to the calendar. Phase one (days 1-19 of each month) was pure replication. The worm scanned random IP addresses on the Class B subnet of infected servers, attempting to infect anything it found. It did this at maximum speed, propagating itself across the internet's backbone with such aggression that it actually congested network traffic. The internet itself became a victim of its own parasitism.
+
+Phase two (day 20 onward) was the payload phase. Infected servers would deface their own websites, replacing the legitimate content with a message: "HACKED BY CHINESE!" in bright red text on white background, crude and direct. The defacement was the worm's calling card, proof of concept, a message to anyone browsing the web that the internet's infrastructure had been compromised.
+
+Then the servers would begin launching a distributed denial-of-service attack against whitehouse.gov, sending hundreds of thousands of HTTP requests per second at the website's servers, attempting to overwhelm them into silence. This was cyberwarfare of a kind: an attack on American government infrastructure, automated and distributed across thousands of compromised servers.
+
+The message "HACKED BY CHINESE" was almost certainly misattribution. The worm contained no identifying information about its origin. It was likely authored by individuals from multiple countries, or by a single author attempting to misdirect attribution. The timing (mid-2001, post-9/11) meant that the defacement landed with extra political weight, interpreted by some as a national security incident, by others as a coordinated attack.
+
+Code Red was almost certainly authored by a researcher testing the mechanics of worm construction, not by any state actor. Phase three was dormancy, the worm waiting for the calendar to cycle to day 20 again.
+
+Corporate networks, government agencies, and ISPs scrambled to patch vulnerable servers. The worm became the first major test of the internet's resilience to automated attacks at scale. By modern standards, the payload is almost quaint: a defacement and a DDoS. But in 2001, it was the first evidence that the infrastructure of the internet could be compromised wholesale, that worms could move faster than humans could respond. Code Red marked the end of the era of curiosity-driven malware. After this, worms would be taken seriously as weapons and infrastructure threats.
