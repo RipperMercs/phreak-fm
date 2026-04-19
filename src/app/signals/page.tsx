@@ -49,12 +49,12 @@ export default function SignalsPage() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {[
-            { slug: "famous-breaches", title: "Famous Breaches" },
-            { slug: "ransomware-era", title: "Ransomware Era" },
-            { slug: "nation-state-operations", title: "Nation State Operations" },
             { slug: "phreaker-elders-and-hacker-culture", title: "Phreaker Elders & Hacker Culture" },
+            { slug: "famous-breaches", title: "Famous Breaches" },
+            { slug: "nation-state-operations", title: "Nation State Operations" },
             { slug: "zero-days-and-exploit-chains", title: "Zero Days & Exploit Chains" },
-            { slug: "insider-threats", title: "Insider Threats" },
+            { slug: "viruses-and-worms", title: "Viruses & Worms" },
+            { slug: "crypto-wars", title: "Crypto Wars" },
           ].map((topic) => (
             <a
               key={topic.slug}
