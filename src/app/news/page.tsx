@@ -1,11 +1,13 @@
 import { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "News Wire",
-  description: "Aggregated security, music, and tech news from 38 trusted sources.",
+  description: "Aggregated security, music, and tech news from trusted sources, refreshed on every build.",
 };
 
-const feedSources = {
+const sourceDirectory = {
   signals: [
     { name: "Krebs on Security", url: "https://krebsonsecurity.com" },
     { name: "BleepingComputer", url: "https://www.bleepingcomputer.com" },
@@ -42,102 +44,216 @@ const feedSources = {
   ],
 };
 
+interface FeedEntry {
+  title: string;
+  link: string;
+  published: string;
+}
+
+interface FeedCache {
+  built: string;
+  feeds: Record<string, FeedEntry[]>;
+}
+
+interface WireItem extends FeedEntry {
+  section: string;
+}
+
+const sectionMeta: Record<string, { abbr: string; color: string; label: string }> = {
+  security: { abbr: "SIG", color: "text-signals", label: "Security" },
+  tech: { abbr: "STA", color: "text-static-v", label: "Tech" },
+  dev: { abbr: "DEV", color: "text-accent", label: "Dev" },
+};
+
+function loadFeedCache(): FeedCache {
+  try {
+    const cachePath = path.join(process.cwd(), "public", "feed-cache.json");
+    return JSON.parse(fs.readFileSync(cachePath, "utf8")) as FeedCache;
+  } catch {
+    return { built: "", feeds: {} };
+  }
+}
+
+function extractDomain(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function formatPubDate(input: string): string {
+  if (!input) return "";
+  const d = new Date(input);
+  if (isNaN(d.getTime())) return "";
+  return `${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}.${String(d.getFullYear()).slice(2)}`;
+}
+
+function formatBuildTimestamp(iso: string): string {
+  if (!iso) return "unknown";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso;
+  return d.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "UTC",
+    timeZoneName: "short",
+  });
+}
+
 export default function NewsPage() {
+  const cache = loadFeedCache();
+  const items: WireItem[] = [];
+  for (const [section, entries] of Object.entries(cache.feeds)) {
+    for (const entry of entries) {
+      items.push({ ...entry, section });
+    }
+  }
+  items.sort(
+    (a, b) => new Date(b.published).getTime() - new Date(a.published).getTime(),
+  );
+
+  const totalSources = Object.values(sourceDirectory).reduce(
+    (n, list) => n + list.length,
+    0,
+  );
+
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-8">
       {/* Header */}
       <header className="mb-8 border-b border-border pb-6">
         <p className="text-xs text-text-muted tracking-widest uppercase mb-2">
-          {'>'} ./wire --status
+          {">"} ./wire --tail
         </p>
         <h1 className="text-2xl text-text-bright mb-2">News Wire</h1>
         <p className="text-sm text-text-muted">
-          Aggregated from {38} sources across security, tech, and music.
-          Updates every 30 minutes once the feed aggregator is deployed.
+          Aggregated chronologically from {totalSources} sources across security, tech, and music. Refreshed on every site build.
         </p>
-        <div className="mt-3 flex gap-3 text-xs">
-          <span className="text-signals border border-signals/30 px-2 py-0.5">SIG: {feedSources.signals.length} sources</span>
-          <span className="text-static-v border border-static-v/30 px-2 py-0.5">STA: {feedSources.static.length} sources</span>
-          <span className="text-frequencies border border-frequencies/30 px-2 py-0.5">MUS: {feedSources.frequencies.length} sources</span>
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+          <span className="text-text-muted">
+            {">"} last refresh:{" "}
+            <span className="text-text">{formatBuildTimestamp(cache.built)}</span>
+          </span>
+          <span className="text-text-muted">{"|"}</span>
+          <span className="text-text-muted">
+            {">"} items: <span className="text-text">{items.length}</span>
+          </span>
         </div>
       </header>
 
-      {/* Wire status */}
-      <div className="border border-border bg-bg-surface p-4 mb-8">
-        <p className="text-xs text-text-muted mb-2">{'>'} wire.status()</p>
-        <p className="text-xs text-static-v">
-          STANDBY: Feed aggregator not yet deployed. Wire will activate
-          when the Cloudflare Worker cron job is running.
+      {/* Wire */}
+      <section className="mb-12">
+        <p className="text-xs text-text-muted tracking-widest uppercase mb-4">
+          {">"} tail -f /var/log/wire
         </p>
-        <p className="text-xs text-text-muted mt-2">
-          When active, this page will display a live chronological feed
-          of headlines from all sources, filterable by section.
-        </p>
-      </div>
+        {items.length > 0 ? (
+          <div className="space-y-0">
+            {items.map((item, i) => {
+              const meta = sectionMeta[item.section] || sectionMeta.dev;
+              const domain = extractDomain(item.link);
+              return (
+                <a
+                  key={`${item.link}-${i}`}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block py-2.5 border-b border-border/50 last:border-b-0 hover:bg-bg-surface/50 transition-colors -mx-2 px-2"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-xs text-text-muted w-6 shrink-0 text-right">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className={`text-xs ${meta.color} shrink-0 w-7`}>
+                      {meta.abbr}
+                    </span>
+                    <span className="text-xs text-text-muted shrink-0 w-16">
+                      {formatPubDate(item.published)}
+                    </span>
+                    <span className="text-sm text-text group-hover:text-accent transition-colors flex-1 leading-snug">
+                      {item.title}
+                    </span>
+                    {domain && (
+                      <span className="text-xs text-text-muted shrink-0 hidden md:inline">
+                        {domain}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="text-xs text-text-muted">
+            {">"} feed cache is empty. The next build will refresh.
+          </p>
+        )}
+      </section>
 
       {/* Source directory */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Security sources */}
-        <div>
-          <h2 className="text-xs text-signals tracking-widest uppercase mb-4 border-b border-signals/20 pb-2">
-            [SIG] Security Sources
-          </h2>
-          <div className="space-y-2">
-            {feedSources.signals.map((source) => (
-              <a
-                key={source.name}
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-xs text-text-muted hover:text-signals transition-colors py-1"
-              >
-                {'>'} {source.name}
-              </a>
-            ))}
+      <section className="border-t border-border pt-8">
+        <p className="text-xs text-text-muted tracking-widest uppercase mb-4">
+          {">"} cat /etc/wire/sources
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h2 className="text-xs text-signals tracking-widest uppercase mb-4 border-b border-signals/20 pb-2">
+              [SIG] Security Sources
+            </h2>
+            <div className="space-y-2">
+              {sourceDirectory.signals.map((source) => (
+                <a
+                  key={source.name}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-xs text-text-muted hover:text-signals transition-colors py-1"
+                >
+                  {">"} {source.name}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-xs text-static-v tracking-widest uppercase mb-4 border-b border-static-v/20 pb-2">
+              [STA] Tech Sources
+            </h2>
+            <div className="space-y-2">
+              {sourceDirectory.static.map((source) => (
+                <a
+                  key={source.name}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-xs text-text-muted hover:text-static-v transition-colors py-1"
+                >
+                  {">"} {source.name}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-xs text-frequencies tracking-widest uppercase mb-4 border-b border-frequencies/20 pb-2">
+              [MUS] Music Sources
+            </h2>
+            <div className="space-y-2">
+              {sourceDirectory.frequencies.map((source) => (
+                <a
+                  key={source.name}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-xs text-text-muted hover:text-frequencies transition-colors py-1"
+                >
+                  {">"} {source.name}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Tech sources */}
-        <div>
-          <h2 className="text-xs text-static-v tracking-widest uppercase mb-4 border-b border-static-v/20 pb-2">
-            [STA] Tech Sources
-          </h2>
-          <div className="space-y-2">
-            {feedSources.static.map((source) => (
-              <a
-                key={source.name}
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-xs text-text-muted hover:text-static-v transition-colors py-1"
-              >
-                {'>'} {source.name}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Music sources */}
-        <div>
-          <h2 className="text-xs text-frequencies tracking-widest uppercase mb-4 border-b border-frequencies/20 pb-2">
-            [MUS] Music Sources
-          </h2>
-          <div className="space-y-2">
-            {feedSources.frequencies.map((source) => (
-              <a
-                key={source.name}
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-xs text-text-muted hover:text-frequencies transition-colors py-1"
-              >
-                {'>'} {source.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
+      </section>
     </main>
   );
 }
