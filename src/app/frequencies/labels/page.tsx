@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getAllLabels, getFeaturedLabels, getLabelOfTheMonth } from "@/config/labels";
+import { getAllLabels, getLabelOfTheMonth } from "@/config/labels";
 
 export const metadata: Metadata = {
   title: "Labels",
@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 
 export default function LabelsIndexPage() {
   const allLabels = getAllLabels();
-  const featured = getFeaturedLabels();
   const labelOfMonth = getLabelOfTheMonth();
   const monthName = new Date().toLocaleDateString("en-US", {
     month: "long",
@@ -16,9 +15,7 @@ export default function LabelsIndexPage() {
   });
   // Hide the rotation pick from the all-labels grid so it doesn't appear
   // twice on the page during its month.
-  const rest = allLabels.filter(
-    (l) => !l.featured && l.slug !== labelOfMonth?.slug,
-  );
+  const rest = allLabels.filter((l) => l.slug !== labelOfMonth?.slug);
 
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
@@ -30,27 +27,6 @@ export default function LabelsIndexPage() {
           The imprints shaping electronic music past and present.
         </p>
       </header>
-
-      {featured.length > 0 && (
-        <section className="mb-12">
-          <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-4">
-            Featured
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {featured.map((label) => (
-              <a
-                key={label.slug}
-                href={`/frequencies/labels/${label.slug}`}
-                className="block p-4 bg-surface border border-accent/30 rounded hover:border-accent/60 transition-colors"
-              >
-                <span className="font-mono text-sm text-accent">
-                  {label.name}
-                </span>
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
 
       {labelOfMonth && (
         <section className="mb-12">
