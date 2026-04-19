@@ -61,6 +61,38 @@ export const authors: Record<string, Author> = {
     ],
     signature: "~ cut by deadpacket / phreak.fm ~",
   },
+  keysmith: {
+    slug: "keysmith",
+    displayName: "keysmith",
+    avatar: "/avatars/keysmith.png",
+    bio: "Civil liberties and cryptography correspondent. Covers the crypto wars across decades, surveillance policy, regulatory fights, and the long arc of how individuals retain control over their own communications. Reads court filings and standards documents so you don't have to.",
+    primaryVertical: "signals",
+    specialties: [
+      "cryptography",
+      "civil liberties",
+      "privacy",
+      "surveillance policy",
+      "crypto wars",
+      "regulation",
+    ],
+    signature: "~ cut by keysmith / phreak.fm ~",
+  },
+  slipmat: {
+    slug: "slipmat",
+    displayName: "slipmat",
+    avatar: "/avatars/slipmat.png",
+    bio: "Music writer covering electronic scenes, club nights, label histories, and the long arc of dance music. Less interested in synth specs, more interested in why a particular kick drum changed how a particular city dances. Lives in the room, not in the studio.",
+    primaryVertical: "frequencies",
+    specialties: [
+      "club culture",
+      "scene history",
+      "label profiles",
+      "DJ history",
+      "drum and bass",
+      "music criticism",
+    ],
+    signature: "~ cut by slipmat / phreak.fm ~",
+  },
 };
 
 export function getAuthor(slug: string): Author | undefined {

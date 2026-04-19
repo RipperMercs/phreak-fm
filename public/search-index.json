@@ -283,6 +283,23 @@
     "kind": "article"
   },
   {
+    "title": "Emmanuel Goldstein: 2600, the H Word, and Forty Years of Holding the Line",
+    "excerpt": "Eric Corley took a pen name from Orwell, founded a quarterly magazine in 1984 dedicated to a subculture that the rest of the world was already moving to criminalize, and spent the next four decades operating a radio show, a quarterly print publication, a biennial international conference, and a constant defense of the proposition that hackers are not the same as criminals. The hacker community has had institutional anchors come and go. Goldstein has been the steadiest of them.",
+    "slug": "emmanuel-goldstein-2600-editor",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "emmanuel-goldstein",
+      "eric-corley",
+      "2600-magazine",
+      "hope-conference",
+      "off-the-hook",
+      "hacker-culture"
+    ],
+    "url": "/signals/emmanuel-goldstein-2600-editor",
+    "kind": "article"
+  },
+  {
     "title": "Hackers: The Movie That Got Everything Wrong and Everything Right",
     "excerpt": "",
     "slug": "hackers-the-movie",
@@ -350,6 +367,23 @@
     "kind": "article"
   },
   {
+    "title": "St Jude: The Hacker Who Coined Cypherpunk",
+    "excerpt": "Jude Milhon was at the Selma march in 1965, was one of the few professional women programmers of the 1960s mainframe era, coined the word cypherpunk in the early 1990s as a wordplay on cyberpunk and cipher, and spent her last decades as the most beloved counterweight to the libertarian male orthodoxy that had grown up around the Cypherpunks list. The cypherpunk movement has the name she gave it. It has remembered her unevenly.",
+    "slug": "jude-milhon-st-jude-cypherpunk",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "jude-milhon",
+      "st-jude",
+      "cypherpunks",
+      "mondo-2000",
+      "hacker-culture",
+      "women-in-tech"
+    ],
+    "url": "/signals/jude-milhon-st-jude-cypherpunk",
+    "kind": "article"
+  },
+  {
     "title": "Karl Koch: Hagbard Celine and the KGB Hack",
     "excerpt": "German hacker Karl Koch, operating under the handle Hagbard Celine from the Illuminatus! trilogy, sold stolen data to the KGB. His story ended in tragedy, fueled by paranoia, drugs, and Cold War espionage.",
     "slug": "karl-koch-hagbard",
@@ -414,6 +448,22 @@
       "history"
     ],
     "url": "/signals/kevin-poulsen-dark-dante",
+    "kind": "article"
+  },
+  {
+    "title": "Kim Zetter: The Reporter Who Made Stuxnet Legible",
+    "excerpt": "Cybersecurity reporting in 2010 was a niche beat with a small audience. By the time Kim Zetter finished publishing Countdown to Zero Day in 2014, she had done something that most security writers had never managed: she had told the story of a complex nation-state malware operation in a way that ordinary readers could follow without losing the technical truth. The shape of long-form security journalism since then is largely her shape.",
+    "slug": "kim-zetter-stuxnet-journalist",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      "kim-zetter",
+      "journalism",
+      "stuxnet",
+      "long-form",
+      "wired"
+    ],
+    "url": "/signals/kim-zetter-stuxnet-journalist",
     "kind": "article"
   },
   {
@@ -617,6 +667,23 @@
     "kind": "article"
   },
   {
+    "title": "Robert Tappan Morris: The Worm, the Sentence, the Second Act",
+    "excerpt": "On November 2, 1988, a Cornell graduate student released a self-replicating program that brought a meaningful fraction of the early internet to a halt within hours. He became the first person convicted under the Computer Fraud and Abuse Act. He also became, eventually, an MIT professor, a Y Combinator cofounder, and the rare cautionary-tale figure whose second act overshadowed the cautionary tale.",
+    "slug": "robert-morris-worm-second-act",
+    "vertical": "signals",
+    "author": "nullbyte",
+    "tags": [
+      "robert-morris",
+      "morris-worm",
+      1988,
+      "cfaa",
+      "viaweb",
+      "y-combinator"
+    ],
+    "url": "/signals/robert-morris-worm-second-act",
+    "kind": "article"
+  },
+  {
     "title": "Solar Sunrise: When the Pentagon Thought Iraq Was Hacking It",
     "excerpt": "",
     "slug": "solar-sunrise",
@@ -776,6 +843,23 @@
       "manifesto"
     ],
     "url": "/signals/the-mentor-profile",
+    "kind": "article"
+  },
+  {
+    "title": "The Crypto Anarchist Manifesto: Tim May's 1988 Pamphlet That Predicted the Modern Privacy Stack",
+    "excerpt": "In the summer of 1988, a former Intel physicist handed out a one-page essay at the Crypto '88 conference. The essay argued that strong cryptography would, by purely technological means, render most state regulation of online activity unenforceable, and that this was a positive outcome. Most of the document's specific predictions came true. Some came true in ways the author would not have endorsed.",
+    "slug": "tim-may-crypto-anarchist-manifesto",
+    "vertical": "signals",
+    "author": "keysmith",
+    "tags": [
+      "tim-may",
+      "crypto-anarchist-manifesto",
+      "cryptography",
+      "cypherpunks",
+      1988,
+      "privacy"
+    ],
+    "url": "/signals/tim-may-crypto-anarchist-manifesto",
     "kind": "article"
   },
   {

@@ -1,0 +1,87 @@
+---
+title: "The Crypto Anarchist Manifesto: Tim May's 1988 Pamphlet That Predicted the Modern Privacy Stack"
+slug: tim-may-crypto-anarchist-manifesto
+vertical: signals
+author: keysmith
+publishedAt: "2026-04-16T09:00:00Z"
+excerpt: "In the summer of 1988, a former Intel physicist handed out a one-page essay at the Crypto '88 conference. The essay argued that strong cryptography would, by purely technological means, render most state regulation of online activity unenforceable, and that this was a positive outcome. Most of the document's specific predictions came true. Some came true in ways the author would not have endorsed."
+tags:
+  - tim-may
+  - crypto-anarchist-manifesto
+  - cryptography
+  - cypherpunks
+  - 1988
+  - privacy
+pillar: phreaker-elders-and-hacker-culture
+readingTimeMinutes: 8
+---
+
+# The Crypto Anarchist Manifesto: Tim May's 1988 Pamphlet That Predicted the Modern Privacy Stack
+
+In August 1988, at the Crypto '88 conference at the University of California Santa Barbara, a former Intel physicist named Tim May handed out a single-page document titled The Crypto Anarchist Manifesto. The document was short, around five hundred words. It was structured as a kind of political pamphlet rather than as an academic paper. The audience at Crypto '88 was the working academic cryptography community of the late 1980s, a population of roughly a few hundred mathematicians and computer scientists who had spent the previous decade quietly building the theoretical foundations of public-key cryptography, digital signatures, and anonymous credentials.
+
+The argument the Manifesto made was, in retrospect, the central political claim that has structured the next thirty-eight years of arguments about cryptography, privacy, surveillance, and the regulatory authority of states over online activity.
+
+The argument was that public-key cryptography, combined with anonymous communications networks, combined with digital cash, would, by purely technological means, render entire categories of state regulation unenforceable. People would be able to transact without intermediaries. People would be able to publish without identifying themselves. People would be able to coordinate economically across borders in ways the existing legal and regulatory frameworks had no mechanism to detect, much less to prevent. The result, May argued, would be a fundamental shift in the balance of power between individuals and institutions. He called this outcome crypto anarchy. He thought it would be good.
+
+Most of the document's specific technical predictions came true within twenty-five years. Anonymous markets exist (the Tor-hosted darknet markets being the most prominent operational examples). Untraceable digital cash exists (Bitcoin and its many descendants, especially the privacy-focused ones like Monero and Zcash). Encrypted end-to-end messaging is the dominant mode of personal communication for most of the world's population (Signal, WhatsApp, iMessage). Anonymous publication of sensitive information through cryptographically protected channels is a routine investigative journalism practice. The Manifesto's predictive batting average is, technically, exceptional.
+
+The political assessment of whether crypto anarchy as actually realized has been good is harder. May was not unambiguously right about the consequences of getting what he wanted.
+
+## What the Manifesto Said
+
+The text itself is short enough to summarize closely. May argued that the combination of encryption and anonymous communications would allow:
+
+The complete circumvention of all forms of state-mandated identity verification online. People would be able to interact under cryptographically backed pseudonyms that the state could not unmask.
+
+The development of anonymous markets in which goods and information could be bought and sold without any intermediary capable of identifying the parties or recording the transactions. May explicitly mentioned both legal and illegal goods, with the implication that the distinction would become operationally meaningless if enforcement was not possible.
+
+The emergence of digital cash that would function like physical cash for online commerce, with no transaction record retained by any party other than the participants themselves.
+
+The dissolution of state authority over information in general. If publication could be done anonymously, encrypted, and globally, then national-level press regulation, intellectual property law, and content-restriction regimes would lose their enforcement mechanism.
+
+May framed these predictions in language that drew on libertarian political theory, with explicit references to Friedrich Hayek and a general Austrian-school orientation toward seeing state regulation of voluntary exchange as harmful. The Manifesto was not subtle about its political position. It was a piece of advocacy as much as it was a piece of analysis.
+
+The document closed with what became the most-quoted passage: "Arise, you have nothing to lose but your barbed wire fences." The reference was to Marx's call to arise from chains, repurposed for the digital era. The barbed wire fences in question were, in May's framing, the regulatory and surveillance structures that the existing nation-state system used to constrain individual economic and informational autonomy.
+
+## What the Predictions Looked Like by 2025
+
+Reviewing the Manifesto's predictions against the actually realized state of digital privacy and economic activity in the 2020s requires some honesty about which parts came true in the form May expected and which parts came true in forms he might have considered failures.
+
+Anonymous markets came true. The major operational example through the 2010s and into the 2020s was the family of darknet marketplaces (Silk Road, AlphaBay, Hydra, and many others) that used Tor for anonymity, Bitcoin or Monero for payment, and PGP for buyer-seller communication. The markets functioned, sometimes for years, before law enforcement operations against specific marketplaces succeeded in taking them down. Each takedown was followed by successor markets within months. The infrastructure has remained operationally viable continuously since around 2011. May's prediction of operationally viable anonymous markets was correct.
+
+Untraceable digital cash came true, with substantial caveats. Bitcoin, when it launched in 2009, was widely interpreted as the realization of the Manifesto's digital cash prediction. The Cypherpunks list (which May had cofounded in 1992) had workshopped many of the conceptual building blocks. Wei Dai's b-money proposal, which Satoshi Nakamoto explicitly cited in the Bitcoin whitepaper, was a direct cypherpunks-tradition design. The caveat was that Bitcoin turned out to be substantially more traceable than May's vision of digital cash had implied, because the public ledger made transaction graphs analyzable in ways that compromised practical anonymity even when the underlying cryptography was strong. Privacy-focused successors like Monero and Zcash addressed this gap with mixed adoption success.
+
+Encrypted end-to-end messaging became the default mode of personal communication for most of the global internet by the late 2010s. Signal, WhatsApp, iMessage, Telegram, and a few smaller players covered the substantial majority of personal communications volume. The state's ability to intercept the content of those communications, in the absence of endpoint compromise, was substantially what May had predicted: limited or absent for properly implemented protocols.
+
+The dissolution of state authority over information, more generally, came true partially. Anonymous and pseudonymous publication is now a routine practice for whistleblowers, dissidents, and journalists working with sensitive sources. But the state has retained substantial authority through other means: pressure on platforms, surveillance of metadata, exploitation of endpoint vulnerabilities, and the simple enforcement of laws against people whose identities can be discovered through any of the many non-cryptographic operational security failures that real-world anonymity attempts inevitably involve.
+
+The aggregate picture is that May's technical predictions were substantially correct, but that the political consequences he expected to follow from those technical realities have been more mixed.
+
+## What He Did Not Predict
+
+The Manifesto did not anticipate, and could not really have anticipated, several things that have meaningfully shaped the actual realized state of crypto-enabled politics.
+
+The Manifesto did not anticipate that the same anonymity technologies that would enable anti-authoritarian dissent would also enable ransomware operations, child sexual abuse material distribution, and large-scale fraud. May's framing of crypto anarchy was substantially abstracted from any specific application. He saw individual liberty being increased relative to state authority and assumed that the increase would, on net, produce better outcomes. The actual realized landscape includes both the dissident protections he wanted and the criminal applications he did not particularly engage with.
+
+The Manifesto did not anticipate that the network effects of large platforms would create new centralized authorities (the major messaging platforms, the major crypto exchanges, the major social platforms) that would substantially reproduce many of the surveillance and enforcement capabilities that the original nation-state system had used. The state did not turn out to be the only relevant locus of regulatory power. Private platforms became regulators in their own right.
+
+The Manifesto did not anticipate that the state's response to widely available encryption would be primarily to attack the endpoints rather than the cryptography itself. The major nation-state surveillance programs of the past two decades have been substantially built around exploiting vulnerabilities in operating systems, browsers, and applications, rather than around attempting to break properly implemented cryptography. The Crypto Wars, in their original sense, were fought on the battlefield of whether strong cryptography would be legally available. The actual cryptographic outcome has been mostly favorable to the cypherpunk position. The actual surveillance outcome has been mostly favorable to the state, because the cryptography has not been the binding constraint.
+
+These limitations of the Manifesto's predictive frame are not failings of May personally. They are inherent to the difficulty of predicting how political systems metabolize new technologies over decades. The Manifesto was a remarkable piece of forecasting for a 1988 document. The specific blind spots it had are visible only with the benefit of forty years of subsequent political and technological history.
+
+## What May Became
+
+Tim May himself had a complicated political evolution in the decades after the Manifesto. He continued to be active on the Cypherpunks mailing list through the 1990s. He retired to a coastal community in California and lived there for the rest of his life on his Intel stock options.
+
+His political writing in the 2000s and into the 2010s, mostly on the Cypherpunks list and in various longer-form essays, took a darker turn that several of his former allies on the list found difficult. The libertarianism of the Manifesto sharpened into positions on race, on immigration, and on civic life that read, by the end, as substantially closer to the political far right than to any recognizable civil-libertarian position. The arc was painful to watch for people who had taken the Manifesto's liberatory rhetoric at face value.
+
+He died in December 2018 at the age of sixty-seven. The obituaries from the broader cypherpunk and crypto community were respectful about his foundational technical contributions and notably more cautious about endorsing his later political views. The Manifesto, considered as a 1988 document, can be read on its own terms. The author who wrote it became, by the end of his life, a more difficult figure to claim as a model.
+
+## Coda
+
+The Crypto Anarchist Manifesto is, as a document, less than one printed page. It has shaped, more than almost any other comparably brief text from the late twentieth century, the political vocabulary that the world has used to argue about cryptography, surveillance, and online autonomy for the next thirty-eight years.
+
+The technical predictions came true. The political consequences are still being argued out. The author's later trajectory complicates any clean inheritance of his thinking. The document itself, separated from the author, remains worth reading as the foundational political statement of the cypherpunk tradition. Most of what people argue about today, when they argue about end-to-end encryption, when they argue about privacy coins, when they argue about whether platforms should be required to provide law enforcement access, traces back to the question May posed in 1988.
+
+That question is whether individuals should be able to use mathematics to reduce the regulatory authority of states over their own communications and economic activity. The Manifesto answered yes. The political world is still arguing about the answer. The math itself, meanwhile, kept working.
