@@ -41,6 +41,34 @@ export default function SignalsPage() {
         </section>
       )}
 
+      {/* Topics: surfaced above Latest so people browsing for a specific
+          subject can jump in without scrolling the whole chronological feed. */}
+      <section className="mb-12">
+        <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-4">
+          Browse by Topic
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {[
+            { slug: "famous-breaches", title: "Famous Breaches" },
+            { slug: "ransomware-era", title: "Ransomware Era" },
+            { slug: "nation-state-operations", title: "Nation State Operations" },
+            { slug: "phreaker-elders-and-hacker-culture", title: "Phreaker Elders & Hacker Culture" },
+            { slug: "zero-days-and-exploit-chains", title: "Zero Days & Exploit Chains" },
+            { slug: "insider-threats", title: "Insider Threats" },
+          ].map((topic) => (
+            <a
+              key={topic.slug}
+              href={`/signals/topics/${topic.slug}`}
+              className="block p-3 bg-surface border border-border rounded hover:border-signals/50 transition-colors text-center"
+            >
+              <span className="font-mono text-sm text-foreground">
+                {topic.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* All articles */}
       <section>
         <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-6">
@@ -56,33 +84,6 @@ export default function SignalsPage() {
               No articles yet. The archive is being assembled.
             </p>
           ) : null}
-        </div>
-      </section>
-
-      {/* Pillar topics link */}
-      <section className="mt-12 pt-8 border-t border-border">
-        <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-4">
-          Topics
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {[
-            { slug: "famous-breaches", title: "Famous Breaches" },
-            { slug: "ransomware-era", title: "Ransomware Era" },
-            { slug: "nation-state-operations", title: "Nation State Operations" },
-            { slug: "phreaker-elders-and-hacker-culture", title: "Phreaker Elders & Hacker Culture" },
-            { slug: "zero-days-and-exploit-chains", title: "Zero Days & Exploit Chains" },
-            { slug: "insider-threats", title: "Insider Threats" },
-          ].map((topic) => (
-            <a
-              key={topic.slug}
-              href={`/signals/topics/${topic.slug}`}
-              className="block p-4 bg-surface border border-border rounded hover:border-signals/50 transition-colors"
-            >
-              <span className="font-mono text-sm text-foreground">
-                {topic.title}
-              </span>
-            </a>
-          ))}
         </div>
       </section>
     </main>

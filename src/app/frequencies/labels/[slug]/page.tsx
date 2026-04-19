@@ -25,9 +25,14 @@ export default function LabelPage({ params }: PageProps) {
   const label = getLabel(params.slug);
   if (!label) notFound();
 
-  const articles = getAllArticles("frequencies").filter(
-    (a) => a.frontmatter.label === label.slug
-  );
+  // Surface articles that either set the label field explicitly or include
+  // the label slug in tags, so coverage shows on the hub even when an
+  // article was written without the label field set.
+  const articles = getAllArticles("frequencies").filter((a) => {
+    if (a.frontmatter.label === label.slug) return true;
+    const tags = a.frontmatter.tags || [];
+    return tags.map((t) => t.toLowerCase()).includes(label.slug);
+  });
 
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
