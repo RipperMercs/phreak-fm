@@ -8,29 +8,29 @@ interface PageProps {
 }
 
 const pillars: Record<string, { title: string; description: string }> = {
-  "famous-breaches": {
-    title: "Famous Breaches",
-    description: "The intrusions that made headlines and changed the game. From the Morris Worm to SolarWinds, the stories behind the biggest breaches in history.",
-  },
-  "ransomware-era": {
-    title: "Ransomware Era",
-    description: "How ransomware went from a curiosity to a global crisis. The gangs, the payouts, the infrastructure, and the defenders holding the line.",
-  },
-  "nation-state-operations": {
-    title: "Nation State Operations",
-    description: "State-sponsored hacking campaigns, APT groups, and the invisible wars fought across networks. When governments go on offense.",
-  },
   "phreaker-elders-and-hacker-culture": {
     title: "Phreaker Elders & Hacker Culture",
     description: "The phreakers, the hackers, the zines, and the cons. From Cap'n Crunch's whistle to the L0pht testimony. The people who built the underground and the stories that defined it.",
   },
+  "famous-breaches": {
+    title: "Famous Breaches",
+    description: "The intrusions that made headlines and changed the game. From the 414s to MafiaBoy, from Cuckoo's Egg to WannaCry, the events that taught the public the internet was attackable.",
+  },
+  "nation-state-operations": {
+    title: "Nation State Operations",
+    description: "State-sponsored hacking campaigns and the invisible wars fought across networks. Stuxnet, Moonlight Maze, the KGB hack, and the era when governments went on cyber offense.",
+  },
   "zero-days-and-exploit-chains": {
     title: "Zero Days & Exploit Chains",
-    description: "The vulnerabilities nobody knew about and the chains of exploits that turned a single flaw into full system compromise.",
+    description: "The vulnerabilities nobody knew about and the chains of exploits that turned a single flaw into full system compromise. From DNS cache poisoning to Back Orifice.",
   },
-  "insider-threats": {
-    title: "Insider Threats",
-    description: "When the call comes from inside the building. Rogue employees, compromised insiders, and the human element in security failures.",
+  "viruses-and-worms": {
+    title: "Viruses & Worms",
+    description: "Self-replicating code from Elk Cloner forward. The Brain virus, the Morris worm, Dark Avenger's polymorphism, the people who wrote the malware that defined each era.",
+  },
+  "crypto-wars": {
+    title: "Crypto Wars",
+    description: "The four-decade fight over whether ordinary people can use strong cryptography. PGP and the federal grand jury, the Cypherpunks list, Tim May's Crypto Anarchist Manifesto, and the long arc that produced every secure messenger we use today.",
   },
 };
 
