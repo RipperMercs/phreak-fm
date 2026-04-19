@@ -28,8 +28,10 @@ const HACKER_QUOTES = [
 export default function Home() {
   const jsonLd = buildSiteJsonLd();
   const allArticles = getAllArticles();
+  // Featured is a pin-to-top highlight, not a removal from the feed.
+  // Latest stays as a complete chronological view including featured pieces.
   const featured = allArticles.find((a) => a.frontmatter.featured);
-  const latest = allArticles.filter((a) => a !== featured).slice(0, 12);
+  const latest = allArticles.slice(0, 12);
   const randomQuote = HACKER_QUOTES[Math.floor(Math.random() * HACKER_QUOTES.length)];
   const wireItems = getSortedWireItems(loadFeedCache(), 10);
 
