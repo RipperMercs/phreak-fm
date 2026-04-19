@@ -1,0 +1,80 @@
+---
+title: "Phil Zimmermann, PGP, and the Time the US Government Tried to Classify Math"
+slug: phil-zimmermann-pgp-crypto-wars
+vertical: signals
+author: ripper
+publishedAt: "2026-04-18T09:00:00Z"
+excerpt: "In 1991, a peace activist in Boulder released a free encryption tool to protect dissidents from surveillance. Within months, federal investigators were treating his source code as illegally exported munitions. The three-year case that followed became the central battle of the Crypto Wars and the foundation for every secure messenger in your pocket today."
+tags:
+  - phil-zimmermann
+  - pgp
+  - crypto-wars
+  - encryption
+  - cryptography
+  - civil-liberties
+  - 1991
+pillar: phreaker-elders-and-hacker-culture
+readingTimeMinutes: 9
+---
+
+# Phil Zimmermann, PGP, and the Time the US Government Tried to Classify Math
+
+In June 1991, a peace activist and freelance software engineer in Boulder, Colorado named Phil Zimmermann uploaded a program to a Usenet newsgroup. The program was called Pretty Good Privacy. It was a public-key encryption tool that ran on consumer hardware. It used RSA for key exchange and IDEA for symmetric encryption. It was free. The source code was included. The license was permissive enough that anyone could grab it and run it on a personal computer the same day.
+
+Within weeks, copies of PGP were on bulletin boards and FTP sites all over the world. Within a few years, Phil Zimmermann was the target of a federal grand jury investigation, and the legal question hanging over him was whether he had committed felony arms trafficking by writing and releasing source code that made strong cryptography available to ordinary people.
+
+This is the central battle of what came to be called the Crypto Wars. It defined the legal status of cryptography for the next generation. It made every encrypted messaging app you currently use legally possible in the United States. And it was fought, mostly, by one person who was not a lawyer, who had not planned to become a civil liberties cause, and who did the work because he believed that activists in dictatorships should not have their private correspondence read by their governments.
+
+## Why He Built It
+
+Zimmermann came up in the nuclear freeze movement of the 1980s. He had been arrested in protests at the Nevada Test Site. He worked, in his day job, as a software engineer in the small but growing personal computer industry. The combination of those two backgrounds gave him a specific anxiety that most of his peers in either world did not have.
+
+He understood, technically, that as personal computing and email and bulletin board systems started to scale, the default condition of all that communication was going to be unencrypted. Anyone with the right access to the wire could read anyone else's mail. He also understood, politically, that the people who most needed protection from surveillance, dissidents and activists in repressive regimes, were the people with the least access to the kinds of cryptographic tools that the diplomatic corps and the military and the banking industry already had.
+
+The asymmetry bothered him. Strong encryption existed. It just was not available to the kind of person who would actually be in danger if their government read their email.
+
+PGP was Zimmermann's attempt to close that gap. He wrote it on his own time, between consulting jobs, with no funding and no institutional backing. He was not a credentialed cryptographer. He had read the academic literature carefully, but he was not Whitfield Diffie or Martin Hellman. He was a working programmer with a political conviction.
+
+He released it in June 1991. He did not formally announce a global rollout. He gave it to a few friends, who put it on bulletin boards. The bulletin boards mirrored to other bulletin boards. Within weeks PGP was running on machines in Europe, in Asia, in South America. Within months it was being used by activists in countries where its mere possession could get the user arrested.
+
+## The Legal Trap
+
+The thing Zimmermann had not fully thought through, and which a lot of his peers in the cryptography community had been worrying about for years, was the International Traffic in Arms Regulations.
+
+ITAR is the regulatory framework that controls the export of military technology from the United States. It is administered by the State Department. The list of items it covers, the United States Munitions List, included at the time, alongside fighter jets and tank components and night vision optics, certain kinds of cryptography. Specifically, any encryption product using key lengths above a certain threshold (the threshold moved around but was generally 40 bits in this period, an embarrassingly low number) was treated as a munition. Exporting one without a State Department license was a felony.
+
+PGP used much longer keys than 40 bits. It was, by the strict reading of ITAR, a munition. And by releasing it on a Usenet newsgroup, Zimmermann had arguably exported it. Usenet was global. The moment the code hit a US-based news server, copies flowed to international news servers automatically.
+
+The US Customs Service opened a criminal investigation in 1993. A federal grand jury in San Jose took up the case. For three years, Zimmermann lived under the threat of indictment. He had to retain counsel. He had to be careful about what he said in public. Reporters asked him every week whether he had been charged yet, and the answer was always not yet.
+
+The legal theory the government appeared to be developing was that the act of writing PGP and posting it to a forum where it could be downloaded internationally constituted unlicensed export of munitions. If they had won that argument, the precedent would have applied to every cryptographer in the United States. It would have made writing strong encryption code for public release a felony. Practically, it would have shut down the entire civilian cryptography research community.
+
+## The Book Gambit
+
+In 1995, midway through the federal investigation, MIT Press published a book titled PGP Source Code and Internals. It was a printed volume, several hundred pages long, containing the complete C source code for PGP, line by line, with explanatory commentary by Zimmermann. It was sold in bookstores. It was shipped abroad through normal book distribution channels.
+
+This was a deliberate constitutional move. The First Amendment protects the publication of printed books. ITAR controlled the export of munitions. The legal question, which the government had spent decades trying to avoid having to answer in court, was whether source code published in a book was a munition or speech. The MIT Press publication forced the issue. If the State Department wanted to prosecute Zimmermann or MIT Press for the book, they would have to argue in open court that the printed letters of the alphabet on the pages constituted controlled munitions when they happened to spell out cryptographic source code. That was an argument the government did not want to make, because they were going to lose it in front of any judge willing to read the First Amendment carefully.
+
+Several rounds of optical character recognition tools were already widely available. A reader anywhere in the world could buy the book, scan it, and have working PGP source code on a computer within hours. Everyone involved knew this. The book was, functionally, a long-form export of cryptography wrapped in the legal armor of the First Amendment.
+
+The government dropped the investigation in January 1996. No charges were filed. No public explanation was given.
+
+## What Came After
+
+The Crypto Wars continued past the Zimmermann case, but the case had broken something. The legal theory that source code was munitions had been tested in the public eye and had not survived contact with constitutional law. The Bernstein cases, brought by mathematician Daniel Bernstein with EFF support, finished what the PGP fight had started. By 1999, the Ninth Circuit ruled in Bernstein's favor, holding that source code was protected speech.
+
+In late 1996 and again in 2000, the Clinton administration substantially relaxed cryptography export controls. The 2000 update was the moment when, for practical purposes, the United States stopped trying to prevent its citizens from publishing cryptographic software. The damage that ITAR had done to the cryptographic research community over the previous twenty years did not undo itself overnight, but the ratchet stopped.
+
+PGP itself had a complicated commercial life. Zimmermann founded PGP Inc, which was acquired by Network Associates in 1997, then spun back out, then acquired again by Symantec in 2010. The OpenPGP standard, RFC 4880, became the open specification that GnuPG and other free implementations followed. PGP and its descendants are still used today, mostly by journalists, security researchers, and people whose threat models include adversaries with serious technical capability.
+
+The bigger inheritance is harder to point at directly because it is everywhere. Signal exists because Phil Zimmermann won. WhatsApp's end-to-end encryption exists because Phil Zimmermann won. iMessage exists because Phil Zimmermann won. Every TLS handshake your browser performs depends on a regulatory environment that, in the early 1990s, was an open question, and that resolved the way it resolved largely because one peace activist in Colorado wrote a program and refused to apologize for it.
+
+## Coda
+
+Zimmermann is still working. He co-founded Silent Circle in 2012, building secure phone hardware and software. He continues to speak at conferences and write about cryptography policy. He has been inducted into the Internet Hall of Fame. He is listed as a Fellow of the Stanford Law School Center for Internet and Society. The federal investigation that defined a large part of his life in the 1990s is now a chapter in textbooks.
+
+The deeper point of his story, the one that is easy to miss in the flag-planting about PGP versions and key sizes and license disputes, is that the case forced the United States to articulate, in front of judges and journalists and an attentive public, what its position actually was on the question of whether private citizens should be allowed to do strong cryptography. The answer that emerged from that process was: yes, with caveats. That answer is not guaranteed. The Crypto Wars have come back in different forms in every decade since, around the Clipper chip, around law enforcement decryption mandates, around the Australian Assistance and Access Act, around proposals for client-side scanning. The argument keeps getting made.
+
+But the baseline that you have a right to write and use strong cryptography as a private citizen in the United States, that this is constitutionally protected expression, that source code is speech, was set in part by what happened to Phil Zimmermann between 1991 and 1996. It was set by him not stopping. It was set by him continuing to maintain PGP, to give interviews, to publish source code in book form, to refuse to take the program down even when his lawyers might reasonably have advised him to take it down.
+
+The work was the position. The position held.

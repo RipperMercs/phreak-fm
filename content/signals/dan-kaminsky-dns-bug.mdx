@@ -1,0 +1,97 @@
+---
+title: "Dan Kaminsky: The Bug, the Patch, and the Mensch"
+slug: dan-kaminsky-dns-bug
+vertical: signals
+author: nullbyte
+publishedAt: "2026-04-18T10:30:00Z"
+excerpt: "In early 2008, a researcher in Seattle realized he had found a way to corrupt the DNS resolver caches that route most traffic on the public internet. What he did next, before disclosing the bug, became a model for how serious vulnerabilities should be coordinated. Then he died, suddenly, at 42. This is what he built and what he meant."
+tags:
+  - dan-kaminsky
+  - dns
+  - dns-cache-poisoning
+  - vulnerability-disclosure
+  - security-research
+  - in-memoriam
+pillar: phreaker-elders-and-hacker-culture
+readingTimeMinutes: 9
+---
+
+# Dan Kaminsky: The Bug, the Patch, and the Mensch
+
+In the spring of 2008, Dan Kaminsky was sitting in his Seattle apartment realizing that he had found a way to break a substantial portion of the public internet.
+
+He was, at the time, the director of penetration testing for a security consultancy called IOActive. He was thirty years old. He had been a working security researcher for nearly a decade, with a reputation in the community as someone who consistently found weird, deep, structural bugs in protocols that everyone else had assumed were boring. He gave talks at Black Hat and DEF CON every year. He wrote a column for IOActive's blog. He answered email from anyone who sent him a question, often within an hour.
+
+The thing he had just found was not a flaw in any specific implementation. It was a flaw in the way DNS itself had been deployed for the previous twenty years. Specifically, he had figured out a way to poison the caches of recursive DNS resolvers, the servers that ISPs and corporate networks run to translate domain names into IP addresses, in a way that was fast enough to be practical for an attacker on a normal residential internet connection.
+
+If you can poison a DNS resolver's cache, you can convince that resolver, and every client that uses it, that bank dot com resolves to your IP address instead of the real one. Every browser on every machine that asked that resolver for DNS lookups would now visit your fake bank, your fake email provider, your fake software update server. Mass redirection of all web traffic to attacker-controlled infrastructure was on the table. Banking, software distribution, email, every service that depends on the user actually arriving at the domain they think they are visiting, was, in principle, broken.
+
+Dan understood what he had found. He spent the next several months not telling almost anyone.
+
+## The Coordinated Patch
+
+The standard playbook for vulnerability disclosure in 2008 was contested. Some researchers favored full disclosure: publish the bug, embarrass the vendors into fixing it. Others favored quiet coordination with the affected vendor, with a delayed public release. Both approaches had reasonable defenses. Both had failed in specific cases.
+
+The DNS bug did not fit either approach cleanly. It was not a vendor-specific issue. It affected every major DNS server implementation: BIND, Microsoft's DNS, Cisco's IOS implementation, Nominum, the resolvers built into countless network appliances. Coordinating a fix meant coordinating across the entire infrastructure of the internet at once. Quiet disclosure to one vendor would have left the others wide open. Full disclosure would have given attackers a window of weeks or months to exploit the bug before patches were available.
+
+What Dan did instead, working with allies inside major vendors and at Microsoft and at the DNS-OARC research community, was organize a secret summit at the Microsoft campus in Redmond in March 2008. Representatives from the major DNS implementations sat in a room and Dan walked them through the bug. They agreed on a coordinated response: every major implementation would prepare patches in private, and on a single day, July 8, 2008, they would all release them simultaneously.
+
+This was an enormous operational lift. It required engineers in many different organizations, several of which were in active commercial competition with each other, to keep a major security vulnerability secret for months while fixes were prepared and tested. It required coordination across time zones, across legal departments, across release engineering teams that did not normally talk to each other. The fact that the secret held for the full duration is a small miracle of professional restraint.
+
+On July 8, 2008, sixteen vendors released coordinated patches. The advisory went out under the name CVE-2008-1447. Dan's involvement was acknowledged but the technical details of the bug were withheld so that defenders had time to deploy the patches before attackers had the details to weaponize them.
+
+He was scheduled to give a full disclosure talk at Black Hat in August, thirty days later.
+
+## The Leak
+
+The coordinated patch was holding. Then, two weeks after the patches dropped, the technical details leaked.
+
+What happened, as Dan later told the story, was that Halvar Flake, a German reverse engineer of considerable skill (real name Thomas Dullien), had been thinking about why the DNS patch was structured the way it was. He had not been at the Microsoft summit. He had not been told the bug. But he was Halvar, and he could read patches. He posted his guess about what the underlying vulnerability was on his blog.
+
+His guess was correct. Within a few hours, someone else had confirmed it independently and posted a working exploit. The thirty-day cushion that Dan and the vendor coalition had built, intended to give defenders time to patch before attackers had a working exploit, collapsed in a single afternoon.
+
+Dan had to make a fast call. He could pull his Black Hat talk and let the bug enter the public discourse without his framing. Or he could go ahead with the talk and try to add value by explaining the bug in detail, walking through the implications, and pushing the larger story about why DNS needed to evolve.
+
+He went ahead with the talk. The Black Hat audience that summer was the largest the conference had ever had. Dan walked through the bug in detail, explained the patch, explained the leak, explained why the patch was not actually a fix and was only a substantial slowdown of the attack. The real fix, he said, was DNSSEC, the cryptographic extension to DNS that had been proposed for years and that nobody had bothered to deploy. Every conference talk Dan gave for the next several years, in some form, included a slide about how everyone needed to get serious about DNSSEC.
+
+## The Patch Was Not a Fix
+
+This is the part of the story that often gets lost in the lay tellings.
+
+The July 2008 patches did not fix DNS cache poisoning. They added source port randomization to the recursive resolver's outgoing DNS queries, which dramatically increased the entropy that an attacker had to guess in order to inject a fake response into the cache. The attack went from being something an attacker could pull off in seconds on a residential connection to something that, with the patches in place, took on the order of hours of sustained traffic. That was a huge improvement, but it was not a permanent fix. An attacker with enough patience and enough bandwidth could still poison a patched resolver.
+
+The actual fix was DNSSEC, which adds cryptographic signatures to DNS responses. With DNSSEC properly deployed, an attacker cannot inject a fake response into the cache, because the response without a valid signature gets rejected. DNSSEC had been proposed in the early 1990s, was standardized in 2005, and as of Dan's bug in 2008 was deployed almost nowhere.
+
+Dan spent the rest of his career, in a real sense, evangelizing DNSSEC. He helped fund DNSSEC implementation work. He wrote tools to make DNSSEC adoption easier. He gave talks at conferences nobody else would speak at, in front of audiences of network engineers who did not particularly want to hear that they had to deploy yet another protocol extension on top of their already-creaking DNS infrastructure. DNSSEC adoption is still incomplete in 2026. Dan made it less incomplete than it would otherwise have been.
+
+## Who He Was
+
+The technical work is the part that gets written about. The human part is the part that the security community keeps trying to find words for.
+
+Dan was kind. He answered email from strangers who wrote to him about security questions they could not figure out. He mentored junior researchers, generously, for free, often without anyone in their organization knowing he was doing it. He gave talks at small regional conferences and Goon college events for the same fee he charged at Black Hat, which was usually nothing. He knew everyone in the security world by name and remembered details about their lives.
+
+He was also funny. Not the dry, defensive humor that a lot of security people develop as a coping mechanism, but actually funny in a generous way. His talks were full of jokes that landed. His writing had voice. He named one of his projects Interpolique, which was both a pun and a useful technical term, because that was the kind of mind he had.
+
+He worked on internet infrastructure problems his entire career. After the DNS bug, he co-founded WhiteOps, a company focused on bot detection and ad fraud, which is now called HUMAN Security. He worked on certificate transparency, on NTP security, on a long list of protocol-level problems that mostly affected things normal people never think about and that would have been worse without him.
+
+He believed, with something approaching religious conviction, that the internet was infrastructure that mattered, that it was worth protecting, that the people who built and maintained it deserved respect, and that security work was a moral activity rather than a commercial one. He acted on that conviction every day for twenty years.
+
+## April 23, 2021
+
+Dan Kaminsky died on April 23, 2021, at his apartment in San Francisco, of complications from diabetic ketoacidosis. He was 42 years old. His death was sudden. The security community received the news with a kind of disbelief that took a long time to settle.
+
+The memorials that came out over the following weeks were extraordinary. Strangers wrote about the email Dan had answered ten years ago. Researchers wrote about the talk Dan had given them feedback on at three in the morning before a conference. Vendor security teams wrote about the bug Dan had quietly reported and helped them fix without ever taking public credit. The volume of these stories was the testimony. The community had not realized, until he was gone, how many of its individual members had been individually carried by him in some specific way.
+
+DEF CON 29 in August 2021 had a tribute presentation. Black Hat that year had a moment of silence. The Internet Society named an award after him, the Dan Kaminsky Fellowship, for early-career researchers working on internet security.
+
+The internet still depends, in places that almost nobody thinks about, on patches that Dan suggested, on protocol extensions that Dan pushed for, on quiet vendor relationships that Dan maintained. DNSSEC is still incomplete. The next person who finds a structural DNS bug will not have Dan to call. The summit at Microsoft in March 2008 happened in part because Dan was the kind of person who could get all those people in a room. There is no replacement for that.
+
+## Coda
+
+The lesson the security industry took from the DNS bug was about coordinated disclosure. The lesson the broader internet community should have taken, and mostly did not, was about how much of the global digital infrastructure depends on the personal generosity of a small number of researchers who do this work because they care about it, not because anyone is paying them properly to care about it.
+
+Dan was the most visible example of that pattern. He was not the only example. The pattern continues. Every protocol you depend on has a small group of people who understand it deeply, who have been keeping it alive for decades, and who are, at any given moment, one bad week away from being unable to keep doing it.
+
+When you can, thank them. When you cannot, at least notice they are there.
+
+Dan would have wanted you to notice.
