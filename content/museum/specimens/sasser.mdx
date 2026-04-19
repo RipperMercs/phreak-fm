@@ -1,0 +1,60 @@
+---
+name: Sasser
+slug: sasser
+aliases:
+  - Sasser.A
+  - Sasser.B
+discovered: "2004-04"
+discoveredLocation: "Germany"
+firstReportedBy: "Kaspersky Lab"
+author: "Sven Jaschan (18-year-old German student)"
+family: "Sasser"
+familySlug: "sasser"
+variants:
+  - "Sasser.B"
+  - "Sasser.C"
+  - "Sasser.D"
+size: 35840
+platform: "Windows XP/2000"
+infectionVector: "LSASS buffer overflow, no user interaction"
+payloadType:
+  - "destructive"
+trigger: "automatic"
+payloadDescription: "Spread without user interaction by exploiting the LSASS service. Caused infected machines to crash and reboot in a loop. Disrupted Delta Air Lines, British Coastguard, and hospitals. Jaschan was caught on his 18th birthday."
+famousRating: 4
+aestheticRating: 1
+heroMedia: "/museum/sasser/placeholder.png"
+heroMediaType: "png"
+heroMediaAlt: "Sasser worm system crash and reboot cycle"
+additionalMedia: []
+sources:
+  - title: "Internet Archive Malware Museum: Sasser"
+    url: "https://archive.org/details/malwaremuseum"
+    citation: "Mikko Hypponen, Internet Archive Malware Museum"
+relatedArticles: []
+tags:
+  - worm
+  - windows-xp
+  - "2004"
+  - germany
+  - infrastructure
+lastUpdated: "2026-04-14"
+---
+
+## The Crash Cycle
+
+Sasser was a worm that wanted nothing from you except the privilege of destroying your system in a very specific way. It did not attempt to steal data, did not exfiltrate files, did not install backdoors, did not send copies of itself in emails. Sasser's entire purpose was to make Windows machines crash repeatedly until manual intervention.
+
+The vector was a buffer overflow in the LSASS (Local Security Authority Subsystem Service), the Windows component responsible for authentication and access control. Like Blaster before it, Sasser required no user interaction. The worm would scan network addresses, send a specially crafted packet, and if the target ran an unpatched Windows XP or 2000 machine, the overflow would execute. Code execution meant worm installation.
+
+What distinguished Sasser from its predecessors was the cascade failure it triggered. When Sasser infected a machine, it didn't announce itself. It didn't display messages. It didn't send emails. Instead, it modified the LSASS process in such a way that the service would become unstable. The system would crash. Windows would automatically reboot (as per default settings). And when the system came back online, before the user could even log in, LSASS would crash again. The machine would enter an infinite crash-reboot loop.
+
+Users would see the Windows reboot notification, the login screen would appear for a moment, and then the machine would blue-screen again. Again. Again. The machine was inaccessible, unusable, effectively dead without manual intervention (booting into safe mode, manually patching the vulnerability, or reinstalling Windows entirely).
+
+The payload was maximally disruptive for minimal effort. Sasser didn't have to break into systems to exfiltrate data or plant backdoors. It just had to break the system itself, make it unusable, force the administrator to take action. This was malware as denial of service, but not against a network target like Code Red attacked whitehouse.gov. This was denial of service against the victim's own machine.
+
+Sasser spread rapidly across Europe in April 2004. It was, at that moment, the fastest-spreading worm in the world. Thousands of machines were infected per day. Corporate networks experienced cascading failures as machines rebooted in sequence. But what distinguished Sasser's impact was the specific infrastructure it affected.
+
+Delta Air Lines had to ground flights. The British Coastguard lost the ability to coordinate maritime rescue operations. Hospitals had to cancel surgeries. The collision of network worms and critical infrastructure had arrived. Sven Jaschan, an 18-year-old German student, was the author. He left traces in forums and code that security researchers tracked down. He was arrested on his 18th birthday, the legal threshold where juvenile detention becomes adult prosecution. Convicted under German law, he received a suspended sentence and community service.
+
+Sasser exists in malware history as a turning point. It was the moment when the consequence structure changed. After Sasser, it became clear that worm authors could be identified, tracked, arrested, and prosecuted. The era of anonymous malware authorship was ending. The worm that crashed hospitals had a face, a name, a birthday, a hometown. In April 2004, Sasser proved that one person with coding skills could crash the internet one vulnerable machine at a time.
