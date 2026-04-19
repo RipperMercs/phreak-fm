@@ -25,10 +25,14 @@ export default function ArtistPage({ params }: PageProps) {
   const artist = getArtist(params.slug);
   if (!artist) notFound();
 
-  // Find articles tagged with this artist
-  const articles = getAllArticles("frequencies").filter(
-    (a) => a.frontmatter.artist === artist.slug
-  );
+  // Surface articles that either set the artist field explicitly or include
+  // the artist slug in tags. Tag matching is the safety net so a feature
+  // piece written without the artist field still appears on the hub.
+  const articles = getAllArticles("frequencies").filter((a) => {
+    if (a.frontmatter.artist === artist.slug) return true;
+    const tags = a.frontmatter.tags || [];
+    return tags.map((t) => t.toLowerCase()).includes(artist.slug);
+  });
 
   const relatedArtists = artist.relatedArtists
     .map((slug) => {
