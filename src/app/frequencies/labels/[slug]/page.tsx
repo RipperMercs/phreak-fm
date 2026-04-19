@@ -28,10 +28,11 @@ export default function LabelPage({ params }: PageProps) {
   // Surface articles that either set the label field explicitly or include
   // the label slug in tags, so coverage shows on the hub even when an
   // article was written without the label field set.
+  // String() coercion guards against YAML parsing year tags as numbers.
   const articles = getAllArticles("frequencies").filter((a) => {
     if (a.frontmatter.label === label.slug) return true;
     const tags = a.frontmatter.tags || [];
-    return tags.map((t) => t.toLowerCase()).includes(label.slug);
+    return tags.map((t) => String(t).toLowerCase()).includes(label.slug);
   });
 
   return (
