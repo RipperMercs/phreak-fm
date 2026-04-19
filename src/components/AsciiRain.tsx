@@ -120,6 +120,9 @@ type Props = {
   apparitions?: boolean;
   /** Average ms between apparitions. Default 20000 (jittered 0.6-1.4x). */
   apparitionIntervalMs?: number;
+  /** If set, apparitions only spawn outside this rem distance from viewport center.
+   *  Use to keep apparitions in the visible gutters when a content mask covers the middle. */
+  apparitionEdgeRem?: number;
 };
 
 type AppCell = { x: number; y: number; idx: number; ch: string };
@@ -141,6 +144,7 @@ export default function AsciiRain({
   rift = true,
   apparitions = true,
   apparitionIntervalMs = 20000,
+  apparitionEdgeRem,
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   // Refs let dim and apparitions update live without restarting the canvas
@@ -221,10 +225,38 @@ export default function AsciiRain({
         nextAppMs = now + 4000;
         return;
       }
-      const marginX = Math.max(1, Math.floor((cols - sw) / 2));
+
+      let gx: number;
+      if (apparitionEdgeRem) {
+        // Constrain spawn to the visible gutters outside the content mask.
+        const baseFontPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+        const edgeCols = Math.ceil((apparitionEdgeRem * baseFontPx) / cell);
+        const center = cols / 2;
+        const leftEnd = Math.floor(center - edgeCols);
+        const rightStart = Math.ceil(center + edgeCols);
+        const leftFits = leftEnd - 1 >= sw + 1;
+        const rightFits = cols - rightStart - 1 >= sw + 1;
+        if (!leftFits && !rightFits) {
+          // Both gutters too narrow for this sprite (typical on laptops/tablets);
+          // skip and retry shortly so a smaller sprite can roll next.
+          nextAppMs = now + 4000;
+          return;
+        }
+        const useLeft = leftFits && (!rightFits || Math.random() < 0.5);
+        if (useLeft) {
+          const range = Math.max(1, leftEnd - sw - 1);
+          gx = 1 + Math.floor(Math.random() * range);
+        } else {
+          const range = Math.max(1, cols - sw - 1 - rightStart);
+          gx = rightStart + Math.floor(Math.random() * range);
+        }
+      } else {
+        const marginX = Math.max(1, Math.floor((cols - sw) / 2));
+        gx = Math.max(1, Math.min(cols - sw - 1,
+          marginX + (((Math.random() - 0.5) * cols * 0.5) | 0)));
+      }
+
       const marginY = Math.max(1, Math.floor((rows - sh) / 2));
-      const gx = Math.max(1, Math.min(cols - sw - 1,
-        marginX + (((Math.random() - 0.5) * cols * 0.5) | 0)));
       const gy = Math.max(1, Math.min(rows - sh - 1,
         marginY + (((Math.random() - 0.5) * rows * 0.4) | 0)));
       const cells: AppCell[] = [];
@@ -386,7 +418,7 @@ export default function AsciiRain({
       window.removeEventListener("resize", resize);
       if (!noCursor) window.removeEventListener("pointermove", onPointer);
     };
-  }, [intensity, cell, noCursor, rift, apparitionIntervalMs]);
+  }, [intensity, cell, noCursor, rift, apparitionIntervalMs, apparitionEdgeRem]);
 
   return (
     <canvas
