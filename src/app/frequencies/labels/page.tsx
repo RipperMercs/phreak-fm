@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getAllLabels, getFeaturedLabels } from "@/config/labels";
+import { getAllLabels, getFeaturedLabels, getLabelOfTheMonth } from "@/config/labels";
 
 export const metadata: Metadata = {
   title: "Labels",
@@ -9,7 +9,16 @@ export const metadata: Metadata = {
 export default function LabelsIndexPage() {
   const allLabels = getAllLabels();
   const featured = getFeaturedLabels();
-  const rest = allLabels.filter((l) => !l.featured);
+  const labelOfMonth = getLabelOfTheMonth();
+  const monthName = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+  // Hide the rotation pick from the all-labels grid so it doesn't appear
+  // twice on the page during its month.
+  const rest = allLabels.filter(
+    (l) => !l.featured && l.slug !== labelOfMonth?.slug,
+  );
 
   return (
     <main className="max-w-content mx-auto px-4 sm:px-6 py-12">
@@ -40,6 +49,25 @@ export default function LabelsIndexPage() {
               </a>
             ))}
           </div>
+        </section>
+      )}
+
+      {labelOfMonth && (
+        <section className="mb-12">
+          <h2 className="font-mono text-sm text-muted uppercase tracking-wider mb-4">
+            Label of the Month <span className="text-frequencies">:: {monthName}</span>
+          </h2>
+          <a
+            href={`/frequencies/labels/${labelOfMonth.slug}`}
+            className="block p-6 bg-surface border border-frequencies/40 rounded hover:border-frequencies transition-colors group"
+          >
+            <h3 className="font-mono text-2xl text-frequencies group-hover:text-frequencies/80 transition-colors mb-3">
+              {labelOfMonth.name}
+            </h3>
+            <p className="font-serif text-text leading-relaxed">
+              {labelOfMonth.bio}
+            </p>
+          </a>
         </section>
       )}
 
