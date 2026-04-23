@@ -21,7 +21,10 @@
       "Bash(SKIP_FETCH=1 npx next build)",
       "Bash(git show *)",
       "Read(//tmp/**)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "WebSearch",
+      "WebFetch(domain:phreak.fm)",
+      "Bash(git diff *)"
     ]
   }
 }
