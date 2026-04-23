@@ -2,6 +2,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
+  alternates: {
+    canonical: "https://phreak.fm/legal/terms",
+  },
 };
 
 export default function TermsPage() {

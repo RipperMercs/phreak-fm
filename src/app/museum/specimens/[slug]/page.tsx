@@ -25,9 +25,23 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const specimen = getSpecimenBySlug(params.slug);
   if (!specimen) return {};
   const fm = specimen.frontmatter;
+  const title = `${fm.name} :: DOS Virus Museum`;
+  const description =
+    fm.payloadDescription || `${fm.name}, a specimen in the phreak.fm DOS Virus Museum.`;
+  const url = `https://phreak.fm/museum/specimens/${params.slug}`;
   return {
-    title: `${fm.name} :: DOS Virus Museum`,
-    description: fm.payloadDescription || `${fm.name}, a specimen in the phreak.fm DOS Virus Museum.`,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description,
+      siteName: "phreak.fm",
+    },
   };
 }
 

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Glossary :: DOS Virus Museum",
   description:
     "Terminology for the MS-DOS-era virus archive. Polymorphic, boot sector, TSR, payload, and the rest.",
+  alternates: {
+    canonical: "https://phreak.fm/museum/glossary",
+  },
 };
 
 interface Term {

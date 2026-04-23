@@ -10,6 +10,9 @@ import {
 export const metadata: Metadata = {
   title: "News Wire",
   description: "Aggregated security, music, and tech news from trusted sources, refreshed on every build.",
+  alternates: {
+    canonical: "https://phreak.fm/news",
+  },
 };
 
 const sourceDirectory = {

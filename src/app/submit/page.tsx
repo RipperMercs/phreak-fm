@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Submit",
   description: "Submit a story or a track to phreak.fm.",
+  alternates: {
+    canonical: "https://phreak.fm/submit",
+  },
 };
 
 export default function SubmitPage() {

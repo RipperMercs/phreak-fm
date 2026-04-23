@@ -2,6 +2,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  alternates: {
+    canonical: "https://phreak.fm/legal/privacy",
+  },
 };
 
 export default function PrivacyPage() {

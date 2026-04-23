@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "DOS Virus Museum :: phreak.fm",
   description:
     "A historical archive of MS-DOS-era computer viruses. Static specimens, technical writeups, and cultural context. Curated by the_curator.",
+  alternates: {
+    canonical: "https://phreak.fm/museum",
+  },
 };
 
 export default function MuseumPage() {

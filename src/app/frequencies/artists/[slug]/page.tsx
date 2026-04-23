@@ -18,6 +18,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `${artist.name} | Frequencies`,
     description: artist.bio || `${artist.name} artist hub on phreak.fm. Articles, reviews, and news.`,
+    alternates: {
+      canonical: `https://phreak.fm/frequencies/artists/${params.slug}`,
+    },
   };
 }
 

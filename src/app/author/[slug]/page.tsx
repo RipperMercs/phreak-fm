@@ -19,6 +19,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: author.displayName,
     description: author.bio,
+    alternates: {
+      canonical: `https://phreak.fm/author/${params.slug}`,
+    },
   };
 }
 

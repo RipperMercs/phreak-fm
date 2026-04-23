@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About the Museum :: phreak.fm",
   description:
     "The personal origin of the DOS Virus Museum, and the editorial and legal posture of the archive.",
+  alternates: {
+    canonical: "https://phreak.fm/museum/about",
+  },
 };
 
 export default function MuseumAboutPage() {
