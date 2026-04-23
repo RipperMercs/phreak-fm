@@ -2,7 +2,7 @@
 
 This is the master context file for phreak.fm. It lives at the repo root and serves as persistent memory for Claude Code, Claude sessions, and Ripper himself. Update it whenever something important changes. Read it at the start of every session before doing anything else.
 
-**Last updated:** April 14, 2026
+**Last updated:** April 18, 2026
 
 ---
 
@@ -48,6 +48,30 @@ This is the master context file for phreak.fm. It lives at the repo root and ser
 - Legal pages (Terms, Privacy, DMCA, Submissions Agreement, Corrections Policy)
 - Live RSS feeds via build-time server-side fetching (cached as static JSON, refreshed every 6h via GitHub Actions cron)
 - Author personas: Ripper (credited on 35-50% of content), nullbyte (Signals), synth_error (Frequencies), deadpacket (Static), the_curator (Museum)
+
+**SEO infrastructure (SHIPPED, April 18 2026):**
+- RSS feed: build-time generated via `scripts/generate-rss.js` -> `public/feed.xml` (50 most recent articles, RSS 2.0 with dc:creator and Atom self-link)
+- OG images: build-time generated via `scripts/generate-og-images.js` -> `public/og/` (130+ branded 1200x630 SVGs with vertical-specific color schemes)
+- Structured data on every page type: Article + BreadcrumbList on articles, CollectionPage + BreadcrumbList on vertical landing pages, Article + BreadcrumbList on museum specimens, WebSite + Organization + SiteNavigationElement + SearchAction on homepage
+- Enhanced metadata in layout.tsx: keywords array, RSS autodiscovery link tag, richer title/description, canonical URL
+- robots.txt blocks AI training crawlers: GPTBot, CCBot, ChatGPT-User, anthropic-ai, Claude-Web, Google-Extended
+- ads.txt with real AdSense publisher ID (ca-pub-7224757913262984)
+- AdSense Auto Ads wired via next/script in layout.tsx with real publisher ID
+- OG image fallback: articles without heroImage now use generated SVGs at `/og/{vertical}/{slug}.svg`
+- Build pipeline: `check:emdash` -> `fetch-feeds` -> `generate-og-images` -> `generate-rss` -> `next build`
+
+**Google Search Console:** Added, sitemap submitted at https://phreak.fm/sitemap.xml
+
+**SEO manual steps remaining (Evan only):**
+- Bing Webmaster Tools: verify ownership, submit sitemap
+- Content distribution: submit best longform to HN, Lobsters, relevant subreddits (Stuxnet, Captain Crunch, Morris Worm, Boards of Canada are strongest candidates)
+- GSC URL Inspection: request indexing on top pages to accelerate crawl
+
+**Design facelift (spec written, pending design agent via DESIGN-AGENT-SPEC.md):**
+- Paper mode (warm off-white, default) and Blueprint mode (navy, toggle)
+- Instrument Serif + Caveat fonts not yet loaded
+- Zine aesthetic pivot away from terminal dashboard look
+- SignalRain component finalized and loved, homepage only
 
 **What's NOT built yet:**
 - DMCA agent registration with US Copyright Office
