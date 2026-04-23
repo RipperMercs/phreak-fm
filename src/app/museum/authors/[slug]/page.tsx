@@ -18,6 +18,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `${author.name} :: DOS Virus Museum`,
     description: `Virus specimens attributed to ${author.name}.`,
+    alternates: {
+      canonical: `https://phreak.fm/museum/authors/${params.slug}`,
+    },
   };
 }
 

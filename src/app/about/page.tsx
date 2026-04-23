@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description: "What phreak.fm is and why it exists.",
+  alternates: {
+    canonical: "https://phreak.fm/about",
+  },
 };
 
 export default function AboutPage() {

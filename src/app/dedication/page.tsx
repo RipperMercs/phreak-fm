@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Dedication",
   description: "A dedication.",
+  alternates: {
+    canonical: "https://phreak.fm/dedication",
+  },
 };
 
 export default function DedicationPage() {

@@ -18,6 +18,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `${family.name} family :: DOS Virus Museum`,
     description: `All specimens in the ${family.name} virus family.`,
+    alternates: {
+      canonical: `https://phreak.fm/museum/families/${params.slug}`,
+    },
   };
 }
 

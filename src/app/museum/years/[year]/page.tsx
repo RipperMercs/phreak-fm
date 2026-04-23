@@ -16,6 +16,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `Viruses of ${params.year} :: DOS Virus Museum`,
     description: `All MS-DOS-era virus specimens discovered in ${params.year}.`,
+    alternates: {
+      canonical: `https://phreak.fm/museum/years/${params.year}`,
+    },
   };
 }
 

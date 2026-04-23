@@ -18,6 +18,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `${label.name} | Frequencies`,
     description: label.bio || `${label.name} label hub on phreak.fm. Articles, reviews, and news.`,
+    alternates: {
+      canonical: `https://phreak.fm/frequencies/labels/${params.slug}`,
+    },
   };
 }
 
