@@ -42,3 +42,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local-only docs and specs (Pizza Robot Studios public-repo rule)
+*.md
+*.markdown
+CLAUDE.md
+README.md
+NOTES.md
+ROADMAP.md
+CHANGELOG.md
+specs/
+spec/
+docs/
+design/
+plans/
+.claude/
