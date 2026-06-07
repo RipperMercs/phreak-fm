@@ -28,6 +28,7 @@ const EXHIBITS = ephemeraData as unknown as Exhibit[];
 const CATEGORY_ORDER = [
   "Payphones",
   "Schematics",
+  "Hardware",
   "BBS Art",
   "Cracktros",
   "Zines",

@@ -188,5 +188,35 @@
     "image": null,
     "ascii": null,
     "link": { "href": "/2600", "label": "lift a handset" }
+  },
+  {
+    "id": "capn-crunch-whistle",
+    "title": "The Cap'n Crunch whistle",
+    "category": "Hardware",
+    "year": "1960s",
+    "caption": "A toy that came free in a cereal box, molded in plastic, meant to amuse a child. It happened to blow a clean 2600 hertz, the exact tone AT&T used to mark a trunk as free. Cover one hole and the most powerful telephone network on earth handed you the keys, for the price of breakfast. The most important hacking tool of its era was a prize at the bottom of the box.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/signals/john-draper-captain-crunch", "label": "Captain Crunch" }
+  },
+  {
+    "id": "acoustic-coupler",
+    "title": "The acoustic coupler",
+    "category": "Hardware",
+    "year": "1960s to 1980s",
+    "caption": "Before a modem plugged into the wall, it listened. You dialed the number on a normal telephone, waited for the carrier tone, then jammed the handset into two rubber cups, one for the earpiece and one for the mouthpiece. The computer talked to the other computer by literally speaking and listening down the line. Bump the desk and you dropped the connection. It was held together by foam and faith.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/static/the-bbs-era", "label": "the BBS era" }
+  },
+  {
+    "id": "the-sampler",
+    "title": "The sampler",
+    "category": "Hardware",
+    "year": "1980s onward",
+    "caption": "A box with a little memory and a microphone input, and suddenly any sound that had ever been recorded was yours to play on a keyboard. A drum break, a string section, a single word, a slammed door. The sampler made theft into composition and put a recording studio's worth of sound inside one machine. The whole argument about what music even is starts here.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/lexicon#musique-concrete", "label": "musique concrete, defined" }
   }
 ]
