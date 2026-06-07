@@ -13,6 +13,7 @@ import {
   SpecimenReference,
 } from "./mdx";
 import { ZineBreak } from "./ZineBreak";
+import { NumbersStation } from "./NumbersStation";
 
 const mdxComponents = {
   Callout,
@@ -25,6 +26,7 @@ const mdxComponents = {
   Spectrogram,
   SpecimenReference,
   ZineBreak,
+  NumbersStation,
 };
 
 interface ArticleRendererProps {

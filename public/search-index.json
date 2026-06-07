@@ -619,6 +619,24 @@
     "kind": "article"
   },
   {
+    "title": "Numbers Stations: The Unbreakable Broadcast",
+    "excerpt": "Somewhere on the shortwave band right now, a flat voice is reading five-digit groups to no one in particular. Numbers stations are the simplest unbreakable communication ever built: a radio anyone can buy, a one-time pad, and a voice counting into the dark. Here is how they work, who ran them, and why musicians cannot stop sampling them. Tune the receiver at the bottom.",
+    "slug": "numbers-stations",
+    "vertical": "signals",
+    "author": "keysmith",
+    "tags": [
+      "numbers-stations",
+      "cryptography",
+      "one-time-pad",
+      "shortwave",
+      "espionage",
+      "conet-project",
+      "history"
+    ],
+    "url": "/signals/numbers-stations",
+    "kind": "article"
+  },
+  {
     "title": "Operation Sundevil: The Secret Service Declares War on Hackers",
     "excerpt": "May 1990. Secret Service raids across 14 American cities. 42 computers seized. 23,000 floppy disks confiscated. The government made it clear: the hacker underground was now a national security threat. But the raids created something larger than themselves. The EFF was founded in response. And hackers started organizing legally.",
     "slug": "operation-sundevil",
