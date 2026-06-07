@@ -158,5 +158,35 @@
     "image": null,
     "ascii": "[==== TDK C90 ====]\n |   (o)   (o)   |\n |  for you / A  |\n[_________________]",
     "link": { "href": "/frequencies/cassette-revival", "label": "the cassette revival" }
+  },
+  {
+    "id": "rave-flyer",
+    "title": "The rave flyer",
+    "category": "Flyers",
+    "year": "late 1980s to 1990s",
+    "caption": "A photocopy folded into a pocket at the record shop, or a glossy card handed to you in a queue. Day-glo, half illegible, covered in cartoon smileys and crew names and a start time that meant nothing because nothing started on time. The flyer was the only advertising an illegal party got, and half its job was to look like nothing the authorities would bother to understand.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/lexicon#acid-house", "label": "acid house, defined" }
+  },
+  {
+    "id": "club-handbill",
+    "title": "A club night handbill",
+    "category": "Flyers",
+    "year": "1990s onward",
+    "caption": "Smaller, squarer, printed on actual card. A residency, a guest, a list of names sized by how much they cost to book. You kept the ones from the nights that mattered, pinned them to a wall, and years later they were the only proof that a particular room on a particular night had felt like the center of the world.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/frequencies/northern-exposure-retrospective", "label": "a night that mattered" }
+  },
+  {
+    "id": "warehouse-map",
+    "title": "Call this number for the location",
+    "category": "Flyers",
+    "year": "1989 to 1992",
+    "caption": "The cleverest flyers gave you no address at all. Just a date, a vibe, and a phone number. You called it the night of, and a recorded voice read out a meeting point, or the next number to call: a chain of payphones and answering machines built to stay one step ahead of the police. The party was wherever the last message sent you. The phone network was the venue's front door.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/2600", "label": "lift a handset" }
   }
 ]
