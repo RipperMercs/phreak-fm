@@ -152,6 +152,17 @@ export default function NewsPage() {
         <p className="text-xs text-text-muted tracking-widest uppercase mb-4">
           {">"} cat /etc/wire/sources
         </p>
+        <p className="text-sm text-text-muted mb-6">
+          Subscribe to the whole wire in your own reader:{" "}
+          <a
+            href="/feeds.opml"
+            download="phreak-fm.opml"
+            className="text-accent hover:text-accent-dim"
+          >
+            download the OPML pack
+          </a>
+          .
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h2 className="text-xs text-signals tracking-widest uppercase mb-4 border-b border-signals/20 pb-2">

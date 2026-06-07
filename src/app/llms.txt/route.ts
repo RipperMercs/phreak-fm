@@ -29,6 +29,7 @@ phreak.fm is a single editorial publication covering three connected worlds:
 - /news: unified RSS aggregator across all three verticals
 - /relay: a hand-curated linkblog, things worth attention relayed with commentary
 - /lexicon: a glossary of phreaking, electronic music, and net-culture terms
+- /feeds.opml: an OPML export of the wire's source feeds, importable into any RSS reader
 - /museum: DOS Virus Museum, a static historical archive of MS-DOS-era computer viruses
 
 ## DOS Virus Museum
