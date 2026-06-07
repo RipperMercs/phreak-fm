@@ -55,6 +55,9 @@ const ODE = `
    "the hacker ethic is that information wants to be free,
     but so do the people who love it."
 
+   ps: one payphone still works. it is not in the nav.
+       lift the handset at  phreak.fm/2600
+
    stay weird. stay curious. keep bending the signal.
 
                                      /r. and the crew
