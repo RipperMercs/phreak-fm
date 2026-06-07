@@ -22,6 +22,7 @@ export function Footer() {
               <Link href="/static" className="block hover:text-accent transition-colors">static</Link>
               <Link href="/frequencies" className="block hover:text-accent transition-colors">music</Link>
               <Link href="/museum" className="block hover:text-accent transition-colors">museum</Link>
+              <Link href="/ephemera" className="block hover:text-accent transition-colors">ephemera</Link>
               <Link href="/news" className="block hover:text-accent transition-colors">wire</Link>
               <Link href="/relay" className="block hover:text-accent transition-colors">relay</Link>
             </div>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "western-electric-coin-phone",
+    "title": "Western Electric coin telephone",
+    "category": "Payphones",
+    "year": "1960s to 1990s",
+    "caption": "The single-slot Western Electric coin phone, the workhorse of the American sidewalk for thirty years. Steel housing, armored cord, a coin relay that answered in tones the phreaks learned to forge. There were millions. There are almost none. A scan of a real one is coming to this cabinet soon.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/2600", "label": "the one on this site still works" }
+  },
+  {
+    "id": "blue-box-schematic",
+    "title": "Blue box, drawn by hand",
+    "category": "Schematics",
+    "year": "circa 1972",
+    "caption": "Not a product. A diagram passed between people who trusted each other, photocopied until the lines went soft. An oscillator for the 2600 hertz seize, a bank of multi-frequency tones for the routing, a key to fire them. Whoever could read it could talk to the whole continent.",
+    "image": null,
+    "ascii": "[ osc 2600 Hz ]===+===[ gain ]===> tip\n                  |\n[ MF tones    ]===+===[ key  ]===> ring",
+    "link": { "href": "/lexicon#blue-box", "label": "blue box, defined" }
+  },
+  {
+    "id": "bbs-login-screen",
+    "title": "A login screen at 2400 baud",
+    "category": "BBS Art",
+    "year": "early 1990s",
+    "caption": "Before the web had a face, a board had a welcome screen, hand-built from ANSI escape codes by a sysop who would never meet most of the people who saw it. Bright on black, drawn one character at a time. This is a reconstruction; the original scrolled past at the speed of a modem.",
+    "image": null,
+    "ascii": "== THE LANDLINE BBS =====================\n   1200/2400 baud      18 nodes\n   sysop: nightcrawler\n   [N]ew    [L]ogin    [G]oodbye",
+    "link": { "href": "/lexicon#ansi-art", "label": "ANSI art, defined" }
+  },
+  {
+    "id": "razor-1911-intro",
+    "title": "A cracking crew's calling card",
+    "category": "Cracktros",
+    "year": "1990s",
+    "caption": "The intro screen a cracking group bolted onto pirated software: scrolling greets, a chiptune, effects squeezed into a few kilobytes, all to sign the work and salute the scene. The cousin of the demoscene, made for an audience of rivals.",
+    "image": null,
+    "ascii": "*** RAZOR 1911 proudly presents ***\n    cracked, trained, and yours\n    greets to the whole scene\n    press space to continue",
+    "link": { "href": "/lexicon#cracktro", "label": "cracktro, defined" }
+  },
+  {
+    "id": "2600-volume-one",
+    "title": "2600 Magazine, the early issues",
+    "category": "Zines",
+    "year": "1984 onward",
+    "caption": "Folded, stapled, mailed in a plain envelope to a PO box in Middle Island, New York. Named for the tone, written for the curious, watched by the authorities for decades. The quarterly that taught a generation that a system is just a thing waiting to be understood.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/signals/emmanuel-goldstein-2600-editor", "label": "the editor's story" }
+  },
+  {
+    "id": "dialup-handshake",
+    "title": "The dial-up handshake",
+    "category": "Signals",
+    "year": "1990s",
+    "caption": "Thirty seconds of negotiation rendered as noise: two modems feeling out the line, trading carrier tones, agreeing on a speed, then falling into the hiss of data. A whole generation knows this sound by heart and never once saw it written down as frequency.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/static/dial-up-sound", "label": "the sound, in full" }
+  }
+]

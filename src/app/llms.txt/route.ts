@@ -31,6 +31,7 @@ phreak.fm is a single editorial publication covering three connected worlds:
 - /lexicon: a glossary of phreaking, electronic music, and net-culture terms
 - /feeds.opml: an OPML export of the wire's source feeds, importable into any RSS reader
 - /museum: DOS Virus Museum, a static historical archive of MS-DOS-era computer viruses
+- /ephemera: a curio cabinet of phreak, music, and net-culture artifacts (payphones, schematics, BBS art, cracktros, zines)
 
 ## DOS Virus Museum
 
