@@ -6,6 +6,7 @@ import { getAuthor } from "@/lib/authors";
 import { Ticker } from "@/components/Ticker";
 import { SystemBar } from "@/components/SystemBar";
 import { LiveFeed } from "@/components/LiveFeed";
+import { OnThisDay } from "@/components/OnThisDay";
 import {
   loadFeedCache,
   getSortedWireItems,
@@ -64,6 +65,9 @@ export default function Home() {
             {randomQuote.author}
           </p>
         </div>
+
+        {/* On This Day: hacker, music, and net milestones, mixed by design */}
+        <OnThisDay />
 
         {/* ASCII Logo */}
         <header className="py-12 sm:py-16 border-b border-border">
