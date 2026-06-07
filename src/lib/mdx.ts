@@ -37,6 +37,9 @@ export function getArticleBySlug(
       ...data,
       slug,
       vertical,
+      // Some posts (Pirate Signal, the welcome manifesto) use a `description`
+      // field instead of `excerpt`. Fall back so subtitles never render empty.
+      excerpt: data.excerpt ?? data.description,
       readingTimeMinutes: Math.ceil(stats.minutes),
     } as ArticleFrontmatter,
     content,
