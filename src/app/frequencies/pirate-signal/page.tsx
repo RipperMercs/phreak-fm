@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getAllArticles } from "@/lib/mdx";
+import { getPirateSignalPosts } from "@/lib/mdx";
 import { ArticleCard } from "@/components/ArticleCard";
 
 export const metadata: Metadata = {
@@ -13,10 +13,7 @@ const tagOptions = [
 ];
 
 export default function PirateSignalPage() {
-  const allArticles = getAllArticles("frequencies");
-  const pirateSignalPosts = allArticles.filter(
-    (a) => a.frontmatter.subsection === "pirate-signal"
-  );
+  const pirateSignalPosts = getPirateSignalPosts();
 
   return (
     <main className="max-w-wire mx-auto px-4 sm:px-6 py-12">

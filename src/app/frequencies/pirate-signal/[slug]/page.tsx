@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { getArticleBySlug, getArticleSlugs } from "@/lib/mdx";
+import { getArticleBySlug, getPirateSignalSlugs } from "@/lib/mdx";
 import { buildArticleMetadata, buildArticleJsonLd } from "@/lib/seo";
 import { getAuthor } from "@/lib/authors";
 import { formatDate } from "@/lib/utils";
@@ -14,12 +14,8 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  // Pirate Signal posts live in content/frequencies/pirate-signal/
-  // but we load them via the frequencies vertical with subsection filter
-  const slugs = getArticleSlugs("frequencies");
-  // Filter for pirate-signal posts would require reading frontmatter;
-  // for SSG we return all frequencies slugs and let the page 404 if not pirate-signal
-  return slugs.map((slug) => ({ slug }));
+  // Only the actual Pirate Signal posts in content/frequencies/pirate-signal/.
+  return getPirateSignalSlugs().map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {

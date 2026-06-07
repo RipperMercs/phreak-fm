@@ -66,6 +66,29 @@ export function getAllArticles(vertical?: Vertical): ArticleData[] {
   );
 }
 
+// Pirate Signal posts live in the subdirectory content/frequencies/pirate-signal/,
+// which the flat per-vertical loaders above do not read. These dedicated helpers
+// load that subdirectory, mirroring how the museum reads content/museum/specimens/.
+export function getPirateSignalSlugs(): string[] {
+  const dir = path.join(contentDirectory, "frequencies", "pirate-signal");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => file.replace(/\.mdx$/, ""));
+}
+
+export function getPirateSignalPosts(): ArticleData[] {
+  return getPirateSignalSlugs()
+    .map((name) => getArticleBySlug("frequencies", `pirate-signal/${name}`))
+    .filter((a): a is ArticleData => a !== null)
+    .sort(
+      (a, b) =>
+        new Date(b.frontmatter.publishedAt).getTime() -
+        new Date(a.frontmatter.publishedAt).getTime()
+    );
+}
+
 export function getFeaturedArticles(vertical?: Vertical): ArticleData[] {
   return getAllArticles(vertical).filter((a) => a.frontmatter.featured);
 }
