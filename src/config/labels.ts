@@ -20,6 +20,7 @@ export const labels: LabelData[] = [
   { slug: "perfecto", name: "Perfecto", bio: "Paul Oakenfold's trance temple, encoding the euphoric ascent and Balearic transmission for the mainfloor. A nexus where Ibiza met the world.", links: { website: "perfectorecords.com" }, featured: false },
   { slug: "good-looking-records", name: "Good Looking Records", bio: "LTJ Bukem's London imprint, founded 1991 to put out his own material and the artists who shared his vision. Peshay, Big Bud, Tayla, Future Engineers, Aquasky. The label that turned atmospheric drum and bass into a canon and the Logical Progression mix series into a school.", links: { website: "goodlookingrecords.co.uk", bandcamp: "goodlookingrecords.bandcamp.com" }, featured: false },
   { slug: "hunya-munya-records", name: "Hunya Munya Records", bio: "A small light burning in the dark: Ripper's own imprint for archival recovery and insider cuts. Where the signal breaks and something true leaks out.", links: { bandcamp: "hunyamunya.bandcamp.com" }, featured: false },
+  { slug: "basic-channel", name: "Basic Channel", bio: "Berlin's most secretive institution. Moritz von Oswald and Mark Ernestus welded Detroit techno to Jamaican dub on stamped, sleeveless twelve-inches, then built a whole world around it: the Hard Wax shop, the Dubplates and Mastering cutting room, and the Chain Reaction roster. Reduction as philosophy, hiss as architecture, anonymity as a signature.", links: { website: "basicchannel.com" }, featured: false },
 ];
 
 export function getLabel(slug: string): LabelData | undefined {
