@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -30,6 +31,17 @@ export default function AboutPage() {
           producers, and the broader community of people who care deeply
           about how systems work and what happens when you push them past
           their intended limits.
+        </p>
+
+        <p>
+          If you want the long version of why these worlds are one, start with{" "}
+          <Link
+            href="/signals/the-2600-hz-note"
+            className="text-accent hover:text-accent-dim"
+          >
+            The 2600 Hz Note
+          </Link>
+          , the essay this whole site rests on.
         </p>
 
         <p>

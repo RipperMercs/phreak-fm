@@ -752,6 +752,24 @@
     "kind": "article"
   },
   {
+    "title": "The 2600 Hz Note",
+    "excerpt": "2600 hertz was never just a number. It was a musical note, a slightly detuned E near the top of the piano, and the master key to the largest machine on earth. A blind kid's whistle, a cereal-box toy, a misused synthesizer, and a face hidden in a spectrogram are all the same act: bending sound to bend a system. This is the idea the whole site rests on.",
+    "slug": "the-2600-hz-note",
+    "vertical": "signals",
+    "author": "ripper",
+    "tags": [
+      2600,
+      "phreaking",
+      "electronic-music",
+      "thesis",
+      "frequencies",
+      "aphex-twin",
+      "history"
+    ],
+    "url": "/signals/the-2600-hz-note",
+    "kind": "article"
+  },
+  {
     "title": "The 414s: Teenage Hackers and the Law That Stopped Them",
     "excerpt": "In 1983, a group of teenage hackers from Milwaukee broke into Los Alamos National Laboratory, Sloan-Kettering Cancer Center, and Security Pacific Bank. Kids with modems and curiosity. Their arrests directly triggered the Computer Fraud and Abuse Act of 1984. The moment hacking became a federal crime.",
     "slug": "the-414s",
@@ -956,8 +974,10 @@
       "warp",
       "idm",
       "ambient",
-      2026
+      "2026"
     ],
+    "artist": "boards-of-canada",
+    "label": "warp",
     "url": "/frequencies/boards-of-canada-tape-05",
     "kind": "article"
   },
