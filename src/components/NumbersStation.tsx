@@ -31,6 +31,9 @@ export function NumbersStation() {
   const [volume, setVolume] = useState(0.6);
   const [muted, setMuted] = useState(false);
   const [teletype, setTeletype] = useState<string[]>([]);
+  const [voiceOn, setVoiceOn] = useState(false);
+  const [voiceSupported, setVoiceSupported] = useState(false);
+  const voiceOnRef = useRef(false);
 
   const getEngine = useCallback((): ShortwaveEngine => {
     if (!engineRef.current) {
@@ -49,32 +52,60 @@ export function NumbersStation() {
     }
   }, []);
 
+  const stopSpeech = useCallback(() => {
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+  }, []);
+
+  // Read a group aloud digit by digit, in a flat voice. Skips if already
+  // speaking so utterances do not pile up behind the 1300ms teletype.
+  const speakGroup = useCallback((group: string) => {
+    if (!voiceOnRef.current) return;
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    const synth = window.speechSynthesis;
+    if (synth.speaking) return;
+    const utter = new SpeechSynthesisUtterance(group.split("").join(" "));
+    utter.rate = 1.05;
+    utter.pitch = 0.9;
+    utter.lang = "en-US";
+    synth.speak(utter);
+  }, []);
+
   useEffect(() => {
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      setVoiceSupported(true);
+    }
     return () => {
       clearTeletypeTimer();
+      stopSpeech();
       engineRef.current?.dispose();
       engineRef.current = null;
     };
-  }, [clearTeletypeTimer]);
+  }, [clearTeletypeTimer, stopSpeech]);
 
   // The teletype only runs while locked onto the counting station.
   useEffect(() => {
     clearTeletypeTimer();
     if (powered && stationId === "counting") {
       teletypeTimer.current = window.setInterval(() => {
-        setTeletype((lines) => [...lines, randomGroup()].slice(-9));
+        const group = randomGroup();
+        setTeletype((lines) => [...lines, group].slice(-9));
         engineRef.current?.blip();
+        speakGroup(group);
       }, 1300);
     } else {
       setTeletype([]);
+      stopSpeech();
     }
     return clearTeletypeTimer;
-  }, [powered, stationId, clearTeletypeTimer]);
+  }, [powered, stationId, clearTeletypeTimer, speakGroup, stopSpeech]);
 
   const togglePower = useCallback(() => {
     const engine = getEngine();
     if (powered) {
       engine.dispose();
+      stopSpeech();
       setPowered(false);
       setStationId(null);
     } else {
@@ -84,7 +115,7 @@ export function NumbersStation() {
       setStationId(res.station?.id ?? null);
       setFreqKHz(res.freqKHz);
     }
-  }, [powered, tuning, getEngine]);
+  }, [powered, tuning, getEngine, stopSpeech]);
 
   const onTune = (t: number) => {
     setTuning(t);
@@ -105,6 +136,13 @@ export function NumbersStation() {
     const next = !muted;
     setMuted(next);
     engineRef.current?.setMuted(next);
+  };
+
+  const toggleVoice = () => {
+    const next = !voiceOn;
+    setVoiceOn(next);
+    voiceOnRef.current = next;
+    if (!next) stopSpeech();
   };
 
   const mhz = (freqKHz / 1000).toFixed(2);
@@ -202,6 +240,22 @@ export function NumbersStation() {
         >
           {muted ? "muted" : "on"}
         </button>
+
+        {voiceSupported && (
+          <button
+            type="button"
+            onClick={toggleVoice}
+            aria-pressed={voiceOn}
+            aria-label={voiceOn ? "Turn voice off" : "Turn voice on"}
+            className={`rounded-sm border px-3 py-2 text-[0.6rem] uppercase tracking-wider transition-colors ${
+              voiceOn
+                ? "border-accent text-accent"
+                : "border-border text-text-muted hover:text-text"
+            }`}
+          >
+            {voiceOn ? "voice on" : "voice off"}
+          </button>
+        )}
 
         <input
           type="range"
