@@ -31,6 +31,7 @@ const CATEGORY_ORDER = [
   "BBS Art",
   "Cracktros",
   "Zines",
+  "Tape",
   "Signals",
 ];
 

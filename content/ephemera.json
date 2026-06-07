@@ -128,5 +128,35 @@
     "image": null,
     "ascii": null,
     "link": { "href": "/signals/aphex-twin-spectrograms", "label": "the spectrogram hacks" }
+  },
+  {
+    "id": "red-box-cassette",
+    "title": "The red box on a cassette",
+    "category": "Tape",
+    "year": "1990s",
+    "caption": "Bernie S worked out that the coin tones did not need a box at all. Record them onto a cassette, hold a Walkman to the payphone mouthpiece, press play, and the phone heard money. He sold the tapes through the back of 2600, unlabeled and deniable, and anyone with a tape deck could now make free calls. The hack, distributed at the speed of dubbing.",
+    "image": null,
+    "ascii": "[==== C60 ====]\n |  (o)  (o)  |\n |  RED  BOX  |\n |  side  A   |\n[_____________]",
+    "link": { "href": "/signals/bernie-s-red-box", "label": "Bernie S and the red box" }
+  },
+  {
+    "id": "demo-tape",
+    "title": "The demo tape",
+    "category": "Tape",
+    "year": "1980s to 1990s",
+    "caption": "A cassette in a padded envelope, mailed to a label that would probably never write back. Four tracks, a handwritten J-card, a return address in hope. Most went into a drawer. A few got somebody signed. The whole of outsider music history is built on the ones nobody listened to and the rare one somebody did.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/frequencies/pirate-signal", "label": "the Pirate Signal beat" }
+  },
+  {
+    "id": "mixtape",
+    "title": "The mixtape",
+    "category": "Tape",
+    "year": "the C90 era",
+    "caption": "Ninety minutes, two sides, sequenced by hand and timed so the last song just fit. You made it for one person and the track order said the things you could not. Curation as devotion, decades before a playlist was a thing you shared with a tap. The cassette revival keeps the ritual alive for people who never had to rewind.",
+    "image": null,
+    "ascii": "[==== TDK C90 ====]\n |   (o)   (o)   |\n |  for you / A  |\n[_________________]",
+    "link": { "href": "/frequencies/cassette-revival", "label": "the cassette revival" }
   }
 ]
