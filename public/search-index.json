@@ -1618,6 +1618,160 @@
     "kind": "article"
   },
   {
+    "title": "Abandoned Factory Reverb: Impulse Responses from Condemned Buildings",
+    "excerpt": "",
+    "slug": "abandoned-factory-reverb",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "reverb",
+      "field-recording",
+      "impulse-response",
+      "architecture"
+    ],
+    "url": "/frequencies/pirate-signal/abandoned-factory-reverb",
+    "kind": "article"
+  },
+  {
+    "title": "Circuit Psalms: Devotional Drone from a Bent Casio",
+    "excerpt": "Prayer and hardware abuse. Circuit-bent Casio keyboards processed through effects chains. Eight followers. One broken machine. Infinite patience.",
+    "slug": "circuit-psalms",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "circuit-bending",
+      "drone",
+      "experimental",
+      "lo-fi"
+    ],
+    "url": "/frequencies/pirate-signal/circuit-psalms",
+    "kind": "article"
+  },
+  {
+    "title": "Dead Mall Frequencies: Muzak Degradation Loops",
+    "excerpt": "Muzak from dying shopping malls, processed into spectral ambient. The source material is already ghostly. The processing reveals ghosts.",
+    "slug": "dead-mall-frequencies",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "vaporwave",
+      "muzak",
+      "ambient",
+      "found-sound"
+    ],
+    "url": "/frequencies/pirate-signal/dead-mall-frequencies",
+    "kind": "article"
+  },
+  {
+    "title": "Ghost Transmitter: Tape Loops from a Basement in Dayton",
+    "excerpt": "Someone in Dayton, Ohio is running cassette tape through a modified Walkman and uploading the results to Bandcamp. Fourteen followers. Zero press. The loops sound like a radio station from a world that never existed.",
+    "slug": "ghost-transmitter-tape-loops",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "ambient",
+      "tape",
+      "lo-fi",
+      "outsider electronic"
+    ],
+    "url": "/frequencies/pirate-signal/ghost-transmitter-tape-loops",
+    "kind": "article"
+  },
+  {
+    "title": "Ham Radio Ambient: Live Shortwave Processing from a Basement in Montana",
+    "excerpt": "",
+    "slug": "ham-radio-ambient",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "ham-radio",
+      "shortwave",
+      "ambient",
+      "live-processing",
+      "granular"
+    ],
+    "url": "/frequencies/pirate-signal/ham-radio-ambient",
+    "kind": "article"
+  },
+  {
+    "title": "Mains Hum: The Drone Underneath Everything",
+    "excerpt": "An artist records the 60-cycle hum of the electrical grid with induction coils, then tunes its harmonics into drone. The sound that is in every room, finally listened to.",
+    "slug": "mains-hum",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "drone",
+      "field-recording",
+      "electrical",
+      "ambient",
+      "lo-fi"
+    ],
+    "url": "/frequencies/pirate-signal/mains-hum",
+    "kind": "article"
+  },
+  {
+    "title": "Parking Garage Drone: Resonant Frequencies of Concrete Structures",
+    "excerpt": "",
+    "slug": "parking-garage-drone",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "drone",
+      "architecture",
+      "resonance",
+      "site-specific",
+      "concrete"
+    ],
+    "url": "/frequencies/pirate-signal/parking-garage-drone",
+    "kind": "article"
+  },
+  {
+    "title": "Shortwave Hymns: Numbers Station Field Recordings as Ambient Music",
+    "excerpt": "Automated voices reading sequences into the void. Lincolnshire Poacher, UVB-76, the Czech Lady. When numbers stations become composition.",
+    "slug": "shortwave-hymns",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "numbers-stations",
+      "shortwave",
+      "ambient",
+      "field-recording"
+    ],
+    "url": "/frequencies/pirate-signal/shortwave-hymns",
+    "kind": "article"
+  },
+  {
+    "title": "Static Harvest: VHS Ambient from an Unlabeled Tape",
+    "excerpt": "Found this on YouTube. No channel name, no description, no other uploads. Just forty minutes of audio pulled from a deteriorating VHS tape. The tracking artifacts become the music.",
+    "slug": "static-harvest-vhs-ambient",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "hauntological",
+      "noise",
+      "lo-fi",
+      "outsider electronic",
+      "tape"
+    ],
+    "url": "/frequencies/pirate-signal/static-harvest-vhs-ambient",
+    "kind": "article"
+  },
+  {
+    "title": "Voltage Cathedral: One Patch, Forty Minutes, Something Holy",
+    "excerpt": "A single modular synth patch recorded in one take. No overdubs, no editing, no post-production. Just voltage finding its way through a rack of modules for forty unbroken minutes. It sounds like it is praying.",
+    "slug": "voltage-cathedral",
+    "vertical": "frequencies",
+    "author": "synth_error",
+    "tags": [
+      "modular",
+      "drone",
+      "experimental",
+      "ambient"
+    ],
+    "url": "/frequencies/pirate-signal/voltage-cathedral",
+    "kind": "article"
+  },
+  {
     "title": "Ambulance",
     "excerpt": "An ASCII ambulance drives across the bottom of the screen with siren sounds from the PC speaker, then disappears.",
     "slug": "ambulance",

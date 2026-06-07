@@ -53,6 +53,28 @@ function buildIndex(): SearchItem[] {
     }
   }
 
+  // Pirate Signal posts live in a subdirectory the flat vertical loop above misses.
+  const pirateDir = path.join(contentDir, "frequencies", "pirate-signal");
+  if (fs.existsSync(pirateDir)) {
+    const files = fs.readdirSync(pirateDir).filter((f) => f.endsWith(".mdx"));
+    for (const file of files) {
+      const raw = fs.readFileSync(path.join(pirateDir, file), "utf8");
+      const { data } = matter(raw);
+      const slug = file.replace(/\.mdx$/, "");
+
+      items.push({
+        title: data.title || slug,
+        excerpt: data.excerpt || data.description || "",
+        slug,
+        vertical: "frequencies",
+        author: data.author || "",
+        tags: data.tags || [],
+        url: `/frequencies/pirate-signal/${slug}`,
+        kind: "article",
+      });
+    }
+  }
+
   const museumDir = path.join(contentDir, "museum", "specimens");
   if (fs.existsSync(museumDir)) {
     const files = fs.readdirSync(museumDir).filter((f) => f.endsWith(".mdx"));
