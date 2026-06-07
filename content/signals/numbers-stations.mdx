@@ -35,7 +35,7 @@ That is the entire system. It is beautiful precisely because it is so stupidly r
 
 ## Why it cannot be broken
 
-The numbers are ciphertext, and the cipher is the one thing in all of cryptography that is provably, mathematically unbreakable: the one-time pad.
+The numbers are ciphertext, and the cipher is the one thing in all of cryptography that is provably, mathematically unbreakable: the <Term slug="one-time-pad">one-time pad</Term>.
 
 The idea is almost insultingly simple. The agent carries a pad of truly random numbers, identical to a pad held by headquarters. To send a message, headquarters adds the random key to the message, digit by digit, and reads out the result. The agent subtracts the same key and recovers the text. As long as the key is genuinely random, as long as it is exactly as long as the message, and as long as it is never reused, the ciphertext carries no information at all about the message. Claude Shannon proved this in 1949. There is no clever attack, no faster computer, no quantum trick. A correctly used one-time pad does not have a weakness to find.
 

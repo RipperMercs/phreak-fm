@@ -23,8 +23,10 @@ export function Footer() {
               <Link href="/frequencies" className="block hover:text-accent transition-colors">music</Link>
               <Link href="/museum" className="block hover:text-accent transition-colors">museum</Link>
               <Link href="/news" className="block hover:text-accent transition-colors">wire</Link>
+              <Link href="/relay" className="block hover:text-accent transition-colors">relay</Link>
             </div>
             <div className="space-y-1.5">
+              <Link href="/lexicon" className="block hover:text-accent transition-colors">lexicon</Link>
               <Link href="/about" className="block hover:text-accent transition-colors">about</Link>
               <Link href="/submit" className="block hover:text-accent transition-colors">submit</Link>
               <Link href="/dedication" className="block hover:text-accent transition-colors">dedication</Link>

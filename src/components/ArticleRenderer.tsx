@@ -11,6 +11,7 @@ import {
   TrackList,
   Spectrogram,
   SpecimenReference,
+  Term,
 } from "./mdx";
 import { ZineBreak } from "./ZineBreak";
 import { NumbersStation } from "./NumbersStation";
@@ -27,6 +28,7 @@ const mdxComponents = {
   SpecimenReference,
   ZineBreak,
   NumbersStation,
+  Term,
 };
 
 interface ArticleRendererProps {

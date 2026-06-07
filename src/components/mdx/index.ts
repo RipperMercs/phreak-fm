@@ -7,6 +7,7 @@ export { Timeline } from "./Timeline";
 export { TrackList } from "./TrackList";
 export { Spectrogram } from "./Spectrogram";
 export { SpecimenReference } from "./SpecimenReference";
+export { Term } from "./Term";
 export { ZineBreak } from "../ZineBreak";
 export { DeadWax } from "../DeadWax";
 export { NumbersStation } from "../NumbersStation";
