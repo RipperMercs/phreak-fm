@@ -7,6 +7,7 @@ import { Ticker } from "@/components/Ticker";
 import { SystemBar } from "@/components/SystemBar";
 import { LiveFeed } from "@/components/LiveFeed";
 import { OnThisDay } from "@/components/OnThisDay";
+import { getRelayEntries } from "@/lib/relay";
 import {
   loadFeedCache,
   getSortedWireItems,
@@ -35,6 +36,7 @@ export default function Home() {
   const latest = allArticles.slice(0, 12);
   const randomQuote = HACKER_QUOTES[Math.floor(Math.random() * HACKER_QUOTES.length)];
   const wireItems = getSortedWireItems(loadFeedCache(), 10);
+  const relayItems = getRelayEntries().slice(0, 3);
 
   return (
     <>
@@ -152,6 +154,69 @@ export default function Home() {
                 })}
               </div>
             </section>
+
+            {/* Relay teaser: Ripper's hand-picked links, distinct from the auto wire */}
+            {relayItems.length > 0 && (
+              <section className="py-6 border-t border-border">
+                <div className="flex items-baseline justify-between mb-4">
+                  <p className="text-xs text-text-muted tracking-widest uppercase">
+                    {'>'} tail /relay
+                  </p>
+                  <Link
+                    href="/relay"
+                    className="text-xs text-text-muted hover:text-accent transition-colors"
+                  >
+                    full relay {'->'}
+                  </Link>
+                </div>
+                <div className="space-y-0">
+                  {relayItems.map((e, i) => {
+                    const relayColor: Record<string, string> = {
+                      signals: "text-signals",
+                      frequencies: "text-frequencies",
+                      static: "text-static-v",
+                    };
+                    const relayAbbr: Record<string, string> = {
+                      signals: "SIG",
+                      frequencies: "MUS",
+                      static: "STA",
+                    };
+                    const rd = new Date(`${e.date}T12:00:00Z`);
+                    const dateStr = `${String(rd.getUTCMonth() + 1).padStart(2, "0")}.${String(rd.getUTCDate()).padStart(2, "0")}.${String(rd.getUTCFullYear()).slice(2)}`;
+                    const domain = extractDomain(e.url);
+                    return (
+                      <a
+                        key={e.id}
+                        href={e.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block py-2.5 border-b border-border/50 last:border-b-0 hover:bg-bg-surface/50 transition-colors -mx-2 px-2"
+                      >
+                        <div className="flex items-baseline gap-3">
+                          <span className="text-xs text-text-muted w-5 shrink-0 text-right">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className={`text-xs shrink-0 w-7 ${e.vertical ? relayColor[e.vertical] : "text-text-muted"}`}>
+                            {e.vertical ? relayAbbr[e.vertical] : "---"}
+                          </span>
+                          <span className="text-xs text-accent shrink-0 w-16">
+                            {dateStr}
+                          </span>
+                          <span className="text-sm text-text group-hover:text-accent transition-colors flex-1 leading-snug">
+                            {e.title}
+                          </span>
+                          {domain && (
+                            <span className="text-xs text-text-muted shrink-0 hidden md:inline">
+                              {domain}
+                            </span>
+                          )}
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
 
             {/* Wire teaser: latest external headlines, links to /news for full feed */}
             {wireItems.length > 0 && (

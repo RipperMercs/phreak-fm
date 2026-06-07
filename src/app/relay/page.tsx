@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     "Hand-picked signals, relayed with a note on why. A curated linkblog of things worth your attention, separate from the automated news wire.",
   alternates: {
     canonical: "https://phreak.fm/relay",
+    types: {
+      "application/rss+xml": "https://phreak.fm/relay.xml",
+    },
   },
 };
 
@@ -40,6 +43,12 @@ export default function RelayPage() {
           Hand-picked signals, relayed with a note on why. Not the machine wire,
           just things I think are worth your time.
         </p>
+        <a
+          href="/relay.xml"
+          className="mt-3 inline-block font-mono text-xs text-text-muted hover:text-accent transition-colors"
+        >
+          {">"} subscribe (RSS)
+        </a>
       </header>
 
       <div className="space-y-8">
