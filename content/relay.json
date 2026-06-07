@@ -1,0 +1,42 @@
+[
+  {
+    "id": "malware-museum",
+    "date": "2026-06-07",
+    "title": "The Malware Museum lets you watch DOS viruses detonate, safely",
+    "url": "https://archive.org/details/malwaremuseum",
+    "note": "The Internet Archive emulates a pile of 1980s and 90s DOS viruses in the browser so you can watch the payloads bloom without infecting anything. The cascade of falling letters still hits. This is the well our own museum drinks from.",
+    "vertical": "signals"
+  },
+  {
+    "id": "hacker-manifesto-source",
+    "date": "2026-06-06",
+    "title": "Read the Hacker Manifesto where it was actually published",
+    "url": "http://phrack.org/issues/7/3.html",
+    "note": "Everyone quotes 'this is our world now.' Almost nobody reads it in Phrack issue 7, phile three, dated January 1986, eight days after the Mentor's arrest. The primary source is one click away and still electric.",
+    "vertical": "signals"
+  },
+  {
+    "id": "conet-project",
+    "date": "2026-06-05",
+    "title": "Four hours of shortwave numbers stations, and yes it is an album",
+    "url": "https://archive.org/details/ird059",
+    "note": "The Conet Project collected the eerie counting voices of Cold War numbers stations across four discs. Wilco named a song after it and got sued. Put it on at 3am and try to tell me phreaking and ambient are different things.",
+    "vertical": "frequencies"
+  },
+  {
+    "id": "textfiles",
+    "date": "2026-06-03",
+    "title": "textfiles.com is still the best museum on the internet",
+    "url": "https://textfiles.com",
+    "note": "Jason Scott has kept the BBS era's text files online for decades: the philes, the anarchy cookbooks, the door games, the ASCII art. No design, no ads, no rot. Just the writing the early network ran on.",
+    "vertical": "static"
+  },
+  {
+    "id": "gifcities",
+    "date": "2026-06-02",
+    "title": "Search the GeoCities animated GIF graveyard",
+    "url": "https://gifcities.org",
+    "note": "The Internet Archive indexed the GIFs it rescued from GeoCities and made them searchable. Type 'under construction' and grieve. The weird web was so much more alive when everything spun.",
+    "vertical": "static"
+  }
+]

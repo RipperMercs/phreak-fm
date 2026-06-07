@@ -27,6 +27,7 @@ phreak.fm is a single editorial publication covering three connected worlds:
 - /frequencies: electronic music reviews, artist features, label profiles, genre coverage
 - /static: tech news commentary, industry coverage, digital culture
 - /news: unified RSS aggregator across all three verticals
+- /relay: a hand-curated linkblog, things worth attention relayed with commentary
 - /museum: DOS Virus Museum, a static historical archive of MS-DOS-era computer viruses
 
 ## DOS Virus Museum

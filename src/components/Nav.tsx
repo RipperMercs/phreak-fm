@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/frequencies", label: "music" },
   { href: "/museum", label: "museum" },
   { href: "/news", label: "wire" },
+  { href: "/relay", label: "relay" },
   { href: "/search", label: "/search" },
 ];
 
