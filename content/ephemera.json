@@ -58,5 +58,75 @@
     "image": null,
     "ascii": null,
     "link": { "href": "/static/dial-up-sound", "label": "the sound, in full" }
+  },
+  {
+    "id": "phone-booth",
+    "title": "The phone booth",
+    "category": "Payphones",
+    "year": "1950s to 1990s",
+    "caption": "Not just a phone. A room. Four walls of glass and an accordion door you could pull shut against the street, a light that came on when you stepped inside, a tiny shelf for the directory nobody read. For a few minutes it was the most private place in a city, and a phreak with a handset and a box could make it the most powerful. They took the booths out first. The phones lasted a little longer.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/2600", "label": "lift a handset" }
+  },
+  {
+    "id": "red-box-tone-dialer",
+    "title": "Red box, a tone dialer reborn",
+    "category": "Schematics",
+    "year": "1990s",
+    "caption": "A fifteen dollar Radio Shack tone dialer, opened up, its crystal pried out and replaced with one that sang at the wrong frequency. Now it spoke the language of dropped coins: a nickel, a dime, a quarter, all of them free, all of them fake, all of them indistinguishable to the payphone from the real thing. Bernie S sold the tones on cassette so you did not even need the box.",
+    "image": null,
+    "ascii": "[ tone dialer, modified ]\n   crystal swapped to 6.5536 MHz\n   output: 1700 Hz + 2200 Hz\n   quarter = five quick bursts",
+    "link": { "href": "/signals/bernie-s-red-box", "label": "Bernie S and the red box" }
+  },
+  {
+    "id": "tb-303-sketch",
+    "title": "The TB-303, in three knobs",
+    "category": "Schematics",
+    "year": "1981",
+    "caption": "Roland built it to be a bass guitarist you did not have to pay. It failed at that completely. Then someone turned the cutoff while the resonance was up and the machine screamed, and a genre fell out. The schematic is dull. The misuse is the instrument.",
+    "image": null,
+    "ascii": "TB-303\n  [ tune ] [ cutoff ] [ reso ] [ env ]\n  saw / square -> filter -> acid",
+    "link": { "href": "/lexicon#tb-303", "label": "TB-303, defined" }
+  },
+  {
+    "id": "nfo-file",
+    "title": "An NFO file",
+    "category": "BBS Art",
+    "year": "1990s",
+    "caption": "Every cracked release came with a text file, the NFO, and the NFO came with art. Block characters arranged into logos and borders by people who signed their work like painters, wrapped around the only words that mattered: who cracked it, how many disks, and greets to the rest of the scene. You read the credits before you ran the program.",
+    "image": null,
+    "ascii": "+========= [ R E L E A S E ] =========+\n   cracked and packaged with care\n   1 of 10 disks .. read me first\n   nfo art by the ascii department\n+=====================================+",
+    "link": { "href": "/lexicon#the-scene", "label": "the scene, defined" }
+  },
+  {
+    "id": "second-reality",
+    "title": "Second Reality, 1993",
+    "category": "Cracktros",
+    "year": "1993",
+    "caption": "The cracking scene's well-behaved cousin was the demoscene, and its masterpiece arrived at Assembly in the summer of 1993. Future Crew's Second Reality did things a PC was not supposed to be able to do, in real time, just to prove it could. No game, no software to sell, no point except the craft. The point was always the craft.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/lexicon#demoscene", "label": "demoscene, defined" }
+  },
+  {
+    "id": "phrack-philes",
+    "title": "Phrack, the philes",
+    "category": "Zines",
+    "year": "1985 onward",
+    "caption": "Not a magazine you held so much as a file you found, passed board to board, each issue a numbered set of philes. Technical articles, scene news, the occasional manifesto, and Pro-Phile interviews with the people who mattered. It was where the underground wrote itself down, and where, in issue seven, a newly arrested kid published the lines everyone still quotes.",
+    "image": null,
+    "ascii": "=== P H R A C K ===  volume one\n   the file that taught the scene\n   read it, then read the next phile",
+    "link": { "href": "/signals/phrack-magazine", "label": "the story of Phrack" }
+  },
+  {
+    "id": "aphex-face",
+    "title": "Aphex Twin's hidden face",
+    "category": "Signals",
+    "year": "1999",
+    "caption": "Run the last track of the Windowlicker EP through a spectrogram and a face appears in the frequencies, grinning back at the kind of person who would think to look. Not metadata, not a trick of the file. The image is the sound. The phreak hid a command in a tone; Richard James hid a portrait in one.",
+    "image": null,
+    "ascii": null,
+    "link": { "href": "/signals/aphex-twin-spectrograms", "label": "the spectrogram hacks" }
   }
 ]
